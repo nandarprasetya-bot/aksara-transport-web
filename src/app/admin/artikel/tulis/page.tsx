@@ -14,6 +14,45 @@ export default function TulisArtikelPage() {
     const [excerpt, setExcerpt] = useState('');
     const [content, setContent] = useState('');
 
+    const [uploadingImage, setUploadingImage] = useState(false);
+
+    const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!e.target.files || e.target.files.length === 0) return;
+        const file = e.target.files[0];
+        
+        if (!supabase) {
+            alert('Supabase belum terhubung.');
+            return;
+        }
+
+        try {
+            setUploadingImage(true);
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${Math.random()}.${fileExt}`;
+            const filePath = `artikel-images/${fileName}`;
+
+            // Upload image to Supabase Storage bucket named 'blog-images'
+            const { error: uploadError } = await supabase.storage
+                .from('blog-images')
+                .upload(filePath, file);
+
+            if (uploadError) {
+                throw uploadError;
+            }
+
+            // Get the public URL
+            const { data } = supabase.storage.from('blog-images').getPublicUrl(filePath);
+            setImageUrl(data.publicUrl);
+            alert('Gambar berhasil diunggah!');
+            
+        } catch (error: any) {
+            console.error('Error uploading image:', error);
+            alert('Gagal mengunggah gambar. Pastikan Anda sudah membuat Storage Bucket bernama "blog-images" di Supabase.');
+        } finally {
+            setUploadingImage(false);
+        }
+    };
+
     const generateSlug = (text: string) => {
         return text.toString().toLowerCase()
             .replace(/\s+/g, '-')           // Replace spaces with -
@@ -120,14 +159,22 @@ export default function TulisArtikelPage() {
                                 </select>
                             </div>
                             <div style={{ flex: 2, minWidth: '300px' }}>
-                                <label style={{ display: 'block', fontWeight: 600, color: '#475569', marginBottom: '8px' }}>URL Foto Thumbnail (Opsional)</label>
-                                <input 
-                                    type="text" 
-                                    value={imageUrl}
-                                    onChange={(e) => setImageUrl(e.target.value)}
-                                    placeholder="/images/tour_merapi.webp atau https://..."
-                                    style={{ width: '100%', padding: '12px', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '1rem', fontFamily: 'inherit' }}
-                                />
+                                <label style={{ display: 'block', fontWeight: 600, color: '#475569', marginBottom: '8px' }}>Upload Foto Thumbnail</label>
+                                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                                    <input 
+                                        type="file" 
+                                        accept="image/*"
+                                        onChange={handleImageUpload}
+                                        disabled={uploadingImage}
+                                        style={{ flex: 1, padding: '9px', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '0.9rem', background: '#f8fafc' }}
+                                    />
+                                    {uploadingImage && <span style={{ fontSize: '0.9rem', color: 'var(--accent)' }}>Mengunggah...</span>}
+                                </div>
+                                {imageUrl && (
+                                    <div style={{ marginTop: '10px' }}>
+                                        <img src={imageUrl} alt="Preview" style={{ height: '80px', borderRadius: '4px', objectFit: 'cover' }} />
+                                    </div>
+                                )}
                             </div>
                         </div>
 
