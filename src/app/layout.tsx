@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'chh1k_l3xMe_SmRy_x-GRSuqPjhGC9SEWfJnAqvTXC0',
   },
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'Jogja Sewa Mobil | Aksara Transport',
     description: 'Layanan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan supir.',
@@ -36,6 +40,23 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AutoRental',
+  name: 'Aksara Transport Jogja',
+  image: 'https://jogjasewamobil.com/icon.png',
+  url: 'https://jogjasewamobil.com',
+  telephone: '+6281234567890',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Yogyakarta',
+    addressLocality: 'Yogyakarta',
+    addressRegion: 'DIY',
+    postalCode: '55271',
+    addressCountry: 'ID'
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,6 +64,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={plusJakarta.className}>
         <Header />
         <main>
