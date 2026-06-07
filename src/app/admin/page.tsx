@@ -62,6 +62,19 @@ export default function AdminPage() {
     return (
         <main style={{ padding: '40px 20px', background: '#f8fafc', minHeight: '100vh' }}>
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+                
+                {/* ADMIN NAVIGATION */}
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '30px', background: 'white', padding: '15px 20px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                    <a href="/admin" style={{ padding: '8px 16px', background: 'var(--primary)', color: 'white', borderRadius: '8px', fontWeight: 600, textDecoration: 'none' }}>
+                        📋 Pesanan Rental
+                    </a>
+                    <a href="/admin/artikel" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
+                        📰 Manajemen Artikel
+                    </a>
+                    <a href="/admin/artikel/tulis" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
+                        ✍️ Tulis Berita Baru
+                    </a>
+                </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
                     <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#1e293b' }}>Dasbor Admin</h1>
                     <button onClick={fetchBookings} className="btn btn-secondary">Refresh Data</button>
