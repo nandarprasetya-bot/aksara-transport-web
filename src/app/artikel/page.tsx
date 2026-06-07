@@ -9,44 +9,7 @@ export const metadata: Metadata = {
     description: 'Kumpulan berita terbaru, tips wisata, rekomendasi kuliner, dan panduan perjalanan di Yogyakarta.',
 };
 
-const dummyArticles = [
-    {
-        id: '1',
-        created_at: '2026-06-01T10:00:00Z',
-        title: '5 Rekomendasi Kuliner Malam Legendaris di Jogja yang Wajib Dicoba',
-        slug: '5-rekomendasi-kuliner-malam-jogja',
-        category: 'Kuliner',
-        image: '/images/tour_city.webp',
-        excerpt: 'Malam di Jogja kurang lengkap tanpa mencicipi kuliner khasnya. Berikut 5 tempat makan malam legendaris yang selalu ramai.',
-    },
-    {
-        id: '2',
-        created_at: '2026-05-28T14:30:00Z',
-        title: 'Tips Memilih Mobil Rental untuk Liburan Keluarga di Jogja',
-        slug: 'tips-memilih-mobil-rental-keluarga',
-        category: 'Tips',
-        image: '/images/tour_merapi.webp',
-        excerpt: 'Liburan bersama keluarga butuh kenyamanan ekstra. Simak tips jitu memilih mobil rental yang tepat agar liburan tetap asyik.',
-    },
-    {
-        id: '3',
-        created_at: '2026-05-15T09:15:00Z',
-        title: 'Panduan Lengkap Wisata ke Gunungkidul: Rute & Pantai Terbaik',
-        slug: 'panduan-wisata-gunungkidul',
-        category: 'Wisata',
-        image: '/images/tour_white_sands.webp',
-        excerpt: 'Merencanakan liburan ke pantai-pantai cantik di Gunungkidul? Ini panduan rute dan pilihan destinasi pantai pasir putih terbaik.',
-    },
-    {
-        id: '4',
-        created_at: '2026-05-10T08:00:00Z',
-        title: 'Serunya Menikmati Sunrise di Puncak Sikunir Dieng',
-        slug: 'sunrise-sikunir-dieng',
-        category: 'Wisata',
-        image: '/images/tour_dieng_sunrise.webp',
-        excerpt: 'Perjalanan berburu golden sunrise tercantik di dataran tinggi Dieng. Bersiaplah terpesona dengan lautan awannya.',
-    }
-];
+import { dummyArticles } from '@/data/articles';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 

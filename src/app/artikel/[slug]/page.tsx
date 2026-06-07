@@ -4,17 +4,22 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { dummyArticles } from '@/data/articles';
+
 export const revalidate = 60; // Revalidate every 60 seconds
 
 // Generate SEO Metadata dynamically
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-    if (!supabase) return { title: 'Artikel Tidak Ditemukan' };
+    let article = null;
 
-    const { data: article } = await supabase
-        .from('articles')
-        .select('title, excerpt, image')
-        .eq('slug', params.slug)
-        .single();
+    if (supabase) {
+        const { data } = await supabase.from('articles').select('title, excerpt, image').eq('slug', params.slug).single();
+        article = data;
+    }
+    
+    if (!article) {
+        article = dummyArticles.find(a => a.slug === params.slug);
+    }
 
     if (!article) return { title: 'Artikel Tidak Ditemukan' };
 
@@ -30,30 +35,31 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function ArtikelDetailPage({ params }: { params: { slug: string } }) {
-    if (!supabase) {
-        return (
-            <div style={{ padding: '100px 20px', textAlign: 'center' }}>
-                Database belum di-setup. Tidak dapat memuat artikel {params.slug}.
-            </div>
-        );
+    let article: any = null;
+    let popularArticles: any[] = [];
+
+    if (supabase) {
+        const { data, error } = await supabase.from('articles').select('*').eq('slug', params.slug).single();
+        article = data;
+
+        const { data: popData } = await supabase.from('articles').select('id, title, slug, created_at').order('created_at', { ascending: false }).limit(4);
+        if (popData && popData.length > 0) {
+            popularArticles = popData;
+        }
     }
 
-    const { data: article, error } = await supabase
-        .from('articles')
-        .select('*')
-        .eq('slug', params.slug)
-        .single();
+    // Fallback to dummy articles if supabase is not connected or article not found in DB
+    if (!article) {
+        article = dummyArticles.find(a => a.slug === params.slug);
+    }
 
-    if (error || !article) {
+    if (popularArticles.length === 0) {
+        popularArticles = dummyArticles.slice(0, 4);
+    }
+
+    if (!article) {
         notFound();
     }
-
-    // Fetch popular articles for the sidebar
-    const { data: popularArticles } = await supabase
-        .from('articles')
-        .select('id, title, slug, created_at')
-        .order('created_at', { ascending: false })
-        .limit(4);
 
     return (
         <main style={{ backgroundColor: '#f8fafc', minHeight: '100vh', paddingTop: '100px', paddingBottom: '60px' }}>
