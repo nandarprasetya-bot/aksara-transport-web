@@ -319,11 +319,11 @@ function PesanSopirInner() {
                                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '24px' }}>Hubungi Kami</h3>
                                 <div style={{ marginBottom: '20px' }}>
                                     <h4 style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Telepon / WhatsApp</h4>
-                                    <p style={{ fontWeight: 800 }}>+62 812-3456-7890</p>
+                                    <p style={{ fontWeight: 800 }}>0838-6000-740</p>
                                 </div>
                                 <div style={{ marginBottom: '20px' }}>
                                     <h4 style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Kantor Pusat</h4>
-                                    <p style={{ fontSize: '0.95rem', fontWeight: 600 }}>Jl. Raya Utama No. 45, Kebayoran Baru, Jakarta Selatan</p>
+                                    <p style={{ fontSize: '0.95rem', fontWeight: 600 }}>Jl. Imogiri Barat No.RT.4, Salakan, Bangunharjo, Kec. Sewon, Kabupaten Bantul, Daerah Istimewa Yogyakarta</p>
                                 </div>
                             </div>
                         </div>

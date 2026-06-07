@@ -46,13 +46,13 @@ const jsonLd = {
   name: 'Aksara Transport Jogja',
   image: 'https://jogjasewamobil.com/icon.png',
   url: 'https://jogjasewamobil.com',
-  telephone: '+6281234567890',
+  telephone: '+628386000740',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Yogyakarta',
-    addressLocality: 'Yogyakarta',
-    addressRegion: 'DIY',
-    postalCode: '55271',
+    streetAddress: 'Jl. Imogiri Barat No.RT.4, Salakan, Bangunharjo, Kec. Sewon',
+    addressLocality: 'Kabupaten Bantul',
+    addressRegion: 'Daerah Istimewa Yogyakarta',
+    postalCode: '55188',
     addressCountry: 'ID'
   }
 };
