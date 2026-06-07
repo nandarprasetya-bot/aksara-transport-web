@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "Jogja Sewa Mobil | Aksara Transport Murah & Terpercaya",
   description: "Layanan sewa mobil Jogja lepas kunci dan pakai supir. Armada terlengkap: Avanza, Innova Reborn/Zenix, Hiace, Alphard. Harga murah dan pelayanan profesional.",
   keywords: "jogja sewa mobil, sewa mobil jogja, rental mobil jogja, sewa mobil jogja lepas kunci, rental mobil murah jogja, sewa hiace jogja, sewa alphard jogja",
+  verification: {
+    google: 'chh1k_l3xMe_SmRy_x-GRSuqPjhGC9SEWfJnAqvTXC0',
+  },
   openGraph: {
     title: 'Jogja Sewa Mobil | Aksara Transport',
     description: 'Layanan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan supir.',
