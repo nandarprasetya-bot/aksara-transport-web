@@ -45,7 +45,7 @@ export default function Header() {
                             <li key={link.href}>
                                 <Link 
                                     href={link.href} 
-                                    className={`nav-link ${pathname === link.href ? 'active' : ''}`}
+                                    className={`nav-link ${(link.href === '/' && pathname === '/') || (link.href !== '/' && pathname.startsWith(link.href)) ? 'active' : ''}`}
                                     onClick={() => setMenuOpen(false)}
                                 >
                                     {link.label}

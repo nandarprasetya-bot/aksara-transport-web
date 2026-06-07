@@ -60,10 +60,15 @@ export default async function ArtikelDetailPage({ params }: { params: { slug: st
             <div className="container">
                 
                 {/* BREADCRUMB */}
-                <div style={{ marginBottom: '20px', fontSize: '0.9rem', color: '#64748b' }}>
-                    <Link href="/" style={{ color: 'var(--primary)', textDecoration: 'none' }}>Beranda</Link> &raquo;{' '}
-                    <Link href="/artikel" style={{ color: 'var(--primary)', textDecoration: 'none' }}>Berita</Link> &raquo;{' '}
-                    <Link href={`/artikel?k=${encodeURIComponent(article.category)}`} style={{ color: 'var(--primary)', textDecoration: 'none' }}>{article.category}</Link>
+                <div style={{ marginBottom: '20px', fontSize: '0.9rem', color: '#64748b', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
+                    <div>
+                        <Link href="/" style={{ color: 'var(--primary)', textDecoration: 'none' }}>Beranda</Link> &raquo;{' '}
+                        <Link href="/artikel" style={{ color: 'var(--primary)', textDecoration: 'none' }}>Berita</Link> &raquo;{' '}
+                        <Link href={`/artikel?k=${encodeURIComponent(article.category)}`} style={{ color: 'var(--primary)', textDecoration: 'none' }}>{article.category}</Link>
+                    </div>
+                    <Link href="/artikel" style={{ padding: '6px 15px', background: '#e2e8f0', color: '#475569', borderRadius: '50px', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                        &larr; Kembali ke Daftar Berita
+                    </Link>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '40px', alignItems: 'start' }}>
