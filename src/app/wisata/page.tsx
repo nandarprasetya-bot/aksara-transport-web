@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 // --- DATA: 1 Day Service ---
@@ -192,7 +193,7 @@ function WisataInner() {
                                     <div key={pkg.id} className="tour-card" style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', overflow: 'hidden', transition: 'all 0.3s', display: 'flex', flexDirection: 'column' }}>
                                         <div className="tour-image-container" style={{ position: 'relative' }}>
                                             <span className={`badge ${pkg.badgeBg ? 'badge-'+pkg.badgeBg : ''} car-tag`} style={{ position: 'absolute', top: '15px', left: '15px', zIndex: 2, ...(pkg.badgeColor ? {backgroundColor: pkg.badgeColor, color: pkg.badgeText} : {}) }}>{pkg.badge}</span>
-                                            <img src={pkg.image} alt={pkg.name} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                                            <Image src={pkg.image} alt={pkg.name} width={500} height={220} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
                                         </div>
                                         <div className="tour-details" style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                             <h3 className="tour-name" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '10px' }}>{pkg.name}</h3>
@@ -225,7 +226,7 @@ function WisataInner() {
                                 {[2, 3, 4, 5, 6, 7].map(d => (
                                     <div key={d} className="special-package-card" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', border: '1.5px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '30px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                                         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--accent), #f59e0b, var(--accent))' }}></div>
-                                        <img src={`/images/tour_${d}day.webp`} alt={`${d} Day Service`} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '16px' }} />
+                                        <Image src={`/images/tour_${d}day.webp`} alt={`${d} Day Service`} width={400} height={180} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '16px' }} />
                                         <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>{d} Day Service</h3>
                                         <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '20px' }}>{d} hari penuh petualangan. Jelajahi destinasi pilihan Anda secara mendalam dan fleksibel.</p>
                                         <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', textAlign: 'left' }}>
@@ -250,7 +251,7 @@ function WisataInner() {
                                 {/* Wisuda */}
                                 <div className="special-package-card" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', border: '1.5px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '30px', textAlign: 'left', position: 'relative' }}>
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--accent), #f59e0b, var(--accent))' }}></div>
-                                    <img src="/images/paket_wisuda.webp" alt="Paket Wisuda" style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
+                                    <Image src="/images/paket_wisuda.webp" alt="Paket Wisuda" width={500} height={220} style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
                                     <h3 style={{ textAlign: 'center', fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>Paket Wisuda</h3>
                                     <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '20px' }}>Rayakan kelulusan dengan layanan penjemputan eksklusif. Driver siap standby selama acara berlangsung.</p>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', textAlign: 'left' }}>
@@ -263,7 +264,7 @@ function WisataInner() {
                                 {/* Wedding */}
                                 <div className="special-package-card" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', border: '1.5px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '30px', textAlign: 'left', position: 'relative' }}>
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--accent), #f59e0b, var(--accent))' }}></div>
-                                    <img src="/images/paket_wedding.webp" alt="Paket Wedding" style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
+                                    <Image src="/images/paket_wedding.webp" alt="Paket Wedding" width={500} height={220} style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
                                     <h3 style={{ textAlign: 'center', fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>Paket Wedding</h3>
                                     <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '20px' }}>Jadikan hari pernikahan lebih elegan. Layanan driver VIP siap membantu mobilitas pengantin seharian.</p>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', textAlign: 'left' }}>
@@ -331,7 +332,7 @@ function WisataInner() {
                                 const price = getCarRates(selectedPackage)[car.id as keyof ReturnType<typeof getCarRates>];
                                 return (
                                     <div key={car.id} style={{ border: '1px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '15px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                                        <img src={car.image} alt={car.name} style={{ height: '80px', objectFit: 'contain', marginBottom: '10px' }} />
+                                        <Image src={car.image} alt={car.name} width={200} height={80} style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '10px' }} />
                                         <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: '0 0 5px 0' }}>{car.name}</h4>
                                         <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '10px' }}>Kapasitas: {car.cap}</div>
                                         <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '15px' }}>
@@ -362,7 +363,7 @@ function WisataInner() {
                                         {selectedMultiDayPackages.includes(pkg.id) && (
                                             <div style={{ position: 'absolute', top: '10px', right: '10px', width: '30px', height: '30px', background: 'var(--primary)', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', zIndex: 10 }}>✓</div>
                                         )}
-                                        <img src={pkg.image} alt={pkg.name} style={{ width: '100%', height: '140px', objectFit: 'cover', borderRadius: '4px', marginBottom: '10px' }} />
+                                        <Image src={pkg.image} alt={pkg.name} width={300} height={140} style={{ width: '100%', height: '140px', objectFit: 'cover', borderRadius: '4px', marginBottom: '10px' }} />
                                         <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: '0 0 10px 0', color: 'var(--text-dark)' }}>{pkg.name}</h4>
                                         <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.5 }}>{pkg.destinations}</p>
                                     </div>
@@ -389,7 +390,7 @@ function WisataInner() {
                                 const price = getMultiDayCarPrice(car.id);
                                 return (
                                     <div key={car.id} style={{ border: '1px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '15px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                                        <img src={car.image} alt={car.name} style={{ height: '80px', objectFit: 'contain', marginBottom: '10px' }} />
+                                        <Image src={car.image} alt={car.name} width={200} height={80} style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '10px' }} />
                                         <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: '0 0 5px 0' }}>{car.name}</h4>
                                         <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '10px' }}>Kapasitas: {car.cap}</div>
                                         <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '15px' }}>
@@ -415,7 +416,7 @@ function WisataInner() {
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '15px' }}>
                             {specialCars.map(car => (
                                 <div key={car.name} style={{ border: '1px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '15px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                                    <img src={car.img} alt={car.name} style={{ height: '80px', objectFit: 'contain', marginBottom: '10px' }} />
+                                    <Image src={car.img} alt={car.name} width={200} height={80} style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '10px' }} />
                                     <h4 style={{ fontSize: '1rem', fontWeight: 700, margin: '0 0 5px 0' }}>{car.name}</h4>
                                     <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '10px' }}>Kapasitas: {car.capacity}</div>
                                     <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '15px' }}>

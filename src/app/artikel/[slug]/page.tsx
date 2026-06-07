@@ -1,181 +1,156 @@
 import React from 'react';
-import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export const revalidate = 60;
+export const revalidate = 60; // Revalidate every 60 seconds
 
-const dummyArticles = [
-    {
-        id: '1',
-        created_at: '2026-06-01T10:00:00Z',
-        title: '5 Rekomendasi Kuliner Malam Legendaris di Jogja yang Wajib Dicoba',
-        slug: '5-rekomendasi-kuliner-malam-jogja',
-        category: 'Kuliner',
-        image: '/images/tour_city.webp',
-        excerpt: 'Malam di Jogja kurang lengkap tanpa mencicipi kuliner khasnya. Berikut 5 tempat makan malam legendaris yang selalu ramai.',
-        content: `
-            <p>Malam di Jogja kurang lengkap tanpa mencicipi kuliner khasnya. Angkringan, gudeg, hingga bakmi jawa menjadi incaran wisatawan yang ingin merasakan syahdunya malam di Kota Pelajar.</p>
-            <h3>1. Gudeg Bromo Bu Tekluk</h3>
-            <p>Berbeda dengan gudeg pada umumnya yang manis, Gudeg Bromo menawarkan rasa yang lebih gurih pedas. Warung ini buka tengah malam dan selalu antre panjang.</p>
-            <h3>2. Oseng Mercon Bu Narti</h3>
-            <p>Bagi pencinta pedas, oseng mercon adalah menu wajib. Daging koyor yang dimasak dengan cabai rawit melimpah siap membuat Anda berkeringat di malam hari.</p>
-            <h3>3. Bakmi Mbah Gito</h3>
-            <p>Dengan interior berbahan kayu yang unik ala pedesaan, Bakmi Mbah Gito menyajikan bakmi jawa otentik yang lezat.</p>
-            <p><em>Pastikan Anda menyewa mobil dengan sopir dari Aksara Transport agar wisata kuliner malam Anda aman dan nyaman tanpa pusing cari parkir!</em></p>
-        `
-    },
-    {
-        id: '2',
-        created_at: '2026-05-28T14:30:00Z',
-        title: 'Tips Memilih Mobil Rental untuk Liburan Keluarga di Jogja',
-        slug: 'tips-memilih-mobil-rental-keluarga',
-        category: 'Tips',
-        image: '/images/tour_merapi.webp',
-        excerpt: 'Liburan bersama keluarga butuh kenyamanan ekstra. Simak tips jitu memilih mobil rental yang tepat agar liburan tetap asyik.',
-        content: `
-            <p>Liburan bersama keluarga butuh persiapan ekstra, terutama soal transportasi. Memilih mobil yang tepat sangat menentukan kenyamanan selama di perjalanan.</p>
-            <h3>Perhatikan Kapasitas Penumpang</h3>
-            <p>Jika rombongan Anda 4-6 orang, <strong>Toyota Avanza atau Innova Reborn</strong> adalah pilihan terbaik. Namun jika lebih dari 10 orang, pertimbangkan menyewa <strong>Toyota Hiace</strong> agar tidak berdesakan.</p>
-            <h3>Kondisi Mobil & AC</h3>
-            <p>Jogja bisa sangat panas di siang hari. Pastikan Anda menyewa dari agen terpercaya seperti Aksara Transport yang selalu menjamin kondisi AC dingin dan mesin prima.</p>
-            <h3>Pilih Paket "Dengan Sopir"</h3>
-            <p>Jalanan Jogja saat musim liburan cukup padat. Dengan menggunakan jasa sopir, Anda bisa beristirahat di mobil sementara sopir yang hafal rute mencari jalan tikus agar tidak terjebak macet.</p>
-        `
-    },
-    {
-        id: '3',
-        created_at: '2026-05-15T09:15:00Z',
-        title: 'Panduan Lengkap Wisata ke Gunungkidul: Rute & Pantai Terbaik',
-        slug: 'panduan-wisata-gunungkidul',
-        category: 'Wisata',
-        image: '/images/tour_parangtritis.webp',
-        excerpt: 'Merencanakan liburan ke pantai-pantai cantik di Gunungkidul? Ini panduan rute dan pilihan destinasi pantai pasir putih terbaik.',
-        content: `
-            <p>Gunungkidul adalah primadona wisata pantai di Yogyakarta. Dengan pasir putih dan tebing karang yang memukau, kawasan ini selalu menjadi favorit.</p>
-            <h3>Rute Terbaik Menuju Gunungkidul</h3>
-            <p>Dari pusat kota Jogja, Anda akan menempuh perjalanan sekitar 1.5 hingga 2 jam melintasi perbukitan Baturagung. Jalanan didominasi tanjakan dan tikungan, sehingga sangat disarankan menggunakan kendaraan dengan tenaga yang cukup.</p>
-            <h3>Pantai Pasir Putih Terbaik</h3>
-            <ul>
-                <li><strong>Pantai Indrayanti:</strong> Pantai modern dengan fasilitas lengkap dan deretan kafe pinggir pantai.</li>
-                <li><strong>Pantai Sadranan:</strong> Surganya snorkeling! Ombaknya tenang dan banyak penyewaan alat snorkeling.</li>
-                <li><strong>Pantai Mesra (Ngrawah):</strong> Pantai bersih dengan taman rumput hijau dan penerangan yang indah.</li>
-            </ul>
-        `
-    }
-];
-
+// Generate SEO Metadata dynamically
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-    let article = dummyArticles.find(a => a.slug === params.slug);
+    if (!supabase) return { title: 'Artikel Tidak Ditemukan' };
 
-    if (supabase) {
-        const { data } = await supabase.from('articles').select('title, excerpt, image').eq('slug', params.slug).single();
-        if (data) article = data as any;
-    }
+    const { data: article } = await supabase
+        .from('articles')
+        .select('title, excerpt, image')
+        .eq('slug', params.slug)
+        .single();
 
     if (!article) return { title: 'Artikel Tidak Ditemukan' };
 
     return {
         title: `${article.title} | Aksara Transport`,
-        description: article.excerpt || article.title,
+        description: article.excerpt,
+        openGraph: {
+            title: article.title,
+            description: article.excerpt,
+            images: [article.image],
+        }
     };
 }
 
-export default async function ArticleDetail({ params }: { params: { slug: string } }) {
-    let article = dummyArticles.find(a => a.slug === params.slug) as any;
-
-    if (supabase) {
-        const { data } = await supabase.from('articles').select('*').eq('slug', params.slug).single();
-        if (data) article = data;
+export default async function ArtikelDetailPage({ params }: { params: { slug: string } }) {
+    if (!supabase) {
+        return (
+            <div style={{ padding: '100px 20px', textAlign: 'center' }}>
+                Database belum di-setup. Tidak dapat memuat artikel {params.slug}.
+            </div>
+        );
     }
 
-    if (!article) {
+    const { data: article, error } = await supabase
+        .from('articles')
+        .select('*')
+        .eq('slug', params.slug)
+        .single();
+
+    if (error || !article) {
         notFound();
     }
 
+    // Fetch popular articles for the sidebar
+    const { data: popularArticles } = await supabase
+        .from('articles')
+        .select('id, title, slug, created_at')
+        .order('created_at', { ascending: false })
+        .limit(4);
+
     return (
-        <main style={{ backgroundColor: '#f8fafc', minHeight: '100vh', paddingBottom: '80px' }}>
-            <article>
-                {/* HERO HEADER */}
-                <header style={{ position: 'relative', height: '500px', width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', paddingBottom: '60px' }}>
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}>
-                        <img src={article.image} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, rgba(15,23,42,0.2) 0%, rgba(15,23,42,0.8) 100%)' }}></div>
-                    </div>
+        <main style={{ backgroundColor: '#f8fafc', minHeight: '100vh', paddingTop: '100px', paddingBottom: '60px' }}>
+            <div className="container">
+                
+                {/* BREADCRUMB */}
+                <div style={{ marginBottom: '20px', fontSize: '0.9rem', color: '#64748b' }}>
+                    <Link href="/" style={{ color: 'var(--primary)', textDecoration: 'none' }}>Beranda</Link> &raquo;{' '}
+                    <Link href="/artikel" style={{ color: 'var(--primary)', textDecoration: 'none' }}>Berita</Link> &raquo;{' '}
+                    <Link href={`/artikel?k=${encodeURIComponent(article.category)}`} style={{ color: 'var(--primary)', textDecoration: 'none' }}>{article.category}</Link>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '40px', alignItems: 'start' }}>
                     
-                    <div className="container" style={{ position: 'relative', zIndex: 2, color: 'white' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                            <Link href="/artikel" style={{ color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '5px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                                Kembali
-                            </Link>
-                            <span style={{ color: '#64748b' }}>|</span>
-                            <span style={{ background: 'var(--accent)', color: '#fff', padding: '4px 12px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '1px' }}>{article.category}</span>
-                            <span style={{ fontSize: '0.9rem', color: '#cbd5e1', fontWeight: 500 }}>
-                                {new Date(article.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    {/* LEFT COLUMN: ARTICLE CONTENT */}
+                    <article style={{ background: '#fff', padding: '40px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+                        <div style={{ marginBottom: '20px' }}>
+                            <span style={{ background: 'var(--accent)', color: '#fff', padding: '4px 12px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase' }}>
+                                {article.category}
                             </span>
                         </div>
-                        <h1 style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1.3, maxWidth: '900px', margin: 0, textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                        
+                        <h1 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#1e293b', marginBottom: '20px', lineHeight: 1.3 }}>
                             {article.title}
                         </h1>
-                    </div>
-                </header>
 
-                {/* CONTENT */}
-                <div className="container" style={{ marginTop: '-40px', position: 'relative', zIndex: 3 }}>
-                    <div style={{ background: '#fff', borderRadius: '16px', padding: '40px 50px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)', maxWidth: '900px', margin: '0 auto' }}>
-                        
-                        <div 
-                            className="article-content" 
-                            style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#334155' }}
-                            dangerouslySetInnerHTML={{ __html: article.content }} 
-                        />
-                        
-                        <div style={{ marginTop: '50px', paddingTop: '30px', borderTop: '2px dashed #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--primary)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '1.2rem' }}>A</div>
-                                <div>
-                                    <div style={{ fontWeight: 800, color: 'var(--primary)', fontSize: '1rem' }}>Admin Aksara</div>
-                                    <div style={{ fontSize: '0.85rem', color: '#64748b' }}>Redaksi Aksara Transport</div>
-                                </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', color: '#64748b', fontSize: '0.9rem', marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #e2e8f0' }}>
+                            <div style={{ fontWeight: 600, color: '#475569' }}>Oleh: Redaksi Aksara</div>
+                            <div>•</div>
+                            <div>{new Date(article.created_at).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })} WIB</div>
+                        </div>
+
+                        {article.image && (
+                            <div style={{ position: 'relative', width: '100%', height: '450px', borderRadius: '8px', overflow: 'hidden', marginBottom: '30px' }}>
+                                <Image src={article.image} alt={article.title} fill style={{ objectFit: 'cover' }} />
                             </div>
-                            
-                            <div style={{ display: 'flex', gap: '10px' }}>
-                                <a href={`https://api.whatsapp.com/send?text=${encodeURIComponent('Cek artikel menarik ini: ' + article.title + ' https://aksaratransport.com/artikel/' + article.slug)}`} target="_blank" rel="noreferrer" style={{ background: '#25D366', color: 'white', padding: '10px 16px', borderRadius: '50px', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                                    Bagikan
-                                </a>
+                        )}
+
+                        <div 
+                            className="article-body" 
+                            style={{ fontSize: '1.1rem', color: '#334155', lineHeight: 1.8 }}
+                            dangerouslySetInnerHTML={{ __html: article.content }}
+                        />
+
+                        {/* SHARE BUTTONS */}
+                        <div style={{ marginTop: '40px', paddingTop: '20px', borderTop: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                            <strong style={{ color: '#1e293b' }}>Bagikan Artikel:</strong>
+                            <button className="btn" style={{ background: '#3b5998', color: '#fff', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.9rem' }}>Facebook</button>
+                            <button className="btn" style={{ background: '#1DA1F2', color: '#fff', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.9rem' }}>Twitter</button>
+                            <button className="btn" style={{ background: '#25D366', color: '#fff', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.9rem' }}>WhatsApp</button>
+                        </div>
+                    </article>
+
+                    {/* RIGHT COLUMN: SIDEBAR */}
+                    <aside style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                        
+                        {/* ADVERTISEMENT BANNER */}
+                        <div style={{ background: 'linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%)', borderRadius: '8px', padding: '25px 20px', textAlign: 'center', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+                            <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '100px', height: '100px', background: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}></div>
+                            <h4 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '10px' }}>Promo Sewa Hiace Commuter</h4>
+                            <p style={{ fontSize: '0.9rem', marginBottom: '20px', opacity: 0.9 }}>Kapasitas rombongan hingga 14 orang. Liburan ke Jogja makin hemat & nyaman.</p>
+                            <Link href="/wisata" className="btn" style={{ background: 'var(--accent)', color: '#fff', padding: '10px 20px', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+                                Pesan Sekarang
+                            </Link>
+                        </div>
+
+                        {/* BACA JUGA */}
+                        <div style={{ background: '#fff', borderRadius: '8px', border: '1px solid #e2e8f0', padding: '20px' }}>
+                            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#1e293b', marginBottom: '15px', paddingBottom: '10px', borderBottom: '2px solid #f1f5f9' }}>Baca Juga</h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                {popularArticles?.filter(a => a.id !== article.id).slice(0, 3).map((item) => (
+                                    <Link href={`/artikel/${item.slug}`} key={item.id} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
+                                        <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#334155', margin: '0 0 5px 0', lineHeight: 1.4 }}>{item.title}</h4>
+                                        <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>{new Date(item.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
+                                    </Link>
+                                ))}
                             </div>
                         </div>
-                    </div>
-                </div>
-            </article>
 
-            {/* STYLES FOR ARTICLE HTML CONTENT */}
+                    </aside>
+                </div>
+            </div>
+
             <style dangerouslySetInnerHTML={{__html: `
-                .article-content h2, .article-content h3 {
-                    color: var(--primary);
-                    font-weight: 800;
-                    margin-top: 35px;
-                    margin-bottom: 15px;
-                }
-                .article-content h2 { font-size: 1.8rem; }
-                .article-content h3 { font-size: 1.4rem; }
-                .article-content p {
-                    margin-bottom: 20px;
-                }
-                .article-content ul {
-                    margin-bottom: 20px;
-                    padding-left: 20px;
-                }
-                .article-content li {
-                    margin-bottom: 10px;
-                }
-                .article-content img {
-                    max-width: 100%;
-                    height: auto;
-                    border-radius: 12px;
-                    margin: 20px 0;
+                .article-body h2 { font-size: 1.8rem; font-weight: 800; color: #1e293b; margin: 30px 0 15px 0; }
+                .article-body h3 { font-size: 1.4rem; font-weight: 700; color: #1e293b; margin: 25px 0 15px 0; }
+                .article-body p { margin-bottom: 20px; }
+                .article-body ul { margin-bottom: 20px; padding-left: 20px; }
+                .article-body li { margin-bottom: 8px; }
+                .article-body a { color: var(--primary); text-decoration: none; font-weight: 600; }
+                .article-body a:hover { text-decoration: underline; }
+                .article-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
+                
+                @media (max-width: 768px) {
+                    .container > div { grid-template-columns: 1fr !important; }
+                    article { padding: 20px !important; }
+                    h1 { font-size: 1.8rem !important; }
                 }
             `}} />
         </main>
