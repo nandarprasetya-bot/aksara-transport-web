@@ -9,7 +9,8 @@ import { dummyArticles } from '@/data/articles';
 export const revalidate = 60; // Revalidate every 60 seconds
 
 // Generate SEO Metadata dynamically
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
     let article = null;
 
     if (supabase) {
@@ -34,7 +35,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default async function ArtikelDetailPage({ params }: { params: { slug: string } }) {
+export default async function ArtikelDetailPage(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
     let article: any = null;
     let popularArticles: any[] = [];
 

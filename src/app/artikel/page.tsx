@@ -13,12 +13,11 @@ import { dummyArticles } from '@/data/articles';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
-export default async function ArtikelPage({
-    searchParams,
-}: {
-    searchParams: { k?: string }
+export default async function ArtikelPage(props: {
+    searchParams: Promise<{ k?: string }>
 }) {
-    const categoryFilter = searchParams.k || 'Semua';
+    const searchParams = await props.searchParams;
+    const categoryFilter = searchParams?.k || 'Semua';
 
     let articles = [];
 
