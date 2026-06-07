@@ -250,7 +250,7 @@ function WisataInner() {
                                 {/* Wisuda */}
                                 <div className="special-package-card" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', border: '1.5px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '30px', textAlign: 'left', position: 'relative' }}>
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--accent), #f59e0b, var(--accent))' }}></div>
-                                    <img src="/images/paket_wisuda.png" alt="Paket Wisuda" style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
+                                    <img src="/images/paket_wisuda.webp" alt="Paket Wisuda" style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
                                     <h3 style={{ textAlign: 'center', fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>Paket Wisuda</h3>
                                     <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '20px' }}>Rayakan kelulusan dengan layanan penjemputan eksklusif. Driver siap standby selama acara berlangsung.</p>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', textAlign: 'left' }}>
@@ -263,7 +263,7 @@ function WisataInner() {
                                 {/* Wedding */}
                                 <div className="special-package-card" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', border: '1.5px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '30px', textAlign: 'left', position: 'relative' }}>
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--accent), #f59e0b, var(--accent))' }}></div>
-                                    <img src="/images/paket_wedding.png" alt="Paket Wedding" style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
+                                    <img src="/images/paket_wedding.webp" alt="Paket Wedding" style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
                                     <h3 style={{ textAlign: 'center', fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>Paket Wedding</h3>
                                     <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '20px' }}>Jadikan hari pernikahan lebih elegan. Layanan driver VIP siap membantu mobilitas pengantin seharian.</p>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', textAlign: 'left' }}>
