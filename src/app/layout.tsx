@@ -12,8 +12,25 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sewa Mobil Murah & Terpercaya | Aksara Transport",
-  description: "Pilihan mobil terlengkap dari Avanza, Brio, Innova Zenix hingga Alphard. Sewa lepas kunci atau dengan supir profesional.",
+  title: "Jogja Sewa Mobil | Aksara Transport Murah & Terpercaya",
+  description: "Layanan sewa mobil Jogja lepas kunci dan pakai supir. Armada terlengkap: Avanza, Innova Reborn/Zenix, Hiace, Alphard. Harga murah dan pelayanan profesional.",
+  keywords: "jogja sewa mobil, sewa mobil jogja, rental mobil jogja, sewa mobil jogja lepas kunci, rental mobil murah jogja, sewa hiace jogja, sewa alphard jogja",
+  openGraph: {
+    title: 'Jogja Sewa Mobil | Aksara Transport',
+    description: 'Layanan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan supir.',
+    url: 'https://jogjasewamobil.com',
+    siteName: 'Aksara Transport',
+    images: [
+      {
+        url: 'https://jogjasewamobil.com/images/hero_car.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Sewa Mobil Jogja - Aksara Transport',
+      },
+    ],
+    locale: 'id_ID',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
