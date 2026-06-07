@@ -41,8 +41,8 @@ export default function Header() {
                 <Link href="/" className="logo">
                     Aksara<span>Transport</span>
                 </Link>
-                <nav className={menuOpen ? 'active' : ''}>
-                    <ul className="nav-menu" id="navMenu">
+                <nav>
+                    <ul className={`nav-menu ${menuOpen ? 'active' : ''}`} id="navMenu">
                         {navLinks.map((link) => (
                             <li key={link.href}>
                                 <Link 
