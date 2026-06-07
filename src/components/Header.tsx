@@ -33,8 +33,10 @@ export default function Header() {
         { href: '/kontak', label: 'Kontak' },
     ];
 
+    const forceScrolled = pathname.startsWith('/artikel') || pathname.startsWith('/admin');
+
     return (
-        <header className={`${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
+        <header className={`${(scrolled || forceScrolled) ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
             <div className="container nav-container">
                 <Link href="/" className="logo">
                     Aksara<span>Transport</span>
