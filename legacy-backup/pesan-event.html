@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulir pemesanan paket kerjasama event & korporat Aksara Transport Yogyakarta. Sewa armada >1 unit untuk dinas, event perusahaan, wisata rombongan, dan acara besar.">
+    <meta name="keywords" content="sewa mobil event jogja, rental armada korporat, sewa bus rombongan, paket event perusahaan yogyakarta, aksara transport">
+    <meta name="author" content="Aksara Transport">
+    <link rel="canonical" href="https://www.aksaratransport.com/pesan-event.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aksaratransport.com/pesan-event.html">
+    <meta property="og:title" content="Form Pemesanan - Paket Event & Korporat | Aksara Transport">
+    <meta property="og:description" content="Pesan armada untuk event perusahaan, dinas pemerintah, wisata rombongan & acara besar. Hubungi admin untuk penawaran harga terbaik.">
+    <meta property="og:image" content="images/hero_car.webp">
+
+    <title>Form Pemesanan - Paket Event & Korporat | Aksara Transport</title>
+
+    <!-- Core Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Custom details for pesan-event.html */
+        .event-info-card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            transition: all var(--transition-normal);
+        }
+        .event-info-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        .event-info-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .event-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .keunggulan-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .keunggulan-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 8px 12px;
+            background-color: #f8fafc;
+            border-radius: var(--border-radius-sm);
+            border-left: 3px solid var(--accent);
+        }
+        .keunggulan-list li svg {
+            flex-shrink: 0;
+        }
+        .vehicle-checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 768px) {
+            .vehicle-checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .vehicle-checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .vehicle-checkbox-item:hover {
+            border-color: var(--accent);
+            background-color: #fffbeb;
+        }
+        .vehicle-checkbox-item.checked {
+            border-color: var(--accent);
+            background-color: #fffbeb;
+        }
+        .vehicle-checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .vehicle-checkbox-label {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            cursor: pointer;
+            line-height: 1.4;
+        }
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                Aksara<span>Transport</span>
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="mobil.html" class="nav-link">Pilihan Mobil</a></li>
+                    <li><a href="wisata.html" class="nav-link active">Paket Wisata</a></li>
+                    <li><a href="artikel.html" class="nav-link">Tips &amp; Berita</a></li>
+                    <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta">
+                <a href="kontak.html" class="btn btn-primary">Pesan Sekarang</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- BREADCRUMB / HERO SUB -->
+        <section class="hero" style="padding: 120px 0 50px 0; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white;">
+            <div class="container">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: #ffffff;">Form Pemesanan - Paket Event &amp; Korporat</h1>
+                <p style="color: #94a3b8; max-width: 600px; margin: 0 auto; font-size: 0.95rem;">Lengkapi formulir di bawah ini untuk pemesanan armada &gt;1 unit. Detail acara Anda akan dikirim ke admin untuk penawaran harga terbaik.</p>
+            </div>
+        </section>
+
+        <!-- MAIN LAYOUT SECTION -->
+        <section class="section-padding" style="background-color: #f8fafc; padding: 40px 0 80px 0;">
+            <div class="container">
+                <div class="contact-layout">
+
+                    <!-- Left: Booking Form Card -->
+                    <div class="contact-card">
+                        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Detail Rencana Acara &amp; Kendaraan
+                        </h2>
+
+                        <form id="bookingEventForm">
+                            <!-- Nama PIC -->
+                            <div class="form-row">
+                                <label for="eventNamaPIC">Nama Penanggung Jawab / PIC</label>
+                                <input type="text" id="eventNamaPIC" placeholder="Contoh: Budi Santoso" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                            </div>
+
+                            <!-- WhatsApp PIC & WhatsApp Cadangan -->
+                            <div class="form-grid-2">
+                                <div class="form-row">
+                                    <label for="eventWaPIC">Nomor WhatsApp PIC</label>
+                                    <input type="tel" id="eventWaPIC" placeholder="Contoh: 081234567890" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="eventWaCadangan">Nomor WhatsApp Cadangan</label>
+                                    <input type="tel" id="eventWaCadangan" placeholder="Contoh: 089876543210" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                            </div>
+
+                            <!-- Nama Instansi & Jenis Acara -->
+                            <div class="form-grid-2">
+                                <div class="form-row">
+                                    <label for="eventInstansi">Nama Instansi / Perusahaan</label>
+                                    <input type="text" id="eventInstansi" placeholder="Contoh: PT Maju Bersama" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="eventJenisAcara">Jenis Acara</label>
+                                    <select id="eventJenisAcara" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                        <option value="" disabled selected>-- Pilih Jenis Acara --</option>
+                                        <option value="Dinas Pemerintah">Dinas Pemerintah</option>
+                                        <option value="Event Perusahaan / Swasta">Event Perusahaan / Swasta</option>
+                                        <option value="Wisata Rombongan">Wisata Rombongan</option>
+                                        <option value="Seminar / Konferensi">Seminar / Konferensi</option>
+                                        <option value="Pernikahan">Pernikahan</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Tanggal Acara, Durasi -->
+                            <div class="form-grid-2">
+                                <div class="form-row">
+                                    <label for="eventTanggal">Tanggal Acara</label>
+                                    <input type="date" id="eventTanggal" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="eventDurasi">Durasi Acara</label>
+                                    <select id="eventDurasi" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                        <option value="1" selected>1 Hari</option>
+                                        <option value="2">2 Hari</option>
+                                        <option value="3">3 Hari</option>
+                                        <option value="4">4 Hari</option>
+                                        <option value="5">5 Hari</option>
+                                        <option value="6">6 Hari</option>
+                                        <option value="7">7 Hari</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Pilihan Kendaraan Dinamis -->
+                            <div class="form-row">
+                                <label>Kebutuhan Armada &amp; Unit</label>
+                                <div id="dynamicVehicleContainer" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px;">
+                                    <!-- Baris Pertama Default -->
+                                    <div class="vehicle-row" style="display: flex; gap: 10px; align-items: center;">
+                                        <select class="vehicle-select" required style="flex: 1; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600;">
+                                            <option value="" disabled selected>-- Pilih Tipe Mobil --</option>
+                                            <option value="Avanza / Xenia">Avanza / Xenia</option>
+                                            <option value="Innova Reborn">Innova Reborn</option>
+                                            <option value="Innova Zenix">Innova Zenix</option>
+                                            <option value="Xpander">Xpander</option>
+                                            <option value="Fortuner">Fortuner</option>
+                                            <option value="Pajero">Pajero</option>
+                                            <option value="Alphard">Alphard</option>
+                                            <option value="Hiace Commuter">Hiace Commuter</option>
+                                            <option value="Hiace Premio">Hiace Premio</option>
+                                            <option value="Elf Long 19 Seat">Elf Long 19 Seat</option>
+                                            <option value="Medium Bus">Medium Bus</option>
+                                            <option value="Big Bus">Big Bus</option>
+                                        </select>
+                                        <input type="number" class="vehicle-qty" min="1" max="100" placeholder="Unit" required style="width: 100px; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600;">
+                                        <button type="button" class="btn-remove-vehicle" style="background: #ef4444; color: white; border: none; border-radius: var(--border-radius-sm); padding: 12px 16px; cursor: pointer; font-weight: bold; opacity: 0.5; pointer-events: none;" title="Baris pertama tidak dapat dihapus">X</button>
+                                    </div>
+                                </div>
+                                <button type="button" id="btnAddVehicle" style="background: #e2e8f0; color: #334155; border: 1.5px dashed #94a3b8; border-radius: var(--border-radius-sm); padding: 12px; width: 100%; font-weight: 700; cursor: pointer; transition: all 0.2s;">+ Tambah Kendaraan Lain</button>
+                            </div>
+
+                            <!-- Rute / Tujuan Perjalanan -->
+                            <div class="form-row">
+                                <label for="eventRute">Rute / Tujuan Perjalanan</label>
+                                <textarea id="eventRute" rows="3" placeholder="Contoh: Jogja → Borobudur → Prambanan → Jogja, atau rute detail per hari jika multi-day" required style="resize: vertical; font-family: inherit; font-size: 0.9rem; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); line-height: 1.5; width: 100%; box-sizing: border-box;"></textarea>
+                            </div>
+
+
+
+                            <!-- Submit Button -->
+                            <div style="margin-top: 30px;">
+                                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem; height: 54px; border-radius: var(--border-radius-sm); font-weight: 700;">
+                                    Kirim Permintaan Penawaran via WhatsApp
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
+                            </div>
+                            <div style="margin-top: 20px; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                                * Penawaran harga akan dikirimkan setelah admin memverifikasi ketersediaan armada dan detail acara Anda.
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Right: Event Info & Invoice details -->
+                    <div class="sticky-sidebar">
+
+                        <!-- Event Info Card -->
+                        <div class="event-info-card">
+                            <div class="event-info-title">
+                                <span style="font-size: 1.5rem;">🏢</span>
+                                Paket Kerjasama Event &amp; Korporat
+                            </div>
+                            <p class="event-description">Layanan sewa armada &gt;1 unit untuk kebutuhan dinas, event perusahaan, wisata rombongan, dan acara besar lainnya.</p>
+                            <ul class="keunggulan-list">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Fleet lengkap dari city car hingga bus
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Driver profesional berpengalaman
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Koordinator armada on-site
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Harga kompetitif untuk volume besar
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Fleksibel durasi &amp; rute
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Rincian Info Card (Negotiation-based) -->
+                        <div class="rincian-biaya-box" style="background-color: var(--primary-light); color: #ffffff; border-radius: var(--border-radius-sm); padding: 24px; box-shadow: var(--shadow-md); margin-bottom: 24px;">
+                            <h3 style="font-size: 1.15rem; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Rincian Informasi Acara</span>
+                                <span style="font-size: 0.75rem; background-color: var(--accent); color: #fff; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Event</span>
+                            </h3>
+                            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; color: rgba(255,255,255,0.85);">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Jenis Acara</span>
+                                    <strong id="calcJenisAcara">-</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Kendaraan</span>
+                                    <strong id="calcJumlahUnit">Sesuai Pilihan</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Durasi Acara</span>
+                                    <strong id="calcDurasi">1 Hari</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Harga</span>
+                                    <strong style="color: var(--accent);">Penawaran Khusus</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; border-top: 1px dashed rgba(255,255,255,0.15); padding-top: 12px; font-size: 1.15rem; color: #ffffff;">
+                                    <strong>Total</strong>
+                                    <strong style="color: var(--accent);">Harga diNegosiasi</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 12px; font-size: 1.15rem; color: #ffffff;">
+                                    <span>Tanda Jadi / DP</span>
+                                    <strong style="color: #10b981;">Sesuai Kesepakatan</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 16px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 600;">
+                                Hubungi Admin untuk Penawaran
+                            </div>
+                        </div>
+
+                        <!-- Payment notice card -->
+                        <div class="notice-pelunasan-card" style="background-color: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: var(--border-radius-sm); padding: 20px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+                            <div style="color: #0284c7; margin-top: 2px; flex-shrink: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            </div>
+                            <div>
+                                <h4 style="color: #0369a1; font-weight: 700; margin: 0 0 8px 0; font-size: 0.95rem;">
+                                    Notice Ketentuan Pembayaran Event:
+                                </h4>
+                                <ul style="font-size: 0.825rem; color: #075985; line-height: 1.6; margin: 0; padding-left: 16px; font-weight: 500; display: flex; flex-direction: column; gap: 6px;">
+                                    <li>Penawaran harga akan dikirimkan setelah admin memverifikasi detail acara dan kebutuhan armada Anda.</li>
+                                    <li>Nomor rekening pembayaran DP akan diberikan oleh admin resmi Aksara Transport beserta dengan Invoice DP.</li>
+                                    <li>Untuk paket kerjasama event & korporat, <strong>pelunasan pembayaran maksimal 7 hari setelah acara selesai</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- SOP notice card -->
+                        <div class="notice-sop-card" style="background-color: #fdf4ff; border: 1.5px solid #f5d0fe; border-radius: var(--border-radius-sm); padding: 20px; display: flex; align-items: flex-start; gap: 12px;">
+                            <div style="color: #c026d3; margin-top: 2px; flex-shrink: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 style="color: #a21caf; font-weight: 700; margin: 0 0 8px 0; font-size: 0.95rem;">
+                                    SOP Keselamatan & Layanan Prima:
+                                </h4>
+                                <ul style="font-size: 0.825rem; color: #86198f; line-height: 1.6; margin: 0; padding-left: 16px; font-weight: 500; display: flex; flex-direction: column; gap: 6px;">
+                                    <li>Seluruh armada telah lulus inspeksi teknis menyeluruh sebelum dikirimkan ke lokasi acara.</li>
+                                    <li>Semua pengemudi kami adalah tenaga profesional yang mematuhi protokol keselamatan dan standar etika pelayanan tinggi.</li>
+                                    <li>Terdapat Koordinator On-Site (opsional) untuk memastikan kelancaran logistik kendaraan di hari-H.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo" style="color: #fff;">
+                    Aksara<span>Transport</span>
+                </a>
+                <p>Aksara Transport adalah penyedia jasa rental mobil terpercaya yang berkomitmen menyediakan armada terbaru berkualitas tinggi dengan harga yang terjangkau.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="mobil.html">Pilihan Mobil</a></li>
+                    <li><a href="wisata.html">Paket Wisata</a></li>
+                    <li><a href="artikel.html">Tips &amp; Berita</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan Sewa</h4>
+                <ul class="footer-links">
+                    <li><a href="mobil.html?filter=family">Sewa Mobil Keluarga</a></li>
+                    <li><a href="mobil.html?filter=premium">Sewa Mobil Premium</a></li>
+                    <li><a href="mobil.html?filter=suv">Sewa Mobil SUV</a></li>
+                    <li><a href="mobil.html?filter=city">Sewa City Car</a></li>
+                    <li><a href="tentang.html#syarat">Syarat Lepas Kunci</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak Layanan</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+62 812-3456-7890</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>info@aksaratransport.com</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Jl. Raya Utama No. 45, Kebayoran Baru, Jakarta Selatan</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <div class="footer-payments">
+                <h5>Metode Pembayaran</h5>
+                <div class="payment-icons">
+                    <span class="payment-badge">BCA</span>
+                    <span class="payment-badge">Mandiri</span>
+                    <span class="payment-badge">BRI</span>
+                    <span class="payment-badge">E-Wallet</span>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                <a href="#" class="social-icon" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 30px; font-size: 0.8rem; color: #64748b;">
+            &copy; 2026 Aksara Transport. Seluruh Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+
+
+    <!-- Core Script & Dynamic Page logic -->
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // === DOM References ===
+            const eventTanggal = document.getElementById('eventTanggal');
+            const eventDurasi = document.getElementById('eventDurasi');
+            const eventJenisAcara = document.getElementById('eventJenisAcara');
+
+            // Sidebar calc references
+            const calcJenisAcara = document.getElementById('calcJenisAcara');
+            const calcDurasi = document.getElementById('calcDurasi');
+
+            // === Set Date Picker default to tomorrow ===
+            const setTomorrowDate = () => {
+                const today = new Date();
+                today.setDate(today.getDate() + 1);
+                const yyyy = today.getFullYear();
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const dd = String(today.getDate()).padStart(2, '0');
+                eventTanggal.value = `${yyyy}-${mm}-${dd}`;
+                eventTanggal.min = `${yyyy}-${mm}-${dd}`;
+            };
+            setTomorrowDate();
+
+            // === Update Sidebar Info ===
+            const updateSidebarInfo = () => {
+                const jenisVal = eventJenisAcara.value;
+                const durasiVal = parseInt(eventDurasi.value) || 1;
+
+                calcJenisAcara.textContent = jenisVal || '-';
+                calcDurasi.textContent = `${durasiVal} Hari`;
+            };
+
+            // === Event Listeners ===
+            eventTanggal.addEventListener('change', updateSidebarInfo);
+            eventDurasi.addEventListener('change', updateSidebarInfo);
+            eventJenisAcara.addEventListener('change', updateSidebarInfo);
+
+            // === URL Parameter Prefill ===
+            const prefillFormFromUrl = () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const jenisParam = urlParams.get('jenis');
+
+                if (jenisParam) {
+                    const options = Array.from(eventJenisAcara.options);
+                    const matched = options.find(o => o.value === jenisParam);
+                    if (matched) {
+                        eventJenisAcara.value = jenisParam;
+                    }
+                }
+            };
+
+            // Run prefill and initial calculations
+            prefillFormFromUrl();
+            updateSidebarInfo();
+
+            // === Dynamic Vehicles Logic ===
+            const container = document.getElementById('dynamicVehicleContainer');
+            const btnAddVehicle = document.getElementById('btnAddVehicle');
+
+            // Add new row
+            btnAddVehicle.addEventListener('click', () => {
+                const row = document.createElement('div');
+                row.className = 'vehicle-row';
+                row.style.cssText = 'display: flex; gap: 10px; align-items: center;';
+                row.innerHTML = `
+                    <select class="vehicle-select" required style="flex: 1; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600;">
+                        <option value="" disabled selected>-- Pilih Tipe Mobil --</option>
+                        <option value="Avanza / Xenia">Avanza / Xenia</option>
+                        <option value="Innova Reborn">Innova Reborn</option>
+                        <option value="Innova Zenix">Innova Zenix</option>
+                        <option value="Xpander">Xpander</option>
+                        <option value="Fortuner">Fortuner</option>
+                        <option value="Pajero">Pajero</option>
+                        <option value="Alphard">Alphard</option>
+                        <option value="Hiace Commuter">Hiace Commuter</option>
+                        <option value="Hiace Premio">Hiace Premio</option>
+                        <option value="Elf Long 19 Seat">Elf Long 19 Seat</option>
+                        <option value="Medium Bus">Medium Bus</option>
+                        <option value="Big Bus">Big Bus</option>
+                    </select>
+                    <input type="number" class="vehicle-qty" min="1" max="100" placeholder="Unit" required style="width: 100px; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600;">
+                    <button type="button" class="btn-remove-vehicle" style="background: #ef4444; color: white; border: none; border-radius: var(--border-radius-sm); padding: 12px 16px; cursor: pointer; font-weight: bold;">X</button>
+                `;
+                container.appendChild(row);
+
+                // Add remove listener to new button
+                const btnRemove = row.querySelector('.btn-remove-vehicle');
+                btnRemove.addEventListener('click', () => {
+                    row.remove();
+                });
+            });
+
+            // === WhatsApp Form Submit ===
+            const form = document.getElementById('bookingEventForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Validate dynamic vehicles
+                const vehicleRows = container.querySelectorAll('.vehicle-row');
+                const vehiclesData = [];
+                let isVehicleValid = true;
+
+                vehicleRows.forEach(row => {
+                    const select = row.querySelector('.vehicle-select');
+                    const qty = row.querySelector('.vehicle-qty');
+                    if(select.value && qty.value && qty.value > 0) {
+                        vehiclesData.push(`- ${qty.value} Unit ${select.value}`);
+                    } else {
+                        isVehicleValid = false;
+                    }
+                });
+
+                if (!isVehicleValid || vehiclesData.length === 0) {
+                    alert('Mohon lengkapi pilihan tipe mobil dan jumlah unitnya.');
+                    return;
+                }
+
+                const namaPIC = document.getElementById('eventNamaPIC').value.trim();
+                const waPIC = document.getElementById('eventWaPIC').value.trim();
+                const waCadangan = document.getElementById('eventWaCadangan').value.trim();
+                const instansi = document.getElementById('eventInstansi').value.trim();
+                const jenisAcara = eventJenisAcara.value;
+                const tanggalAcara = eventTanggal.value;
+                const durasi = parseInt(eventDurasi.value) || 1;
+                const rute = document.getElementById('eventRute').value.trim();
+
+                const vehicleList = vehiclesData.join('\n');
+
+                // Build WhatsApp message
+                let text = `*FORM PEMESANAN - PAKET KERJASAMA EVENT / KORPORAT*\n`;
+                text += `Aksara Transport Yogyakarta\n\n`;
+
+                text += `*Data PIC / Penanggung Jawab:*\n`;
+                text += `- Nama PIC: ${namaPIC}\n`;
+                text += `- No. WhatsApp PIC: ${waPIC}\n`;
+                text += `- No. WhatsApp Cadangan: ${waCadangan}\n`;
+                text += `- Instansi / Perusahaan: ${instansi}\n\n`;
+
+                text += `*Detail Acara:*\n`;
+                text += `- Jenis Acara: ${jenisAcara}\n`;
+                text += `- Tanggal Acara: ${tanggalAcara}\n`;
+                text += `- Durasi: ${durasi} Hari\n\n`;
+
+                text += `*Kebutuhan Kendaraan:*\n`;
+                text += `${vehicleList}\n\n`;
+
+                text += `*Rute / Tujuan Perjalanan:*\n`;
+                text += `${rute}\n\n`;
+
+                text += `---------------------------------\n`;
+                text += `*HARGA: Menunggu Penawaran Khusus dari Admin*\n`;
+                text += `*DP: Sesuai Kesepakatan*\n\n`;
+
+                text += `Mohon penawaran harga untuk kebutuhan di atas. Terima kasih!`;
+
+                const encodedText = encodeURIComponent(text);
+                const adminNumber = '6281234567890';
+                window.open(`https://wa.me/${adminNumber}?text=${encodedText}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

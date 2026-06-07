@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paket Wisata Yogyakarta Terbaik &amp; Murah. Dapatkan paket City Tour Jogja Klasik, Merapi Lava Tour Jeep, VW Safari Borobudur &amp; Nanggulan. Paket Multi-Hari, Wisuda, hingga Event Korporat.">
+    <meta name="keywords" content="paket wisata jogja, tour merapi jeep, vw safari borobudur, rental mobil wisata jogja, city tour jogja, paket wisuda jogja, sewa mobil event">
+    <meta name="author" content="Aksara Transport">
+    <link rel="canonical" href="https://www.aksaratransport.com/wisata.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aksaratransport.com/wisata.html">
+    <meta property="og:title" content="Pilihan Paket Wisata Yogyakarta Premium | Aksara Transport">
+    <meta property="og:description" content="Jelajahi keindahan budaya, alam, dan petualangan di Yogyakarta bersama Paket Wisata Aksara Transport dengan unit mobil terbaik dan supir berpengalaman.">
+    <meta property="og:image" content="images/tour_city.webp">
+
+    <title>Paket Wisata Yogyakarta Premium &amp; Terbaik | Aksara Transport</title>
+    
+    <!-- Core Style -->
+        <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ===== TOUR GRID ===== */
+        .wisata-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 991px) {
+            .wisata-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .wisata-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .tour-details-list {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 12px 0 18px 0;
+            padding-left: 18px;
+            line-height: 1.6;
+        }
+        .tour-details-list li strong {
+            color: var(--text-dark);
+        }
+
+        /* ===== TAB NAVIGATION ===== */
+        .wisata-tab-nav {
+            display: flex;
+            width: fit-content;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto 40px auto;
+            padding: 6px;
+            background: #f1f5f9;
+            border-radius: 50px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+        .wisata-tab-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            background: transparent;
+            color: #64748b;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+        .wisata-tab-btn:hover {
+            color: #0f172a;
+        }
+        .wisata-tab-btn.active {
+            background: #ffffff;
+            color: var(--primary, #2563eb);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .wisata-tab-btn .tab-count {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .wisata-tab-btn.active .tab-count {
+            background: var(--primary, #2563eb);
+            color: #ffffff;
+        }
+
+        /* ===== TAB CONTENT ===== */
+        .wisata-tab-content {
+            display: none;
+            animation: fadeInTab 0.3s ease;
+        }
+        .wisata-tab-content.active {
+            display: block;
+        }
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== CATEGORY HEADER ===== */
+        .category-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .category-header h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .category-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== SPECIAL PACKAGE CARDS (Wisuda, Event, Multi-Day) ===== */
+        .special-package-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 40px;
+            text-align: center;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        .special-package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #f59e0b, var(--accent));
+        }
+        .special-package-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+        .special-package-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .special-package-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .special-package-card .package-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .special-package-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+            text-align: left;
+        }
+        .special-package-features li {
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .special-package-features li:last-child {
+            border-bottom: none;
+        }
+        .special-package-features li .feat-icon {
+            color: var(--success);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .special-package-price {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .special-package-price small {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ===== MULTIDAY GRID ===== */
+        .multiday-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 991px) {
+            .multiday-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .multiday-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+        /* ===== RESPONSIVE TAB NAV ===== */
+        @media (max-width: 600px) {
+            .wisata-tab-nav {
+                gap: 4px;
+                padding: 4px;
+                border-radius: 24px;
+                width: 100%;
+            }
+            .wisata-tab-btn {
+                padding: 10px 14px;
+                font-size: 0.85rem;
+                flex: 1 1 calc(50% - 4px);
+                justify-content: center;
+                border-radius: 20px;
+            }
+        }
+
+        /* ===== MULTIDAY CARD IMAGES ===== */
+        .multiday-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 16px;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background: #ffffff;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            border-radius: var(--border-radius-md);
+            padding: 30px;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+        .modal-close:hover {
+            color: var(--danger, #ef4444);
+        }
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            background: #f8fafc;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-control:focus {
+            border-color: var(--primary);
+            background: #ffffff;
+        }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+        }
+        @media (max-width: 500px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .package-checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+        .package-checkbox-label input {
+            margin-top: 3px;
+        }
+        .modal-footer {
+            position: sticky;
+            bottom: 0;
+            background: #fff;
+            padding: 15px 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 10;
+            border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+        }
+        .modal-total {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        /* COMPACT GRID FOR POPUPS SO EVERYTHING IS VISIBLE */
+        dialog.car-modal, #kustomRouteModal {
+            margin: auto !important; /* Center the modal properly */
+        }
+        @media (min-width: 768px) {
+            dialog.car-modal, #kustomRouteModal {
+                max-width: 1050px !important;
+                width: 95% !important;
+            }
+            dialog.car-modal .modal-content, #kustomRouteModal .modal-content {
+                max-width: 100% !important;
+                width: 100% !important;
+                overflow: visible !important; /* Let the dialog handle scrolling */
+            }
+            .modal-car-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 15px !important;
+            }
+            .modal-car-card {
+                padding: 15px !important;
+            }
+            .modal-car-image {
+                height: 85px !important;
+                margin-bottom: 10px !important;
+            }
+            .modal-car-image img {
+                max-height: 75px !important;
+            }
+            .modal-car-info h4 {
+                font-size: 0.95rem !important;
+            }
+            .modal-car-info .price {
+                font-size: 1.05rem !important;
+                margin-bottom: 8px !important;
+                padding-top: 8px !important;
+            }
+            .modal-car-terms ul {
+                font-size: 0.68rem !important;
+                line-height: 1.4 !important;
+            }
+            .btn-select-car {
+                padding: 8px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            #multiDayModal .modal-content {
+                max-width: 1150px !important;
+            }
+            #multiDayGridContainer .wisata-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 20px !important;
+            }
+        }
+
+        .selectable-card {
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .selectable-card.selected {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+        .selectable-card .tour-pricing-footer {
+            display: none !important;
+        }
+        .selectable-card-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s;
+            z-index: 5;
+        }
+        .selectable-card.selected .selectable-card-overlay {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                Aksara<span>Transport</span>
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="mobil.html" class="nav-link">Pilihan Mobil</a></li>
+                    <li><a href="wisata.html" class="nav-link active">Paket Wisata</a></li>
+                    <li><a href="artikel.html" class="nav-link">Tips &amp; Berita</a></li>
+                    <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta">
+                <a href="kontak.html" class="btn btn-primary">Pesan Sekarang</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO / BREADCRUMB -->
+        <section class="hero" style="padding: 120px 0 60px 0; text-align: center;">
+            <div class="container">
+                <span class="badge badge-accent" style="margin-bottom: 10px;">Jogja Tour Packages</span>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; color: #fff;">Paket Wisata Yogyakarta</h1>
+                <p style="color: #cbd5e1; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                    Lengkapi pengalaman perjalanan Anda di Yogyakarta dengan pilihan paket wisata menarik. Kami menyediakan unit mobil prima beserta supir berpengalaman yang siap mengantarkan Anda menyusuri destinasi favorit.
+                </p>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT WITH TABS -->
+        <section class="section-padding">
+            <div class="container">
+
+                <!-- TAB NAVIGATION -->
+                <div class="wisata-tab-nav" id="wisataTabNav">
+                    <button class="wisata-tab-btn active" data-tab="1day">
+                        1 Day Service
+                        <span class="tab-count">13</span>
+                    </button>
+                    <button class="wisata-tab-btn" data-tab="multiday">
+                        Multi-Day (2–7 Hari)
+                        <span class="tab-count">6</span>
+                    </button>
+                    <button class="wisata-tab-btn" data-tab="wisuda">
+                        Wisuda &amp; Wedding
+                    </button>
+                    <button class="wisata-tab-btn" data-tab="event">
+                        Event &amp; Kerjasama
+                    </button>
+                </div>
+
+                <!-- ================================================================
+                     TAB 1: 1 DAY SERVICE (EXISTING PACKAGES)
+                     ================================================================ -->
+                <div class="wisata-tab-content active" id="tab-1day">
+                    <div class="category-header">
+                        <h2>Paket 1 Day Service</h2>
+                        <p>Pilih paket wisata harian dengan driver + BBM. Maksimal 12 jam pelayanan per hari. Semua rute sudah dirancang optimal untuk pengalaman terbaik.</p>
+                    </div>
+
+                    <div class="wisata-grid">
+                    <!-- Paket A -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-success car-tag">Borobudur &amp; Prambanan</span>
+                            <img loading="lazy" src="images/tour_borobudur.webp" alt="Paket A: Borobudur &amp; Prambanan">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket A: Borobudur, VW Tour &amp; Prambanan</h3>
+                            <p class="tour-desc">Perpaduan sejarah candi termegah dengan petualangan pedesaan asri naik mobil VW klasik.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Candi Borobudur, VW Safari Tour, Kopi Klothok, Candi Prambanan.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            
+                            <!-- Detail Itinerary Collapsible -->
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">07:00</span> Penjemputan di Stasiun/Hotel area Jogja kota.</div>
+                                    <div class="timeline-item"><span class="timeline-time">08:30</span> Tiba di **Candi Borobudur** (Eksplorasi stupa &amp; arsitektur candi Buddha terbesar).</div>
+                                    <div class="timeline-item"><span class="timeline-time">11:30</span> Wisata keliling pedesaan Borobudur menaiki mobil antik **VW Safari Tour** (Mengunjungi kebun, kerajinan madu/gerabah).</div>
+                                    <div class="timeline-item"><span class="timeline-time">13:00</span> Makan siang masakan ndeso sayur lodeh legendaris di **Kopi Klothok** Kaliurang.</div>
+                                    <div class="timeline-item"><span class="timeline-time">14:30</span> Menjelajahi keindahan arsitektur candi Hindu tercantik **Candi Prambanan**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">17:30</span> Perjalanan kembali dan pengantaran pulang (*drop-off*).</div>
+                                </div>
+                            </details>
+
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+A" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket B -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-success car-tag">Borobudur &amp; Merapi</span>
+                            <img loading="lazy" src="images/tour_merapi.webp" alt="Paket B: Borobudur &amp; Lava Tour Merapi">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket B: Candi &amp; Volcano Adventure</h3>
+                            <p class="tour-desc">Mengunjungi warisan budaya candi Buddha dan menantang adrenalin dengan petualangan Jeep Merapi.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Candi Borobudur, Lavatour Merapi, Kopi Klothok, Candi Prambanan.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">07:00</span> Penjemputan di hotel/stasiun area Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">08:30</span> Mengunjungi candi megah **Candi Borobudur**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">11:30</span> Makan siang santai di warung **Kopi Klothok** Kaliurang.</div>
+                                    <div class="timeline-item"><span class="timeline-time">13:30</span> Menuju Kaliurang/Kaliadem untuk petualangan **Lavatour Merapi** menggunakan Jeep offroad terbuka (Bunker Kaliadem, Batu Alien, dll).</div>
+                                    <div class="timeline-item"><span class="timeline-time">16:00</span> Eksplorasi candi Hindu tercantik **Candi Prambanan**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">18:30</span> Kembali ke hotel/lokasi drop-off.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+B" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket C -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-accent car-tag" style="background-color: #ffedd5; color: #ea580c;">Petualangan &amp; Sunset</span>
+                            <img loading="lazy" src="images/tour_merapi.webp" alt="Paket C: Merapi &amp; Pantai Selatan">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket C: Volcano, Sand Dunes &amp; Sea View</h3>
+                            <p class="tour-desc">Petualangan lengkap dari dinginnya lereng Gunung Merapi hingga keindahan sunset tebing laut pantai selatan.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Lavatour Merapi, Kopi Klothok, Gumukpasir, Obelix Sea View.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">07:30</span> Penjemputan di hotel/stasiun area Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">08:45</span> Petualangan Jeep **Lavatour Merapi** melintasi sisa-sisa reruntuhan erupsi Gunung Merapi.</div>
+                                    <div class="timeline-item"><span class="timeline-time">11:30</span> Makan siang santap tradisional di **Kopi Klothok**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">14:00</span> Perjalanan ke selatan menuju gumuk pasir unik **Gumukpasir** Parangtritis (foto &amp; sandboarding).</div>
+                                    <div class="timeline-item"><span class="timeline-time">16:30</span> Menikmati pemandangan laut selatan dari tebing modern **Obelix Sea View** dan menyaksikan sunset indah.</div>
+                                    <div class="timeline-item"><span class="timeline-time">19:30</span> Perjalanan kembali ke hotel.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+C" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket D -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-accent car-tag" style="background-color: #fce7f3; color: #db2777;">Kombinasi Alam</span>
+                            <img loading="lazy" src="images/tour_parangtritis.webp" alt="Paket D: Candi, Pinus, &amp; Tebing Laut">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket D: Prambanan, Pines &amp; Ocean Sunset</h3>
+                            <p class="tour-desc">Menyusuri mahakarya candi Hindu kuno, kesejukan hutan pinus, hingga pasir putih dan tebing samudera.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Candi Prambanan, Hutan Pinus, Gumukpasir, Obelix Sea View.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">08:00</span> Penjemputan di hotel/stasiun area Jogja kota.</div>
+                                    <div class="timeline-item"><span class="timeline-time">09:00</span> Eksplorasi kompleks candi Hindu termegah **Candi Prambanan**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">12:00</span> Berfoto ria di bawah naungan pohon rindang yang sejuk di **Hutan Pinus** Mangunan.</div>
+                                    <div class="timeline-item"><span class="timeline-time">14:30</span> Berfoto estetis di gurun pasir mini **Gumukpasir** Parangtritis.</div>
+                                    <div class="timeline-item"><span class="timeline-time">16:30</span> Menikmati sunset samudera dari tebing modern **Obelix Sea View**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">19:30</span> Perjalanan kembali dan drop-off di hotel.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+D" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket E -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-success car-tag">Heritage &amp; Family</span>
+                            <img loading="lazy" src="images/tour_city.webp" alt="Paket E: Heritage Jogja &amp; Family Park">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket E: Kraton, Tamansari &amp; Family Zoo</h3>
+                            <p class="tour-desc">Wisata ramah keluarga melintasi warisan budaya kerajaan Jogja hingga kebun binatang interaktif.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Keraton, Tamansari, Suraloka Zoo, Ibarbo Park.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">08:00</span> Penjemputan di hotel/stasiun area Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">08:30</span> Mengunjungi pusat budaya &amp; istana kesultanan **Keraton Yogyakarta**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">10:30</span> Eksplorasi reruntuhan istana air kuno nan indah **Tamansari** (Water Castle).</div>
+                                    <div class="timeline-item"><span class="timeline-time">13:00</span> Bermain dan belajar berinteraksi dengan hewan di kebun binatang **Suraloka Zoo**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">15:30</span> Rekreasi, berfoto, dan membeli oleh-oleh khas Jogja terlengkap di **Ibarbo Park**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">18:30</span> Perjalanan kembali ke hotel.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+E" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket F -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-accent car-tag" style="background-color: #e0f2fe; color: #0369a1;">Gunungkidul Ocean</span>
+                            <img loading="lazy" src="images/tour_parangtritis.webp" alt="Paket F: On The Rock &amp; Gesing">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket F: Rock Coastline &amp; Wonderland</h3>
+                            <p class="tour-desc">Petualangan menyusuri jajaran destinasi pesisir pantai Gunungkidul yang berkarang megah dan modern.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> On The Rock, Gesing Wonderland, Puncak Segoro, Obelix Sea View.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">08:00</span> Penjemputan di hotel/stasiun area Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">10:00</span> Tiba di **On The Rock** Gunungkidul (Menikmati tebing laut yang menakjubkan).</div>
+                                    <div class="timeline-item"><span class="timeline-time">12:30</span> Makan siang dan rekreasi modern di **Gesing Wonderland** yang berlatar pantai cantik.</div>
+                                    <div class="timeline-item"><span class="timeline-time">15:00</span> Menikmati panorama laut samudera dari atas tebing tinggi **Puncak Segoro**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">17:00</span> Menyaksikan sunset yang sangat menawan di tebing modern **Obelix Sea View**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">19:30</span> Perjalanan pulang kembali ke hotel.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+F" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket G -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-accent car-tag" style="background-color: #e0f2fe; color: #0369a1;">Pura &amp; Pantai</span>
+                            <img loading="lazy" src="images/tour_parangtritis.webp" alt="Paket G: Ngobaran &amp; Segoro">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket G: Bali van Jogja &amp; Ocean Cliffs</h3>
+                            <p class="tour-desc">Menikmati sensasi pura eksotis di bibir tebing laut layaknya Bali, berpadu keindahan pantai selatan.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Pantai Ngobaran, Gesing Wonderland, Puncak Segoro, Obelix Sea View.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">08:00</span> Penjemputan di hotel/stasiun area Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">10:00</span> Eksplorasi **Pantai Ngobaran** yang eksotis dengan candi pura hindu di tepi laut.</div>
+                                    <div class="timeline-item"><span class="timeline-time">12:30</span> Wisata dan santap siang di area pantai **Gesing Wonderland**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">15:00</span> Spot foto instagenic di tebing curam berlatar samudera biru **Puncak Segoro**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">17:00</span> Menikmati sunset penutup di tebing hits **Obelix Sea View**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">19:30</span> Perjalanan kembali ke hotel.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+G" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket H -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-accent car-tag" style="background-color: #e0f2fe; color: #0369a1;">Pantai Pasir Putih</span>
+                            <img loading="lazy" src="images/tour_parangtritis.webp" alt="Paket H: Sadranan &amp; Slili">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket H: White Sands &amp; Sea View Sunset</h3>
+                            <p class="tour-desc">Petualangan menyusuri pantai pasir putih Gunungkidul yang berair jernih, dilanjut bersantai di atas tebing.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> On The Rock, Pantai Sadranan, Pantai Slili, Obelix Sea View.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">08:00</span> Penjemputan di hotel/stasiun area Jogja kota.</div>
+                                    <div class="timeline-item"><span class="timeline-time">10:00</span> Berwisata foto di tebing karang **On The Rock** Gunungkidul.</div>
+                                    <div class="timeline-item"><span class="timeline-time">12:30</span> Bermain air, snorkeling, atau bermain kano di pasir putih **Pantai Sadranan**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">15:00</span> Bersantai menyantap kelapa muda di pasir putih **Pantai Slili** yang bersebelahan.</div>
+                                    <div class="timeline-item"><span class="timeline-time">17:00</span> Menikmati sunset eksklusif dari cafe tebing **Obelix Sea View**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">19:30</span> Perjalanan pulang ke hotel.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+H" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket I -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-accent car-tag" style="background-color: #ffedd5; color: #ea580c;">Petualangan Ekstrim</span>
+                            <img loading="lazy" src="images/tour_kulonprogo.webp" alt="Paket I: Timang &amp; Goa Pindul">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket I: Timang Gondola &amp; Cave Tubing</h3>
+                            <p class="tour-desc">Uji nyali menaiki kereta gantung kayu tradisional ke pulau karang laut, digabung serunya susur goa basah.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Pantai Timang, Goa Pindul, Pictniq Land.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">07:30</span> Penjemputan di hotel/stasiun area Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">09:30</span> Mengarungi jembatan gantung atau gondola kayu legendaris ke pulau karang **Pantai Timang**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">13:30</span> Petualangan *cave tubing* menyusuri sungai bawah tanah berornamen kristal di **Goa Pindul**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">16:30</span> Bersantai dan mengambil foto estetis ala piknik tebing laut di **Pictniq Land**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">19:00</span> Kembali menuju Jogja kota dan drop-off.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+I" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket J -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-success car-tag">Borobudur &amp; Menoreh</span>
+                            <img loading="lazy" src="images/tour_kulonprogo.webp" alt="Paket J: Tumpeng Menoreh &amp; VW Safari">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket J: Menoreh, VW Heritage &amp; Bukit Rhema</h3>
+                            <p class="tour-desc">Melihat lanskap pegunungan Menoreh yang menawan, dilanjut keliling desa Borobudur naik VW klasik.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Tumpeng Menoreh, Vw Safari Tour, Candi Borobudur, Gereja Ayam.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">05:00</span> Penjemputan pagi buta di hotel/stasiun Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">06:30</span> Tiba di perbukitan **Tumpeng Menoreh** (Menikmati udara sejuk pegunungan &amp; sarapan).</div>
+                                    <div class="timeline-item"><span class="timeline-time">09:00</span> Petualangan seru **VW Safari Tour** keliling pedesaan asri di sekitar Candi Borobudur.</div>
+                                    <div class="timeline-item"><span class="timeline-time">11:30</span> Mengunjungi kemegahan stupa utama candi Buddha terbesar **Candi Borobudur**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">14:30</span> Mengunjungi spot arsitektur merpati unik **Gereja Ayam** (Bukit Rhema) untuk foto &amp; panorama.</div>
+                                    <div class="timeline-item"><span class="timeline-time">17:00</span> Kembali ke hotel/lokasi semula.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+J" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket K -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-success car-tag">Mangunan &amp; Goa</span>
+                            <img loading="lazy" src="images/tour_kulonprogo.webp" alt="Paket K: Mangunan &amp; Pindul">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket K: Pine Valley, Cave Tubing &amp; Cliffs</h3>
+                            <p class="tour-desc">Merasakan embun pagi bukit buah, ketenangan jajaran pohon pinus tinggi, hingga petualangan sungai bawah tanah.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Kebun Buah, Hutan Pinus, Goa Pindul, Pictniq Land.</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">07:30</span> Penjemputan di hotel/stasiun area Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">08:30</span> Menikmati panorama jurang berkabut nan hijau dari gardu pandang **Kebun Buah Mangunan**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">10:30</span> Berjalan santai dan berfoto di antara barisan pohon pinus **Hutan Pinus Mangunan**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">13:30</span> Berpetualang menyusuri goa basah menggunakan ban pelampung di **Goa Pindul**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">16:30</span> Bersantai menikmati teh sore dan berfoto estetis di tebing pantai **Pictniq Land**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">19:00</span> Perjalanan pulang ke Jogja kota.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+K" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket Dieng -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-accent car-tag" style="background-color: #ffedd5; color: #ea580c;">Negeri Di Atas Awan</span>
+                            <img loading="lazy" src="images/tour_borobudur.webp" alt="Paket Dieng: Sikunir &amp; Kawah">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Paket Dieng: Sikunir Sunrise &amp; Vulkanik</h3>
+                            <p class="tour-desc">Mengunjungi dataran tinggi Dieng yang berselimut kabut, melihat kawah aktif, dan menikmati golden sunrise tercantik.</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Puncak Sikunir, Kawah Sikidang, Candi Arjuna, Gardu Pandang Tieng.</li>
+                                <li><strong>Durasi:</strong> Satu hari perjalanan khusus luar kota Jogja.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">02:00</span> Penjemputan dini hari di hotel Jogja (Perjalanan langsung ke Wonosobo/Dieng).</div>
+                                    <div class="timeline-item"><span class="timeline-time">05:30</span> Trekking ringan dan menyaksikan matahari terbit keemasan di atas bukit **Puncak Sikunir**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">08:00</span> Melihat secara dekat lumpur kawah belerang yang mendidih di **Kawah Sikidang**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">09:30</span> Menyusuri kompleks candi Hindu tertua bersejarah di Jawa **Candi Arjuna**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">11:30</span> Berfoto dengan latar belakang panorama bukit dan lembah pertanian di **Gardu Pandang Tieng**.</div>
+                                    <div class="timeline-item"><span class="timeline-time">13:00</span> Santap siang kuliner khas Mie Ongklok khas Wonosobo dan perjalanan pulang ke Jogja.</div>
+                                    <div class="timeline-item"><span class="timeline-time">17:00</span> Tiba kembali di Jogja kota.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / unit</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Paket+Dieng" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kustom Rute -->
+                    <div class="tour-card">
+                        <div class="tour-image-container">
+                            <span class="badge badge-success car-tag">Bebas Pilih</span>
+                            <img loading="lazy" src="images/tour_city.webp" alt="Kustom Rute Wisata">
+                        </div>
+                        <div class="tour-details">
+                            <h3 class="tour-name">Kustom Rute (Bebas Pilih Tujuan)</h3>
+                            <p class="tour-desc">Tentukan sendiri rute destinasi wisata impian Anda secara fleksibel (belanja, candi, pantai kidul, kuliner, dll).</p>
+                            <ul class="tour-details-list">
+                                <li><strong>Destinasi:</strong> Sesuai permintaan penyewa (bebas kustom rute).</li>
+                                <li><strong>Durasi:</strong> Maksimal 12 Jam pelayanan dengan driver + BBM.</li>
+                            </ul>
+                            <details class="tour-itinerary-details">
+                                <summary>Lihat Detail Itinerary</summary>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item"><span class="timeline-time">Jadwal</span> Waktu penjemputan awal diatur sesuai permintaan Anda.</div>
+                                    <div class="timeline-item"><span class="timeline-time">Rute</span> Rencana perjalanan didiskusikan langsung bersama driver sebelum berangkat.</div>
+                                    <div class="timeline-item"><span class="timeline-time">Fleksibel</span> Tempat wisata bebas diganti di tengah perjalanan asalkan masih satu arah / satu kawasan.</div>
+                                </div>
+                            </details>
+                            <div class="tour-pricing-footer">
+                                <div class="price-box">
+                                    <span class="price-label">Mulai Dari</span>
+                                    <span class="price-val">Rp 600.000<span> / 12 jam</span></span>
+                                </div>
+                                <a href="pesan-wisata.html?wisata=Kustom+Rute" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">Rancang Rute</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- ================================================================
+                     TAB 2: MULTI-DAY SERVICE (2-7 HARI)
+                     ================================================================ -->
+                <div class="wisata-tab-content" id="tab-multiday">
+                    <div class="category-header">
+                        <h2>Paket Multi-Day Service (2–7 Hari)</h2>
+                        <p>Nikmati perjalanan panjang menjelajahi Yogyakarta dan sekitarnya. Sewa mobil + driver fullday per hari dengan rute fleksibel sesuai keinginan Anda. Rekomendasi rute tersedia, atau rancang sendiri.</p>
+                    </div>
+
+                    <div class="multiday-grid">
+                        <!-- 2 Day Service -->
+                        <div class="special-package-card">
+                            <img src="images/tour_borobudur.webp" alt="2 Day Service" class="multiday-card-img" loading="lazy">
+                            <h3>2 Day Service</h3>
+                            <p class="package-desc">Dua hari eksplorasi Jogja. Cocok untuk kombinasi Heritage + Alam atau Candi + Pantai.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> 2 hari fullday (maks. 12 jam/hari)</li>
+                                <li><span class="feat-icon">✓</span> Driver + BBM termasuk</li>
+                                <li><span class="feat-icon">✓</span> Rute rekomendasi atau kustom</li>
+                                <li><span class="feat-icon">✓</span> Penjemputan hotel/stasiun/bandara</li>
+                            </ul>
+                            <div class="special-package-price">
+                                Harga Paket Khusus <small>/ 2 hari</small>
+                            </div>
+                            <button class="btn btn-primary btn-pesan-multiday" data-days="2" style="width: 100%; font-size: 0.9rem;">Pesan 2 Day Service</button>
+                        </div>
+
+                        <!-- 3 Day Service -->
+                        <div class="special-package-card">
+                            <img src="images/tour_merapi.webp" alt="3 Day Service" class="multiday-card-img" loading="lazy">
+                            <h3>3 Day Service</h3>
+                            <p class="package-desc">Tiga hari menjelajah Jogja lengkap. Heritage, alam, pantai, dan kuliner dalam satu paket.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> 3 hari fullday (maks. 12 jam/hari)</li>
+                                <li><span class="feat-icon">✓</span> Driver + BBM termasuk</li>
+                                <li><span class="feat-icon">✓</span> Rute rekomendasi atau kustom</li>
+                                <li><span class="feat-icon">✓</span> Penjemputan hotel/stasiun/bandara</li>
+                            </ul>
+                            <div class="special-package-price">
+                                Harga Paket Khusus <small>/ 3 hari</small>
+                            </div>
+                            <button class="btn btn-primary btn-pesan-multiday" data-days="3" style="width: 100%; font-size: 0.9rem;">Pesan 3 Day Service</button>
+                        </div>
+
+                        <!-- 4 Day Service -->
+                        <div class="special-package-card">
+                            <img src="images/tour_city.webp" alt="4 Day Service" class="multiday-card-img" loading="lazy">
+                            <h3>4 Day Service</h3>
+                            <p class="package-desc">Empat hari penuh petualangan. Jelajahi Jogja + Dieng atau Jogja + Solo dalam satu perjalanan.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> 4 hari fullday (maks. 12 jam/hari)</li>
+                                <li><span class="feat-icon">✓</span> Driver + BBM termasuk</li>
+                                <li><span class="feat-icon">✓</span> Rute rekomendasi atau kustom</li>
+                                <li><span class="feat-icon">✓</span> Penjemputan hotel/stasiun/bandara</li>
+                            </ul>
+                            <div class="special-package-price">
+                                Harga Paket Khusus <small>/ 4 hari</small>
+                            </div>
+                            <button class="btn btn-primary btn-pesan-multiday" data-days="4" style="width: 100%; font-size: 0.9rem;">Pesan 4 Day Service</button>
+                        </div>
+
+                        <!-- 5 Day Service -->
+                        <div class="special-package-card">
+                            <img src="images/tour_kulonprogo.webp" alt="5 Day Service" class="multiday-card-img" loading="lazy">
+                            <h3>5 Day Service</h3>
+                            <p class="package-desc">Lima hari menjelajahi Jogja + Jawa Tengah. Candi, gunung, pantai, dan budaya dalam satu trip epik.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> 5 hari fullday (maks. 12 jam/hari)</li>
+                                <li><span class="feat-icon">✓</span> Driver + BBM termasuk</li>
+                                <li><span class="feat-icon">✓</span> Rute rekomendasi atau kustom</li>
+                                <li><span class="feat-icon">✓</span> Penjemputan hotel/stasiun/bandara</li>
+                            </ul>
+                            <div class="special-package-price">
+                                Harga Paket Khusus <small>/ 5 hari</small>
+                            </div>
+                            <button class="btn btn-primary btn-pesan-multiday" data-days="5" style="width: 100%; font-size: 0.9rem;">Pesan 5 Day Service</button>
+                        </div>
+
+                        <!-- 6 Day Service -->
+                        <div class="special-package-card">
+                            <img src="images/tour_parangtritis.webp" alt="6 Day Service" class="multiday-card-img" loading="lazy">
+                            <h3>6 Day Service</h3>
+                            <p class="package-desc">Enam hari Grand Tour Jogja dan sekitarnya. Eksplorasi mendalam seluruh penjuru DIY dan Jawa Tengah.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> 6 hari fullday (maks. 12 jam/hari)</li>
+                                <li><span class="feat-icon">✓</span> Driver + BBM termasuk</li>
+                                <li><span class="feat-icon">✓</span> Rute rekomendasi atau kustom</li>
+                                <li><span class="feat-icon">✓</span> Penjemputan hotel/stasiun/bandara</li>
+                            </ul>
+                            <div class="special-package-price">
+                                Harga Paket Khusus <small>/ 6 hari</small>
+                            </div>
+                            <button class="btn btn-primary btn-pesan-multiday" data-days="6" style="width: 100%; font-size: 0.9rem;">Pesan 6 Day Service</button>
+                        </div>
+
+                        <!-- 7 Day Service -->
+                        <div class="special-package-card">
+                            <img src="images/tour_borobudur.webp" alt="7 Day Service" class="multiday-card-img" loading="lazy">
+                            <h3>7 Day Service</h3>
+                            <p class="package-desc">Seminggu penuh Full Week Tour Jawa Tengah-DIY. Pengalaman terlengkap menjelajahi pulau Jawa.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> 7 hari fullday (maks. 12 jam/hari)</li>
+                                <li><span class="feat-icon">✓</span> Driver + BBM termasuk</li>
+                                <li><span class="feat-icon">✓</span> Rute rekomendasi atau kustom</li>
+                                <li><span class="feat-icon">✓</span> Penjemputan hotel/stasiun/bandara</li>
+                            </ul>
+                            <div class="special-package-price">
+                                Harga Paket Khusus <small>/ 7 hari</small>
+                            </div>
+                            <button class="btn btn-primary btn-pesan-multiday" data-days="7" style="width: 100%; font-size: 0.9rem;">Pesan 7 Day Service</button>
+                        </div>
+                    </div>
+
+                    <!-- Info Box Multi-Day -->
+                    <div style="background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: var(--border-radius-sm); padding: 20px; display: flex; align-items: flex-start; gap: 12px;">
+                        <div style="color: #0284c7; margin-top: 2px; flex-shrink: 0;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </div>
+                        <div>
+                            <h4 style="color: #0369a1; font-weight: 700; margin: 0 0 6px 0; font-size: 0.95rem;">Informasi Paket Multi-Hari</h4>
+                            <ul style="font-size: 0.825rem; color: #075985; line-height: 1.6; margin: 0; padding-left: 16px; font-weight: 500;">
+                                <li>Semua paket sudah termasuk mobil, driver berpengalaman, dan BBM.</li>
+                                <li>Durasi pelayanan maksimal 12 jam per hari.</li>
+                                <li>Rute rekomendasi tersedia, atau Anda bebas menentukan rute kustom.</li>
+                                <li>Harga paket multi-hari bersifat khusus (lebih hemat daripada tarif harian biasa).</li>
+                                <li>Hubungi admin untuk penawaran harga terbaik sesuai paket dan unit pilihan Anda.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================================================================
+                     TAB 3: PAKET WISUDA
+                     ================================================================ -->
+                <div class="wisata-tab-content" id="tab-wisuda">
+                    <div class="category-header">
+                        <h2>🎓 Paket Wisuda &amp; Wedding</h2>
+                        <p>Layanan rental mobil premium beserta driver profesional di Jogja, didedikasikan khusus untuk mendukung kelancaran mobilitas di hari spesial wisuda dan pernikahan Anda. Bebaskan diri Anda dari kendala transportasi, nikmati momen bahagia bersama keluarga dengan layanan transportasi VIP kami.</p>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                        
+                        <!-- Paket Wisuda Card -->
+                        <div class="special-package-card" style="text-align: left; padding: 30px;">
+                            <img src="images/paket_wisuda.png" alt="Paket Wisuda" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--border-radius-sm); margin-bottom: 20px;">
+                            <h3 style="text-align: center;">Paket Wisuda</h3>
+                            <p class="package-desc" style="text-align: center;">Rayakan kelulusan dengan layanan penjemputan eksklusif. Driver siap standby selama acara berlangsung.</p>
+                            
+                            <div style="background: #f8fafc; border-radius: var(--border-radius-sm); padding: 15px; margin: 20px 0;">
+                                <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--primary); margin: 0 0 12px 0;">Alur Layanan:</h4>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item" style="padding-bottom: 10px;"><span class="timeline-time">Jemput</span> Penjemputan wisudawan.</div>
+                                    <div class="timeline-item" style="padding-bottom: 10px;"><span class="timeline-time">Kampus</span> Mengantar ke lokasi wisuda.</div>
+                                    <div class="timeline-item" style="padding-bottom: 10px;"><span class="timeline-time">Tunggu</span> Driver standby di kampus.</div>
+                                    <div class="timeline-item" style="padding-bottom: 10px;"><span class="timeline-time">Foto/Makan</span> Mengantar foto studio / makan.</div>
+                                    <div class="timeline-item" style="padding-bottom: 0;"><span class="timeline-time">Pulang</span> Pengantaran pulang.</div>
+                                </div>
+                            </div>
+
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> <strong>Sudah Termasuk:</strong> Mobil, Driver, BBM (12 Jam)</li>
+                                <li><span class="feat-icon">✓</span> <strong>Standby di Kampus:</strong> Ya</li>
+                                <li><span class="feat-icon">✓</span> <strong>Harga:</strong> Sesuai katalog sewa 12 jam</li>
+                            </ul>
+
+                            <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: var(--border-radius-sm); padding: 14px 16px; margin: 16px 0; font-size: 0.8rem; color: #92400e; font-weight: 500;">
+                                ⚠️ Tarif belum termasuk tol dan parkir.
+                            </div>
+
+                            <div class="special-package-price" style="text-align: center;">
+                                Mulai dari Rp 450.000 <small>/ 12 jam</small>
+                            </div>
+                            <button class="btn btn-primary btn-pesan-special" data-paket="Wisuda" style="width: 100%; font-size: 1rem; padding: 14px; border: none; cursor: pointer;">🎓 Pilih Mobil Wisuda</button>
+                        </div>
+
+                        <!-- Paket Wedding Card -->
+                        <div class="special-package-card" style="text-align: left; padding: 30px;">
+                            <img src="images/paket_wedding.png" alt="Paket Wedding" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--border-radius-sm); margin-bottom: 20px;">
+                            <h3 style="text-align: center;">Paket Wedding</h3>
+                            <p class="package-desc" style="text-align: center;">Jadikan hari pernikahan lebih elegan. Layanan driver VIP siap membantu mobilitas pengantin seharian.</p>
+                            
+                            <div style="background: #f8fafc; border-radius: var(--border-radius-sm); padding: 15px; margin: 20px 0;">
+                                <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--primary); margin: 0 0 12px 0;">Alur Layanan:</h4>
+                                <div class="itinerary-timeline">
+                                    <div class="timeline-item" style="padding-bottom: 10px;"><span class="timeline-time">Jemput</span> Penjemputan di hotel/rumah.</div>
+                                    <div class="timeline-item" style="padding-bottom: 10px;"><span class="timeline-time">Akad</span> Mengantar ke lokasi akad.</div>
+                                    <div class="timeline-item" style="padding-bottom: 10px;"><span class="timeline-time">Tunggu</span> Driver standby saat prosesi.</div>
+                                    <div class="timeline-item" style="padding-bottom: 10px;"><span class="timeline-time">Resepsi</span> Mengantar ke lokasi resepsi.</div>
+                                    <div class="timeline-item" style="padding-bottom: 0;"><span class="timeline-time">Pulang</span> Pengantaran kembali.</div>
+                                </div>
+                            </div>
+
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> <strong>Sudah Termasuk:</strong> Mobil, Driver, BBM (12 Jam)</li>
+                                <li><span class="feat-icon">✓</span> <strong>Layanan VIP:</strong> Driver rapi / jas</li>
+                                <li><span class="feat-icon">✓</span> <strong>Harga:</strong> Sesuai katalog sewa 12 jam</li>
+                            </ul>
+
+                            <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: var(--border-radius-sm); padding: 14px 16px; margin: 16px 0; font-size: 0.8rem; color: #92400e; font-weight: 500;">
+                                ⚠️ Tarif belum termasuk dekorasi bunga, tol, dan parkir.
+                            </div>
+
+                            <div class="special-package-price" style="text-align: center;">
+                                Mulai dari Rp 800.000 <small>/ 12 jam (Innova Reborn)</small>
+                            </div>
+                            <button class="btn btn-primary btn-pesan-special" data-paket="Wedding" style="width: 100%; font-size: 1rem; padding: 14px; border: none; cursor: pointer;">💍 Pilih Mobil Wedding</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================================================================
+                     TAB 4: EVENT & KERJASAMA
+                     ================================================================ -->
+                <div class="wisata-tab-content" id="tab-event">
+                    <!-- Category Header -->
+                    <div class="category-header">
+                        <h2>Paket Kerjasama Event &amp; Korporat</h2>
+                        <p>Sewa mobil event dan korporat di Yogyakarta dengan armada lengkap dan driver profesional. Layanan rental mobil borongan untuk dinas instansi pemerintah, gathering perusahaan, wisata rombongan, hingga pernikahan.</p>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="multiday-grid">
+                        <div class="special-package-card">
+                            <span class="special-package-icon">🏛️</span>
+                            <h3>Dinas Pemerintah</h3>
+                            <p class="package-desc">Layanan armada untuk kegiatan dinas, kunjungan kerja, dan inspeksi lapangan instansi pemerintah.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> Armada seragam tersedia</li>
+                                <li><span class="feat-icon">✓</span> Driver berseragam rapi</li>
+                                <li><span class="feat-icon">✓</span> Koordinator lapangan</li>
+                                <li><span class="feat-icon">✓</span> Invoice resmi / kwitansi</li>
+                            </ul>
+                            <a href="pesan-event.html?jenis=Dinas+Pemerintah" class="btn btn-secondary" style="width: 100%; font-size: 0.9rem;">Ajukan Penawaran</a>
+                        </div>
+
+                        <div class="special-package-card">
+                            <span class="special-package-icon">🏢</span>
+                            <h3>Event Perusahaan</h3>
+                            <p class="package-desc">Solusi transportasi untuk outing kantor, gathering, team building, dan acara internal perusahaan.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> Multi-unit tersedia</li>
+                                <li><span class="feat-icon">✓</span> Pilihan mobil fleksibel</li>
+                                <li><span class="feat-icon">✓</span> Harga volume discount</li>
+                                <li><span class="feat-icon">✓</span> Durasi fleksibel 1-7 hari</li>
+                            </ul>
+                            <a href="pesan-event.html?jenis=Event+Perusahaan+%2F+Swasta" class="btn btn-secondary" style="width: 100%; font-size: 0.9rem;">Ajukan Penawaran</a>
+                        </div>
+
+                        <div class="special-package-card">
+                            <span class="special-package-icon">👥</span>
+                            <h3>Wisata Rombongan</h3>
+                            <p class="package-desc">Sewa armada rombongan besar untuk wisata keluarga besar, reuni, atau grup komunitas.</p>
+                            <ul class="special-package-features">
+                                <li><span class="feat-icon">✓</span> Kapasitas hingga ratusan orang</li>
+                                <li><span class="feat-icon">✓</span> Mix unit: MPV + Hiace + Elf</li>
+                                <li><span class="feat-icon">✓</span> Rute wisata customizable</li>
+                                <li><span class="feat-icon">✓</span> Paket multi-hari tersedia</li>
+                            </ul>
+                            <a href="pesan-event.html?jenis=Wisata+Rombongan" class="btn btn-secondary" style="width: 100%; font-size: 0.9rem;">Ajukan Penawaran</a>
+                        </div>
+                    </div>
+
+                    <!-- Available Fleet Info -->
+                    <div style="background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: var(--border-radius-sm); padding: 20px; display: flex; align-items: flex-start; gap: 12px;">
+                        <div style="color: #0284c7; margin-top: 2px; flex-shrink: 0;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </div>
+                        <div>
+                            <h4 style="color: #0369a1; font-weight: 700; margin: 0 0 6px 0; font-size: 0.95rem;">Armada Tersedia untuk Event</h4>
+                            <ul style="font-size: 0.825rem; color: #075985; line-height: 1.6; margin: 0; padding-left: 16px; font-weight: 500;">
+                                <li><strong>City Car:</strong> Honda Brio</li>
+                                <li><strong>MPV:</strong> Avanza, Xpander, Innova Reborn, Innova Zenix</li>
+                                <li><strong>SUV:</strong> Fortuner, Pajero</li>
+                                <li><strong>Premium:</strong> Toyota Alphard Facelift, Alphard HEV</li>
+                                <li><strong>Minibus:</strong> Toyota Hiace Commuter, Hiace Premio</li>
+                                <li><strong>Bus Kecil:</strong> Elf Long 19 Seat</li>
+                            </ul>
+                            <p style="font-size: 0.825rem; color: #075985; margin-top: 10px; font-weight: 600;">📞 Hubungi admin kami untuk penawaran harga terbaik sesuai kebutuhan acara Anda.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo" style="color: #fff;">
+                    Aksara<span>Transport</span>
+                </a>
+                <p>Aksara Transport adalah penyedia jasa rental mobil terpercaya yang berkomitmen menyediakan armada terbaru berkualitas tinggi dengan harga yang terjangkau.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="mobil.html">Pilihan Mobil</a></li>
+                    <li><a href="wisata.html">Paket Wisata</a></li>
+                    <li><a href="artikel.html">Tips &amp; Berita</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="mobil.html?service=lepasKunci">Sewa Mobil Lepas Kunci</a></li>
+                    <li><a href="mobil.html?service=denganSopir">Sewa Mobil Dengan Sopir</a></li>
+                    <li><a href="wisata.html">Paket Wisata Jogja</a></li>
+                    <li><a href="tentang.html#syarat">Syarat &amp; Ketentuan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <p style="margin-bottom: 10px;">Gg. Aksara No. 12, Sleman, Yogyakarta</p>
+                <p style="margin-bottom: 10px;">WhatsApp: +62 812-3456-7890</p>
+                <p>Email: info@aksaratransport.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Aksara Transport. Hak Cipta Dilindungi.</p>
+                <p>Desain Premium oleh Antigravity</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dialog Modal Kustom Rute -->
+    <dialog id="kustomRouteModal" class="car-modal" style="max-width: 550px;">
+        <div class="modal-content" style="padding: 25px;">
+            <div class="modal-header">
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0;">Rancang Rute Kustom Anda</h3>
+                <button class="close-modal-btn" id="closeKustomModalBtn" aria-label="Tutup Modal">&times;</button>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.875rem; line-height: 1.5; margin: 0 0 20px 0;">
+                Tentukan hingga maksimal 4 destinasi wisata impian Anda di Jogja. Setelah itu, kami akan mengarahkan Anda ke pilihan mobil dengan driver.
+            </p>
+            
+            <form id="kustomRouteForm" style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Destinasi 1 (Wajib)</label>
+                    <input type="text" id="dest1" placeholder="Contoh: Candi Borobudur" required style="padding: 10px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-size: 0.9rem; font-weight: 600; box-sizing: border-box; width: 100%;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Destinasi 2 (Opsional)</label>
+                    <input type="text" id="dest2" placeholder="Contoh: Tebing Breksi" style="padding: 10px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-size: 0.9rem; font-weight: 600; box-sizing: border-box; width: 100%;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Destinasi 3 (Opsional)</label>
+                    <input type="text" id="dest3" placeholder="Contoh: Heha Sky View" style="padding: 10px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-size: 0.9rem; font-weight: 600; box-sizing: border-box; width: 100%;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <label style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Destinasi 4 (Opsional)</label>
+                    <input type="text" id="dest4" placeholder="Contoh: Pantai Parangtritis" style="padding: 10px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-size: 0.9rem; font-weight: 600; box-sizing: border-box; width: 100%;">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 700; margin-top: 15px;">Lanjutkan &amp; Pilih Mobil</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Dialog Modal Pilih Kendaraan -->
+    <dialog id="carSelectModal" class="car-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0;">Pilih Kendaraan - <span id="modalTourName" style="color: var(--accent);">Nama Paket</span></h3>
+                <button class="close-modal-btn" id="closeModalBtn" aria-label="Tutup Modal">&times;</button>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.875rem; line-height: 1.5; margin: 0 0 20px 0;">
+                Silakan pilih tipe mobil yang sesuai dengan kebutuhan kapasitas dan kenyamanan rombongan Anda.
+            </p>
+            
+            <div class="modal-car-grid">
+                <!-- Mobil 1: Avanza / Xenia Facelift -->
+                <div class="modal-car-card" data-car="Avanza / Xenia Facelift">
+                    <div class="modal-car-image">
+                        <img src="images/toyota_avanza_facelift.webp" alt="Avanza / Xenia Facelift">
+                    </div>
+                    <div class="modal-car-info">
+                        <h4>Avanza / Xenia Facelift</h4>
+                        <span class="capacity">Kapasitas: 1-6 Pax</span>
+                        <div class="price">Rp 600.000 <small>/ 12 Jam</small></div>
+                        <div class="modal-car-terms" style="text-align: left; border-top: 1px dashed var(--border-color); padding-top: 10px; margin: 8px 0 15px 0; width: 100%; box-sizing: border-box;">
+                            <ul style="padding-left: 15px; margin: 0; font-size: 0.725rem; color: var(--text-muted); line-height: 1.5; list-style-type: disc;">
+                                <li style="margin-bottom: 4px;"><strong>Sudah Termasuk:</strong> Mobil, Driver, &amp; BBM (12 Jam).</li>
+                                <li style="margin-bottom: 4px;"><strong>Belum Termasuk:</strong> Parkir, Tol, Tiket Wisata, Makan Driver.</li>
+                                <li style="margin-bottom: 4px;"><strong>Rute:</strong> Fleksibel &amp; searah tujuan paket.</li>
+                                <li style="margin-bottom: 4px;"><strong>Surcharge (+Rp 50rb):</strong> Rute Sunrise / Pantai Gunungkidul.</li>
+                                <li style="margin-bottom: 0;">Harga fluktuatif selama musim liburan (High Season).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-select-car" style="width: 100%; font-size: 0.85rem; padding: 10px; margin-top: auto;">Pilih & Lanjutkan</button>
+                </div>
+
+                <!-- Mobil 2: Avanza / Xenia FWD -->
+                <div class="modal-car-card" data-car="Avanza / Xenia FWD">
+                    <div class="modal-car-image">
+                        <img src="images/toyota_avanza_fwd.webp" alt="Avanza / Xenia FWD">
+                    </div>
+                    <div class="modal-car-info">
+                        <h4>Avanza / Xenia FWD</h4>
+                        <span class="capacity">Kapasitas: 1-6 Pax</span>
+                        <div class="price">Rp 650.000 <small>/ 12 Jam</small></div>
+                        <div class="modal-car-terms" style="text-align: left; border-top: 1px dashed var(--border-color); padding-top: 10px; margin: 8px 0 15px 0; width: 100%; box-sizing: border-box;">
+                            <ul style="padding-left: 15px; margin: 0; font-size: 0.725rem; color: var(--text-muted); line-height: 1.5; list-style-type: disc;">
+                                <li style="margin-bottom: 4px;"><strong>Sudah Termasuk:</strong> Mobil, Driver, &amp; BBM (12 Jam).</li>
+                                <li style="margin-bottom: 4px;"><strong>Belum Termasuk:</strong> Parkir, Tol, Tiket Wisata, Makan Driver.</li>
+                                <li style="margin-bottom: 4px;"><strong>Rute:</strong> Fleksibel &amp; searah tujuan paket.</li>
+                                <li style="margin-bottom: 4px;"><strong>Surcharge (+Rp 50rb):</strong> Rute Sunrise / Pantai Gunungkidul.</li>
+                                <li style="margin-bottom: 0;">Harga fluktuatif selama musim liburan (High Season).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-select-car" style="width: 100%; font-size: 0.85rem; padding: 10px; margin-top: auto;">Pilih & Lanjutkan</button>
+                </div>
+
+                <!-- Mobil 3: Innova Reborn -->
+                <div class="modal-car-card" data-car="Innova Reborn">
+                    <div class="modal-car-image">
+                        <img src="images/innova_reborn.webp" alt="Innova Reborn">
+                    </div>
+                    <div class="modal-car-info">
+                        <h4>Innova Reborn</h4>
+                        <span class="capacity">Kapasitas: 1-7 Pax</span>
+                        <div class="price">Rp 800.000 <small>/ 12 Jam</small></div>
+                        <div class="modal-car-terms" style="text-align: left; border-top: 1px dashed var(--border-color); padding-top: 10px; margin: 8px 0 15px 0; width: 100%; box-sizing: border-box;">
+                            <ul style="padding-left: 15px; margin: 0; font-size: 0.725rem; color: var(--text-muted); line-height: 1.5; list-style-type: disc;">
+                                <li style="margin-bottom: 4px;"><strong>Sudah Termasuk:</strong> Mobil, Driver, &amp; BBM (12 Jam).</li>
+                                <li style="margin-bottom: 4px;"><strong>Belum Termasuk:</strong> Parkir, Tol, Tiket Wisata, Makan Driver.</li>
+                                <li style="margin-bottom: 4px;"><strong>Rute:</strong> Fleksibel &amp; searah tujuan paket.</li>
+                                <li style="margin-bottom: 4px;"><strong>Surcharge (+Rp 50rb):</strong> Rute Sunrise / Pantai Gunungkidul.</li>
+                                <li style="margin-bottom: 0;">Harga fluktuatif selama musim liburan (High Season).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-select-car" style="width: 100%; font-size: 0.85rem; padding: 10px; margin-top: auto;">Pilih & Lanjutkan</button>
+                </div>
+
+                <!-- Mobil 4: Hiace Commuter -->
+                <div class="modal-car-card" data-car="Hiace Commuter">
+                    <div class="modal-car-image">
+                        <img src="images/toyota_hiace_commuter.webp" alt="Hiace Commuter">
+                    </div>
+                    <div class="modal-car-info">
+                        <h4>Hiace Commuter</h4>
+                        <span class="capacity">Kapasitas: 1-14 Pax</span>
+                        <div class="price">Rp 1.300.000 <small>/ 12 Jam</small></div>
+                        <div class="modal-car-terms" style="text-align: left; border-top: 1px dashed var(--border-color); padding-top: 10px; margin: 8px 0 15px 0; width: 100%; box-sizing: border-box;">
+                            <ul style="padding-left: 15px; margin: 0; font-size: 0.725rem; color: var(--text-muted); line-height: 1.5; list-style-type: disc;">
+                                <li style="margin-bottom: 4px;"><strong>Sudah Termasuk:</strong> Mobil, Driver, &amp; BBM (12 Jam).</li>
+                                <li style="margin-bottom: 4px;"><strong>Belum Termasuk:</strong> Parkir, Tol, Tiket Wisata, Makan Driver.</li>
+                                <li style="margin-bottom: 4px;"><strong>Rute:</strong> Fleksibel &amp; searah tujuan paket.</li>
+                                <li style="margin-bottom: 4px;"><strong>Surcharge (+Rp 50rb):</strong> Rute Sunrise / Pantai Gunungkidul.</li>
+                                <li style="margin-bottom: 0;">Harga fluktuatif selama musim liburan (High Season).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-select-car" style="width: 100%; font-size: 0.85rem; padding: 10px; margin-top: auto;">Pilih & Lanjutkan</button>
+                </div>
+
+                <!-- Mobil 5: Hiace Premio -->
+                <div class="modal-car-card" data-car="Hiace Premio">
+                    <div class="modal-car-image">
+                        <img src="images/toyota_hiace_premio.webp" alt="Hiace Premio">
+                    </div>
+                    <div class="modal-car-info">
+                        <h4>Hiace Premio</h4>
+                        <span class="capacity">Kapasitas: 1-14 Pax</span>
+                        <div class="price">Rp 1.500.000 <small>/ 12 Jam</small></div>
+                        <div class="modal-car-terms" style="text-align: left; border-top: 1px dashed var(--border-color); padding-top: 10px; margin: 8px 0 15px 0; width: 100%; box-sizing: border-box;">
+                            <ul style="padding-left: 15px; margin: 0; font-size: 0.725rem; color: var(--text-muted); line-height: 1.5; list-style-type: disc;">
+                                <li style="margin-bottom: 4px;"><strong>Sudah Termasuk:</strong> Mobil, Driver, &amp; BBM (12 Jam).</li>
+                                <li style="margin-bottom: 4px;"><strong>Belum Termasuk:</strong> Parkir, Tol, Tiket Wisata, Makan Driver.</li>
+                                <li style="margin-bottom: 4px;"><strong>Rute:</strong> Fleksibel &amp; searah tujuan paket.</li>
+                                <li style="margin-bottom: 4px;"><strong>Surcharge (+Rp 50rb):</strong> Rute Sunrise / Pantai Gunungkidul.</li>
+                                <li style="margin-bottom: 0;">Harga fluktuatif selama musim liburan (High Season).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-select-car" style="width: 100%; font-size: 0.85rem; padding: 10px; margin-top: auto;">Pilih & Lanjutkan</button>
+                </div>
+
+                <!-- Mobil Kustom: Pilih Mobil Lain -->
+                <div class="modal-car-card" data-car="Lainnya">
+                    <div class="modal-car-image">
+                        <img src="images/toyota_innova_zenix.webp" alt="Pilih Mobil Lain">
+                    </div>
+                    <div class="modal-car-info">
+                        <h4>Pilih Mobil Lain (Kustom)</h4>
+                        <span class="capacity">Brio, Xpander, Fortuner, Alphard, dll.</span>
+                        <div class="price" style="font-size: 1.1rem; font-weight: 700; border-top: 1px dashed var(--border-color); padding-top: 10px; margin-bottom: 12px; color: var(--accent);">Tarif Katalog <small style="color: var(--text-muted); font-size: 0.75rem; font-weight: normal;">/ Sesuai Unit</small></div>
+                        <div class="modal-car-terms" style="text-align: left; border-top: 1px dashed var(--border-color); padding-top: 10px; margin: 8px 0 15px 0; width: 100%; box-sizing: border-box;">
+                            <ul style="padding-left: 15px; margin: 0; font-size: 0.725rem; color: var(--text-muted); line-height: 1.5; list-style-type: disc;">
+                                <li style="margin-bottom: 4px;"><strong>Unit Kustom:</strong> Tersedia unit SUV, Premium, City Car, Elf, &amp; Bus.</li>
+                                <li style="margin-bottom: 4px;"><strong>Include:</strong> Driver &amp; BBM (12 Jam).</li>
+                                <li style="margin-bottom: 4px;"><strong>Tarif:</strong> Mengacu pada tarif normal rental mobil dengan driver.</li>
+                                <li style="margin-bottom: 0;">Hubungi kami untuk penyesuaian unit rombongan Anda.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-select-car" style="width: 100%; font-size: 0.85rem; padding: 10px; margin-top: auto; background-color: var(--accent); border-color: var(--accent); color: white;">Lihat Katalog</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ===== TAB SWITCHING =====
+            const tabBtns = document.querySelectorAll('.wisata-tab-btn');
+            const tabContents = document.querySelectorAll('.wisata-tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetTab = btn.getAttribute('data-tab');
+                    
+                    // Remove active from all
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Activate selected
+                    btn.classList.add('active');
+                    const targetContent = document.getElementById(`tab-${targetTab}`);
+                    if (targetContent) targetContent.classList.add('active');
+
+                    // Scroll to top of tabs area smoothly
+                    document.querySelector('.wisata-tab-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // Handle URL hash to open specific tab
+            const urlParams = new URLSearchParams(window.location.search);
+            const tabParam = urlParams.get('tab');
+            if (tabParam) {
+                const targetBtn = document.querySelector(`.wisata-tab-btn[data-tab="${tabParam}"]`);
+                if (targetBtn) targetBtn.click();
+            }
+
+            // ===== EXISTING 1-DAY MODAL LOGIC =====
+            const modal = document.getElementById('carSelectModal');
+            const kustomModal = document.getElementById('kustomRouteModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const closeKustomModalBtn = document.getElementById('closeKustomModalBtn');
+            const modalTourName = document.getElementById('modalTourName');
+            let selectedWisata = '';
+
+            window.tourCarRatesByPackage = {
+                'default': {
+                    'Avanza / Xenia Facelift': 600000,
+                    'Avanza / Xenia FWD': 650000,
+                    'Innova Reborn': 800000,
+                    'Hiace Commuter': 1300000,
+                    'Hiace Premio': 1500000
+                },
+                'Paket A': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1300000, 'Hiace Premio': 1500000 },
+                'Paket B': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1300000, 'Hiace Premio': 1500000 },
+                'Paket C': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1300000, 'Hiace Premio': 1500000 },
+                'Paket D': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1300000, 'Hiace Premio': 1500000 },
+                'Paket E': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1300000, 'Hiace Premio': 1500000 },
+                'Paket F': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1350000, 'Hiace Premio': 1550000 },
+                'Paket G': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1350000, 'Hiace Premio': 1550000 },
+                'Paket H': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1350000, 'Hiace Premio': 1550000 },
+                'Paket I': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1350000, 'Hiace Premio': 1550000 },
+                'Paket J': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1350000, 'Hiace Premio': 1550000 },
+                'Paket K': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1350000, 'Hiace Premio': 1550000 },
+                'Paket Dieng': { 'Avanza / Xenia Facelift': 800000, 'Avanza / Xenia FWD': 900000, 'Innova Reborn': 1000000, 'Hiace Commuter': 1500000, 'Hiace Premio': 1700000 }
+            };
+
+            const formatRupiah = (number) => {
+                return new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(number).replace('IDR', 'Rp');
+            };
+
+            // Intercept booking buttons on 1-day tab
+            const tourButtons = document.querySelectorAll('#tab-1day a[href^="pesan-wisata.html?"][href*="wisata="]');
+            tourButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    const hrefUrl = new URL(btn.href, window.location.origin);
+                    selectedWisata = hrefUrl.searchParams.get('wisata');
+                    
+                    if (selectedWisata) {
+                        if (selectedWisata === 'Kustom Rute') {
+                            kustomModal.showModal();
+                        } else {
+                            modalTourName.textContent = selectedWisata;
+                            
+                            // Dynamic pricing update in modal cards
+                            const rates = window.tourCarRatesByPackage[selectedWisata] || window.tourCarRatesByPackage['default'];
+                            const carCards = modal.querySelectorAll('.modal-car-card');
+                            carCards.forEach(card => {
+                                const carName = card.getAttribute('data-car');
+                                const priceEl = card.querySelector('.price');
+                                if (priceEl && rates[carName]) {
+                                    priceEl.innerHTML = `${formatRupiah(rates[carName])} <small>/ 12 Jam</small>`;
+                                }
+                            });
+                            
+                            modal.showModal();
+                        }
+                    }
+                });
+            });
+
+            // Close buttons
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    modal.close();
+                });
+            }
+            if (closeKustomModalBtn) {
+                closeKustomModalBtn.addEventListener('click', () => {
+                    kustomModal.close();
+                });
+            }
+
+            // Close modal when clicking outside content (on backdrop)
+            const handleBackdropClick = (dialogEl) => {
+                if (!dialogEl) return;
+                dialogEl.addEventListener('click', (e) => {
+                    const rect = dialogEl.getBoundingClientRect();
+                    const isInDialog = (
+                        e.clientX >= rect.left &&
+                        e.clientX <= rect.right &&
+                        e.clientY >= rect.top &&
+                        e.clientY <= rect.bottom
+                    );
+                    if (!isInDialog) {
+                        dialogEl.close();
+                    }
+                });
+            };
+            handleBackdropClick(modal);
+            handleBackdropClick(kustomModal);
+
+            // Handle car selection inside modal
+            const carCards = document.querySelectorAll('.modal-car-card');
+            carCards.forEach(card => {
+                const carName = card.getAttribute('data-car');
+                const selectBtn = card.querySelector('.btn-select-car');
+                
+                const handleSelect = () => {
+                    if (window.isMultiDayOrder) {
+                        // MULTI-DAY FLOW: Car selected -> Redirect to Form
+                        const modal = document.getElementById('carSelectModal');
+                        if (modal && typeof modal.close === 'function') modal.close();
+                        
+                        // Use the dynamically computed total price for this specific car
+                        // If it's the "Lainnya" custom car, redirect to mobil.html
+                        if (carName === 'Lainnya') {
+                            const targetUrl = `mobil.html?service=denganSopir&wisata=MultiDay&days=${window.currentMultiDays}&paket=${encodeURIComponent(window.selectedPackagesList.join(' | '))}`;
+                            window.location.href = targetUrl;
+                        } else {
+                            const targetUrl = `pesan-multiday.html?days=${window.currentMultiDays}&mobil=${encodeURIComponent(carName)}&paket=${encodeURIComponent(window.selectedPackagesList.join(' | '))}`;
+                            window.location.href = targetUrl;
+                        }
+                    } else if (selectedWisata && carName) {
+                        // 1-DAY FLOW
+                        if (carName === 'Lainnya') {
+                            const targetUrl = `mobil.html?service=denganSopir&wisata=${encodeURIComponent(selectedWisata)}`;
+                            window.location.href = targetUrl;
+                        } else {
+                            const targetUrl = `pesan-wisata.html?wisata=${encodeURIComponent(selectedWisata)}&mobil=${encodeURIComponent(carName)}`;
+                            window.location.href = targetUrl;
+                        }
+                    }
+                };
+
+                if (selectBtn) selectBtn.addEventListener('click', handleSelect);
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', (e) => {
+                    if (e.target !== selectBtn) {
+                        handleSelect();
+                    }
+                });
+            });
+
+            // Handle custom route form submit
+            const kustomForm = document.getElementById('kustomRouteForm');
+            if (kustomForm) {
+                kustomForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const d1 = document.getElementById('dest1').value.trim();
+                    const d2 = document.getElementById('dest2').value.trim();
+                    const d3 = document.getElementById('dest3').value.trim();
+                    const d4 = document.getElementById('dest4').value.trim();
+                    
+                    let destinations = [d1];
+                    if (d2) destinations.push(d2);
+                    if (d3) destinations.push(d3);
+                    if (d4) destinations.push(d4);
+                    
+                    const combinedRoute = destinations.join(', ');
+                    
+                    // Redirect with combined route param to mobil.html
+                    const targetUrl = `mobil.html?service=denganSopir&wisata=Kustom+Rute&rute=${encodeURIComponent(combinedRoute)}`;
+                    window.location.href = targetUrl;
+                });
+            }
+        });
+    </script>
+
+    <!-- Dialog Modal Pilih Kendaraan Wisuda/Wedding -->
+    <dialog id="carSelectModalSpecial" class="car-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0;">Pilih Kendaraan - <span id="modalSpecialName" style="color: var(--accent);">Nama Paket</span></h3>
+                <button class="close-modal-btn" id="closeSpecialModalBtn" aria-label="Tutup Modal">&times;</button>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.875rem; line-height: 1.5; margin: 0 0 20px 0;">
+                Silakan pilih tipe mobil yang sesuai dengan kebutuhan kapasitas dan kenyamanan rombongan Anda (Harga Sewa + Sopir 12 Jam).
+            </p>
+            
+            <div class="modal-car-grid" id="specialCarGrid">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL MULTI-DAY CATALOG -->
+    <div class="modal-overlay" id="multiDayModal">
+        <div class="modal-content" style="max-width: 900px; padding: 0; display: flex; flex-direction: column; max-height: 95vh;">
+            <div style="padding: 20px 20px 10px; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: #fff; z-index: 10; border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;">
+                <span class="modal-close" id="closeMultiDayModalBtn" style="top: 15px;">&times;</span>
+                <h3 class="modal-title" style="margin-bottom: 5px;" id="modalTitle">Pilih Paket Wisata</h3>
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin: 0;">Silakan pilih maksimal <strong id="maxDaysDisplay">0</strong> paket untuk perjalanan Anda.</p>
+            </div>
+            
+            <div style="padding: 20px; overflow-y: auto; flex-grow: 1; background: #f8fafc;" id="multiDayGridContainer">
+                <!-- Cloned grid will be placed here -->
+            </div>
+
+            <div class="modal-footer">
+                <div class="modal-total" id="totalPriceDisplay">Total: Rp 0</div>
+                <button id="btnPesanWA" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 14px;">Konfirmasi Pesanan via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Script -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Global Multi-Day Variables
+            window.isMultiDayOrder = false;
+            window.currentMultiDays = 0;
+            window.multiDaySelectedCar = "";
+            window.multiDayTotalPrice = 0;
+            window.selectedPackagesList = [];
+
+            const modalMultiDay = document.getElementById('multiDayModal');
+            const closeMultiDayBtn = document.getElementById('closeMultiDayModalBtn');
+            const btnPesanWA = document.getElementById('btnPesanWA');
+            const maxDaysDisplay = document.getElementById('maxDaysDisplay');
+            const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+            const gridContainer = document.getElementById('multiDayGridContainer');
+            
+            let gridCloned = false;
+
+            const formatRupiah = (number) => {
+                return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
+            };
+
+            // 1. Open Multi-Day Catalog from Multi-Day Button
+            document.querySelectorAll('.btn-pesan-multiday').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.isMultiDayOrder = true;
+                    window.currentMultiDays = parseInt(e.target.getAttribute('data-days'));
+                    window.selectedPackagesList = []; // Reset selections
+                    
+                    maxDaysDisplay.textContent = window.currentMultiDays;
+                    totalPriceDisplay.textContent = `Pilih ${window.currentMultiDays} paket wisata untuk melanjutkan.`;
+                    
+                    // Clone 1-day grid if not already done
+                    if (!gridCloned) {
+                        const originalGrid = document.querySelector('#tab-1day .wisata-grid');
+                        if (originalGrid) {
+                            const cloned = originalGrid.cloneNode(true);
+                            
+                            // Modify cloned cards
+                            cloned.querySelectorAll('.tour-card').forEach(card => {
+                                card.classList.add('selectable-card');
+                                
+                                // Add checkmark overlay
+                                const overlay = document.createElement('div');
+                                overlay.className = 'selectable-card-overlay';
+                                overlay.innerHTML = '✓';
+                                card.appendChild(overlay);
+                                
+                                // Hide the original "Pesan" buttons on the cloned cards
+                                const actionBtn = card.querySelector('.btn-secondary');
+                                if (actionBtn) actionBtn.style.display = 'none';
+                                
+                                // Extract exact package name (e.g. "Paket F") from the button's href URL
+                                let packageName = 'Paket Kustom';
+                                if (actionBtn && actionBtn.href) {
+                                    const url = new URL(actionBtn.href, window.location.origin);
+                                    packageName = url.searchParams.get('wisata') || packageName;
+                                }
+                                
+                                card.addEventListener('click', () => {
+                                    const isSelected = card.classList.contains('selected');
+                                    
+                                    if (isSelected) {
+                                        card.classList.remove('selected');
+                                        window.selectedPackagesList = window.selectedPackagesList.filter(p => p !== packageName);
+                                    } else {
+                                        if (window.selectedPackagesList.length >= window.currentMultiDays) {
+                                            alert(`Maksimal memilih ${window.currentMultiDays} paket.`);
+                                            return;
+                                        }
+                                        card.classList.add('selected');
+                                        window.selectedPackagesList.push(packageName);
+                                    }
+                                });
+                            });
+                            
+                            gridContainer.appendChild(cloned);
+                            gridCloned = true;
+                        }
+                    } else {
+                        // Reset selection visually
+                        document.querySelectorAll('.selectable-card').forEach(c => c.classList.remove('selected'));
+                    }
+                    
+                    modalMultiDay.classList.add('active');
+                });
+            });
+
+            // Make sure if car modal is closed manually, we reset flag
+            const closeCarModalBtn = document.getElementById('closeModalBtn');
+            if (closeCarModalBtn) {
+                closeCarModalBtn.addEventListener('click', () => {
+                    window.isMultiDayOrder = false;
+                });
+            }
+
+            // Close MultiDay Catalog
+            closeMultiDayBtn.addEventListener('click', () => {
+                modalMultiDay.classList.remove('active');
+                window.isMultiDayOrder = false;
+            });
+
+            // 2. Proceed to Car Selection (Called after packages are selected)
+            btnPesanWA.textContent = "Lanjutkan Pilih Kendaraan";
+            btnPesanWA.addEventListener('click', () => {
+                if (window.selectedPackagesList.length !== window.currentMultiDays) {
+                    alert(`Silakan pilih tepat ${window.currentMultiDays} paket wisata terlebih dahulu.`);
+                    return;
+                }
+                
+                // Close package modal
+                modalMultiDay.classList.remove('active');
+                
+                // Open car modal
+                const carModal = document.getElementById('carSelectModal');
+                const modalTourName = document.getElementById('modalTourName');
+                
+                if (carModal && modalTourName) {
+                    modalTourName.textContent = `${window.currentMultiDays} Day Service`;
+                    
+                    // Update car prices dynamically by summing up the selected packages
+                    const carCards = carModal.querySelectorAll('.modal-car-card');
+                    carCards.forEach(card => {
+                        const carName = card.getAttribute('data-car');
+                        const priceEl = card.querySelector('.price');
+                        
+                        if (priceEl) {
+                            let totalPrice = 0;
+                            let isValid = true;
+                            
+                            // Calculate total price based on selected packages
+                            window.selectedPackagesList.forEach(pkg => {
+                                const packageRates = window.tourCarRatesByPackage[pkg] || window.tourCarRatesByPackage['default'];
+                                if (packageRates[carName]) {
+                                    totalPrice += packageRates[carName];
+                                } else if (window.tourCarRatesByPackage['default'][carName]) {
+                                    totalPrice += window.tourCarRatesByPackage['default'][carName];
+                                } else {
+                                    isValid = false; // Fallback if no rate exists
+                                }
+                            });
+                            
+                            if (isValid && totalPrice > 0) {
+                                priceEl.innerHTML = `${formatRupiah(totalPrice)} <small>/ ${window.currentMultiDays} Hari</small>`;
+                            }
+                        }
+                    });
+                    
+                    carModal.showModal();
+                }
+            });
+
+            // ===== SPECIAL MODAL (WISUDA / WEDDING) =====
+            const specialModal = document.getElementById('carSelectModalSpecial');
+            const closeSpecialModalBtn = document.getElementById('closeSpecialModalBtn');
+            const modalSpecialName = document.getElementById('modalSpecialName');
+            const specialCarGrid = document.getElementById('specialCarGrid');
+            let currentSpecialPaket = '';
+
+            const specialCars = [
+                { name: 'Honda Brio Matic', sopirName: 'Honda Brio (Sopir)', capacity: '1-4 Pax', price: 450000, img: 'honda_brio.webp' },
+                { name: 'Avanza / Xenia Facelift', sopirName: 'Toyota Avanza Facelift (Sopir)', capacity: '1-6 Pax', price: 550000, img: 'toyota_avanza_facelift.webp' },
+                { name: 'Avanza / Xenia FWD', sopirName: 'Toyota Avanza FWD (Sopir)', capacity: '1-6 Pax', price: 650000, img: 'toyota_avanza_fwd.webp' },
+                { name: 'Xpander', sopirName: 'Mitsubishi Xpander (Sopir)', capacity: '1-6 Pax', price: 700000, img: 'mitsubishi_xpander.webp' },
+                { name: 'Innova Reborn', sopirName: 'Toyota Innova Reborn 2026 (Sopir)', capacity: '1-7 Pax', price: 750000, img: 'innova_reborn.webp' },
+                { name: 'Innova Zenix', sopirName: 'Toyota Innova Zenix 2026 (Sopir)', capacity: '1-7 Pax', price: 1000000, img: 'toyota_innova_zenix.webp' },
+                { name: 'Fortuner', sopirName: 'Toyota Fortuner 2026 (Sopir)', capacity: '1-7 Pax', price: 1500000, img: 'toyota_fortuner.webp' },
+                { name: 'Pajero', sopirName: 'Mitsubishi Pajero 2026 (Sopir)', capacity: '1-7 Pax', price: 1500000, img: 'mitsubishi_pajero.webp' },
+                { name: 'Alphard Facelift', sopirName: 'Toyota Alphard Facelift 2023 (Sopir)', capacity: '1-7 Pax', price: 2899000, img: 'toyota_alphard.webp' },
+                { name: 'Alphard HEV', sopirName: 'Toyota Alphard HEV 2026 (Sopir)', capacity: '1-7 Pax', price: 3899999, img: 'toyota_alphard_hev.webp' },
+                { name: 'Hiace Commuter', sopirName: 'Toyota Hiace Commuter (Sopir)', capacity: '1-14 Pax', price: 1100000, img: 'toyota_hiace_commuter.webp' },
+                { name: 'Hiace Premio', sopirName: 'Toyota Hiace Premio (Sopir)', capacity: '1-14 Pax', price: 1400000, img: 'toyota_hiace_premio.webp' },
+                { name: 'Elf Long', sopirName: 'Elf Long 19 Seat (Sopir)', capacity: '1-19 Pax', price: 1500000, img: 'elf_long.webp' }
+            ];
+
+            const renderSpecialCars = () => {
+                specialCarGrid.innerHTML = '';
+                specialCars.forEach(car => {
+                    const card = document.createElement('div');
+                    card.className = 'modal-car-card';
+                    card.setAttribute('data-car', car.name);
+                    
+                    card.innerHTML = `
+                        <div class="modal-car-image">
+                            <img src="images/${car.img}" alt="${car.name}" style="width: 100%; height: 160px; object-fit: contain;">
+                        </div>
+                        <div class="modal-car-info">
+                            <h4>${car.name}</h4>
+                            <span class="capacity">Kapasitas: ${car.capacity}</span>
+                            <div class="price">${formatRupiah(car.price)} <small>/ 12 Jam</small></div>
+                            <div class="modal-car-terms" style="text-align: left; border-top: 1px dashed var(--border-color); padding-top: 10px; margin: 8px 0 15px 0; width: 100%; box-sizing: border-box;">
+                                <ul style="padding-left: 15px; margin: 0; font-size: 0.725rem; color: var(--text-muted); line-height: 1.5; list-style-type: disc;">
+                                    <li style="margin-bottom: 4px;"><strong>Sudah Termasuk:</strong> Mobil, Driver, &amp; BBM (12 Jam).</li>
+                                    <li style="margin-bottom: 4px;"><strong>Belum Termasuk:</strong> Parkir, Tol, Makan Driver.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-select-special-car" style="width: 100%; font-size: 0.85rem; padding: 10px; margin-top: auto;">Pilih & Lanjutkan</button>
+                    `;
+                    
+                    const selectBtn = card.querySelector('.btn-select-special-car');
+                    const handleSelect = () => {
+                        specialModal.close();
+                        const targetUrl = currentSpecialPaket === 'Wisuda' 
+                            ? 'pesan-wisuda.html?mobil=' + encodeURIComponent(car.name)
+                            : 'pesan-wedding.html?mobil=' + encodeURIComponent(car.name);
+                        window.location.href = targetUrl;
+                    };
+                    
+                    selectBtn.addEventListener('click', handleSelect);
+                    card.style.cursor = 'pointer';
+                    card.addEventListener('click', (e) => {
+                        if (e.target !== selectBtn) handleSelect();
+                    });
+                    
+                    specialCarGrid.appendChild(card);
+                });
+            };
+
+            document.querySelectorAll('.btn-pesan-special').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentSpecialPaket = btn.getAttribute('data-paket');
+                    modalSpecialName.textContent = 'Paket ' + currentSpecialPaket;
+                    renderSpecialCars();
+                    specialModal.showModal();
+                });
+            });
+
+            if (closeSpecialModalBtn) {
+                closeSpecialModalBtn.addEventListener('click', () => {
+                    specialModal.close();
+                });
+            }
+            
+            if (specialModal) {
+                specialModal.addEventListener('click', (e) => {
+                    const rect = specialModal.getBoundingClientRect();
+                    const isInDialog = (
+                        e.clientX >= rect.left &&
+                        e.clientX <= rect.right &&
+                        e.clientY >= rect.top &&
+                        e.clientY <= rect.bottom
+                    );
+                    if (!isInDialog) specialModal.close();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

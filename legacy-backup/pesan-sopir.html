@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulir pemesanan sewa mobil dengan sopir (include driver & BBM) di Yogyakarta. Reservasi cepat, hitung tarif instan, dan hubungi WhatsApp admin.">
+    <meta name="keywords" content="booking rental mobil dengan sopir, sewa mobil driver bbm, sewa mobil harian jogja, rental mobil aksara transport">
+    <meta name="author" content="Aksara Transport">
+    <link rel="canonical" href="https://www.aksaratransport.com/pesan-sopir.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aksaratransport.com/pesan-sopir.html">
+    <meta property="og:title" content="Form Pemesanan - Sewa Mobil dengan Sopir | Aksara Transport">
+    <meta property="og:description" content="Pesan rental mobil harian dengan driver + BBM. Hitung tarif otomatis dan kirim reservasi langsung ke WhatsApp admin.">
+    <meta property="og:image" content="images/hero_car.webp">
+
+    <title>Form Pemesanan - Sewa Mobil dengan Sopir | Aksara Transport</title>
+    
+    <!-- Core Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                Aksara<span>Transport</span>
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="mobil.html" class="nav-link active">Pilihan Mobil</a></li>
+                    <li><a href="wisata.html" class="nav-link">Paket Wisata</a></li>
+                    <li><a href="artikel.html" class="nav-link">Tips &amp; Berita</a></li>
+                    <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta">
+                <a href="kontak.html" class="btn btn-primary">Pesan Sekarang</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- BREADCRUMB / HERO SUB -->
+        <section class="hero" style="padding: 120px 0 50px 0; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white;">
+            <div class="container">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: #ffffff;">Form Pemesanan - Sewa Mobil dengan Sopir</h1>
+                <p style="color: #94a3b8; max-width: 600px; margin: 0 auto; font-size: 0.95rem;">Lengkapi formulir sewa di bawah untuk pemesanan armada mobil dengan driver + BBM. Rincian tarif pemakaian Anda akan dihitung secara instan.</p>
+            </div>
+        </section>
+
+        <!-- MAIN LAYOUT SECTION -->
+        <section class="section-padding" style="background-color: #f8fafc; padding: 40px 0 80px 0;">
+            <div class="container">
+                <div class="contact-layout">
+                    
+                    <!-- Left: Booking Form Card -->
+                    <div class="contact-card">
+                        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="15" y2="17"></line><line x1="9" y1="5" x2="9" y2="5"></line><line x1="15" y1="5" x2="15" y2="5"></line></svg>
+                            Formulir Sewa Mobil + Sopir
+                        </h2>
+                        
+                        <form id="bookingSopirForm">
+                            <!-- Nama Lengkap -->
+                            <div class="form-row">
+                                <label for="sewaNama">Nama Lengkap</label>
+                                <input type="text" id="sewaNama" placeholder="Contoh: Budi Santoso" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                            </div>
+
+                            <!-- WhatsApp 1 & 2 -->
+                            <div class="form-grid-2">
+                                <div class="form-row">
+                                    <label for="sewaTelepon">Nomor WhatsApp Aktif 1 (Utama)</label>
+                                    <input type="tel" id="sewaTelepon" placeholder="Contoh: 081234567890" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="sewaTeleponAlt">Nomor WhatsApp Aktif 2 (Cadangan)</label>
+                                    <input type="tel" id="sewaTeleponAlt" placeholder="Contoh: 089876543210" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                            </div>
+
+                            <!-- Pilihan Mobil & Paket Waktu -->
+                            <div class="form-grid-2">
+                                <div class="form-row">
+                                    <label for="sewaMobil">Pilihan Armada Mobil</label>
+                                    <select id="sewaMobil" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                        <option value="Honda Brio (Sopir)" selected>Honda Brio (Sopir)</option>
+                                        <option value="Toyota Avanza Facelift (Sopir)">Toyota Avanza Facelift (Sopir)</option>
+                                        <option value="Toyota Avanza FWD (Sopir)">Toyota Avanza FWD (Sopir)</option>
+                                        <option value="Mitsubishi Xpander (Sopir)">Mitsubishi Xpander (Sopir)</option>
+                                        <option value="Toyota Innova Reborn 2026 (Sopir)">Toyota Innova Reborn 2026 (Sopir)</option>
+                                        <option value="Toyota Innova Zenix 2026 (Sopir)">Toyota Innova Zenix 2026 (Sopir)</option>
+                                        <option value="Mitsubishi Pajero 2026 (Sopir)">Mitsubishi Pajero 2026 (Sopir)</option>
+                                        <option value="Toyota Fortuner 2026 (Sopir)">Toyota Fortuner 2026 (Sopir)</option>
+                                        <option value="Toyota Alphard Facelift 2023 (Sopir)">Toyota Alphard Facelift 2023 (Sopir)</option>
+                                        <option value="Toyota Alphard HEV 2026 (Sopir)">Toyota Alphard HEV 2026 (Sopir)</option>
+                                        <option value="Toyota Hiace Commuter (Sopir)">Toyota Hiace Commuter (Sopir)</option>
+                                        <option value="Toyota Hiace Premio (Sopir)">Toyota Hiace Premio (Sopir)</option>
+                                        <option value="Elf Long 19 Seat (Sopir)">Elf Long 19 Seat (Sopir)</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="sewaPaket">Pilihan Paket Waktu</label>
+                                    <select id="sewaPaket" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                        <!-- Dynamically populated based on selected car -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Penjemputan Tanggal, Jam, & Durasi -->
+                            <div class="form-grid-3" style="display: grid; grid-template-columns: 1.2fr 0.8fr 1fr; gap: 15px;">
+                                <div class="form-row">
+                                    <label for="sewaMulai">Tanggal Mulai Penjemputan</label>
+                                    <input type="date" id="sewaMulai" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="sewaMulaiTime">Jam Penjemputan</label>
+                                    <input type="time" id="sewaMulaiTime" required value="08:00" style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="sewaDurasi">Durasi Sewa (Hari)</label>
+                                    <input type="number" id="sewaDurasi" min="1" value="1" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                            </div>
+
+                            <!-- Tanggal & Jam Selesai Sewa -->
+                            <div class="form-row" style="margin-top: 15px;">
+                                <label id="sewaSelesaiLabel" for="sewaSelesai">Tanggal &amp; Jam Selesai Sewa (Otomatis)</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="date" id="sewaSelesai" readonly style="flex: 1; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; background-color: #f1f5f9; cursor: not-allowed; color: #64748b;">
+                                    <input type="time" id="sewaSelesaiTime" style="width: 110px; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600;">
+                                </div>
+                            </div>
+
+                            <!-- Rencana Wilayah / Kota Pemakaian Mobil -->
+                            <div class="form-row">
+                                <label for="sewaTujuan">Rencana Wilayah / Kota Pemakaian Mobil</label>
+                                <input type="text" id="sewaTujuan" placeholder="Contoh: Dalam kota Jogja saja, atau Candi Borobudur, Solo, Semarang, dll" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                <div id="warningLuarKota" style="display: none; background-color: #fffbeb; border: 1.5px solid #fef3c7; border-radius: var(--border-radius-sm); padding: 12px; margin-top: 8px; color: #b45309; font-size: 0.85rem; font-weight: 600; align-items: flex-start; gap: 8px;">
+                                    <span style="font-size: 1.1rem; line-height: 1;">⚠️</span>
+                                    <span>Pemakaian luar kota dikenakan tambahan biaya BBM &amp; Driver (luar kota wajib menggunakan paket Fullday). Silakan konfirmasi rincian biaya tambahan ke admin.</span>
+                                </div>
+                            </div>
+
+                            <!-- Alamat Penjemputan -->
+                            <div class="form-row">
+                                <label for="sewaPengantaranAlamat">Alamat Lengkap Lokasi Penjemputan</label>
+                                <textarea id="sewaPengantaranAlamat" rows="2" placeholder="Masukkan nama hotel, stasiun, bandara, rumah (atau paste link Google Maps)" required style="resize: vertical; font-family: inherit; font-size: 0.9rem; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); line-height: 1.5; width: 100%; box-sizing: border-box;"></textarea>
+                                <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 8px;">
+                                    <a href="#" id="btnMapAntar" style="font-size: 0.75rem; color: var(--accent); font-weight: 700; display: inline-flex; align-items: center; gap: 4px; text-decoration: underline;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                        Pilih di Google Maps
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Catatan Tambahan -->
+                            <div class="form-row">
+                                <label for="sewaCatatan">Catatan Tambahan (Opsional)</label>
+                                <textarea id="sewaCatatan" rows="3" placeholder="Contoh: Driver fasih bahasa Inggris, request baby car seat, rute wisata spesifik, dll."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div style="margin-top: 30px;">
+                                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem; height: 54px; border-radius: var(--border-radius-sm); font-weight: 700;">
+                                    Proses Pemesanan via WhatsApp
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
+                            </div>
+                            <div style="margin-top: 20px; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                                * Butuh sewa lepas kunci (tanpa supir)? Klik <a href="kontak.html?supir=lepas-kunci" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Form Booking Lepas Kunci</a> untuk memesan.
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Right: Pricing Sidebar & Notice -->
+                    <div class="sticky-sidebar">
+                        
+                        <!-- Price summary calculation -->
+                        <div class="rincian-biaya-box" style="background-color: var(--primary-light); color: #ffffff; border-radius: var(--border-radius-sm); padding: 24px; box-shadow: var(--shadow-md); margin-bottom: 24px;">
+                            <h3 style="font-size: 1.15rem; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Kalkulator Rincian Biaya</span>
+                                <span style="font-size: 0.75rem; background-color: var(--accent); color: #fff; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Dengan Sopir</span>
+                            </h3>
+                            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; color: rgba(255,255,255,0.85);">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Unit Mobil</span>
+                                    <strong id="calcMobilName">-</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Paket Waktu / Tarif</span>
+                                    <strong id="calcMobilPrice">Rp 0</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Durasi Sewa</span>
+                                    <strong id="calcDurasi">0 Hari</strong>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; border-top: 1px dashed rgba(255,255,255,0.15); padding-top: 12px; font-size: 1.15rem; color: #ffffff;">
+                                    <strong>Total Biaya Sewa</strong>
+                                    <strong style="color: var(--accent);" id="calcTotal">Rp 0</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 12px; font-size: 1.15rem; color: #ffffff;">
+                                    <span>Tanda Jadi / DP (30%)</span>
+                                    <strong style="color: #10b981;" id="calcDP">Rp 0</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment notice card -->
+                        <div class="notice-pelunasan-card" style="background-color: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: var(--border-radius-sm); padding: 20px; display: flex; align-items: flex-start; gap: 12px;">
+                            <div style="color: #0284c7; margin-top: 2px; flex-shrink: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            </div>
+                            <div>
+                                <h4 style="color: #0369a1; font-weight: 700; margin: 0 0 8px 0; font-size: 0.95rem;">
+                                    Notice Ketentuan Pembayaran:
+                                </h4>
+                                <ul style="font-size: 0.825rem; color: #075985; line-height: 1.6; margin: 0; padding-left: 16px; font-weight: 500; display: flex; flex-direction: column; gap: 6px;">
+                                    <li>Pembayaran **DP 30%** dilakukan setelah pesanan dikonfirmasi oleh admin sebagai tanda jadi mengunci jadwal.</li>
+                                    <li>Nomor rekening pembayaran DP resmi akan diberikan langsung oleh admin resmi Aksara Transport setelah armada Anda diverifikasi.</li>
+                                    <li>Pelunasan sisa pembayaran dilakukan langsung kepada driver setelah pelayanan hari terakhir sewa selesai.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo" style="color: #fff;">
+                    Aksara<span>Transport</span>
+                </a>
+                <p>Aksara Transport adalah penyedia jasa rental mobil terpercaya yang berkomitmen menyediakan armada terbaru berkualitas tinggi dengan harga yang terjangkau.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="mobil.html">Pilihan Mobil</a></li>
+                    <li><a href="wisata.html">Paket Wisata</a></li>
+                    <li><a href="artikel.html">Tips &amp; Berita</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan Sewa</h4>
+                <ul class="footer-links">
+                    <li><a href="mobil.html?filter=family">Sewa Mobil Keluarga</a></li>
+                    <li><a href="mobil.html?filter=premium">Sewa Mobil Premium</a></li>
+                    <li><a href="mobil.html?filter=suv">Sewa Mobil SUV</a></li>
+                    <li><a href="mobil.html?filter=city">Sewa City Car</a></li>
+                    <li><a href="tentang.html#syarat">Syarat Lepas Kunci</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak Layanan</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+62 812-3456-7890</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>info@aksaratransport.com</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Jl. Raya Utama No. 45, Kebayoran Baru, Jakarta Selatan</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <div class="footer-payments">
+                <h5>Metode Pembayaran</h5>
+                <div class="payment-icons">
+                    <span class="payment-badge">BCA</span>
+                    <span class="payment-badge">Mandiri</span>
+                    <span class="payment-badge">BRI</span>
+                    <span class="payment-badge">E-Wallet</span>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                <a href="#" class="social-icon" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 30px; font-size: 0.8rem; color: #64748b;">
+            &copy; 2026 Aksara Transport. Seluruh Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+    <!-- Map Picker Modal -->
+    <div id="mapPickerModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: #ffffff; border-radius: var(--border-radius-md); width: 90%; max-width: 700px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); position: relative; border: 1px solid var(--border-color);">
+            <!-- Modal Header -->
+            <div style="padding: 16px 20px; border-bottom: 1.5px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: #f8fafc;">
+                <h3 style="font-weight: 800; font-size: 1.1rem; color: var(--primary); margin: 0; display: flex; align-items: center; gap: 8px; font-family: var(--font-main);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Pilih Lokasi di Peta
+                </h3>
+                <button id="closeMapPickerBtn" style="background: none; border: none; font-size: 1.5rem; font-weight: 700; cursor: pointer; color: #64748b; line-height: 1; padding: 0;">&times;</button>
+            </div>
+            
+            <!-- Search Box -->
+            <div style="padding: 12px 20px; border-bottom: 1.5px solid var(--border-color); display: flex; gap: 8px; background: #ffffff;">
+                <input type="text" id="mapSearchInput" placeholder="Cari lokasi (contoh: Stasiun Tugu, Malioboro...)" style="flex: 1; padding: 10px 14px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-size: 0.9rem; font-weight: 600; font-family: var(--font-main);">
+                <button id="mapSearchBtn" style="background: var(--accent); color: white; border: none; padding: 10px 16px; border-radius: var(--border-radius-sm); font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 4px; font-family: var(--font-main);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    Cari
+                </button>
+            </div>
+            
+            <!-- Map Container -->
+            <div id="leafletMap" style="width: 100%; height: 350px; background: #e2e8f0; position: relative; z-index: 1;"></div>
+            
+            <!-- Modal Footer / Selection Info -->
+            <div style="padding: 16px 20px; border-top: 1.5px solid var(--border-color); background: #f8fafc; display: flex; flex-direction: column; gap: 12px;">
+                <div>
+                    <label style="font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px; font-family: var(--font-main);">Lokasi Terpilih</label>
+                    <div id="selectedAddressText" style="font-size: 0.9rem; font-weight: 600; color: var(--primary); line-height: 1.4; background: #ffffff; padding: 10px 14px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); min-height: 40px; display: flex; align-items: center; font-family: var(--font-main);">
+                        Silakan klik pada peta atau cari lokasi di atas...
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; font-family: var(--font-main);">
+                    <button id="cancelMapPickerBtn" style="background: #ffffff; border: 1.5px solid var(--border-color); color: #64748b; padding: 10px 18px; border-radius: var(--border-radius-sm); font-weight: 700; cursor: pointer;">Batal</button>
+                    <button id="confirmMapPickerBtn" disabled style="background: #94a3b8; color: #ffffff; border: none; padding: 10px 22px; border-radius: var(--border-radius-sm); font-weight: 700; cursor: not-allowed;">Gunakan Lokasi Ini</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Script & Dynamic Page logic -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Rates Database
+            const carRates = {
+                'dengan-sopir': {
+                    'Honda Brio (Sopir)': {
+                        '12-Jam': 450000,
+                        'Fullday': 550000
+                    },
+                    'Toyota Avanza Facelift (Sopir)': {
+                        '12-Jam': 550000,
+                        'Fullday': 600000
+                    },
+                    'Toyota Avanza FWD (Sopir)': {
+                        '12-Jam': 650000,
+                        'Fullday': 750000
+                    },
+                    'Mitsubishi Xpander (Sopir)': {
+                        '12-Jam': 700000,
+                        'Fullday': 800000
+                    },
+                    'Toyota Innova Reborn 2026 (Sopir)': {
+                        '12-Jam': 750000,
+                        'Fullday': 850000
+                    },
+                    'Toyota Innova Zenix 2026 (Sopir)': {
+                        '12-Jam': 1000000,
+                        'Fullday': 1100000
+                    },
+                    'Toyota Fortuner 2026 (Sopir)': {
+                        '12-Jam': 1500000,
+                        'Fullday': 1600000
+                    },
+                    'Mitsubishi Pajero 2026 (Sopir)': {
+                        '12-Jam': 1500000,
+                        'Fullday': 1600000
+                    },
+                    'Toyota Alphard Facelift 2023 (Sopir)': {
+                        '12-Jam': 2899000,
+                        'Fullday': 2999999
+                    },
+                    'Toyota Alphard HEV 2026 (Sopir)': {
+                        '12-Jam': 3899999,
+                        'Fullday': 3999999
+                    },
+                    'Toyota Hiace Commuter (Sopir)': {
+                        '12-Jam': 1100000,
+                        'Fullday': 1200000
+                    },
+                    'Toyota Hiace Premio (Sopir)': {
+                        '12-Jam': 1400000,
+                        'Fullday': 1500000
+                    },
+                    'Elf Long 19 Seat (Sopir)': {
+                        '12-Jam': 1500000,
+                        'Fullday': 1600000
+                    }
+                }
+            };
+
+            // DOM Elements
+            const selectMobil = document.getElementById('sewaMobil');
+            const selectPaket = document.getElementById('sewaPaket');
+            const sewaNama = document.getElementById('sewaNama');
+            const sewaTelepon = document.getElementById('sewaTelepon');
+            const sewaTeleponAlt = document.getElementById('sewaTeleponAlt');
+            const sewaMulai = document.getElementById('sewaMulai');
+            const sewaMulaiTime = document.getElementById('sewaMulaiTime');
+            const sewaDurasi = document.getElementById('sewaDurasi');
+            const sewaTujuan = document.getElementById('sewaTujuan');
+            const sewaPengantaranAlamat = document.getElementById('sewaPengantaranAlamat');
+            const sewaCatatan = document.getElementById('sewaCatatan');
+
+            // Sidebar DOM
+            const calcMobilName = document.getElementById('calcMobilName');
+            const calcMobilPrice = document.getElementById('calcMobilPrice');
+            const calcDurasi = document.getElementById('calcDurasi');
+            const calcTotal = document.getElementById('calcTotal');
+            const calcDP = document.getElementById('calcDP');
+
+            // Format Currency
+            const formatRupiah = (num) => {
+                return 'Rp ' + num.toLocaleString('id-ID');
+            };
+
+            // Set Date Picker default to tomorrow
+            const setTomorrowDate = () => {
+                const today = new Date();
+                today.setDate(today.getDate() + 1);
+                const yyyy = today.getFullYear();
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const dd = String(today.getDate()).padStart(2, '0');
+                sewaMulai.value = `${yyyy}-${mm}-${dd}`;
+                sewaMulai.min = `${yyyy}-${mm}-${dd}`;
+            };
+            setTomorrowDate();
+
+            // Input Time default values
+            sewaMulaiTime.value = '08:00';
+            document.getElementById('sewaSelesaiTime').value = '08:00';
+
+            const parseLocalDate = (dateStr) => {
+                if (!dateStr) return new Date();
+                const [year, month, day] = dateStr.split('-').map(Number);
+                return new Date(year, month - 1, day);
+            };
+
+            const formatLocalDate = (date) => {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            };
+
+            // Out of town checking
+            const checkLuarKota = (isFromUserInteraction = false) => {
+                const tujuanVal = sewaTujuan.value.trim().toLowerCase();
+                const warningBanner = document.getElementById('warningLuarKota');
+                const paketVal = selectPaket.value;
+
+                // Keyword matching for out of town
+                const luarKotaRegex = /semarang|solo|surakarta|magelang|klaten|boyolali|salatiga|temanggung|wonosobo|purworejo|kebumen|bandung|jakarta|surabaya|malang|luar\s*kota|luarkota|demak|kudus|jepara|rembang|pati|blora|sragen|karanganyar|wonogiri|sukoharjo|purwokerto|cilacap|tegal|brebes|pemalang|pekalongan|batang|kendall|kendal/i;
+                const isLuarKota = luarKotaRegex.test(tujuanVal);
+
+                if (isLuarKota) {
+                    if (warningBanner) warningBanner.style.display = 'flex';
+                    if (paketVal === '12-Jam') {
+                        if (isFromUserInteraction) {
+                            alert("⚠️ Layanan sewa mobil dengan driver 12 Jam hanya untuk pemakaian dalam kota.\n\nUntuk pemakaian luar kota (seperti Semarang/Solo) otomatis dialihkan ke paket Fullday dan dikenakan tambahan biaya BBM & Driver.");
+                        }
+                        selectPaket.value = 'Fullday';
+                        selectPaket.dispatchEvent(new Event('change'));
+                    }
+                } else {
+                    if (warningBanner) warningBanner.style.display = 'none';
+                }
+                return isLuarKota;
+            };
+
+            const updateReturnDateTime = () => {
+                const startVal = sewaMulai.value;
+                const startTimeVal = sewaMulaiTime.value;
+                const paketVal = selectPaket.value;
+                const durasiVal = Math.max(1, parseInt(sewaDurasi.value) || 1);
+                const endInput = document.getElementById('sewaSelesai');
+                const endTimeInput = document.getElementById('sewaSelesaiTime');
+                const labelSelesai = document.getElementById('sewaSelesaiLabel');
+
+                if (!startVal || !endInput) return;
+
+                const startDate = parseLocalDate(startVal);
+                let minEndDateStr = startVal;
+                let targetTimeStr = '';
+
+                if (paketVal === '12-Jam') {
+                    // Lock duration input (system calculates it)
+                    sewaDurasi.readOnly = true;
+                    sewaDurasi.style.backgroundColor = '#f8fafc';
+                    sewaDurasi.style.cursor = 'default';
+                    sewaDurasi.style.color = 'inherit';
+
+                    // 12 Jam: jam kembali = jam jemput + 12 jam, default return date is start date + duration - 1 day + dayOffset
+                    let dayOffset = 0;
+                    if (startTimeVal) {
+                        const [hours, minutes] = startTimeVal.split(':').map(Number);
+                        let endHours = hours + 12;
+                        if (endHours >= 24) {
+                            endHours -= 24;
+                            dayOffset = 1;
+                        }
+                        const nextDay = new Date(startDate);
+                        nextDay.setDate(nextDay.getDate() + durasiVal - 1 + dayOffset);
+                        minEndDateStr = formatLocalDate(nextDay);
+
+                        const endHoursStr = String(endHours).padStart(2, '0');
+                        const endMinStr = String(minutes).padStart(2, '0');
+                        targetTimeStr = `${endHoursStr}:${endMinStr}`;
+                    }
+
+                    // Unlock return date
+                    endInput.readOnly = false;
+                    endInput.style.backgroundColor = '#ffffff';
+                    endInput.style.cursor = 'pointer';
+                    endInput.style.color = 'inherit';
+                    if (!endInput.value || parseLocalDate(endInput.value) < startDate) {
+                        endInput.value = minEndDateStr;
+                    }
+
+                    // Lock return time (computed 12 hours automatically)
+                    if (endTimeInput) {
+                        endTimeInput.disabled = true;
+                        endTimeInput.style.backgroundColor = '#f1f5f9';
+                        endTimeInput.style.cursor = 'not-allowed';
+                        endTimeInput.style.color = '#64748b';
+                    }
+
+                    if (labelSelesai) {
+                        labelSelesai.textContent = "Tanggal Selesai (Bisa Diisi Manual) & Jam Kembali (Otomatis)";
+                    }
+                } else {
+                    // Fullday: tanggal selesai = tanggal mulai + durasi - 1 hari, jam kembali maksimal 22:30.
+                    const nextDay = new Date(startDate);
+                    nextDay.setDate(nextDay.getDate() + durasiVal - 1);
+                    minEndDateStr = formatLocalDate(nextDay);
+                    targetTimeStr = "22:30";
+
+                    // Unlock return date
+                    endInput.readOnly = false;
+                    endInput.style.backgroundColor = '#ffffff';
+                    endInput.style.cursor = 'pointer';
+                    endInput.style.color = 'inherit';
+                    if (!endInput.value || parseLocalDate(endInput.value) < startDate) {
+                        endInput.value = minEndDateStr;
+                    }
+
+                    // Unlock return time
+                    if (endTimeInput) {
+                        endTimeInput.disabled = false;
+                        endTimeInput.style.backgroundColor = '#ffffff';
+                        endTimeInput.style.cursor = 'pointer';
+                        endTimeInput.style.color = 'inherit';
+                    }
+
+                    // Lock durasi but styled as system-calculated
+                    sewaDurasi.readOnly = true;
+                    sewaDurasi.style.backgroundColor = '#f8fafc';
+                    sewaDurasi.style.cursor = 'default';
+                    sewaDurasi.style.color = 'inherit';
+
+                    if (labelSelesai) {
+                        labelSelesai.textContent = "Tanggal Selesai & Jam Kembali (Bisa Diisi Manual)";
+                    }
+                }
+
+                if (targetTimeStr && endTimeInput) {
+                    endTimeInput.value = targetTimeStr;
+                }
+            };
+
+            const recalculateDurationFromDates = () => {
+                const startVal = sewaMulai.value;
+                const startTimeVal = sewaMulaiTime.value;
+                const endInput = document.getElementById('sewaSelesai');
+                const endVal = endInput ? endInput.value : '';
+                const paketVal = selectPaket.value;
+
+                if (!startVal || !endVal) return;
+
+                const startDate = parseLocalDate(startVal);
+                const endDate = parseLocalDate(endVal);
+
+                if (endDate < startDate) {
+                    if (endInput) endInput.value = startVal;
+                    sewaDurasi.value = 1;
+                    calculatePrice();
+                    return;
+                }
+
+                let duration = 1;
+
+                if (paketVal === '12-Jam') {
+                    let dayOffset = 0;
+                    if (startTimeVal) {
+                        const [hours] = startTimeVal.split(':').map(Number);
+                        if (hours + 12 >= 24) {
+                            dayOffset = 1;
+                        }
+                    }
+                    const diffTime = endDate.getTime() - startDate.getTime();
+                    const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+                    duration = Math.max(1, diffDays + 1 - dayOffset);
+                } else {
+                    const diffTime = endDate.getTime() - startDate.getTime();
+                    const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+                    duration = Math.max(1, diffDays + 1);
+                }
+
+                sewaDurasi.value = duration;
+                calculatePrice();
+            };
+
+            // Match score car names
+            const matchCarScore = (optionValue, queryValue) => {
+                const optClean = optionValue.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim();
+                const qClean = queryValue.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim();
+                if (optClean === qClean) return 1000;
+                if (optClean.includes(qClean) || qClean.includes(optClean)) {
+                    return 500 - Math.abs(optClean.length - qClean.length);
+                }
+                return 0;
+            };
+
+            // Update Paket Dropdown
+            const updatePaketDropdown = () => {
+                const carVal = selectMobil.value;
+                selectPaket.innerHTML = '';
+                
+                const rates = carRates['dengan-sopir'][carVal];
+                if (rates) {
+                    Object.keys(rates).forEach(key => {
+                        const opt = document.createElement('option');
+                        opt.value = key;
+                        const labelClean = key.replace(/-/g, ' ');
+                        opt.textContent = `${labelClean} (${formatRupiah(rates[key])})`;
+                        selectPaket.appendChild(opt);
+                    });
+                }
+                calculatePrice();
+            };
+
+            // Calculate Price
+            const calculatePrice = () => {
+                const carVal = selectMobil.value;
+                const paketVal = selectPaket.value;
+                const days = Math.max(1, parseInt(sewaDurasi.value) || 1);
+
+                const rates = carRates['dengan-sopir'][carVal];
+                if (!rates || !paketVal || !rates[paketVal]) return;
+
+                const pricePerDay = rates[paketVal];
+                const total = pricePerDay * days;
+                const dp = total * 0.3;
+
+                // Update UI
+                calcMobilName.textContent = carVal;
+                calcMobilPrice.textContent = `${formatRupiah(pricePerDay)} / Hari`;
+                calcDurasi.textContent = `${days} Hari`;
+                calcTotal.textContent = formatRupiah(total);
+                calcDP.textContent = formatRupiah(dp);
+            };
+
+            // Listeners
+            selectMobil.addEventListener('change', () => {
+                updatePaketDropdown();
+                updateReturnDateTime();
+            });
+            selectPaket.addEventListener('change', () => {
+                checkLuarKota(true);
+                calculatePrice();
+                updateReturnDateTime();
+            });
+            sewaDurasi.addEventListener('input', () => {
+                calculatePrice();
+                updateReturnDateTime();
+            });
+            sewaMulai.addEventListener('change', () => {
+                updateReturnDateTime();
+                calculatePrice();
+            });
+            sewaMulaiTime.addEventListener('change', () => {
+                updateReturnDateTime();
+                calculatePrice();
+            });
+
+            const endInput = document.getElementById('sewaSelesai');
+            const endTimeInput = document.getElementById('sewaSelesaiTime');
+            if (endInput) {
+                endInput.addEventListener('change', recalculateDurationFromDates);
+                endInput.addEventListener('input', recalculateDurationFromDates);
+            }
+            if (endTimeInput) {
+                endTimeInput.addEventListener('change', recalculateDurationFromDates);
+            }
+
+            sewaTujuan.addEventListener('input', () => {
+                checkLuarKota(true);
+            });
+            sewaTujuan.addEventListener('change', () => {
+                checkLuarKota(true);
+            });
+
+            // Parse URL Parameters
+            const prefillForm = () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const mobilParam = urlParams.get('mobil');
+                const tanggalParam = urlParams.get('tanggal');
+                const durasiParam = urlParams.get('durasi');
+                const paketParam = urlParams.get('paket');
+                const tujuanParam = urlParams.get('tujuan');
+
+                if (mobilParam) {
+                    let matchedMobil = '';
+                    const carOptions = Array.from(selectMobil.options).map(o => o.value);
+                    let bestScore = 0;
+
+                    carOptions.forEach(car => {
+                        const score = matchCarScore(car, mobilParam);
+                        if (score > bestScore) {
+                            bestScore = score;
+                            matchedMobil = car;
+                        }
+                    });
+
+                    if (bestScore >= 100 && matchedMobil) {
+                        selectMobil.value = matchedMobil;
+                    }
+                }
+
+                if (tanggalParam) sewaMulai.value = tanggalParam;
+                if (durasiParam) {
+                    const days = parseInt(durasiParam);
+                    if (days > 0) sewaDurasi.value = days;
+                }
+                if (tujuanParam) sewaTujuan.value = tujuanParam;
+
+                updatePaketDropdown();
+
+                if (paketParam && selectPaket) {
+                    for (let option of selectPaket.options) {
+                        if (option.value.toLowerCase() === paketParam.toLowerCase()) {
+                            option.selected = true;
+                            selectPaket.value = option.value;
+                            selectPaket.dispatchEvent(new Event('change'));
+                            break;
+                        }
+                    }
+                }
+            };
+
+            // Run prefill
+            prefillForm();
+            checkLuarKota(false);
+            updateReturnDateTime();
+
+            // Submit logic
+            const form = document.getElementById('bookingSopirForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nama = sewaNama.value.trim();
+                const wa1 = sewaTelepon.value.trim();
+                const wa2 = sewaTeleponAlt.value.trim();
+                const mobil = selectMobil.value;
+                const paket = selectPaket.value;
+                const tglMulai = sewaMulai.value;
+                const jamMulai = sewaMulaiTime.value;
+                const durasi = Math.max(1, parseInt(sewaDurasi.value) || 1);
+                const tujuan = sewaTujuan.value.trim();
+                const alamatJemput = sewaPengantaranAlamat.value.trim();
+                const catatan = sewaCatatan.value.trim() || '-';
+
+                const tglSelesai = document.getElementById('sewaSelesai').value;
+                const jamSelesai = document.getElementById('sewaSelesaiTime').value;
+
+                const pricePerDay = carRates['dengan-sopir'][mobil][paket];
+                const total = pricePerDay * durasi;
+                const dp = total * 0.3;
+
+                const isLuarKota = checkLuarKota(false);
+                const wilayahTujuanText = isLuarKota ? `${tujuan} (Luar Kota - Ada Tambahan Biaya BBM & Driver)` : tujuan;
+
+                let text = `*FORM PEMESANAN - SEWA MOBIL DENGAN SOPIR*\n`;
+                text += `Aksara Transport Yogyakarta\n\n`;
+
+                text += `*Data Pelanggan:*\n`;
+                text += `- Nama Lengkap: ${nama}\n`;
+                text += `- No. WhatsApp 1 (Utama): ${wa1}\n`;
+                text += `- No. WhatsApp 2 (Cadangan): ${wa2}\n\n`;
+
+                text += `*Detail Reservasi Sewa:*\n`;
+                text += `- Unit Mobil: ${mobil}\n`;
+                text += `- Paket Waktu: ${paket.replace(/-/g, ' ')}\n`;
+                text += `- Tanggal Penjemputan: ${tglMulai}\n`;
+                text += `- Jam Penjemputan: ${jamMulai} WIB\n`;
+                text += `- Durasi Sewa: ${durasi} Hari\n`;
+                text += `- Tanggal Selesai Sewa: ${tglSelesai}\n`;
+                text += `- Jam Selesai Sewa: ${jamSelesai} WIB\n`;
+                text += `- Wilayah Pemakaian: ${wilayahTujuanText}\n`;
+                text += `- Alamat Penjemputan: ${alamatJemput}\n\n`;
+
+                text += `*Catatan Tambahan:*\n`;
+                text += `${catatan}\n\n`;
+
+                text += `*Rincian Biaya:*\n`;
+                text += `- Tarif Unit: ${formatRupiah(pricePerDay)} x ${durasi} Hari = ${formatRupiah(total)}\n`;
+                if (isLuarKota) {
+                    text += `- Tambahan Biaya: Luar Kota (BBM & Driver di luar tarif dasar, silakan konfirmasi ke admin)\n`;
+                }
+                text += `---------------------------------\n`;
+                text += `*TOTAL BIAYA SEWA:* ${formatRupiah(total)}\n`;
+                text += `*ESTIMASI DP (30%):* ${formatRupiah(dp)}\n\n`;
+
+                text += `Mohon konfirmasi ketersediaan armada. Terima kasih!`;
+
+                const encodedText = encodeURIComponent(text);
+                const adminNumber = '6281234567890';
+                window.open(`https://wa.me/${adminNumber}?text=${encodedText}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

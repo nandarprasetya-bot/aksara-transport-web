@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulir pemesanan khusus sewa mobil paket wisata di Yogyakarta. Reservasi praktis, hitung tarif instan, dan terhubung langsung ke WhatsApp.">
+    <meta name="keywords" content="booking rental mobil wisata, paket wisata jogja, sewa mobil sopir bbm, pesan wisata aksara transport">
+    <meta name="author" content="Aksara Transport">
+    <link rel="canonical" href="https://www.aksaratransport.com/pesan-wisata.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aksaratransport.com/pesan-wisata.html">
+    <meta property="og:title" content="Form Pemesanan - Sewa Mobil Paket Wisata | Aksara Transport">
+    <meta property="og:description" content="Pesan paket wisata Jogja plus rental mobil dengan supir. Hitung tarif otomatis dan kirim reservasi langsung ke WhatsApp admin.">
+    <meta property="og:image" content="images/hero_car.webp">
+
+    <title>Form Pemesanan - Sewa Mobil Paket Wisata | Aksara Transport</title>
+    
+    <!-- Core Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Custom details for pesan-wisata.html */
+        .wisata-itinerary-card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            transition: all var(--transition-normal);
+        }
+        .wisata-itinerary-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        .wisata-itinerary-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .destinasi-badge {
+            background-color: #f1f5f9;
+            border-left: 3px solid var(--accent);
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin: 10px 0 20px 0;
+        }
+        .addon-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background-color: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .addon-item:hover {
+            border-color: var(--accent);
+            background-color: #fffbeb;
+        }
+        .addon-item input[type="checkbox"] {
+            margin-top: 3px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .addon-label-text {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            cursor: pointer;
+            line-height: 1.4;
+        }
+        .addon-price-text {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+            display: block;
+            margin-top: 2px;
+        }
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                Aksara<span>Transport</span>
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="mobil.html" class="nav-link">Pilihan Mobil</a></li>
+                    <li><a href="wisata.html" class="nav-link active">Paket Wisata</a></li>
+                    <li><a href="artikel.html" class="nav-link">Tips &amp; Berita</a></li>
+                    <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta">
+                <a href="kontak.html" class="btn btn-primary">Pesan Sekarang</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- BREADCRUMB / HERO SUB -->
+        <section class="hero" style="padding: 120px 0 50px 0; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white;">
+            <div class="container">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: #ffffff;">Form Pemesanan - Sewa Mobil Paket Wisata</h1>
+                <p style="color: #94a3b8; max-width: 600px; margin: 0 auto; font-size: 0.95rem;">Lengkapi formulir di bawah ini untuk pemesanan paket tour dengan driver + BBM. Rincian biaya & rute perjalanan akan diperbarui secara real-time.</p>
+            </div>
+        </section>
+
+        <!-- MAIN LAYOUT SECTION -->
+        <section class="section-padding" style="background-color: #f8fafc; padding: 40px 0 80px 0;">
+            <div class="container">
+                <div class="contact-layout">
+                    
+                    <!-- Left: Booking Form Card -->
+                    <div class="contact-card">
+                        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Detail Rencana Perjalanan Wisata
+                        </h2>
+                        
+                        <form id="bookingWisataForm">
+                            <!-- Nama Lengkap -->
+                            <div class="form-row">
+                                <label for="sewaNama">Nama Lengkap</label>
+                                <input type="text" id="sewaNama" placeholder="Contoh: Budi Santoso" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                            </div>
+
+                            <!-- WhatsApp 1 & 2 -->
+                            <div class="form-grid-2">
+                                <div class="form-row">
+                                    <label for="sewaTelepon">Nomor WhatsApp Aktif 1 (Utama)</label>
+                                    <input type="tel" id="sewaTelepon" placeholder="Contoh: 081234567890" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="sewaTeleponAlt">Nomor WhatsApp Aktif 2 (Cadangan)</label>
+                                    <input type="tel" id="sewaTeleponAlt" placeholder="Contoh: 089876543210" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                            </div>
+
+                            <!-- Pilihan Paket & Mobil -->
+                            <div class="form-grid-2">
+                                <div class="form-row">
+                                    <label for="sewaPaketWisata">Pilihan Paket Wisata</label>
+                                    <select id="sewaPaketWisata" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                        <option value="Paket A" selected>Paket A: Borobudur, VW Tour &amp; Prambanan</option>
+                                        <option value="Paket B">Paket B: Candi &amp; Volcano Adventure</option>
+                                        <option value="Paket C">Paket C: Volcano, Sand Dunes &amp; Sea View</option>
+                                        <option value="Paket D">Paket D: Prambanan, Pines &amp; Ocean Sunset</option>
+                                        <option value="Paket E">Paket E: Kraton, Tamansari &amp; Family Zoo</option>
+                                        <option value="Paket F">Paket F: Rock Coastline &amp; Gesing Wonderland</option>
+                                        <option value="Paket G">Paket G: Bali van Jogja &amp; Ocean Cliffs</option>
+                                        <option value="Paket H">Paket H: White Sands &amp; Sea View Sunset</option>
+                                        <option value="Paket I">Paket I: Timang Gondola &amp; Cave Tubing</option>
+                                        <option value="Paket J">Paket J: Menoreh, VW Heritage &amp; Bukit Rhema</option>
+                                        <option value="Paket K">Paket K: Pine Valley, Cave Tubing &amp; Cliffs</option>
+                                        <option value="Paket Dieng">Paket Dieng: Sikunir Sunrise &amp; Vulkanik</option>
+                                        <option value="Kustom Rute">Kustom Rute (Bebas Tentukan Tujuan Sendiri)</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="sewaMobil">Pilihan Unit Mobil</label>
+                                    <select id="sewaMobil" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                        <option value="Avanza / Xenia Facelift" selected>Avanza / Xenia Facelift</option>
+                                        <option value="Avanza / Xenia FWD">Avanza / Xenia FWD</option>
+                                        <option value="Innova Reborn">Innova Reborn</option>
+                                        <option value="Hiace Commuter">Hiace Commuter</option>
+                                        <option value="Hiace Premio">Hiace Premio</option>
+                                        <!-- Custom car will be dynamically added here from URL -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Textarea Kustom Rute (Hanya tampil jika Kustom Rute dipilih) -->
+                            <div class="form-row" id="colKustomRute" style="display: none;">
+                                <label for="sewaKustomRute">Tuliskan Destinasi Kustom Wisata Anda (Maksimal 4 Tempat)</label>
+                                <textarea id="sewaKustomRute" rows="3" placeholder="Contoh: Pantai Indrayanti, Pinus Pengger, Bukit Bintang, Candi Ijo" style="resize: vertical; font-family: inherit; font-size: 0.9rem; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); line-height: 1.5; width: 100%; box-sizing: border-box;"></textarea>
+                            </div>
+
+                            <!-- Penjemputan Tanggal, Jam, & Durasi -->
+                            <div class="form-grid-3" style="display: grid; grid-template-columns: 1.2fr 0.8fr 1fr; gap: 15px;">
+                                <div class="form-row">
+                                    <label for="sewaMulai">Tanggal Mulai Penjemputan</label>
+                                    <input type="date" id="sewaMulai" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="sewaMulaiTime">Jam Penjemputan</label>
+                                    <input type="time" id="sewaMulaiTime" required value="08:00" style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                                <div class="form-row">
+                                    <label for="sewaDurasi">Durasi Tour (Hari)</label>
+                                    <input type="number" id="sewaDurasi" min="1" value="1" required style="padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; width: 100%; box-sizing: border-box;">
+                                </div>
+                            </div>
+
+                            <!-- Tanggal & Jam Selesai Wisata (Otomatis) -->
+                            <div class="form-row" style="margin-top: 15px;">
+                                <label for="sewaSelesai">Tanggal &amp; Jam Selesai Wisata (Otomatis)</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="date" id="sewaSelesai" readonly style="flex: 1; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600; background-color: #f1f5f9; cursor: not-allowed; color: #64748b;">
+                                    <input type="time" id="sewaSelesaiTime" style="width: 110px; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-weight: 600;">
+                                </div>
+                            </div>
+
+                            <!-- Alamat Penjemputan -->
+                            <div class="form-row">
+                                <label for="sewaPengantaranAlamat">Alamat Lengkap Lokasi Penjemputan</label>
+                                <textarea id="sewaPengantaranAlamat" rows="2" placeholder="Contoh: Hotel Grand Aston Jogja / Stasiun Tugu (atau paste link Google Maps)" required style="resize: vertical; font-family: inherit; font-size: 0.9rem; padding: 12px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); line-height: 1.5; width: 100%; box-sizing: border-box;"></textarea>
+                                <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 8px;">
+                                    <a href="#" id="btnMapAntar" style="font-size: 0.75rem; color: var(--accent); font-weight: 700; display: inline-flex; align-items: center; gap: 4px; text-decoration: underline;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                        Pilih di Google Maps
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Layanan Tambahan Aktivitas Wisata (Add-ons) -->
+                            <div id="wisataAddonsContainer" style="display: none; background-color: #f8fafc; border: 1.5px solid var(--border-color); border-radius: var(--border-radius-sm); padding: 20px; margin-bottom: 25px;">
+                                <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--primary); margin: 0 0 14px 0;">Layanan Tambahan Aktivitas Wisata (Opsional):</h4>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div style="display: none;" id="addonJeepMerapiWrapper">
+                                        <label class="addon-item">
+                                            <input type="checkbox" id="addonJeepMerapi">
+                                            <div class="addon-info">
+                                                <span class="addon-label-text">Sewa Jeep Lava Tour Merapi</span>
+                                                <span class="addon-price-text">+ Rp 350.000 / Jeep</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div style="display: none;" id="addonJeepGumukWrapper">
+                                        <label class="addon-item">
+                                            <input type="checkbox" id="addonJeepGumuk">
+                                            <div class="addon-info">
+                                                <span class="addon-label-text">Sewa Jeep Gumuk Pasir Parangtritis</span>
+                                                <span class="addon-price-text">+ Rp 350.000 / Jeep</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div style="display: none;" id="addonVWBorobudurWrapper">
+                                        <label class="addon-item">
+                                            <input type="checkbox" id="addonVWBorobudur">
+                                            <div class="addon-info">
+                                                <span class="addon-label-text">Sewa VW Safari Borobudur</span>
+                                                <span class="addon-price-text">+ Rp 650.000 / Mobil</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Catatan Tambahan -->
+                            <div class="form-row">
+                                <label for="sewaCatatan">Catatan Tambahan (Opsional)</label>
+                                <textarea id="sewaCatatan" rows="3" placeholder="Contoh: Butuh baby car seat, rombongan keluarga dengan lansia, request driver non-smoking, dll."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div style="margin-top: 30px;">
+                                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem; height: 54px; border-radius: var(--border-radius-sm); font-weight: 700;">
+                                    Proses Pemesanan via WhatsApp
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
+                            </div>
+                            <div style="margin-top: 20px; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                                * Mencari mobil lain yang tidak terdaftar? Klik <a href="mobil.html?service=denganSopir&wisata=Kustom+Rute" id="katalogRedirectLink" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Katalog Sewa Mobil</a> untuk memilih mobil kustom dengan supir.
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Right: Itinerary & Invoice details -->
+                    <div class="sticky-sidebar">
+                        
+                        <!-- Itinerary Detail Card -->
+                        <div class="wisata-itinerary-card" id="ruteDetailCard">
+                            <div class="wisata-itinerary-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+                                Detail Rute Wisata
+                            </div>
+                            <h3 id="ruteTitle" style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin: 10px 0 0 0;">-</h3>
+                            <div class="destinasi-badge" id="ruteDestinasi">-</div>
+                            
+                            <div id="ruteTimelineContainer">
+                                <!-- Dynamic timeline here -->
+                            </div>
+                        </div>
+
+                        <!-- Price summary calculation -->
+                        <div class="rincian-biaya-box" style="background-color: var(--primary-light); color: #ffffff; border-radius: var(--border-radius-sm); padding: 24px; box-shadow: var(--shadow-md); margin-bottom: 24px;">
+                            <h3 style="font-size: 1.15rem; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>Kalkulator Rincian Biaya</span>
+                                <span style="font-size: 0.75rem; background-color: var(--accent); color: #fff; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.05em;">Tour Package</span>
+                            </h3>
+                            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; color: rgba(255,255,255,0.85);">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Paket Wisata (<span id="calcWisataName">-</span>)</span>
+                                    <strong id="calcWisataPrice">Sesuai Pilihan Unit</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Unit Mobil (<span id="calcMobilName">-</span>)</span>
+                                    <strong id="calcMobilPrice">Rp 0</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Durasi Pemakaian</span>
+                                    <strong id="calcDurasi">0 Hari</strong>
+                                </div>
+                                <div id="rowBiayaAntarJemput" style="display: none; justify-content: space-between;">
+                                    <span>Layanan Bandara YIA (Jemput/Antar)</span>
+                                    <strong id="calcAntarJemput">Rp 0</strong>
+                                </div>
+                                <div id="rowBiayaWisataAddons" style="display: none; justify-content: space-between;">
+                                    <span>Layanan Tambahan (Add-on)</span>
+                                    <strong id="calcWisataAddonsPrice">Rp 0</strong>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; border-top: 1px dashed rgba(255,255,255,0.15); padding-top: 12px; font-size: 1.15rem; color: #ffffff;">
+                                    <strong>Total Biaya Tour</strong>
+                                    <strong style="color: var(--accent);" id="calcTotal">Rp 0</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 12px; font-size: 1.15rem; color: #ffffff;">
+                                    <span>Tanda Jadi / DP (30%)</span>
+                                    <strong style="color: #10b981;" id="calcDP">Rp 0</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment notice card -->
+                        <div class="notice-pelunasan-card" style="background-color: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: var(--border-radius-sm); padding: 20px; display: flex; align-items: flex-start; gap: 12px;">
+                            <div style="color: #0284c7; margin-top: 2px; flex-shrink: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            </div>
+                            <div>
+                                <h4 style="color: #0369a1; font-weight: 700; margin: 0 0 8px 0; font-size: 0.95rem;">
+                                    Notice Ketentuan Reservasi & Pembayaran:
+                                </h4>
+                                <ul style="font-size: 0.825rem; color: #075985; line-height: 1.6; margin: 0; padding-left: 16px; font-weight: 500; display: flex; flex-direction: column; gap: 6px;">
+                                    <li>Pembayaran **DP 30%** dilakukan untuk mengunci ketersediaan unit dan jadwal driver.</li>
+                                    <li>Nomor rekening pembayaran DP resmi akan diberikan langsung oleh admin resmi Aksara Transport setelah ketersediaan armada dikonfirmasi.</li>
+                                    <li>Konfirmasikan bukti transfer DP via WhatsApp ke admin untuk verifikasi instan.</li>
+                                    <li>Pelunasan sisa pembayaran sewa dilakukan langsung ke driver setelah hari pelayanan selesai.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="logo" style="color: #fff;">
+                    Aksara<span>Transport</span>
+                </a>
+                <p>Aksara Transport adalah penyedia jasa rental mobil terpercaya yang berkomitmen menyediakan armada terbaru berkualitas tinggi dengan harga yang terjangkau.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="mobil.html">Pilihan Mobil</a></li>
+                    <li><a href="wisata.html">Paket Wisata</a></li>
+                    <li><a href="artikel.html">Tips &amp; Berita</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan Sewa</h4>
+                <ul class="footer-links">
+                    <li><a href="mobil.html?filter=family">Sewa Mobil Keluarga</a></li>
+                    <li><a href="mobil.html?filter=premium">Sewa Mobil Premium</a></li>
+                    <li><a href="mobil.html?filter=suv">Sewa Mobil SUV</a></li>
+                    <li><a href="mobil.html?filter=city">Sewa City Car</a></li>
+                    <li><a href="tentang.html#syarat">Syarat Lepas Kunci</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak Layanan</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+62 812-3456-7890</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>info@aksaratransport.com</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Jl. Raya Utama No. 45, Kebayoran Baru, Jakarta Selatan</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <div class="footer-payments">
+                <h5>Metode Pembayaran</h5>
+                <div class="payment-icons">
+                    <span class="payment-badge">BCA</span>
+                    <span class="payment-badge">Mandiri</span>
+                    <span class="payment-badge">BRI</span>
+                    <span class="payment-badge">E-Wallet</span>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                <a href="#" class="social-icon" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 30px; font-size: 0.8rem; color: #64748b;">
+            &copy; 2026 Aksara Transport. Seluruh Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+    <!-- Map Picker Modal -->
+    <div id="mapPickerModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: #ffffff; border-radius: var(--border-radius-md); width: 90%; max-width: 700px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); position: relative; border: 1px solid var(--border-color);">
+            <!-- Modal Header -->
+            <div style="padding: 16px 20px; border-bottom: 1.5px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: #f8fafc;">
+                <h3 style="font-weight: 800; font-size: 1.1rem; color: var(--primary); margin: 0; display: flex; align-items: center; gap: 8px; font-family: var(--font-main);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Pilih Lokasi di Peta
+                </h3>
+                <button id="closeMapPickerBtn" style="background: none; border: none; font-size: 1.5rem; font-weight: 700; cursor: pointer; color: #64748b; line-height: 1; padding: 0;">&times;</button>
+            </div>
+            
+            <!-- Search Box -->
+            <div style="padding: 12px 20px; border-bottom: 1.5px solid var(--border-color); display: flex; gap: 8px; background: #ffffff;">
+                <input type="text" id="mapSearchInput" placeholder="Cari lokasi (contoh: Stasiun Tugu, Malioboro...)" style="flex: 1; padding: 10px 14px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); font-size: 0.9rem; font-weight: 600; font-family: var(--font-main);">
+                <button id="mapSearchBtn" style="background: var(--accent); color: white; border: none; padding: 10px 16px; border-radius: var(--border-radius-sm); font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 4px; font-family: var(--font-main);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    Cari
+                </button>
+            </div>
+            
+            <!-- Map Container -->
+            <div id="leafletMap" style="width: 100%; height: 350px; background: #e2e8f0; position: relative; z-index: 1;"></div>
+            
+            <!-- Modal Footer / Selection Info -->
+            <div style="padding: 16px 20px; border-top: 1.5px solid var(--border-color); background: #f8fafc; display: flex; flex-direction: column; gap: 12px;">
+                <div>
+                    <label style="font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px; font-family: var(--font-main);">Lokasi Terpilih</label>
+                    <div id="selectedAddressText" style="font-size: 0.9rem; font-weight: 600; color: var(--primary); line-height: 1.4; background: #ffffff; padding: 10px 14px; border-radius: var(--border-radius-sm); border: 1.5px solid var(--border-color); min-height: 40px; display: flex; align-items: center; font-family: var(--font-main);">
+                        Silakan klik pada peta atau cari lokasi di atas...
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; font-family: var(--font-main);">
+                    <button id="cancelMapPickerBtn" style="background: #ffffff; border: 1.5px solid var(--border-color); color: #64748b; padding: 10px 18px; border-radius: var(--border-radius-sm); font-weight: 700; cursor: pointer;">Batal</button>
+                    <button id="confirmMapPickerBtn" disabled style="background: #94a3b8; color: #ffffff; border: none; padding: 10px 22px; border-radius: var(--border-radius-sm); font-weight: 700; cursor: not-allowed;">Gunakan Lokasi Ini</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Script & Dynamic Page logic -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tour Itineraries Database
+            const tourItineraries = {
+                'Paket A': {
+                    name: 'Paket A: Borobudur, VW Tour & Prambanan',
+                    destinations: 'Candi Borobudur, VW Safari Tour, Kopi Klothok, Candi Prambanan.',
+                    timeline: [
+                        { time: '07:00', text: 'Penjemputan di Stasiun/Hotel area Jogja kota.' },
+                        { time: '08:30', text: 'Tiba di <strong>Candi Borobudur</strong> (Eksplorasi stupa & arsitektur candi Buddha terbesar).' },
+                        { time: '11:30', text: 'Wisata keliling pedesaan Borobudur menaiki mobil antik <strong>VW Safari Tour</strong> (Mengunjungi kebun, kerajinan madu/gerabah).' },
+                        { time: '13:00', text: 'Makan siang masakan ndeso sayur lodeh legendaris di <strong>Kopi Klothok</strong> Kaliurang.' },
+                        { time: '14:30', text: 'Menjelajahi keindahan arsitektur candi Hindu tercantik <strong>Candi Prambanan</strong>.' },
+                        { time: '17:30', text: 'Perjalanan kembali dan pengantaran pulang (drop-off).' }
+                    ]
+                },
+                'Paket B': {
+                    name: 'Paket B: Candi & Volcano Adventure',
+                    destinations: 'Candi Borobudur, Lavatour Merapi, Kopi Klothok, Candi Prambanan.',
+                    timeline: [
+                        { time: '07:00', text: 'Penjemputan di Stasiun/Hotel area Jogja kota.' },
+                        { time: '08:30', text: 'Menuju <strong>Candi Borobudur</strong> untuk melihat situs warisan dunia UNESCO.' },
+                        { time: '11:30', text: 'Menuju Kaliurang untuk wisata <strong>Jeep Lava Tour Merapi</strong> (rute pendek/medium).' },
+                        { time: '13:30', text: 'Makan siang masakan lodeh khas di <strong>Kopi Klothok</strong>.' },
+                        { time: '15:30', text: 'Mengunjungi megahnya Candi Hindu <strong>Candi Prambanan</strong>.' },
+                        { time: '18:00', text: 'Kembali ke Jogja kota & drop-off.' }
+                    ]
+                },
+                'Paket C': {
+                    name: 'Paket C: Volcano, Sand Dunes & Sea View',
+                    destinations: 'Lavatour Merapi, Kopi Klothok, Gumukpasir, Obelix Sea View.',
+                    timeline: [
+                        { time: '07:00', text: 'Penjemputan di titik penjemputan Jogja.' },
+                        { time: '08:00', text: 'Lava Tour Merapi dengan <strong>Jeep Merapi</strong> (Bunker Kaliadem & trek basah Kalikuning).' },
+                        { time: '11:00', text: 'Makan siang ndeso di <strong>Kopi Klothok</strong> Cangkringan.' },
+                        { time: '14:00', text: 'Bermain sandboarding di <strong>Gumuk Pasir Parangtritis</strong>.' },
+                        { time: '16:30', text: 'Menikmati sunset spektakuler dan makan malam di <strong>Obelix Sea View</strong>.' },
+                        { time: '19:30', text: 'Drop-off kembali ke hotel/stasiun.' }
+                    ]
+                },
+                'Paket D': {
+                    name: 'Paket D: Prambanan, Pines & Ocean Sunset',
+                    destinations: 'Candi Prambanan, Hutan Pinus, Gumukpasir, Obelix Sea View.',
+                    timeline: [
+                        { time: '07:30', text: 'Penjemputan di area Jogja kota.' },
+                        { time: '08:30', text: 'Eksplorasi mahakarya arsitektur Hindu di <strong>Candi Prambanan</strong>.' },
+                        { time: '11:30', text: 'Menikmati kesejukan pinus Mangunan / Pinus Pengger.' },
+                        { time: '14:30', text: 'Menuju <strong>Gumuk Pasir Parangtritis</strong> untuk spot foto gurun eksotis.' },
+                        { time: '16:30', text: 'Menikmati sunset samudera romantis di <strong>Obelix Sea View</strong>.' },
+                        { time: '19:30', text: 'Pengantaran kembali.' }
+                    ]
+                },
+                'Paket E': {
+                    name: 'Paket E: Kraton, Tamansari & Family Zoo',
+                    destinations: 'Keraton, Tamansari, Suraloka Zoo, Ibarbo Park.',
+                    timeline: [
+                        { time: '08:00', text: 'Penjemputan di hotel/stasiun.' },
+                        { time: '08:30', text: 'Belajar sejarah Kesultanan Yogyakarta di istana <strong>Keraton Jogja</strong>.' },
+                        { time: '10:30', text: 'Mengunjungi kolam pemandian kerajaan di <strong>Taman Sari</strong>.' },
+                        { time: '12:30', text: 'Makan siang kuliner lokal Jogja.' },
+                        { time: '14:00', text: 'Berwisata edukasi keluarga berinteraksi dengan satwa di <strong>Suraloka Zoo</strong>.' },
+                        { time: '16:30', text: 'Belanja oleh-oleh terlengkap Jogja di <strong>Ibarbo Park</strong>.' },
+                        { time: '18:30', text: 'Pengantaran kembali ke stasiun/hotel.' }
+                    ]
+                },
+                'Paket F': {
+                    name: 'Paket F: Rock Coastline & Gesing Wonderland',
+                    destinations: 'On The Rock, Gesing Wonderland, Puncak Segoro, Obelix Sea View.',
+                    timeline: [
+                        { time: '08:00', text: 'Penjemputan di area Jogja.' },
+                        { time: '09:30', text: 'Menikmati keindahan tebing laut eksotis di <strong>On The Rock</strong>.' },
+                        { time: '11:00', text: 'Menjelajah wahana foto dan jembatan kaca di <strong>Gesing Wonderland</strong>.' },
+                        { time: '13:30', text: 'Makan siang seafood dengan view Samudera Hindia di tebing <strong>Puncak Segoro</strong>.' },
+                        { time: '16:00', text: 'Menanti sunset premium bertabur lampu estetik di <strong>Obelix Sea View</strong>.' },
+                        { time: '19:00', text: 'Perjalanan pulang menuju kota Jogja.' }
+                    ]
+                },
+                'Paket G': {
+                    name: 'Paket G: Bali van Jogja & Ocean Cliffs',
+                    destinations: 'Pantai Ngobaran, Gesing Wonderland, Puncak Segoro, Obelix Sea View.',
+                    timeline: [
+                        { time: '08:00', text: 'Penjemputan di hotel.' },
+                        { time: '09:30', text: 'Mengunjungi <strong>Pantai Ngobaran</strong> (pantai eksotis dengan arsitektur pura/candi hindu di tepi tebing).' },
+                        { time: '11:30', text: 'Mengunjungi spot wisata <strong>Gesing Wonderland</strong>.' },
+                        { time: '13:30', text: 'Makan siang santai di <strong>Puncak Segoro</strong>.' },
+                        { time: '16:00', text: 'Hunting sunset di <strong>Obelix Sea View</strong>.' },
+                        { time: '19:00', text: 'Pengantaran kembali ke kota.' }
+                    ]
+                },
+                'Paket H': {
+                    name: 'Paket H: White Sands & Sea View Sunset',
+                    destinations: 'On The Rock, Pantai Sadranan, Pantai Slili, Obelix Sea View.',
+                    timeline: [
+                        { time: '08:00', text: 'Penjemputan di lokasi Anda.' },
+                        { time: '09:30', text: 'Spot foto pertama di tebing <strong>On The Rock</strong> Gunungkidul.' },
+                        { time: '11:00', text: 'Bermain air, snorkeling, atau kano di pantai pasir putih <strong>Pantai Sadranan</strong>.' },
+                        { time: '13:30', text: 'Makan siang santai di tepi pantai <strong>Pantai Slili</strong>.' },
+                        { time: '16:00', text: 'Sunset dan makan malam romantis di <strong>Obelix Sea View</strong>.' },
+                        { time: '19:00', text: 'Perjalanan kembali ke Jogja kota.' }
+                    ]
+                },
+                'Paket I': {
+                    name: 'Paket I: Timang Gondola & Cave Tubing',
+                    destinations: 'Pantai Timang, Goa Pindul, Pictniq Land.',
+                    timeline: [
+                        { time: '07:00', text: 'Penjemputan pagi.' },
+                        { time: '09:00', text: 'Uji adrenalin menyeberang pulau karang menaiki <strong>Gondola Tradisional Pantai Timang</strong>.' },
+                        { time: '13:00', text: 'Petualangan <strong>Cave Tubing Goa Pindul</strong> menyusuri sungai bawah tanah.' },
+                        { time: '16:00', text: 'Bersantai menikmati senja di <strong>Pictniq Land</strong>.' },
+                        { time: '18:30', text: 'Kembali menuju hotel/stasiun.' }
+                    ]
+                },
+                'Paket J': {
+                    name: 'Paket J: Menoreh, VW Heritage & Bukit Rhema',
+                    destinations: 'Tumpeng Menoreh, Vw Safari Tour, Candi Borobudur, Gereja Ayam.',
+                    timeline: [
+                        { time: '04:00', text: 'Penjemputan subuh di hotel.' },
+                        { time: '05:30', text: 'Menikmati sunrise dan keindahan alam Menoreh di <strong>Tumpeng Menoreh</strong>.' },
+                        { time: '09:00', text: 'Menaiki mobil klasik **VW Safari** mengelilingi pedesaan Borobudur.' },
+                        { time: '11:30', text: 'Menjelajah kawasan candi Buddha terbesar **Candi Borobudur**.' },
+                        { time: '14:00', text: 'Melihat pemandangan bukit Menoreh dari rooftop **Gereja Ayam (Bukit Rhema)**.' },
+                        { time: '16:30', text: 'Drop-off pulang ke stasiun/hotel.' }
+                    ]
+                },
+                'Paket K': {
+                    name: 'Paket K: Pine Valley, Cave Tubing & Cliffs',
+                    destinations: 'Kebun Buah, Hutan Pinus, Goa Pindul, Pictniq Land.',
+                    timeline: [
+                        { time: '07:30', text: 'Penjemputan.' },
+                        { time: '08:30', text: 'Melihat pemandangan sungai berkelok di atas awan **Kebun Buah Mangunan**.' },
+                        { time: '10:00', text: 'Menghirup udara segar di spot rindang **Hutan Pinus Imogiri**.' },
+                        { time: '12:30', text: 'Aktivitas basah-basahan cave tubing menyusuri **Goa Pindul**.' },
+                        { time: '15:30', text: 'Menikmati suasana piknik sore hari di spot hits **Pictniq Land**.' },
+                        { time: '18:00', text: 'Drop-off kembali ke kota.' }
+                    ]
+                },
+                'Paket Dieng': {
+                    name: 'Paket Dieng: Sikunir Sunrise & Vulkanik',
+                    destinations: 'Puncak Sikunir, Kawah Sikidang, Candi Arjuna, Gardu Pandang Tieng.',
+                    timeline: [
+                        { time: '00:00', text: 'Penjemputan tengah malam di area Yogyakarta.' },
+                        { time: '04:00', text: 'Tiba di kawasan Dieng, persiapan trekking <strong>Puncak Sikunir</strong> (Golden Sunrise).' },
+                        { time: '07:30', text: 'Singgah di <strong>Gardu Pandang Tieng</strong> & sarapan pagi kuliner lokal Dieng.' },
+                        { time: '09:00', text: 'Eksplorasi letupan belerang aktif di kawasan <strong>Kawah Sikidang</strong>.' },
+                        { time: '10:30', text: 'Mengunjungi kompleks candi Hindu tertua di Jawa <strong>Candi Arjuna Dieng</strong>.' },
+                        { time: '12:00', text: 'Makan siang dan perjalanan kembali pulang menuju Yogyakarta.' },
+                        { time: '16:00', text: 'Tiba kembali di Kota Yogyakarta (drop-off).' }
+                    ]
+                },
+                'Kustom Rute': {
+                    name: 'Kustom Rute (Bebas Tentukan Tujuan Sendiri)',
+                    destinations: 'Rute destinasi kustom sesuai pilihan Anda (maksimal 4 tempat wisata Jogja & sekitarnya).',
+                    timeline: [
+                        { time: '--:--', text: 'Penjemputan sesuai jam request Anda.' },
+                        { time: 'Tour', text: 'Mengunjungi rute destinasi yang Anda cantumkan di kolom input.' },
+                        { time: '12 Jam', text: 'Durasi total tour maksimal 12 jam pelayanan per hari.' },
+                        { time: '--:--', text: 'Pengantaran kembali ke hotel / stasiun Jogja.' }
+                    ]
+                }
+            };
+
+            // Rates Database
+            const tourCarRatesByPackage = {
+                'default': {
+                    'Avanza / Xenia Facelift': 600000,
+                    'Avanza / Xenia FWD': 650000,
+                    'Innova Reborn': 900000,
+                    'Hiace Commuter': 1300000,
+                    'Hiace Premio': 1500000
+                },
+                'Paket A': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1200000, 'Hiace Premio': 1400000 },
+                'Paket B': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1200000, 'Hiace Premio': 1400000 },
+                'Paket C': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1200000, 'Hiace Premio': 1400000 },
+                'Paket D': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1200000, 'Hiace Premio': 1400000 },
+                'Paket E': { 'Avanza / Xenia Facelift': 600000, 'Avanza / Xenia FWD': 650000, 'Innova Reborn': 800000, 'Hiace Commuter': 1200000, 'Hiace Premio': 1400000 },
+                'Paket F': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1250000, 'Hiace Premio': 1450000 },
+                'Paket G': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1250000, 'Hiace Premio': 1450000 },
+                'Paket H': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1250000, 'Hiace Premio': 1450000 },
+                'Paket I': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1250000, 'Hiace Premio': 1450000 },
+                'Paket J': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1250000, 'Hiace Premio': 1450000 },
+                'Paket K': { 'Avanza / Xenia Facelift': 650000, 'Avanza / Xenia FWD': 700000, 'Innova Reborn': 850000, 'Hiace Commuter': 1250000, 'Hiace Premio': 1450000 },
+                'Paket Dieng': { 'Avanza / Xenia Facelift': 800000, 'Avanza / Xenia FWD': 900000, 'Innova Reborn': 1000000, 'Hiace Commuter': 1350000, 'Hiace Premio': 1600000 }
+            };
+
+            const normalCarRates = {
+                'Honda Brio (Sopir)': 450000,
+                'Toyota Avanza (Sopir)': 600000,
+                'Mitsubishi Xpander (Sopir)': 750000,
+                'Toyota Innova Reborn 2026 (Sopir)': 850000,
+                'Toyota Innova Zenix 2026 (Sopir)': 1100000,
+                'Mitsubishi Pajero 2026 (Sopir)': 1600000,
+                'Toyota Fortuner 2026 (Sopir)': 1600000,
+                'Toyota Alphard Facelift 2023 (Sopir)': 2900000,
+                'Toyota Alphard HEV 2026 (Sopir)': 3900000,
+                'Toyota Hiace Commuter (Sopir)': 1200000,
+                'Toyota Hiace Premio (Sopir)': 1400000,
+                'Elf Long 19 Seat (Sopir)': 1600000
+            };
+
+            // DOM Elements
+            const selectWisata = document.getElementById('sewaPaketWisata');
+            const selectMobil = document.getElementById('sewaMobil');
+            const colKustomRute = document.getElementById('colKustomRute');
+            const sewaKustomRute = document.getElementById('sewaKustomRute');
+            
+            const sewaNama = document.getElementById('sewaNama');
+            const sewaTelepon = document.getElementById('sewaTelepon');
+            const sewaTeleponAlt = document.getElementById('sewaTeleponAlt');
+            const sewaMulai = document.getElementById('sewaMulai');
+            const sewaMulaiTime = document.getElementById('sewaMulaiTime');
+            const sewaDurasi = document.getElementById('sewaDurasi');
+            const sewaPengantaranAlamat = document.getElementById('sewaPengantaranAlamat');
+            const sewaCatatan = document.getElementById('sewaCatatan');
+
+            // Addons DOM
+            const wisataAddonsContainer = document.getElementById('wisataAddonsContainer');
+            const addonJeepMerapiWrapper = document.getElementById('addonJeepMerapiWrapper');
+            const addonJeepGumukWrapper = document.getElementById('addonJeepGumukWrapper');
+            const addonVWBorobudurWrapper = document.getElementById('addonVWBorobudurWrapper');
+            
+            const chkJeepMerapi = document.getElementById('addonJeepMerapi');
+            const chkJeepGumuk = document.getElementById('addonJeepGumuk');
+            const chkVWBorobudur = document.getElementById('addonVWBorobudur');
+
+
+            // Sidebar Itinerary DOM
+            const ruteTitle = document.getElementById('ruteTitle');
+            const ruteDestinasi = document.getElementById('ruteDestinasi');
+            const ruteTimelineContainer = document.getElementById('ruteTimelineContainer');
+
+            // Sidebar Calculator DOM
+            const calcWisataName = document.getElementById('calcWisataName');
+            const calcMobilName = document.getElementById('calcMobilName');
+            const calcMobilPrice = document.getElementById('calcMobilPrice');
+            const calcDurasi = document.getElementById('calcDurasi');
+
+            const calcWisataAddonsPrice = document.getElementById('calcWisataAddonsPrice');
+            const rowBiayaWisataAddons = document.getElementById('rowBiayaWisataAddons');
+            const calcTotal = document.getElementById('calcTotal');
+            const calcDP = document.getElementById('calcDP');
+            const katalogRedirectLink = document.getElementById('katalogRedirectLink');
+
+            // Input Time default values
+            sewaMulaiTime.value = '08:00';
+            document.getElementById('sewaSelesaiTime').value = '08:00';
+
+            const parseLocalDate = (dateStr) => {
+                const [year, month, day] = dateStr.split('-').map(Number);
+                return new Date(year, month - 1, day);
+            };
+
+            const formatLocalDate = (date) => {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            };
+
+            const updateReturnDateTime = () => {
+                const startVal = sewaMulai.value;
+                const startTimeVal = sewaMulaiTime.value;
+                const durasiVal = Math.max(1, parseInt(sewaDurasi.value) || 1);
+                const endInput = document.getElementById('sewaSelesai');
+                const endTimeInput = document.getElementById('sewaSelesaiTime');
+
+                if (!startVal || !endInput) return;
+
+                const startDate = parseLocalDate(startVal);
+                let minEndDateStr = startVal;
+                let targetTimeStr = '';
+
+                // Tour is always 12-Jam rule
+                if (startTimeVal) {
+                    const [hours, minutes] = startTimeVal.split(':').map(Number);
+                    let endHours = hours + 12;
+                    let dayOffset = 0;
+                    if (endHours >= 24) {
+                        endHours -= 24;
+                        dayOffset = 1;
+                    }
+                    const nextDay = new Date(startDate);
+                    nextDay.setDate(nextDay.getDate() + durasiVal - 1 + dayOffset);
+                    minEndDateStr = formatLocalDate(nextDay);
+
+                    const endHoursStr = String(endHours).padStart(2, '0');
+                    const endMinStr = String(minutes).padStart(2, '0');
+                    targetTimeStr = `${endHoursStr}:${endMinStr}`;
+                }
+
+                endInput.value = minEndDateStr;
+
+                if (targetTimeStr && endTimeInput) {
+                    endTimeInput.value = targetTimeStr;
+                }
+            };
+
+            // Set Date Picker default to tomorrow
+            const setTomorrowDate = () => {
+                const today = new Date();
+                today.setDate(today.getDate() + 1);
+                const yyyy = today.getFullYear();
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const dd = String(today.getDate()).padStart(2, '0');
+                sewaMulai.value = `${yyyy}-${mm}-${dd}`;
+                sewaMulai.min = `${yyyy}-${mm}-${dd}`;
+            };
+            setTomorrowDate();
+
+            // Format Currency
+            const formatRupiah = (num) => {
+                return 'Rp ' + num.toLocaleString('id-ID');
+            };
+
+            // Scoring match helper for cars (matching standard / custom cars)
+            const matchCarScore = (optionValue, queryValue) => {
+                const optClean = optionValue.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim();
+                const qClean = queryValue.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim();
+                if (optClean === qClean) return 1000;
+                if (optClean.includes(qClean) || qClean.includes(optClean)) {
+                    return 500 - Math.abs(optClean.length - qClean.length);
+                }
+                const optTokens = optClean.split(/\s+/).filter(t => t.length > 1);
+                const qTokens = qClean.split(/\s+/).filter(t => t.length > 1);
+                let intersection = 0;
+                qTokens.forEach(t => {
+                    if (optTokens.includes(t)) intersection++;
+                });
+                if (intersection > 0) {
+                    return intersection * 10 - Math.abs(optTokens.length - qTokens.length);
+                }
+                return 0;
+            };
+
+            // Get rate for selected car and package
+            const getTourCarRate = (wisata, car) => {
+                // If it is a normal car rate (custom car outside standard 5)
+                if (normalCarRates[car] !== undefined) {
+                    return normalCarRates[car];
+                }
+                // Else evaluate standard package rate
+                const pkgRates = tourCarRatesByPackage[wisata] || tourCarRatesByPackage['default'];
+                if (pkgRates && pkgRates[car] !== undefined) {
+                    return pkgRates[car];
+                }
+                return pkgRates['Avanza / Xenia Facelift'] || 600000;
+            };
+
+            // Update UI Sidebar Itinerary
+            const updateItineraryCard = () => {
+                const wisataVal = selectWisata.value;
+                const data = tourItineraries[wisataVal];
+                if (!data) return;
+
+                ruteTitle.textContent = data.name;
+                ruteDestinasi.textContent = data.destinations;
+                
+                // Clear and render timeline
+                ruteTimelineContainer.innerHTML = '';
+                const timelineDiv = document.createElement('div');
+                timelineDiv.className = 'itinerary-timeline';
+
+                data.timeline.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'timeline-item';
+                    itemDiv.innerHTML = `<span class="timeline-time">${item.time}</span> ${item.text}`;
+                    timelineDiv.appendChild(itemDiv);
+                });
+                ruteTimelineContainer.appendChild(timelineDiv);
+            };
+
+            // Update Addons visibility based on selected package
+            const updateAddons = () => {
+                const wisataVal = selectWisata.value;
+                
+                if (wisataVal === 'Paket B') {
+                    wisataAddonsContainer.style.display = 'block';
+                    addonJeepMerapiWrapper.style.display = 'block';
+                    addonJeepGumukWrapper.style.display = 'none';
+                    addonVWBorobudurWrapper.style.display = 'none';
+                    chkJeepGumuk.checked = false;
+                    chkVWBorobudur.checked = false;
+                } else if (wisataVal === 'Paket C') {
+                    wisataAddonsContainer.style.display = 'block';
+                    addonJeepMerapiWrapper.style.display = 'block';
+                    addonJeepGumukWrapper.style.display = 'block';
+                    addonVWBorobudurWrapper.style.display = 'none';
+                    chkVWBorobudur.checked = false;
+                } else if (wisataVal === 'Paket D') {
+                    wisataAddonsContainer.style.display = 'block';
+                    addonJeepMerapiWrapper.style.display = 'none';
+                    addonJeepGumukWrapper.style.display = 'block';
+                    addonVWBorobudurWrapper.style.display = 'none';
+                    chkJeepMerapi.checked = false;
+                    chkVWBorobudur.checked = false;
+                } else if (wisataVal === 'Paket A' || wisataVal === 'Paket J') {
+                    wisataAddonsContainer.style.display = 'block';
+                    addonJeepMerapiWrapper.style.display = 'none';
+                    addonJeepGumukWrapper.style.display = 'none';
+                    addonVWBorobudurWrapper.style.display = 'block';
+                    chkJeepMerapi.checked = false;
+                    chkJeepGumuk.checked = false;
+                } else if (wisataVal === 'Kustom Rute') {
+                    wisataAddonsContainer.style.display = 'block';
+                    addonJeepMerapiWrapper.style.display = 'block';
+                    addonJeepGumukWrapper.style.display = 'block';
+                    addonVWBorobudurWrapper.style.display = 'block';
+                } else {
+                    wisataAddonsContainer.style.display = 'none';
+                    addonJeepMerapiWrapper.style.display = 'none';
+                    addonJeepGumukWrapper.style.display = 'none';
+                    addonVWBorobudurWrapper.style.display = 'none';
+                    chkJeepMerapi.checked = false;
+                    chkJeepGumuk.checked = false;
+                    chkVWBorobudur.checked = false;
+                }
+            };
+
+            // Main calculator function
+            const calculatePrice = () => {
+                const wisataVal = selectWisata.value;
+                const carVal = selectMobil.value;
+                const days = Math.max(1, parseInt(sewaDurasi.value) || 1);
+
+                if (!carVal) return;
+
+                // 1. Get base car package price
+                const carPrice = getTourCarRate(wisataVal, carVal);
+                
+                // 2. Addon charges
+                let addonsFee = 0;
+                if (chkJeepMerapi.checked) addonsFee += 350000;
+                if (chkJeepGumuk.checked) addonsFee += 350000;
+                if (chkVWBorobudur.checked) addonsFee += 650000;
+
+                // 3. Calculate total & DP
+                const baseTotal = carPrice * days;
+                const grandTotal = baseTotal + addonsFee;
+                const dpAmount = grandTotal * 0.3;
+
+                // 5. Update UI
+                calcWisataName.textContent = wisataVal;
+                calcMobilName.textContent = carVal;
+                calcMobilPrice.textContent = `${formatRupiah(carPrice)} / Hari`;
+                calcDurasi.textContent = `${days} Hari`;
+
+                
+                if (addonsFee > 0) {
+                    rowBiayaWisataAddons.style.display = 'flex';
+                    calcWisataAddonsPrice.textContent = formatRupiah(addonsFee);
+                } else {
+                    rowBiayaWisataAddons.style.display = 'none';
+                }
+
+                calcTotal.textContent = formatRupiah(grandTotal);
+                calcDP.textContent = formatRupiah(dpAmount);
+
+                // Set dynamic catalog link
+                katalogRedirectLink.href = `mobil.html?service=denganSopir&wisata=${encodeURIComponent(wisataVal)}`;
+            };
+
+            // Handle wisata dropdown change
+            const handleWisataChange = () => {
+                const wisataVal = selectWisata.value;
+                
+                if (wisataVal === 'Kustom Rute') {
+                    colKustomRute.style.display = 'block';
+                    sewaKustomRute.required = true;
+                } else {
+                    colKustomRute.style.display = 'none';
+                    sewaKustomRute.required = false;
+                    sewaKustomRute.value = '';
+                }
+
+                updateItineraryCard();
+                updateAddons();
+                calculatePrice();
+            };
+
+            selectWisata.addEventListener('change', () => {
+                handleWisataChange();
+                updateReturnDateTime();
+            });
+            selectMobil.addEventListener('change', () => {
+                calculatePrice();
+                updateReturnDateTime();
+            });
+            sewaDurasi.addEventListener('input', () => {
+                calculatePrice();
+                updateReturnDateTime();
+            });
+            sewaMulai.addEventListener('change', updateReturnDateTime);
+            sewaMulaiTime.addEventListener('change', updateReturnDateTime);
+            
+            [chkJeepMerapi, chkJeepGumuk, chkVWBorobudur].forEach(el => {
+                if (el) el.addEventListener('change', calculatePrice);
+            });
+
+            // Parse URL Query Parameters to Prefill the Form
+            const prefillFormFromUrl = () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const wisataParam = urlParams.get('wisata');
+                const mobilParam = urlParams.get('mobil');
+                const ruteParam = urlParams.get('rute');
+                const tanggalParam = urlParams.get('tanggal');
+                const durasiParam = urlParams.get('durasi');
+
+                // 1. Prefill Paket Wisata
+                if (wisataParam) {
+                    let matchedWisata = '';
+                    const options = Array.from(selectWisata.options).map(o => o.value);
+                    let bestScore = 0;
+                    
+                    options.forEach(opt => {
+                        const score = matchCarScore(opt, wisataParam);
+                        if (score > bestScore) {
+                            bestScore = score;
+                            matchedWisata = opt;
+                        }
+                    });
+
+                    if (bestScore >= 100 && matchedWisata) {
+                        selectWisata.value = matchedWisata;
+                    } else if (wisataParam.toLowerCase().includes('kustom') || wisataParam.toLowerCase().includes('custom')) {
+                        selectWisata.value = 'Kustom Rute';
+                    }
+                }
+
+                // 2. Prefill Mobil (handling standard & custom cars)
+                if (mobilParam) {
+                    let matchedMobil = '';
+                    const standardCars = Array.from(selectMobil.options).map(o => o.value);
+                    let bestScore = 0;
+
+                    standardCars.forEach(car => {
+                        const score = matchCarScore(car, mobilParam);
+                        if (score > bestScore) {
+                            bestScore = score;
+                            matchedMobil = car;
+                        }
+                    });
+
+                    if (bestScore >= 100 && matchedMobil) {
+                        selectMobil.value = matchedMobil;
+                    } else {
+                        // It's a custom/other car from the catalog! Find standard dengan-sopir rate
+                        let bestNormalCar = '';
+                        let bestNormalScore = 0;
+                        const normalCars = Object.keys(normalCarRates);
+
+                        normalCars.forEach(car => {
+                            const score = matchCarScore(car, mobilParam);
+                            if (score > bestNormalScore) {
+                                bestNormalScore = score;
+                                bestNormalCar = car;
+                            }
+                        });
+
+                        if (bestNormalScore >= 100 && bestNormalCar) {
+                            // Append custom option
+                            const customOpt = document.createElement('option');
+                            customOpt.value = bestNormalCar;
+                            customOpt.textContent = `${bestNormalCar} (Tarif Sewa: ${formatRupiah(normalCarRates[bestNormalCar])})`;
+                            customOpt.selected = true;
+                            selectMobil.appendChild(customOpt);
+                        }
+                    }
+                }
+
+                // 3. Prefill Kustom Route Textarea
+                if (ruteParam) {
+                    sewaKustomRute.value = ruteParam;
+                    if (selectWisata.value !== 'Kustom Rute') {
+                        selectWisata.value = 'Kustom Rute';
+                    }
+                }
+
+                // 4. Prefill Dates
+                if (tanggalParam) {
+                    sewaMulai.value = tanggalParam;
+                }
+
+                // 5. Prefill Durasi
+                if (durasiParam) {
+                    const days = parseInt(durasiParam);
+                    if (days > 0) sewaDurasi.value = days;
+                }
+
+                // Trigger states
+                handleWisataChange();
+            };
+
+            // Run prefill initially
+            prefillFormFromUrl();
+            updateReturnDateTime();
+
+            // WhatsApp Reservasi Message Builder on Form Submit
+            const form = document.getElementById('bookingWisataForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nama = sewaNama.value.trim();
+                const wa1 = sewaTelepon.value.trim();
+                const wa2 = sewaTeleponAlt.value.trim();
+                const paket = selectWisata.value;
+                const mobil = selectMobil.value;
+                const ruteKustomText = sewaKustomRute.value.trim();
+                const tglMulai = sewaMulai.value;
+                const jamMulai = sewaMulaiTime.value;
+                const durasi = Math.max(1, parseInt(sewaDurasi.value) || 1);
+                const alamatJemput = sewaPengantaranAlamat.value.trim();
+                const catatan = sewaCatatan.value.trim() || '-';
+
+                const tglSelesai = document.getElementById('sewaSelesai').value;
+                const jamSelesai = document.getElementById('sewaSelesaiTime').value;
+
+                // Get rates
+                const ratePerHari = getTourCarRate(paket, mobil);
+                const totalMobilRate = ratePerHari * durasi;
+
+                // Addons active
+                let addonsList = [];
+                let addonsPrice = 0;
+                if (chkJeepMerapi.checked) {
+                    addonsList.push('- Sewa Jeep Lava Tour Merapi (+Rp 350.000 / Jeep)');
+                    addonsPrice += 350000;
+                }
+                if (chkJeepGumuk.checked) {
+                    addonsList.push('- Sewa Jeep Gumuk Pasir Parangtritis (+Rp 350.000 / Jeep)');
+                    addonsPrice += 350000;
+                }
+                if (chkVWBorobudur.checked) {
+                    addonsList.push('- Sewa VW Safari Borobudur (+Rp 650.000 / Mobil)');
+                    addonsPrice += 650000;
+                }
+
+                const totalBiaya = totalMobilRate + addonsPrice;
+                const dpEstimation = totalBiaya * 0.3;
+
+                // Construct text
+                let text = `*FORM PEMESANAN - SEWA MOBIL PAKET WISATA*\n`;
+                text += `Aksara Transport Yogyakarta\n\n`;
+                
+                text += `*Data Pelanggan:*\n`;
+                text += `- Nama Lengkap: ${nama}\n`;
+                text += `- No. WhatsApp 1 (Utama): ${wa1}\n`;
+                text += `- No. WhatsApp 2 (Cadangan): ${wa2}\n\n`;
+                
+                text += `*Detail Tour & Kendaraan:*\n`;
+                text += `- Paket Wisata: ${paket}\n`;
+                text += `- Unit Mobil: ${mobil}\n`;
+                text += `- Tanggal Penjemputan: ${tglMulai}\n`;
+                text += `- Jam Penjemputan: ${jamMulai} WIB\n`;
+                text += `- Durasi Wisata: ${durasi} Hari\n`;
+                text += `- Tanggal Selesai Wisata: ${tglSelesai}\n`;
+                text += `- Jam Selesai Wisata: ${jamSelesai} WIB\n`;
+                text += `- Lokasi Penjemputan: ${alamatJemput}\n\n`;
+
+                if (paket === 'Kustom Rute') {
+                    text += `*Destinasi Wisata Kustom:*\n`;
+                    text += `${ruteKustomText}\n\n`;
+                } else {
+                    const data = tourItineraries[paket];
+                    text += `*Destinasi Rute Paket:*\n`;
+                    text += `${data ? data.destinations : '-'}\n\n`;
+                }
+
+                if (addonsList.length > 0) {
+                    text += `*Layanan Tambahan (Add-on):*\n`;
+                    text += `${addonsList.join('\n')}\n\n`;
+                }
+
+
+
+                text += `*Catatan Tambahan:*\n`;
+                text += `${catatan}\n\n`;
+
+                text += `*Rincian Kalkulasi Tarif:*\n`;
+                text += `- Tarif Unit: ${formatRupiah(ratePerHari)} x ${durasi} Hari = ${formatRupiah(totalMobilRate)}\n`;
+                if (addonsPrice > 0) text += `- Biaya Add-on Wisata: ${formatRupiah(addonsPrice)}\n`;
+
+                text += `---------------------------------\n`;
+                text += `*TOTAL TARIF TOUR:* ${formatRupiah(totalBiaya)}\n`;
+                text += `*ESTIMASI DP (30%):* ${formatRupiah(dpEstimation)}\n\n`;
+
+                text += `Mohon ketersediaan armada dikonfirmasi oleh admin. Terima kasih!`;
+
+                const encodedText = encodeURIComponent(text);
+                const adminNumber = '6281234567890'; // Admin WhatsApp
+                window.open(`https://wa.me/${adminNumber}?text=${encodedText}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+"use client";
+
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+
+const wisudaRates: Record<string, number> = {
+    'Honda Brio Matic': 400000,
+    'Avanza / Xenia Facelift': 500000,
+    'Avanza / Xenia FWD': 600000,
+    'Xpander': 650000,
+    'Innova Reborn': 700000,
+    'Innova Zenix': 900000,
+    'Fortuner': 1400000,
+    'Pajero': 1400000,
+    'Alphard Facelift': 2700000,
+    'Hiace Commuter': 1100000,
+    'Hiace Premio': 1400000,
+    'Elf Long': 1500000
+};
+
+const formatRupiah = (num: number) => {
+    return 'Rp ' + num.toLocaleString('id-ID');
+};
+
+function PesanWisudaInner() {
+    const searchParams = useSearchParams();
+
+    const [nama, setNama] = useState('');
+    const [wa, setWa] = useState('');
+    const [mobil, setMobil] = useState('Avanza / Xenia Facelift');
+    const [tanggal, setTanggal] = useState('');
+    const [jamMulai, setJamMulai] = useState('06:00');
+    const [alamat, setAlamat] = useState('');
+    const [kampus, setKampus] = useState('');
+
+    useEffect(() => {
+        const mobilParam = searchParams.get('mobil');
+        if (mobilParam) {
+            const matched = Object.keys(wisudaRates).find(m => m.toLowerCase().includes(mobilParam.toLowerCase()));
+            if (matched) setMobil(matched);
+        }
+
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        setTanggal(tomorrow.toISOString().split('T')[0]);
+    }, [searchParams]);
+
+    // Kalkulasi Waktu Selesai (12 Jam)
+    let endTanggal = '';
+    let endJam = '';
+    if (tanggal && jamMulai) {
+        const [hours, minutes] = jamMulai.split(':').map(Number);
+        const startDate = new Date(`${tanggal}T00:00:00`);
+        let endHour = hours + 12;
+        let dayOffset = 0;
+        if (endHour >= 24) {
+            endHour -= 24;
+            dayOffset = 1;
+        }
+        const endDate = new Date(startDate);
+        endDate.setDate(endDate.getDate() + dayOffset);
+        endTanggal = endDate.toISOString().split('T')[0];
+        endJam = `${String(endHour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+    }
+
+    // Kalkulasi Biaya
+    const rate = wisudaRates[mobil] || 0;
+    const total = rate;
+    const dp = total * 0.3;
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        let text = `*FORM PEMESANAN - PAKET WISUDA*\nAksara Transport Yogyakarta\n\n`;
+        text += `*Data Pemesan:*\n- Nama: ${nama}\n- WhatsApp: ${wa}\n\n`;
+        text += `*Lokasi Kampus:*\n- Kampus Wisuda: ${kampus}\n\n`;
+        text += `*Detail Pemesanan:*\n- Layanan: Paket Wisuda\n- Mobil: ${mobil}\n- Tanggal: ${tanggal}\n- Jam Penjemputan: ${jamMulai} WIB\n- Rencana Selesai: ${endTanggal} (${endJam} WIB)\n- Lokasi Penjemputan: ${alamat}\n\n`;
+        
+        text += `*Rincian Biaya:*\n- Tarif Unit: ${formatRupiah(total)}\n`;
+        text += `---------------------------------\n`;
+        text += `*TOTAL BIAYA:* ${formatRupiah(total)}\n*ESTIMASI DP (30%):* ${formatRupiah(dp)}\n\n`;
+        text += `Mohon ketersediaan armada dikonfirmasi. Terima kasih!`;
+
+        try {
+            const { supabase } = await import('@/utils/supabase/client');
+            const { data, error } = await supabase.from('bookings').insert([{
+                nama: nama,
+                wa_utama: wa,
+                tipe_layanan: 'Paket Wisuda',
+                mobil: mobil,
+                tgl_mulai: tanggal,
+                jam_mulai: jamMulai,
+                alamat_jemput: alamat,
+                rute_destinasi: kampus,
+                harga_mobil: total,
+                total_biaya: total,
+                dp_biaya: dp
+            }]).select('id').single();
+
+            if (error) throw error;
+
+            text += `\n\nLihat Detail Pesanan Anda: ${window.location.origin}/detail-pesanan/${data.id}`;
+            text += `\n\n====================\n[KHUSUS ADMIN AKSARA]\nKlik link di bawah ini untuk meng-ACC pesanan (LUNAS):\n${window.location.origin}/admin/acc?id=${data.id}`;
+        } catch (err) {
+            console.error('Supabase error:', err);
+            const encodedData = btoa(unescape(encodeURIComponent(text)));
+            text += `\n\nLihat Ringkasan Pesanan Anda: ${window.location.origin}/ringkasan-pesanan?data=${encodedData}`;
+        }
+
+        window.open(`https://wa.me/628386000740?text=${encodeURIComponent(text)}`, '_blank');
+    };
+
+    return (
+        <main style={{ backgroundColor: '#f8fafc', paddingBottom: '80px' }}>
+            <section style={{ padding: '120px 0 50px 0', textAlign: 'center', background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', color: 'white' }}>
+                <div className="container">
+                    <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '10px' }}>Form Pemesanan - Paket Wisuda</h1>
+                    <p style={{ color: '#94a3b8', maxWidth: '600px', margin: '0 auto' }}>Sewa mobil + driver untuk acara wisuda. Harga sudah termasuk BBM dan tunggu di kampus.</p>
+                </div>
+            </section>
+
+            <section className="container" style={{ marginTop: '40px' }}>
+                <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+                    
+                    {/* FORM */}
+                    <div style={{ flex: '1 1 500px', background: '#fff', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+                        <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '24px' }}>Detail Pemesanan</h2>
+                        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>Nama Lengkap</label>
+                                <input type="text" value={nama} onChange={e => setNama(e.target.value)} required style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+                            </div>
+
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>WhatsApp</label>
+                                <input type="tel" value={wa} onChange={e => setWa(e.target.value)} required style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+                            </div>
+
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>Pilihan Unit Mobil</label>
+                                <select value={mobil} onChange={e => setMobil(e.target.value)} required style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0' }}>
+                                    {Object.keys(wisudaRates).map(m => <option key={m} value={m}>{m}</option>)}
+                                </select>
+                            </div>
+
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                                <div>
+                                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>Tanggal Wisuda</label>
+                                    <input type="date" value={tanggal} onChange={e => setTanggal(e.target.value)} required style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+                                </div>
+                                <div>
+                                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>Jam Penjemputan</label>
+                                    <input type="time" value={jamMulai} onChange={e => setJamMulai(e.target.value)} required style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>Selesai (Otomatis 12 Jam)</label>
+                                <div style={{ display: 'flex', gap: '10px' }}>
+                                    <input type="text" value={endTanggal} readOnly style={{ flex: 1, padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0', background: '#f1f5f9', color: '#64748b' }} />
+                                    <input type="text" value={endJam} readOnly style={{ width: '100px', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0', background: '#f1f5f9', color: '#64748b' }} />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>Lokasi Penjemputan</label>
+                                <textarea value={alamat} onChange={e => setAlamat(e.target.value)} rows={2} required style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+                            </div>
+
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>Kampus / Gedung Wisuda</label>
+                                <input type="text" value={kampus} onChange={e => setKampus(e.target.value)} required placeholder="Contoh: Grha Sabha Pramana UGM" style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+                            </div>
+
+                            <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: '1rem', fontWeight: 800, borderRadius: '6px', border: 'none', cursor: 'pointer', marginTop: '10px' }}>
+                                Pesan via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                    {/* SIDEBAR KALKULATOR */}
+                    <div style={{ flex: '1 1 350px', position: 'sticky', top: '100px' }}>
+                        <div style={{ background: 'var(--primary)', color: 'white', padding: '30px', borderRadius: '12px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}>
+                            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '15px', marginBottom: '20px' }}>Rincian Biaya</h3>
+                            
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px', fontSize: '0.95rem' }}>
+                                <span>Unit Mobil</span>
+                                <span style={{ fontWeight: 700 }}>{mobil}</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px', fontSize: '0.95rem' }}>
+                                <span>Durasi Pemakaian</span>
+                                <span style={{ fontWeight: 700 }}>12 Jam</span>
+                            </div>
+
+                            <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px dashed rgba(255,255,255,0.2)', paddingTop: '20px', marginBottom: '15px', fontSize: '1.2rem', fontWeight: 800 }}>
+                                <span>Total Biaya</span>
+                                <span style={{ color: 'var(--accent)' }}>{formatRupiah(total)}</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '15px', fontSize: '1.05rem', fontWeight: 700 }}>
+                                <span>DP (30%)</span>
+                                <span style={{ color: '#10b981' }}>{formatRupiah(dp)}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    );
+}
+
+export default function PesanWisudaPage() {
+    return (
+        <Suspense fallback={<div style={{ textAlign: 'center', padding: '100px' }}>Loading...</div>}>
+            <PesanWisudaInner />
+        </Suspense>
+    );
+}
