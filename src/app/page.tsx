@@ -340,7 +340,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="feature-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                            <img src="/images/paket_wedding.png" alt="Paket Wedding" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                            <img src="/images/paket_wedding.webp" alt="Paket Wedding" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
                             <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                 <h3 style={{ marginTop: 0 }}>Mobil Pengantin VIP</h3>
                                 <p style={{ flex: 1 }}>Sempurnakan momen hari bahagia Anda dengan pilihan mobil mewah yang elegan, dilengkapi dekorasi bunga dan driver profesional.</p>
@@ -348,7 +348,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="feature-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                            <img src="/images/paket_wisuda.png" alt="Paket Wisuda" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                            <img src="/images/paket_wisuda.webp" alt="Paket Wisuda" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
                             <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                 <h3 style={{ marginTop: 0 }}>Paket Wisuda Keluarga</h3>
                                 <p style={{ flex: 1 }}>Hadirkan kemudahan mobilitas untuk keluarga di hari kelulusan Anda. Tepat waktu, nyaman, dan bisa memuat banyak anggota keluarga.</p>
