@@ -107,11 +107,11 @@ function PesanSopirInner() {
             const mins = String(endDateTime.getMinutes()).padStart(2, '0');
             setSewaSelesaiTime(`${hrs}:${mins}`);
         } else {
-            // Fullday finishes at 22:30 on the last day
+            // Fullday finishes at 23:00 on the last day
             const endDateTime = new Date(startDateTime);
             endDateTime.setDate(endDateTime.getDate() + (sewaDurasi - 1));
             setSewaSelesai(endDateTime.toISOString().split('T')[0]);
-            setSewaSelesaiTime('22:30');
+            setSewaSelesaiTime('23:00');
         }
     }, [sewaMulai, sewaMulaiTime, sewaDurasi, sewaPaket]);
 

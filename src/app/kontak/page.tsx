@@ -85,7 +85,7 @@ function KontakInner() {
         } else if (sewaPaket.includes('Fullday')) {
             const endDateTime = new Date(startDateTime);
             setSewaSelesai(endDateTime.toISOString().split('T')[0]);
-            setSewaSelesaiTime('22:30');
+            setSewaSelesaiTime('23:00');
         }
     }, [sewaPaket, sewaMulai, sewaMulaiTime]);
 
@@ -101,7 +101,9 @@ function KontakInner() {
         
         if (diffTime > 0) {
             if (sewaPaket.includes('Fullday')) {
-                const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+                const startDateOnly = new Date(`${sewaMulai}T00:00:00`);
+                const endDateOnly = new Date(`${sewaSelesai}T00:00:00`);
+                const diffDays = Math.round((endDateOnly.getTime() - startDateOnly.getTime()) / (1000 * 60 * 60 * 24));
                 calculatedDurasi = Math.max(1, diffDays + 1);
             } else {
                 const diffHours = diffTime / (1000 * 60 * 60);
@@ -325,7 +327,7 @@ function KontakInner() {
                                             <li><strong>Jaminan Sepeda Motor</strong>: Khusus penyewa berdomisili Yogyakarta & sekitarnya, wajib menjaminkan sepeda motor saat sewa.</li>
                                             <li><strong>Perhitungan Sewa</strong>: Untuk sewa pada akhir pekan dan hari libur, perhitungan sewa berdasarkan tanggal (per hari), bukan 24 jam.</li>
                                             <li><strong>Sewa Keluar Kota</strong>: Untuk sewa mobil keluar kota (misalnya Solo, Semarang, Dieng) akan dikenakan biaya tambahan. Mohon informasikan tujuan Anda saat pemesanan.</li>
-                                            <li><strong>Pengantaran Bandara YIA</strong>: Akan dikenakan biaya tambahan Rp 150.000. Jika terjadi keterlambatan (delay) penerbangan hingga melebihi pukul 22.30 WIB, biaya kepulangan kru ditanggung oleh penyewa.</li>
+                                            <li><strong>Pengantaran Bandara YIA</strong>: Akan dikenakan biaya tambahan Rp 150.000. Jika terjadi keterlambatan (delay) penerbangan hingga melebihi pukul 23.00 WIB, biaya kepulangan kru ditanggung oleh penyewa.</li>
                                         </ul>
                                         <p style={{ fontWeight: 700, textAlign: 'center', marginTop: '16px' }}>TERIMA KASIH atas kepercayaan Anda menggunakan layanan kami.</p>
                                     </div>
