@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {
@@ -79,7 +80,15 @@ export default function Home() {
         <>
             {/* HERO SECTION */}
             <section className="hero">
-                <div className="container hero-grid">
+                <Image 
+                    src="/images/hero_background.webp" 
+                    alt="Hero Background" 
+                    fill 
+                    priority 
+                    style={{ objectFit: 'cover', zIndex: 0, opacity: 0.18 }} 
+                />
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.5) 0%, rgba(15, 23, 42, 0.85) 100%)', zIndex: 1, pointerEvents: 'none' }}></div>
+                <div className="container hero-grid" style={{ position: 'relative', zIndex: 2 }}>
                     <div className="hero-content">
                         <span className="badge badge-accent" style={{ marginBottom: '20px' }}>Rental Mobil Premium #1</span>
                         <h1>Perjalanan Aman, Nyaman, dan <span>Tanpa Ribet</span></h1>
@@ -195,7 +204,9 @@ export default function Home() {
                         <div className="car-card">
                             <div className="car-image-container">
                                 <span className="badge badge-success car-tag">Laris</span>
-                                <img loading="lazy" src="/images/honda_brio.webp" alt="Sewa Honda Brio Murah" />
+                                <div style={{ position: 'relative', width: '100%', height: '180px' }}>
+                                    <Image src="/images/honda_brio.webp" alt="Sewa Honda Brio Murah" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
+                                </div>
                             </div>
                             <div className="car-details">
                                 <h3 className="car-name">Honda Brio</h3>
@@ -226,7 +237,9 @@ export default function Home() {
                         <div className="car-card">
                             <div className="car-image-container">
                                 <span className="badge badge-success car-tag">Populer</span>
-                                <img loading="lazy" src="/images/toyota_avanza.webp" alt="Sewa Toyota Avanza Murah" />
+                                <div style={{ position: 'relative', width: '100%', height: '180px' }}>
+                                    <Image src="/images/toyota_avanza.webp" alt="Sewa Toyota Avanza Murah" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
+                                </div>
                             </div>
                             <div className="car-details">
                                 <h3 className="car-name">Toyota Avanza</h3>
@@ -257,7 +270,9 @@ export default function Home() {
                         <div className="car-card">
                             <div className="car-image-container">
                                 <span className="badge car-tag" style={{ backgroundColor: '#d1fae5', color: '#065f46', fontWeight: 800 }}>Mobil Listrik</span>
-                                <img loading="lazy" src="/images/wuling_binguo.webp" alt="Sewa Wuling Binguo EV Jogja" />
+                                <div style={{ position: 'relative', width: '100%', height: '180px' }}>
+                                    <Image src="/images/wuling_binguo.webp" alt="Sewa Wuling Binguo EV Jogja" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
+                                </div>
                             </div>
                             <div className="car-details">
                                 <h3 className="car-name">Wuling Binguo EV</h3>
@@ -288,7 +303,9 @@ export default function Home() {
                         <div className="car-card">
                             <div className="car-image-container">
                                 <span className="badge badge-accent car-tag" style={{ backgroundColor: '#e0f2fe', color: '#0369a1' }}>Grup</span>
-                                <img loading="lazy" src="/images/toyota_hiace_premio.webp" alt="Sewa Toyota Hiace Premio Jogja" />
+                                <div style={{ position: 'relative', width: '100%', height: '180px' }}>
+                                    <Image src="/images/toyota_hiace_premio.webp" alt="Sewa Toyota Hiace Premio Jogja" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
+                                </div>
                             </div>
                             <div className="car-details">
                                 <h3 className="car-name">Toyota Hiace Premio</h3>
@@ -332,7 +349,9 @@ export default function Home() {
                     </div>
                     <div className="features-grid">
                         <div className="feature-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                            <img src="/images/tour_city.webp" alt="Paket Wisata" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                            <div style={{ position: 'relative', width: '100%', height: '220px' }}>
+                                <Image src="/images/tour_city.webp" alt="Paket Wisata" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+                            </div>
                             <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                 <h3 style={{ marginTop: 0 }}>Paket Wisata Jogja</h3>
                                 <p style={{ flex: 1 }}>Jelajahi keindahan Yogyakarta tanpa repot. Sudah termasuk armada nyaman, driver merangkap guide, dan kebebasan memilih destinasi.</p>
@@ -340,7 +359,9 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="feature-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                            <img src="/images/paket_wedding.webp" alt="Paket Wedding" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                            <div style={{ position: 'relative', width: '100%', height: '220px' }}>
+                                <Image src="/images/paket_wedding.webp" alt="Paket Wedding" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+                            </div>
                             <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                 <h3 style={{ marginTop: 0 }}>Mobil Pengantin VIP</h3>
                                 <p style={{ flex: 1 }}>Sempurnakan momen hari bahagia Anda dengan pilihan mobil mewah yang elegan, dilengkapi dekorasi bunga dan driver profesional.</p>
@@ -348,7 +369,9 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="feature-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                            <img src="/images/paket_wisuda.webp" alt="Paket Wisuda" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                            <div style={{ position: 'relative', width: '100%', height: '220px' }}>
+                                <Image src="/images/paket_wisuda.webp" alt="Paket Wisuda" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+                            </div>
                             <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                 <h3 style={{ marginTop: 0 }}>Paket Wisuda Keluarga</h3>
                                 <p style={{ flex: 1 }}>Hadirkan kemudahan mobilitas untuk keluarga di hari kelulusan Anda. Tepat waktu, nyaman, dan bisa memuat banyak anggota keluarga.</p>

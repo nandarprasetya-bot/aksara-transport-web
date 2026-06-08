@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
 const lepasKunciCars = [
@@ -157,7 +158,9 @@ function CatalogMobilInner() {
             <div className="car-card">
                 <div className="car-image-container">
                     <span className={`badge badge-${car.badgeColor || 'success'} car-tag`} style={car.badgeBg ? {backgroundColor: car.badgeBg, color: car.badgeText} : {}}>{car.badge}</span>
-                    <img loading="lazy" src={car.image} alt={`Sewa ${car.name}`} />
+                    <div style={{ position: 'relative', width: '100%', height: '200px' }}>
+                        <Image src={car.image} alt={`Sewa ${car.name}`} fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
+                    </div>
                 </div>
                 <div className="car-details">
                     <h3 className="car-name">{car.name}</h3>
