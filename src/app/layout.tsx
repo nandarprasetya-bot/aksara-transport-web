@@ -57,7 +57,7 @@ const jsonLd = {
   }
 };
 
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export default function RootLayout({
   children,
@@ -66,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <GoogleTagManager gtmId="GTM-5SZ4NDL7" />
+      <GoogleAnalytics gaId="G-G00BF38QDS" />
       <head>
         <script
           type="application/ld+json"
