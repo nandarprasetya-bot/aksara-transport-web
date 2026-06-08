@@ -5,7 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-export default function DynamicLandingPage({ title }: { title: string }) {
+import { KeywordData } from '@/data/seoKeywords';
+
+export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }) {
+    const { title, type, carName, price12, price24, priceWithDriver, priceAllIn, benefits, imageUrl } = seoData;
     const router = useRouter();
     
     // Booking Form State
@@ -157,35 +160,111 @@ export default function DynamicLandingPage({ title }: { title: string }) {
                 </div>
             </section>
 
-            {/* WHY CHOOSE US */}
-            <section className="section-padding">
+            {/* AIO STRUCTURED DATA (JSON-LD) */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": type === 'car' ? "Product" : "LocalBusiness",
+                        "name": title,
+                        "description": `Layanan ${title.toLowerCase()} terbaik. Armada bersih, harga murah, lepas kunci atau dengan supir profesional di Yogyakarta.`,
+                        ...(type === 'car' && price12 ? {
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "IDR",
+                                "price": price12.toString(),
+                                "availability": "https://schema.org/InStock"
+                            }
+                        } : {}),
+                        "provider": {
+                            "@type": "LocalBusiness",
+                            "name": "Aksara Transport",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "addressLocality": "Yogyakarta",
+                                "addressRegion": "DIY",
+                                "addressCountry": "ID"
+                            }
+                        }
+                    })
+                }}
+            />
+
+            {/* DYNAMIC PRICING TABLE (SEO OPTIMIZED) */}
+            {type === 'car' && price12 && (
+                <section className="section-padding" style={{ backgroundColor: '#fff', borderTop: '1px solid #f1f5f9' }}>
+                    <div className="container">
+                        <div className="text-center">
+                            <span className="badge badge-accent">Daftar Harga</span>
+                            <h2 className="section-title">Tarif Harga Sewa {carName}</h2>
+                            <p className="section-subtitle">Tabel harga transparan tanpa biaya tersembunyi. Dapatkan diskon khusus untuk sewa jangka panjang.</p>
+                        </div>
+                        <div style={{ maxWidth: '800px', margin: '0 auto', overflowX: 'auto' }}>
+                            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+                                <thead>
+                                    <tr style={{ backgroundColor: 'var(--primary)', color: '#fff' }}>
+                                        <th style={{ padding: '16px 20px', fontWeight: 700 }}>Paket Layanan</th>
+                                        <th style={{ padding: '16px 20px', fontWeight: 700 }}>Durasi</th>
+                                        <th style={{ padding: '16px 20px', fontWeight: 700 }}>Harga Mulai</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style={{ backgroundColor: '#fff', borderBottom: '1px solid #f1f5f9' }}>
+                                        <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
+                                        <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam</td>
+                                        <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price12.toLocaleString('id-ID')}</td>
+                                    </tr>
+                                    <tr style={{ backgroundColor: '#f8fafc', borderBottom: '1px solid #f1f5f9' }}>
+                                        <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
+                                        <td style={{ padding: '16px 20px', color: '#64748b' }}>24 Jam (Full Day)</td>
+                                        <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price24?.toLocaleString('id-ID')}</td>
+                                    </tr>
+                                    <tr style={{ backgroundColor: '#fff', borderBottom: '1px solid #f1f5f9' }}>
+                                        <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Mobil + Supir</td>
+                                        <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam</td>
+                                        <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {priceWithDriver?.toLocaleString('id-ID')}</td>
+                                    </tr>
+                                    <tr style={{ backgroundColor: '#f8fafc' }}>
+                                        <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>All-In (Mobil + Supir + BBM)</td>
+                                        <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam</td>
+                                        <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {priceAllIn?.toLocaleString('id-ID')}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* DYNAMIC BENEFITS SECTION (WHY CHOOSE THIS CAR / SERVICE) */}
+            <section className="section-padding" style={{ backgroundColor: type === 'car' ? '#f8fafc' : '#fff' }}>
                 <div className="container">
                     <div className="text-center">
-                        <span className="badge badge-accent">Mengapa Aksara Transport</span>
-                        <h2 className="section-title">Layanan Terbaik Untuk Perjalanan Anda</h2>
-                        <p className="section-subtitle">Kami menaruh prioritas tertinggi pada kenyamanan, keamanan, dan kepuasan setiap pelanggan kami.</p>
+                        <span className="badge badge-success">Keunggulan</span>
+                        <h2 className="section-title">
+                            {type === 'car' ? `Keuntungan Memilih ${carName} di Jogja` : 'Kenapa Memilih Kami?'}
+                        </h2>
+                        <p className="section-subtitle">Fakta mengapa layanan ini adalah pilihan paling tepat untuk perjalanan Anda.</p>
                     </div>
                     <div className="features-grid">
-                        <div className="feature-card">
-                            <div className="feature-icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                        {benefits?.map((benefit, index) => (
+                            <div className="feature-card" key={index} style={{ border: '1px solid #e2e8f0', boxShadow: 'none' }}>
+                                <div className="feature-icon-box" style={{ backgroundColor: '#dcfce7', color: '#15803d' }}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </div>
+                                <h3 style={{ fontSize: '1.1rem', marginBottom: '10px' }}>Keuntungan #{index + 1}</h3>
+                                <p style={{ fontSize: '0.95rem' }}>{benefit}</p>
                             </div>
-                            <h3>Armada Prima &amp; Terawat</h3>
-                            <p>Semua kendaraan kami selalu dibersihkan secara berkala, disinfeksi penuh, dan diservis rutin di bengkel resmi demi performa optimal di jalan.</p>
-                        </div>
-                        <div className="feature-card">
-                            <div className="feature-icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        ))}
+                        
+                        {/* AIO Soft-selling injection */}
+                        <div className="feature-card" style={{ border: '1px solid #e2e8f0', boxShadow: 'none', backgroundColor: '#eff6ff' }}>
+                            <div className="feature-icon-box" style={{ backgroundColor: '#dbeafe', color: '#1d4ed8' }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
                             </div>
-                            <h3>Supir Ramah &amp; Berpengalaman</h3>
-                            <p>Didukung oleh tim supir bersertifikat, hafal jalanan lokal dan tempat wisata, serta mengutamakan keselamatan berkendara secara aman.</p>
-                        </div>
-                        <div className="feature-card">
-                            <div className="feature-icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                            </div>
-                            <h3>Harga Jujur &amp; Transparan</h3>
-                            <p>Tidak ada biaya tersembunyi. Harga sewa yang tertera sudah termasuk asuransi dasar. Dapatkan diskon khusus untuk sewa mingguan atau bulanan.</p>
+                            <h3 style={{ fontSize: '1.1rem', marginBottom: '10px' }}>Garansi Aksara Transport</h3>
+                            <p style={{ fontSize: '0.95rem' }}>Sebagai <strong>Rental Mobil Jogja Terbaik</strong>, kami menggaransi unit selalu bersih, prima, wangi, dengan pelayanan supir bintang 5 yang ramah.</p>
                         </div>
                     </div>
                 </div>

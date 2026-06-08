@@ -1,44 +1,26 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import DynamicLandingPage from '@/components/DynamicLandingPage';
-
-export const validKeywords = [
-  "sewa-brio-jogja",
-  "sewa-avanza-jogja",
-  "sewa-inova-reborn-jogja",
-  "sewa-inova-zenix-jogja",
-  "sewa-alphard-jogja",
-  "sewa-hiace-jogja",
-  "sewa-elf-jogja",
-  "sewa-mobil-terdekat",
-  "sewa-mobil-yogyakarta",
-  "sewa-mobil-listrik-jogja",
-  "sewa-mobil-murah",
-  "sewa-mobil-1-di-yogyakarta"
-];
-
-function formatTitle(slug: string) {
-  if (slug === 'sewa-mobil-1-di-yogyakarta') return 'Sewa Mobil #1 Di Yogyakarta';
-  return slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-}
+import { seoKeywords, getKeywordData } from '@/data/seoKeywords';
 
 export async function generateStaticParams() {
-  return validKeywords.map((slug) => ({
-    slug: slug,
+  return seoKeywords.map((data) => ({
+    slug: data.slug,
   }));
 }
 
 export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const params = await props.params;
   const { slug } = params;
-  if (!validKeywords.includes(slug)) {
+  const seoData = getKeywordData(slug);
+  
+  if (!seoData) {
     return {};
   }
 
-  const title = formatTitle(slug);
   return {
-    title: `${title} Murah & Lepas Kunci | Aksara Transport`,
-    description: `Layanan ${title.toLowerCase()} terbaik. Armada bersih, harga murah, lepas kunci atau dengan supir profesional.`,
+    title: `${seoData.title} Murah & Lepas Kunci | Aksara Transport`,
+    description: `Layanan ${seoData.title.toLowerCase()} terbaik. Armada bersih, harga murah, lepas kunci atau dengan supir profesional.`,
     alternates: {
       canonical: `https://jogjasewamobil.com/${slug}`,
     }
@@ -48,14 +30,13 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
 export default async function KeywordLandingPage(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;
   const { slug } = params;
+  const seoData = getKeywordData(slug);
 
-  if (!validKeywords.includes(slug)) {
+  if (!seoData) {
     notFound();
   }
 
-  const title = formatTitle(slug);
-
   return (
-    <DynamicLandingPage title={title} />
+    <DynamicLandingPage seoData={seoData} />
   );
 }
