@@ -1,144 +1,248 @@
 export const dummyArticles = [
     {
         id: '1',
-        created_at: '2026-06-07T10:00:00Z',
-        title: 'Harga Sewa Mobil Jogja Murah 2026: Lepas Kunci & Pakai Supir',
-        slug: 'harga-sewa-mobil-jogja-murah-2026',
-        category: 'Promo',
-        image: '/images/hero_car.webp',
-        excerpt: 'Daftar lengkap harga sewa mobil di Jogja tahun 2026. Melayani sewa mobil lepas kunci maupun dengan supir. Tersedia Avanza, Innova Zenix, hingga Hiace Commuter.',
+        created_at: '2026-06-08T10:00:00Z',
+        title: 'Bukan Cuma Malioboro, Ini 15 Tempat Wisata Hits di Jogja (Update 2026) yang Wajib Masuk Daftar Liburanmu!',
+        slug: '15-tempat-wisata-hits-jogja-2026',
+        category: 'Wisata',
+        image: '/images/artikel_wisata_hits.webp',
+        excerpt: 'Yogyakarta tidak pernah kehabisan daya tarik. Dari wisata alam hingga kafe estetik, temukan 15 destinasi wisata paling hits dan viral di Jogja tahun 2026 yang wajib Anda kunjungi!',
         content: `
-            <p>Mencari jasa <strong>sewa mobil Jogja murah</strong> yang aman dan terpercaya? Aksara Transport adalah solusi terbaik untuk perjalanan Anda di tahun 2026. Dengan semakin meningkatnya jumlah wisatawan dan pelancong bisnis di Yogyakarta, memiliki kendaraan pribadi yang nyaman adalah sebuah keharusan.</p>
-            
-            <h2>Mengapa Memilih Sewa Mobil di Jogja?</h2>
-            <p>Yogyakarta memiliki banyak destinasi wisata yang jaraknya cukup berjauhan. Dari Pantai di Gunungkidul hingga Candi Borobudur di Magelang, menggunakan transportasi umum seringkali memakan waktu. Dengan menggunakan jasa rental mobil, Anda mendapatkan:</p>
-            <ul>
-                <li><strong>Efisiensi Waktu:</strong> Kunjungi 3-4 destinasi wisata dalam sehari tanpa repot berganti kendaraan.</li>
-                <li><strong>Kenyamanan Ekstra:</strong> Privasi penuh bersama keluarga atau rombongan.</li>
-                <li><strong>Fleksibilitas:</strong> Bebas menentukan rute dan jadwal keberangkatan Anda sendiri.</li>
-            </ul>
+            <p>Bicara soal Jogja memang nggak ada habisnya. Setiap kali berkunjung, selalu saja ada hal baru yang bikin kangen dan ingin kembali. Malioboro memang legendaris, tapi kalau Anda mencari suasana liburan yang berbeda dan lebih kekinian, Jogja punya segudang tempat wisata baru yang sedang viral di tahun 2026 ini!</p>
+            <p>Siapkan kamera dan outfit terbaikmu, karena inilah <strong>15 rekomendasi tempat wisata hits di Jogja</strong> yang wajib banget masuk ke dalam itinerary liburanmu bersama keluarga atau sahabat!</p>
 
-            <h2>Pilihan Layanan: Lepas Kunci vs Pakai Supir</h2>
-            <p>Kami menyediakan dua opsi layanan utama:</p>
-            <h3>1. Sewa Mobil Lepas Kunci (Self-Drive)</h3>
-            <p>Sangat cocok bagi Anda yang sudah hafal jalanan Jogja dan menginginkan privasi 100%. Syarat sewa mobil lepas kunci di Aksara Transport sangat mudah dan prosesnya cepat. Cocok untuk pasangan atau perjalanan bisnis rahasia.</p>
-            
-            <h3>2. Sewa Mobil dengan Supir (All-In)</h3>
-            <p>Tidak ingin lelah menyetir? Pilih paket sewa mobil plus supir. Supir kami bukan sekadar sopir, melainkan merangkap sebagai <em>tour guide</em> lokal yang tahu jalan-jalan tikus bebas macet dan rekomendasi kuliner hidden gem di Jogja.</p>
+            <h2>1. Obelix Sea View (Gunungkidul)</h2>
+            <p>Berbeda dengan Obelix Hills, tempat ini menawarkan pemandangan sunset langsung menghadap Samudra Hindia dari atas tebing. Tersedia infinity pool, spot foto kaca, dan restoran dengan menu western yang lezat. Waktu terbaik ke sini adalah pukul 16.00 WIB!</p>
 
-            <h2>Daftar Harga Rental Mobil Jogja 2026 (Update Terbaru)</h2>
-            <p>Berikut adalah estimasi harga sewa harian (12 jam) di Aksara Transport:</p>
-            <ul>
-                <li><strong>Toyota Avanza / Xenia:</strong> Mulai Rp 250.000 / hari</li>
-                <li><strong>Toyota Innova Reborn:</strong> Mulai Rp 450.000 / hari</li>
-                <li><strong>Toyota Innova Zenix:</strong> Mulai Rp 600.000 / hari</li>
-                <li><strong>Toyota Hiace Commuter (14 Seat):</strong> Mulai Rp 1.100.000 / hari</li>
-                <li><strong>Toyota Alphard / Vellfire:</strong> Mulai Rp 2.500.000 / hari</li>
-            </ul>
-            <p><em>*Harga di atas dapat berubah sewaktu-waktu, terutama saat periode High Season (Lebaran, Natal, Tahun Baru).</em></p>
+            <h2>2. Tumpeng Menoreh (Kulon Progo)</h2>
+            <p>Restoran berbentuk heksagonal di puncak perbukitan Menoreh ini buka 24 jam lho! Pemandangan sunrise dari sini sangat magis. Jangan lupa sedia jaket tebal karena udara paginya cukup dingin.</p>
 
-            <h2>Cara Memesan</h2>
-            <p>Sangat mudah! Anda cukup menekan tombol WhatsApp di pojok kanan bawah layar ini untuk langsung terhubung dengan tim admin kami yang siap melayani 24 jam. Jangan biarkan liburan Anda berantakan karena salah pilih transportasi. Percayakan perjalanan Anda pada Aksara Transport!</p>
+            <h2>3. HeHa Stone Valley</h2>
+            <p>Satu lagi keluarga HeHa yang menggebrak Jogja! Mengusung konsep bebatuan karst yang disulap menjadi taman hiburan aesthetic, tempat ini menawarkan puluhan spot foto gratis dan restoran bertema gua alam.</p>
+
+            <h2>4. Litto (Little Tokyo) Bantul</h2>
+            <p>Kangen suasana Jepang? Nggak perlu jauh-jauh ke Tokyo! Litto menawarkan resor dan area wisata bernuansa pedesaan Jepang lengkap dengan onsen (kolam air panas) dan penyewaan kimono dengan latar bukit Dlingo.</p>
+
+            <h2>5. Jungwok Blue Ocean</h2>
+            <p>Pecinta suasana Santorini, Yunani wajib merapat ke sini! Terletak di dekat Pantai Jungwok, tempat ini didominasi bangunan putih biru yang sangat kontras dengan laut selatan. Auto bikin feeds Instagram kamu makin kece.</p>
+
+            <h2>6. Mahaloka Dien (Bantul)</h2>
+            <p>Ingin ngopi santai di tengah sawah ala Ubud, Bali? Mahaloka Dien adalah jawabannya. Hamparan sawah hijau berpadu dengan angin sepoi-sepoi bikin pikiran langsung fresh dari penatnya kerjaan ibu kota.</p>
+
+            <h2>7. Puncak Segoro</h2>
+            <p>Kafe bertingkat yang menempel di dinding tebing laut ini menyajikan sensasi nongkrong yang mendebarkan sekaligus indah. Kamu bisa menikmati secangkir kopi sambil melihat ombak besar memecah karang di bawah sana.</p>
+
+            <h2>8. Studio Alam Gamplong</h2>
+            <p>Sering disebut sebagai "Mini Hollywood"-nya Indonesia, tempat ini merupakan lokasi syuting film-film terkenal karya Hanung Bramantyo. Seting bangunan jadul era kolonial sangat cocok untuk Anda yang suka fotografi vintage.</p>
+
+            <h2>9. Suraloka Zoo (Kaliurang)</h2>
+            <p>Liburan bawa anak-anak? Suraloka Zoo adalah destinasi ramah anak dengan koleksi hewan eksotis yang jinak. Selain itu, ada flying fox, wahana AR (Augmented Reality), dan taman anggrek yang sangat luas.</p>
+
+            <h2>10. Ledok Sambi</h2>
+            <p>Ingin piknik di pinggir sungai dengan suasana asri? Ledok Sambi di kawasan Kaliurang sangat cocok untuk bersantai sambil menyantap mendoan hangat dan teh poci. Kabar baiknya: Tiket masuknya gratis, cukup bayar parkir dan makanan saja!</p>
+
+            <h2>11. La Li Sa Farmer's Village</h2>
+            <p>Wisata bernuansa desa pertanian Eropa (Belanda) ini menghadirkan kincir angin raksasa, padang rumput, dan bangunan berkayu. Tempat ini sangat strategis karena searah dengan jalur ke bandara YIA.</p>
+
+            <h2>12. Gumuk Pasir Parangkusumo</h2>
+            <p>Bermain sandboarding (selancar pasir) ala gurun pasir Timur Tengah ternyata bisa dilakukan di Jogja! Waktu terbaik ke sini adalah pagi hari atau sore agar pasirnya tidak terlalu panas.</p>
+
+            <h2>13. Chingu Cafe Jogja</h2>
+            <p>Pecinta K-Pop dan drakor? Kafe ini didesain persis seperti jalanan kota Seoul lengkap dengan replika halte bus, sungai Cheonggyecheon, dan menu makanan Korea yang sangat otentik.</p>
+
+            <h2>14. Bukit Pengilon</h2>
+            <p>Bagi yang suka trekking ringan dan camping, Bukit Pengilon menawarkan padang rumput hijau yang langsung berbatasan dengan tebing laut. Pemandangannya mirip seperti padang rumput di Selandia Baru!</p>
+
+            <h2>15. Kopi Klotok Kaliurang</h2>
+            <p>Terakhir, belum sah ke Jogja kalau belum antri pisang goreng dan telur krispi di Kopi Klotok! Datanglah pagi-pagi sekali jika ingin menghindari antrean panjang.</p>
+
+            <hr />
+            <p><strong>Tips Penting:</strong> Jarak antar tempat wisata di Jogja cukup berjauhan (contoh: Gunungkidul ke Kulon Progo bisa memakan waktu 2-3 jam). Agar liburan kamu nggak habis di jalan, kami sangat menyarankan Anda untuk <strong>sewa mobil plus supir di Aksara Transport</strong>. </p>
+            <p>Supir lokal kami hafal jalan tikus, bebas macet, dan pastinya bisa jadi fotografer dadakan buat rombongan kamu! Klik tombol WhatsApp di website ini untuk cek promo harga sewa mobil terbaru tahun 2026.</p>
         `
     },
     {
         id: '2',
-        created_at: '2026-06-05T14:30:00Z',
-        title: '7 Destinasi Wisata Hits di Jogja 2026 yang Wajib Dikunjungi',
-        slug: '7-destinasi-wisata-hits-jogja-2026',
+        created_at: '2026-06-06T14:30:00Z',
+        title: 'Nggak Bikin Kantong Jebol: 20 Spot Wisata Alam Gratis & Murah di Jogja yang Pemandangannya Kelas Dunia',
+        slug: '20-spot-wisata-alam-gratis-murah-jogja',
         category: 'Wisata',
-        image: '/images/tour_city.webp',
-        excerpt: 'Update terbaru daftar tempat wisata paling hits dan viral di Yogyakarta tahun 2026. Mulai dari wisata alam, pantai pasir putih, hingga spot foto instagramable.',
+        image: '/images/artikel_wisata_alam.webp',
+        excerpt: 'Siapa bilang liburan ke Jogja harus mahal? Simak 20 rekomendasi wisata alam dengan HTM super murah bahkan gratis, namun menyajikan pemandangan spektakuler!',
         content: `
-            <p>Yogyakarta tidak pernah kehabisan tempat baru untuk dieksplorasi. Setiap tahunnya, selalu ada destinasi wisata hits yang bermunculan dan viral di media sosial. Bagi Anda yang berencana liburan ke Jogja di tahun 2026, berikut adalah 7 daftar tempat wisata yang pantang untuk dilewatkan!</p>
+            <p>Liburan hemat (budget traveling) ke Jogja bukanlah hal yang mustahil. Percaya atau tidak, beberapa pemandangan alam terbaik di Yogyakarta justru bisa dinikmati dengan biaya yang sangat murah, atau bahkan gratis! Anda hanya perlu membayar retribusi parkir kendaraan saja.</p>
+            <p>Penasaran di mana saja letaknya? Yuk, catat <strong>20 spot wisata alam murah meriah di Jogja</strong> yang bakal bikin feed Instagram kamu meledak tanpa bikin kantong jebol!</p>
 
-            <h2>1. Obelix Hills</h2>
-            <p>Berada di perbukitan Prambanan, Obelix Hills menawarkan pemandangan <em>sunset</em> (matahari terbenam) terbaik di Jogja. Dengan lebih dari 30 spot foto gratis yang aesthetic, tempat ini menjadi favorit anak muda. Jangan lupa nikmati hidangan lezat di restoran area atas sambil menikmati live music.</p>
+            <h2>1. Watu Goyang (Bantul)</h2>
+            <p>HTM: Seikhlasnya / Parkir Rp 5.000<br/>Menawarkan pemandangan kota Jogja dari ketinggian. Jika beruntung, Anda bisa melihat lautan awan di pagi hari.</p>
 
-            <h2>2. HeHa Ocean View</h2>
-            <p>Terletak di tebing pantai Gunungkidul, HeHa Ocean View menawarkan sensasi nongkrong dengan latar belakang laut selatan yang megah. Waktu terbaik untuk berkunjung adalah sore menjelang malam hari agar Anda bisa melihat kombinasi lampu-lampu indah dan warna langit senja.</p>
+            <h2>2. Bukit Paralayang Watugupit</h2>
+            <p>HTM: Rp 10.000<br/>Spot sunset terbaik yang memadukan pemandangan bukit dan hamparan Pantai Parangtritis dari atas ketinggian.</p>
 
-            <h2>3. Pantai Mesra (Ngrawe)</h2>
-            <p>Jika Anda mencari pantai dengan tata letak taman yang rapi mirip di luar negeri, Pantai Mesra adalah jawabannya. Hamparan rumput hijau yang berdampingan langsung dengan pasir putih dan deburan ombak menjadikannya sangat unik dibandingkan pantai Gunungkidul lainnya.</p>
+            <h2>3. Pantai Kesirat</h2>
+            <p>HTM: Rp 5.000<br/>Pantai unik tanpa pasir putih, melainkan tebing karang tinggi tempat memancing dan camping yang sangat epik.</p>
 
-            <h2>4. Tumpeng Menoreh</h2>
-            <p>Berlokasi di Kulon Progo, restoran berbentuk heksagonal di atas bukit ini memberikan pemandangan 360 derajat. Anda bisa melihat matahari terbit (sunrise) yang sangat magis jika datang di pagi buta.</p>
+            <h2>4. Grojogan Watu Purbo</h2>
+            <p>HTM: Gratis (Hanya Parkir)<br/>Air terjun bertingkat enam peninggalan bendungan Belanda yang sangat instagenic, terutama setelah hujan reda.</p>
 
-            <h2>5. Lava Tour Merapi</h2>
-            <p>Bagi pecinta adrenalin, menyewa Jeep klasik menyusuri sisa-sisa letusan Gunung Merapi adalah pengalaman yang tak terlupakan. Rute basah melewati sungai Kali Kuning akan membuat liburan Anda semakin seru!</p>
+            <h2>5. Hutan Pinus Mangunan</h2>
+            <p>HTM: Rp 5.000<br/>Udara sejuk dengan deretan pohon pinus tinggi menjulang. Sangat romantis untuk foto pre-wedding atau sekadar jalan pagi.</p>
 
-            <h2>6. Studio Alam Gamplong</h2>
-            <p>Sering disebut sebagai "Mini Hollywood"-nya Indonesia, tempat ini merupakan lokasi syuting film-film terkenal karya Hanung Bramantyo (seperti Bumi Manusia). Seting bangunan jadul era kolonial sangat cocok untuk Anda yang suka fotografi vintage.</p>
+            <h2>6. Pantai Ngrumput</h2>
+            <p>HTM: Rp 10.000<br/>Berada tepat di sebelah Pantai Drini, pantai ini menawarkan area camping luas di hamparan rumput hijau pinggir pantai.</p>
 
-            <h2>7. Jalan Malioboro (Wajah Baru)</h2>
-            <p>Kini Malioboro sudah sepenuhnya bebas dari Pedagang Kaki Lima di sepanjang trotoar, menjadikannya sangat luas dan nyaman untuk pejalan kaki. Nikmati suasana malam Jogja yang romantis dengan alunan musisi jalanan yang berkualitas.</p>
+            <h2>7. Air Terjun Sri Gethuk</h2>
+            <p>HTM: Rp 15.000<br/>Sering dijuluki "Grand Canyon"-nya Jogja. Anda bisa berenang di aliran sungai hijau tosca atau menyewa perahu rakit.</p>
 
-            <p>Agar liburan Anda mengunjungi semua tempat ini berjalan lancar tanpa lelah menyetir, sangat disarankan untuk menggunakan jasa <strong>sewa mobil Jogja</strong> seperti Aksara Transport. Supir kami siap mengantar Anda ke semua lokasi viral ini dengan rute paling efisien!</p>
+            <h2>8. Bukit Bintang</h2>
+            <p>HTM: Gratis (Beli Makan/Minum)<br/>Jejeran warung kopi sederhana di pinggir tebing jalan Wonosari. Tempat asyik melihat lautan lampu kota Jogja di malam hari.</p>
+
+            <h2>9. Pantai Wediombo</h2>
+            <p>HTM: Rp 10.000<br/>Pantai dengan bebatuan karang besar yang membentuk kolam alami (laguna). Bisa juga untuk surfing ombak menantang!</p>
+
+            <h2>10. Laguna Depok</h2>
+            <p>HTM: Rp 10.000<br/>Pemandangan muara sungai Opak yang bertemu laut. Ada jembatan estetik dan Anda bisa naik perahu menelusuri hutan mangrove.</p>
+
+            <h2>11. Kebun Teh Nglinggo</h2>
+            <p>HTM: Rp 5.000<br/>Berada di Kulon Progo, Anda akan merasakan hawa sejuk khas pegunungan lengkap dengan hamparan kebun teh yang hijau.</p>
+
+            <h2>12. Bendungan Kamijoro</h2>
+            <p>HTM: Gratis (Hanya Parkir)<br/>Bendungan modern dengan taman yang tertata rapi. Jembatan gantungnya menjadi spot foto favorit warga lokal.</p>
+
+            <h2>13. Pantai Greweng</h2>
+            <p>HTM: Rp 10.000<br/>Butuh trekking sekitar 30 menit, tapi Anda akan dibayar lunas dengan pantai tersembunyi yang diapit dua tebing karang raksasa.</p>
+
+            <h2>14. Embung Nglanggeran</h2>
+            <p>HTM: Rp 15.000<br/>Telaga buatan di puncak gunung api purba. Pantulan senja di permukaan airnya adalah mahakarya alam yang wajib dilihat.</p>
+
+            <h2>15. Hutan Jati Banyusoco</h2>
+            <p>HTM: Gratis<br/>Jalanan membelah hutan jati yang gugur di musim kemarau. Sangat estetik, mirip dengan setting film-film Twilight!</p>
+
+            <h2>16. Pantai Sinden & Pulau Kalong</h2>
+            <p>HTM: Rp 10.000<br/>Suka tantangan ekstrem? Anda bisa menyeberang ke Pulau Kalong menggunakan jembatan gantung kayu di atas deburan ombak ganas.</p>
+
+            <h2>17. Bukit Panguk Kediwung</h2>
+            <p>HTM: Rp 5.000<br/>Spot melihat sunrise di Bantul. Kabut tebal di pagi hari membuat Anda seolah sedang melayang di atas awan.</p>
+
+            <h2>18. Air Terjun Kedung Pedut</h2>
+            <p>HTM: Rp 10.000<br/>Kolam alami dua warna (hijau tosca dan putih jernih) yang tersembunyi di rimbunnya hutan Kulon Progo.</p>
+
+            <h2>19. Selopamioro Adventure Park</h2>
+            <p>HTM: Gratis (Hanya bayar wahana)<br/>Taman edukasi alam di pinggir Kali Oya. Cocok untuk main kano, flying fox, atau sekadar jajan cilok sambil memandang sungai.</p>
+
+            <h2>20. Malioboro (Malam Hari)</h2>
+            <p>HTM: Gratis<br/>Tentu saja, duduk di kursi-kursi pedestrian Malioboro mendengarkan angklung jalanan adalah kemewahan gratis terbaik di Jogja!</p>
+
+            <hr />
+            <p><strong>Biar Kantong Makin Hemat, Gini Caranya!</strong><br />Banyak dari destinasi wisata di atas letaknya terpencil dan tidak bisa dijangkau bus umum. Menyewa taksi online puluhan kali akan sangat membakar biaya liburan Anda. Solusi cerdasnya? <strong>Sewa Mobil Jogja Murah</strong> di Aksara Transport!</p>
+            <p>Kami menyediakan mobil irit BBM seperti Honda Brio dan Toyota Avanza yang bisa disewa harian. Mau lepas kunci atau pakai supir? Semua bisa! Hubungi admin kami sekarang juga.</p>
         `
     },
     {
         id: '3',
-        created_at: '2026-06-03T09:15:00Z',
-        title: 'Tips Memilih Jasa Rental Mobil di Jogja yang Aman dan Terpercaya',
-        slug: 'tips-memilih-rental-mobil-jogja-terpercaya',
+        created_at: '2026-06-05T09:15:00Z',
+        title: 'Jangan Asal Sewa! Kenali 15 Modus Penipuan Rental Mobil di Jogja dan Cara Menghindarinya',
+        slug: '15-modus-penipuan-rental-mobil-jogja',
         category: 'Tips',
         image: '/images/tour_merapi.webp',
-        excerpt: 'Hati-hati penipuan! Ini dia panduan lengkap cara memilih jasa sewa mobil di Yogyakarta yang memiliki reputasi baik, armada sehat, dan harga transparan.',
+        excerpt: 'Jangan sampai liburan impian berubah menjadi mimpi buruk! Pelajari 15 trik licik oknum rental mobil nakal dan tips memilih rental terpercaya.',
         content: `
-            <p>Tingginya minat pariwisata di Yogyakarta membuat bisnis rental mobil tumbuh subur. Sayangnya, tidak semua penyedia jasa rental mobil bermain jujur. Banyak kasus wisatawan yang tertipu harga murah namun mendapatkan mobil mogok, atau terjebak biaya tambahan yang tidak masuk akal. Agar liburan Anda tenang, ikuti tips memilih rental mobil terpercaya berikut ini.</p>
+            <p>Pesatnya pariwisata Jogja rupanya juga mengundang oknum-oknum nakal yang ingin meraup untung dari wisatawan dengan cara curang. Banyak korban penipuan rental mobil yang akhirnya curhat viral di media sosial. Mulai dari mobil yang mogok, harga yang tiba-tiba membengkak, hingga kehilangan uang DP (Down Payment) karena rental fiktif.</p>
+            <p>Agar hal ini tidak terjadi pada Anda, mari kita kupas tuntas <strong>15 modus penipuan rental mobil</strong> yang sering terjadi di Jogja, serta cara jitu menghindarinya!</p>
+            
+            <h2>1. Harga "Umpan" Terlalu Murah</h2>
+            <p>Modus: Menawarkan Avanza seharga Rp 100.000/hari di Instagram. Fakta: Begitu tiba, mobil tidak ada dan ditawari mobil lain yang jauh lebih mahal dengan alasan "Avanza sudah disewa orang".</p>
+            
+            <h2>2. Rental Bodong (Fiktif)</h2>
+            <p>Modus: Akun Instagram dengan followers puluhan ribu (beli follower palsu). Meminta Anda transfer DP penuh, lalu memblokir nomor WhatsApp Anda pada hari-H.</p>
 
-            <h2>1. Cek Reputasi dan Ulasan (Review) di Google</h2>
-            <p>Langkah paling krusial sebelum mentransfer uang DP (Down Payment) adalah mengecek nama rental tersebut di Google Maps. Baca ulasan dari pelanggan sebelumnya. Jika ratingnya di bawah 4.0 atau banyak ulasan yang mengeluhkan kondisi mesin mobil, lebih baik cari tempat lain.</p>
+            <h2>3. Uang Jaminan (Deposit) Tidak Kembali</h2>
+            <p>Modus: Meminta deposit tunai Rp 500rb - Rp 1 juta di awal. Saat mengembalikan mobil, mereka mencari-cari alasan (mobil kotor, bau rokok) agar deposit hangus.</p>
 
-            <h2>2. Pastikan Harga Transparan (Tidak Ada Hidden Fee)</h2>
-            <p>Seringkali harga yang diiklankan sangat murah, namun saat Anda mengembalikan mobil, Anda dikenakan tagihan tambahan (seperti asuransi, biaya cuci, atau <em>overtime</em> yang tidak masuk akal). Tanyakan dengan detail di awal: <strong>"Apakah harga ini sudah final atau ada biaya lain?"</strong></p>
+            <h2>4. "Goresan Gaib" pada Body Mobil</h2>
+            <p>Modus: Menuduh Anda membuat lecet pada bumper mobil dan meminta denda perbaikan jutaan rupiah. Padahal lecet tersebut sudah ada sejak awal.</p>
 
-            <h2>3. Kondisi dan Tahun Pembuatan Mobil</h2>
-            <p>Pastikan Anda bertanya tahun berapa mobil tersebut diproduksi. Rental profesional biasanya menggunakan armada maksimal usia 5-6 tahun untuk menjaga performa mesin dan dinginnya AC. Aksara Transport secara rutin melakukan peremajaan unit sehingga Anda dijamin mendapatkan mobil keluaran terbaru.</p>
+            <h2>5. Mobil Berbeda dengan Pesanan</h2>
+            <p>Modus: Anda memesan Innova Reborn 2024, namun yang diantar adalah Innova tahun 2017 yang AC-nya kurang dingin dan mesinnya kasar.</p>
 
-            <h2>4. Layanan Pelanggan (Customer Service) yang Responsif</h2>
-            <p>Cobalah chat nomor WhatsApp rental tersebut. Jika balasannya sangat lama atau tidak profesional, itu bisa menjadi pertanda buruk jika sewaktu-waktu Anda mengalami kendala di jalan. Pilih rental yang CS-nya cepat tanggap dan solutif.</p>
+            <h2>6. Hidden Fee (Biaya Tersembunyi) Pengiriman</h2>
+            <p>Modus: Di awal katanya gratis antar-jemput ke bandara. Namun saat hari-H, tiba-tiba ditagih biaya antar jemput sebesar Rp 200.000.</p>
 
-            <h2>5. Memiliki Syarat dan Ketentuan yang Jelas</h2>
-            <p>Penyedia rental yang baik memiliki formulir serah terima kendaraan dan mencatat kondisi fisik mobil sebelum diserahkan kepada Anda. Pastikan Anda juga mendokumentasikan (video) kondisi sekeliling mobil saat serah terima untuk menghindari perdebatan mengenai lecet/goresan.</p>
+            <h2>7. Overtime (Kelebihan Jam) Mencekik</h2>
+            <p>Modus: Anda telat mengembalikan mobil 30 menit karena macet. Oknum rental mendenda Anda seharga sewa 1 hari penuh (bukan denda per jam 10%).</p>
 
-            <p>Jika Anda mencari jasa rental yang memenuhi kelima syarat di atas, <strong>Aksara Transport</strong> adalah jawabannya. Kami menjamin transparansi harga, armada yang wangi dan terawat, serta pelayanan supir yang ramah dan sopan.</p>
+            <h2>8. Modus Asuransi Wajib Palsu</h2>
+            <p>Modus: Memaksa Anda membayar asuransi jiwa/kendaraan harian yang sebenarnya fiktif dan masuk ke kantong pribadi karyawan.</p>
+
+            <h2>9. Bensin Tidak Sesuai</h2>
+            <p>Modus: Menyerahkan mobil dengan indikator bensin berkedip (hampir habis), namun meminta Anda mengembalikan dengan minimal 1/4 tangki.</p>
+
+            <h2>10. Supir Nakal (Paket All-In)</h2>
+            <p>Modus: Supir sengaja memperlambat rute perjalanan agar Anda dikenakan biaya lembur (overtime), atau membawa Anda ke restoran dengan harga di mark-up tinggi (supir mendapat komisi).</p>
+
+            <h2>11. Mencuri Identitas Penyewa</h2>
+            <p>Modus: Oknum menyalahgunakan KTP asli yang Anda tahan sebagai jaminan untuk mengajukan pinjaman online (Pinjol).</p>
+
+            <h2>12. Mesin Sengaja Disetting Bermasalah</h2>
+            <p>Modus: Mobil mogok di tengah jalan. Kemudian oknum menuduh gaya mengemudi Anda yang merusak mesin dan memaksa Anda menanggung biaya derek.</p>
+
+            <h2>13. Ban Gundul Tidak Diganti</h2>
+            <p>Modus: Memberikan mobil dengan ban tipis yang rawan bocor. Saat bocor/meletus di jalan, penyewa yang disalahkan dan disuruh beli ban baru.</p>
+
+            <h2>14. Pemerasan Cuci Mobil</h2>
+            <p>Modus: Menagih biaya cuci mobil eksklusif Rp 150.000, padahal mobil hanya kotor wajar akibat hujan (bukan tumpahan makanan parah).</p>
+
+            <h2>15. Penggelapan Barang Bawaan</h2>
+            <p>Modus: Memanfaatkan kelengahan penumpang yang menitipkan koper di dalam mobil saat mampir ke toko oleh-oleh.</p>
+
+            <hr />
+
+            <h2>Lalu, Bagaimana Cara Menghindarinya?</h2>
+            <p>Jangan paranoid! Masih banyak rental mobil yang profesional dan jujur. Ini kuncinya:</p>
+            <ul>
+                <li><strong>Cek Google Maps:</strong> Pastikan rental memiliki kantor fisik (bukan sekadar akun IG) dan baca ulasan pelanggan di Google Maps.</li>
+                <li><strong>Video Keliling Mobil:</strong> Wajib merekam kondisi sekeliling body mobil saat serah terima.</li>
+                <li><strong>Baca Surat Perjanjian:</strong> Jangan langsung tanda tangan! Cek detail jam sewa dan persentase denda keterlambatan.</li>
+                <li><strong>Pilih Aksara Transport:</strong> Tidak ingin ambil pusing? Aksara Transport adalah perusahaan legal yang memiliki reputasi prima. Kami menggaransi harga yang transparan, bebas <em>hidden fee</em>, serta mengembalikan seluruh dokumen dan deposit Anda tanpa drama!</li>
+            </ul>
         `
     },
     {
         id: '4',
         created_at: '2026-05-20T08:00:00Z',
-        title: 'Paket Wisata Jogja 1 Hari: Rute Populer untuk Liburan Singkat',
-        slug: 'paket-wisata-jogja-1-hari-rute-populer',
-        category: 'Wisata',
+        title: 'Mending Sewa Lepas Kunci atau Pakai Supir? Simak 15 Fakta Nyata Liburan di Jogja yang Jarang Orang Tahu!',
+        slug: 'sewa-mobil-lepas-kunci-vs-pakai-supir-jogja',
+        category: 'Tips',
         image: '/images/tour_pines_sunset.webp',
-        excerpt: 'Cuma punya waktu 1 hari di Jogja? Tenang, ikuti rekomendasi rute perjalanan (Itinerary) padat merayap ini agar Anda bisa menikmati esensi Yogyakarta secara maksimal.',
+        excerpt: 'Bimbang mau nyetir sendiri atau santai pakai jasa driver selama di Jogja? Baca artikel ini sebelum memutuskan agar tidak menyesal.',
         content: `
-            <p>Banyak wisatawan yang singgah di Jogja hanya untuk waktu singkat, entah karena urusan dinas atau sekadar transit <em>weekend</em>. Meski hanya memiliki waktu 1 hari (One Day Tour), Anda tetap bisa menikmati liburan yang berkesan jika merencanakannya dengan rute yang searah.</p>
+            <p>Pertanyaan ini paling sering diajukan oleh calon pelanggan: <strong>"Lebih baik sewa mobil lepas kunci (nyetir sendiri) atau plus supir ya?"</strong></p>
+            <p>Kedua opsi tersebut memiliki kelebihan dan kekurangannya masing-masing. Jika Anda masih bingung, berikut adalah 15 fakta kondisi lapangan di Jogja yang wajib Anda pertimbangkan sebelum menyewa mobil.</p>
 
-            <h2>Rute 1: Eksplorasi Candi dan Budaya (Utara)</h2>
-            <p>Rute ini berfokus pada sejarah dan keindahan arsitektur kuno. Sangat cocok bagi pecinta budaya.</p>
-            <ul>
-                <li><strong>07:00 - 09:30:</strong> Candi Borobudur (Magelang). Nikmati kemegahan candi Buddha terbesar di dunia di pagi hari saat cuaca belum terlalu panas.</li>
-                <li><strong>10:30 - 12:00:</strong> Lava Tour Merapi. Menggunakan Jeep menyusuri sisa letusan gunung api.</li>
-                <li><strong>13:00 - 15:00:</strong> Makan siang di Kopi Klotok Kaliurang, lalu lanjut ke Museum Ullen Sentalu.</li>
-                <li><strong>16:00 - 18:00:</strong> Candi Prambanan untuk menikmati relief Hindu yang indah saat sore hari.</li>
-                <li><strong>19:00:</strong> Makan malam di Gudeg Pawon atau sate klatak Pak Pong.</li>
-            </ul>
+            <h2>Kelebihan Sewa Lepas Kunci (Nyetir Sendiri)</h2>
+            <p><strong>1. Privasi 100%:</strong> Anda bebas bercanda, ngobrol rahasia, atau karaoke sepuasnya bareng keluarga di dalam mobil tanpa rasa canggung.</p>
+            <p><strong>2. Biaya Jauh Lebih Murah:</strong> Tentu saja, Anda tidak perlu membayar jasa harian supir, makan supir, atau uang rokok/tips.</p>
+            <p><strong>3. Fleksibilitas Waktu Penuh:</strong> Mau keluar cari makan jam 2 pagi? Mau tidur di mobil seharian? Bebas! Tidak terikat oleh jam kerja supir (umumnya supir bekerja 12 jam/hari).</p>
+            <p><strong>4. Kapasitas Penumpang Penuh:</strong> Menghemat 1 kursi di depan yang biasanya dipakai supir, sehingga anggota keluarga Anda bisa duduk lebih lega.</p>
 
-            <h2>Rute 2: Petualangan Alam dan Pantai (Selatan)</h2>
-            <p>Rute ini mengarah ke Kabupaten Gunungkidul yang terkenal dengan deretan pantai eksotisnya.</p>
-            <ul>
-                <li><strong>08:00 - 10:00:</strong> Goa Jomblang (Harus reservasi). Menuruni perut bumi untuk melihat "Cahaya Surga".</li>
-                <li><strong>11:00 - 12:30:</strong> Cave Tubing Goa Pindul. Menyusuri sungai bawah tanah menggunakan ban pelampung.</li>
-                <li><strong>13:30 - 15:30:</strong> Makan siang seafood di Pantai Indrayanti atau Pantai Drini.</li>
-                <li><strong>16:30 - 18:30:</strong> Menikmati sunset di HeHa Ocean View atau Pantai Mesra.</li>
-                <li><strong>20:00:</strong> Kembali ke pusat kota dan berbelanja oleh-oleh di kawasan Malioboro.</li>
-            </ul>
+            <h2>Tantangan Nyetir Sendiri di Jogja</h2>
+            <p><strong>5. Jalanan Jogja Semakin Macet:</strong> Terutama di akhir pekan (Jumat-Minggu) dan kawasan Malioboro. Jika Anda belum terbiasa macet-macetan, ini bisa membuat stres.</p>
+            <p><strong>6. Awas! Banyak Jalan Sempit & Satu Arah:</strong> Banyak jalan di keraton dan pusat kota yang merupakan sistem satu arah (one-way). Salah masuk bisa didenda polisi.</p>
+            <p><strong>7. Rute Pegunungan yang Ekstrem:</strong> Jika Anda mau ke Pantai Gunungkidul, Anda harus melewati jalan menanjak curam (Bukit Bintang / Pathuk) yang rawan rem blong jika tidak mahir.</p>
+            <p><strong>8. Susah Cari Parkir:</strong> Di tempat wisata viral, mencari lahan parkir sangat menguras emosi dan waktu.</p>
+            <p><strong>9. Menguras Energi:</strong> Setelah capek jalan-jalan seharian, Anda masih harus konsentrasi menyetir pulang ke hotel malam harinya.</p>
 
-            <h2>Tips Liburan 1 Hari di Jogja</h2>
-            <p>Kunci sukses liburan singkat adalah <strong>mobilitas yang cepat</strong>. Jika Anda tersesat atau salah jalan, waktu Anda yang berharga akan terbuang percuma.</p>
-            <p>Oleh karena itu, sangat disarankan untuk menyewa mobil beserta supir lokal. Di Aksara Transport, kami menyediakan layanan <strong>Paket Wisata 1 Hari (All-in)</strong> yang sudah termasuk Mobil, Supir, BBM, dan parkir. Anda cukup duduk manis, dan supir kami akan mengantar Anda tepat waktu ke setiap destinasi!</p>
+            <h2>Kelebihan Menggunakan Sewa Mobil + Supir</h2>
+            <p><strong>10. Bebas Stres & Capek:</strong> Ini yang terpenting! Anda cukup duduk di kursi penumpang, main HP, atau tidur, dan tiba-tiba sudah sampai di lokasi wisata tujuan.</p>
+            <p><strong>11. Supir = Pemandu Wisata Gratis:</strong> Supir lokal hafal sejarah tempat wisata dan bisa merekomendasikan kuliner legendaris yang tidak ada di Google.</p>
+            <p><strong>12. Tahu Jalan Tikus:</strong> Saat jalan utama macet total, supir lokal hafal gang-gang kecil pedesaan untuk memotong rute perjalanan Anda.</p>
+            <p><strong>13. Drop-off Bebas Repot:</strong> Supir akan menurunkan Anda tepat di pintu masuk tempat wisata, lalu supir yang akan pusing mencari tempat parkir.</p>
+            <p><strong>14. Gratis Fotografer Dadakan:</strong> Supir yang berpengalaman biasanya sangat pintar mengambil angle foto yang bagus untuk rombongan Anda.</p>
+            <p><strong>15. Tanggung Jawab Keamanan:</strong> Jika terjadi masalah mesin, ban bocor, atau serempetan, itu sepenuhnya menjadi tanggung jawab supir dan pihak rental, bukan Anda!</p>
+
+            <hr />
+            <p><strong>Kesimpulan:</strong><br />Jika Anda masih mahasiswa/anak muda yang energinya masih full dan ingin ngirit budget, <strong>Sewa Lepas Kunci</strong> adalah opsi terbaik. Namun, jika Anda membawa keluarga (orang tua & anak kecil) dan ingin liburan yang eksklusif tanpa stres, <strong>Sewa Mobil Plus Supir</strong> sangat kami rekomendasikan.</p>
+            <p>Apapun pilihan Anda, pastikan Anda memesannya hanya di <strong>Aksara Transport</strong>. Kami menyediakan puluhan unit mobil bersih terawat baik untuk lepas kunci maupun lengkap dengan supir profesional!</p>
         `
     }
 ];
