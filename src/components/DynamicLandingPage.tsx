@@ -85,7 +85,7 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
             <section className="hero">
                 <Image 
                     src="/images/hero_background.webp" 
-                    alt="Hero Background" 
+                    alt={`Layanan ${title} di Yogyakarta dari Aksara Transport`} 
                     fill 
                     priority 
                     style={{ objectFit: 'cover', zIndex: 0, opacity: 0.18 }} 
