@@ -57,6 +57,8 @@ const jsonLd = {
   }
 };
 
+import { GoogleTagManager } from '@next/third-parties/google';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,6 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
+      <GoogleTagManager gtmId="GTM-5SZ4NDL7" />
       <head>
         <script
           type="application/ld+json"

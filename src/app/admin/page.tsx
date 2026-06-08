@@ -64,7 +64,7 @@ export default function AdminPage() {
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
                 
                 {/* ADMIN NAVIGATION */}
-                <div style={{ display: 'flex', gap: '15px', marginBottom: '30px', background: 'white', padding: '15px 20px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '30px', background: 'white', padding: '15px 20px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', flexWrap: 'wrap' }}>
                     <a href="/admin" style={{ padding: '8px 16px', background: 'var(--primary)', color: 'white', borderRadius: '8px', fontWeight: 600, textDecoration: 'none' }}>
                         📋 Pesanan Rental
                     </a>
@@ -77,7 +77,7 @@ export default function AdminPage() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
                     <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#1e293b' }}>Dasbor Admin</h1>
-                    <button onClick={fetchBookings} className="btn btn-secondary">Refresh Data</button>
+                     <button onClick={fetchBookings} className="btn btn-secondary">Refresh Data</button>
                 </div>
 
                 <div style={{ background: 'white', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', overflow: 'hidden' }}>
