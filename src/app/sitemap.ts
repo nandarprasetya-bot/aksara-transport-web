@@ -1,4 +1,5 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
+import { validKeywords } from './[slug]/page';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://jogjasewamobil.com'
@@ -40,5 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    ...validKeywords.map((slug) => ({
+      url: `${baseUrl}/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
   ]
 }
