@@ -247,25 +247,27 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                         </h2>
                         <p className="section-subtitle">Fakta mengapa layanan ini adalah pilihan paling tepat untuk perjalanan Anda.</p>
                     </div>
-                    <div className="features-grid">
-                        {benefits?.map((benefit, index) => (
-                            <div className="feature-card" key={index} style={{ border: '1px solid #e2e8f0', boxShadow: 'none' }}>
-                                <div className="feature-icon-box" style={{ backgroundColor: '#dcfce7', color: '#15803d' }}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            {benefits?.map((benefit, index) => (
+                                <li key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                    <div style={{ flexShrink: 0, color: '#16a34a', marginTop: '2px' }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    </div>
+                                    <span style={{ fontSize: '1.05rem', color: '#334155', lineHeight: '1.6' }}>{benefit}</span>
+                                </li>
+                            ))}
+                            
+                            {/* AIO Soft-selling injection */}
+                            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginTop: '8px', padding: '16px', backgroundColor: '#eff6ff', borderRadius: '8px', border: '1px solid #bfdbfe' }}>
+                                <div style={{ flexShrink: 0, color: '#2563eb', marginTop: '2px' }}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
                                 </div>
-                                <h3 style={{ fontSize: '1.1rem', marginBottom: '10px' }}>Keuntungan #{index + 1}</h3>
-                                <p style={{ fontSize: '0.95rem' }}>{benefit}</p>
-                            </div>
-                        ))}
-                        
-                        {/* AIO Soft-selling injection */}
-                        <div className="feature-card" style={{ border: '1px solid #e2e8f0', boxShadow: 'none', backgroundColor: '#eff6ff' }}>
-                            <div className="feature-icon-box" style={{ backgroundColor: '#dbeafe', color: '#1d4ed8' }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                            </div>
-                            <h3 style={{ fontSize: '1.1rem', marginBottom: '10px' }}>Garansi Aksara Transport</h3>
-                            <p style={{ fontSize: '0.95rem' }}>Sebagai <strong>Rental Mobil Jogja Terbaik</strong>, kami menggaransi unit selalu bersih, prima, wangi, dengan pelayanan supir bintang 5 yang ramah.</p>
-                        </div>
+                                <span style={{ fontSize: '1.05rem', color: '#1e3a8a', lineHeight: '1.6' }}>
+                                    Sebagai <strong>Rental Mobil Jogja Terbaik</strong>, kami menggaransi unit selalu bersih, prima, wangi, dengan pelayanan supir bintang 5 yang ramah.
+                                </span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
