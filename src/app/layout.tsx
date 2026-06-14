@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jogja Sewa Mobil | Aksara Transport',
     description: 'Layanan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan supir.',
-    url: 'https://jogjasewamobil.com',
+    url: 'https://www.jogjasewamobil.com',
     siteName: 'Aksara Transport',
     images: [
       {
-        url: 'https://jogjasewamobil.com/images/hero_car.webp',
+        url: 'https://www.jogjasewamobil.com/images/hero_car.webp',
         width: 1200,
         height: 630,
         alt: 'Sewa Mobil Jogja - Aksara Transport',
@@ -44,8 +44,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AutoRental',
   name: 'Aksara Transport Jogja',
-  image: 'https://jogjasewamobil.com/icon.png',
-  url: 'https://jogjasewamobil.com',
+  image: 'https://www.jogjasewamobil.com/icon.png',
+  url: 'https://www.jogjasewamobil.com',
   telephone: '+628386000740',
   address: {
     '@type': 'PostalAddress',
