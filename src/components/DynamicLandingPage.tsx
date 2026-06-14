@@ -168,13 +168,50 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                         "@context": "https://schema.org",
                         "@type": type === 'car' ? "Product" : "LocalBusiness",
                         "name": title,
+                        "image": imageUrl ? `https://jogjasewamobil.com${imageUrl}` : "https://jogjasewamobil.com/images/hero_car.webp",
                         "description": `Layanan ${title.toLowerCase()} terbaik. Armada bersih, harga murah, lepas kunci atau dengan supir profesional di Yogyakarta.`,
+                        ...(type === 'car' ? {
+                            "brand": {
+                                "@type": "Brand",
+                                "name": carName ? carName.split(' ')[0] : "Aksara Transport"
+                            }
+                        } : {}),
                         ...(type === 'car' && price12 ? {
                             "offers": {
                                 "@type": "Offer",
                                 "priceCurrency": "IDR",
                                 "price": price12.toString(),
-                                "availability": "https://schema.org/InStock"
+                                "availability": "https://schema.org/InStock",
+                                "url": `https://jogjasewamobil.com/${seoData.slug}`,
+                                "shippingDetails": {
+                                    "@type": "OfferShippingDetails",
+                                    "shippingRate": {
+                                        "@type": "MonetaryAmount",
+                                        "value": "0",
+                                        "currency": "IDR"
+                                    },
+                                    "deliveryTime": {
+                                        "@type": "ShippingDeliveryTime",
+                                        "handlingTime": {
+                                            "@type": "QuantitativeValue",
+                                            "minValue": 0,
+                                            "maxValue": 1,
+                                            "unitCode": "d"
+                                        },
+                                        "transitTime": {
+                                            "@type": "QuantitativeValue",
+                                            "minValue": 0,
+                                            "maxValue": 1,
+                                            "unitCode": "d"
+                                        }
+                                    }
+                                },
+                                "hasMerchantReturnPolicy": {
+                                    "@type": "MerchantReturnPolicy",
+                                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                                    "merchantReturnDays": 1,
+                                    "returnMethod": "https://schema.org/ReturnInStore"
+                                }
                             }
                         } : {}),
                         "provider": {
