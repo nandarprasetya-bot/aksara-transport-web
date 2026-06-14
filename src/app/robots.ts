@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/admin/',
     },
-    sitemap: 'https://www.jogjasewamobil.com/sitemap.xml',
+    sitemap: 'https://jogjasewamobil.com/sitemap.xml',
   }
 }

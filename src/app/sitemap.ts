@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { seoKeywords } from '@/data/seoKeywords';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.jogjasewamobil.com'
+  const baseUrl = 'https://jogjasewamobil.com'
 
   return [
     {

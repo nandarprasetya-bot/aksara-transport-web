@@ -22,7 +22,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     title: `${seoData.title} Murah & Lepas Kunci | Aksara Transport`,
     description: `Layanan ${seoData.title.toLowerCase()} terbaik. Armada bersih, harga murah, lepas kunci atau dengan supir profesional.`,
     alternates: {
-      canonical: `https://www.jogjasewamobil.com/${slug}`,
+      canonical: `https://jogjasewamobil.com/${slug}`,
     }
   };
 }
