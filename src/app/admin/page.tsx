@@ -68,6 +68,9 @@ export default function AdminPage() {
                     <a href="/admin" style={{ padding: '8px 16px', background: 'var(--primary)', color: 'white', borderRadius: '8px', fontWeight: 600, textDecoration: 'none' }}>
                         📋 Pesanan Rental
                     </a>
+                    <a href="/admin/tagihan" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
+                        💰 Kalkulator Tagihan WA
+                    </a>
                     <a href="/admin/artikel" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
                         📰 Manajemen Artikel
                     </a>

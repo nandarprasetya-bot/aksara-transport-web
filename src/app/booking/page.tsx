@@ -47,6 +47,7 @@ export default function BookingPage() {
             text += `2. Foto SIM A Asli\n`;
             text += `3. Tiket Pulang Pergi (Pesawat/Kereta)\n`;
             text += `4. Voucher Penginapan Hotel\n`;
+            text += `* Khusus Domisili Jogja wajib menjaminkan Sepeda Motor dan STNK atas nama pribadi.\n`;
         }
 
         const waNumber = "628386000740"; 
@@ -141,6 +142,7 @@ export default function BookingPage() {
                                     <li>Foto SIM A aktif pengemudi</li>
                                     <li>Foto tiket pesawat / kereta api pulang-pergi Jogja</li>
                                     <li>Foto voucher hotel / penginapan di Jogja</li>
+                                    <li><strong>Khusus Domisili Jogja:</strong> Wajib menjaminkan Sepeda Motor dan STNK atas nama pribadi</li>
                                 </ul>
                             </div>
                         )}
