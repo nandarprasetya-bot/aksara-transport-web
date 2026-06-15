@@ -87,9 +87,8 @@ export default function AdminTagihanPage() {
         text += `*⚠️ PENTING:* \n_${generateWarningText()}_\n\n`;
 
         text += `*Rekening Pembayaran:*\n`;
-        text += `BCA: 1234567890\n`;
-        text += `Mandiri: 0987654321\n`;
-        text += `a.n Aksara Transport\n\n`;
+        text += `BCA: 4452490696\n`;
+        text += `a.n Nandar Prasetya\n\n`;
 
         text += `Mohon lampirkan bukti transfer jika sudah melakukan pembayaran DP. Jadwal armada Anda akan segera kami amankan setelah DP diterima. Terima kasih! 🙏`;
 
@@ -301,9 +300,8 @@ export default function AdminTagihanPage() {
                     <div style={{ width: '60%' }}>
                         <h3 style={{ fontSize: '14px', margin: '0 0 8px 0', textTransform: 'uppercase', color: '#475569', letterSpacing: '1px' }}>METODE PEMBAYARAN:</h3>
                         <div style={{ borderLeft: '4px solid #d97706', paddingLeft: '15px' }}>
-                            <p style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>BCA: 123-456-7890</p>
-                            <p style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>Mandiri: 098-765-4321</p>
-                            <p style={{ margin: 0, fontSize: '14px', color: '#475569' }}>Atas Nama: <strong>Aksara Transport</strong></p>
+                            <p style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>BCA: 4452490696</p>
+                            <p style={{ margin: 0, fontSize: '14px', color: '#475569' }}>a/n: <strong>Nandar Prasetya</strong></p>
                         </div>
                     </div>
 
