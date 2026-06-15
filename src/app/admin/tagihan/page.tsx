@@ -16,6 +16,9 @@ export default function AdminTagihanPage() {
     const [tambahanList, setTambahanList] = useState<{id: number, ket: string, harga: number}[]>([
         { id: Date.now(), ket: '', harga: 0 }
     ]);
+    
+    // Diskon
+    const [diskon, setDiskon] = useState<number>(0);
 
     const [totalHargaSewa, setTotalHargaSewa] = useState(0);
     const [total, setTotal] = useState(0);
@@ -30,12 +33,14 @@ export default function AdminTagihanPage() {
         setTotalHargaSewa(hSewa);
         
         const totalTambahan = tambahanList.reduce((sum, item) => sum + (item.harga || 0), 0);
-        const t = hSewa + totalTambahan;
+        let t = hSewa + totalTambahan - (diskon || 0);
+        if (t < 0) t = 0; // Prevent negative total
+        
         const dp = Math.round(t * (dpPercent / 100));
         setTotal(t);
         setDpAmount(dp);
         setSisa(t - dp);
-    }, [hargaHarian, jumlahHari, tambahanList, dpPercent]);
+    }, [hargaHarian, jumlahHari, tambahanList, diskon, dpPercent]);
 
     const formatRupiah = (angka: number) => {
         if (!angka) return 'Rp 0';
@@ -43,7 +48,7 @@ export default function AdminTagihanPage() {
     };
 
     // Helper for formatting input with dots
-    const handleHargaChange = (val: string, setter: React.Dispatch<React.SetStateAction<number>>) => {
+    const handleNumberChange = (val: string, setter: React.Dispatch<React.SetStateAction<number>>) => {
         const numericString = val.replace(/\D/g, '');
         setter(numericString ? parseInt(numericString, 10) : 0);
     };
@@ -99,6 +104,10 @@ export default function AdminTagihanPage() {
                 text += `- ${t.ket}: ${formatRupiah(t.harga)}\n`;
             }
         });
+        
+        if (diskon > 0) {
+            text += `- Diskon / Potongan Harga: -${formatRupiah(diskon)}\n`;
+        }
         
         text += `-----------------------------------\n`;
         text += `*Total Biaya Keseluruhan:* ${formatRupiah(total)}\n\n`;
@@ -187,7 +196,7 @@ export default function AdminTagihanPage() {
                             <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 2fr', gap: '20px', marginBottom: '15px' }}>
                                 <div>
                                     <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Harga Sewa / Hari (Rp)</label>
-                                    <input type="text" value={formatRupiah(hargaHarian)} onChange={e=>handleHargaChange(e.target.value, setHargaHarian)} placeholder="Rp 300.000" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                    <input type="text" value={formatRupiah(hargaHarian)} onChange={e=>handleNumberChange(e.target.value, setHargaHarian)} placeholder="Rp 300.000" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                                 </div>
                                 <div>
                                     <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Jumlah Hari</label>
@@ -216,9 +225,15 @@ export default function AdminTagihanPage() {
                                 ))}
                             </div>
                             
-                            <div style={{ borderTop: '1px solid #e2e8f0', marginTop: '15px', paddingTop: '15px' }}>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Persentase DP (%)</label>
-                                <input type="number" value={dpPercent} onChange={e=>setDpPercent(parseInt(e.target.value)||0)} className="form-control" style={{ width: '100px', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                            <div style={{ borderTop: '1px solid #e2e8f0', marginTop: '15px', paddingTop: '15px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                                <div>
+                                    <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: '#b91c1c' }}>Potongan / Diskon (Rp)</label>
+                                    <input type="text" value={diskon === 0 ? '' : formatRupiah(diskon)} onChange={e=>handleNumberChange(e.target.value, setDiskon)} placeholder="Misal diskon: Rp 50.000" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #fca5a5', backgroundColor: '#fef2f2' }} />
+                                </div>
+                                <div>
+                                    <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Persentase DP (%)</label>
+                                    <input type="number" value={dpPercent} onChange={e=>setDpPercent(parseInt(e.target.value)||0)} className="form-control" style={{ width: '100px', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                </div>
                             </div>
                         </div>
                         
@@ -300,6 +315,12 @@ export default function AdminTagihanPage() {
                             }
                             return null;
                         })}
+                        {diskon > 0 && (
+                            <tr>
+                                <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#b91c1c', fontWeight: 700 }}>Diskon / Potongan Harga</td>
+                                <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#b91c1c' }}>-{formatRupiah(diskon)}</td>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
 
