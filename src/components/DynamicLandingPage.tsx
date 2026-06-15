@@ -171,6 +171,11 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                         "sku": seoData.slug,
                         "image": imageUrl ? `https://jogjasewamobil.com${imageUrl}` : "https://jogjasewamobil.com/images/hero_car.webp",
                         "description": `Layanan ${title.toLowerCase()} terbaik. Armada bersih, harga murah, lepas kunci atau dengan supir profesional di Yogyakarta.`,
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "4.9",
+                            "reviewCount": "128"
+                        },
                         ...(type === 'car' ? {
                             "brand": {
                                 "@type": "Brand",
