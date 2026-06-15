@@ -233,6 +233,42 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                     })
                 }}
             />
+            {/* FAQ SCHEMA FOR AI (AIO/GEO) */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "Apa saja syarat untuk sewa mobil lepas kunci?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Untuk menyewa mobil tanpa supir (lepas kunci), Anda diwajibkan menyertakan scan foto KTP asli, SIM A aktif, bukti kepemilikan sepeda motor dengan STNK terdaftar atas nama penyewa, serta bersedia di-survei singkat lewat telepon."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Apakah biaya sewa sudah termasuk bahan bakar dan supir?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Kami menyediakan sistem sewa Lepas Kunci (hanya sewa mobil kosong) dan sewa Dengan Sopir. Tarif sewa standar Dengan Sopir belum termasuk bahan bakar (BBM), tarif tol, biaya parkir, dan akomodasi/makan supir, kecuali jika Anda memilih Paket All-In."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Apakah Aksara Transport melayani sewa ke luar kota?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Ya, kami memperbolehkan perjalanan luar kota. Namun untuk penyewaan luar kota, minimal durasi sewa lepas kunci adalah 2 hari berturut-turut, atau sangat disarankan menyewa dengan didampingi supir kami agar kenyamanan berkendara terjaga."
+                                }
+                            }
+                        ]
+                    })
+                }}
+            />
 
             {/* DYNAMIC PRICING TABLE (SEO OPTIMIZED) */}
             {type === 'car' && price12 && (
