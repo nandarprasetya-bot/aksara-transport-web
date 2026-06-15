@@ -18,6 +18,7 @@ export default function Footer() {
                         <li><Link href="/mobil">Pilihan Mobil</Link></li>
                         <li><Link href="/wisata">Paket Wisata</Link></li>
                         <li><Link href="/artikel">Tips &amp; Berita</Link></li>
+                        <li><Link href="/panduan">Panduan &amp; FAQ</Link></li>
                         <li><Link href="/tentang">Tentang Kami</Link></li>
                         <li><Link href="/kontak">Kontak Kami</Link></li>
                     </ul>
