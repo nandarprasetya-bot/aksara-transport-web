@@ -71,9 +71,6 @@ export default function AdminPage() {
                     <a href="/admin/tagihan" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
                         💰 Kalkulator Tagihan
                     </a>
-                    <a href="/admin/pricelist" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
-                        📑 Generator Pricelist
-                    </a>
                     <a href="/admin/artikel" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
                         📰 Manajemen Artikel
                     </a>
