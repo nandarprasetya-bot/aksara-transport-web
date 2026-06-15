@@ -6,15 +6,18 @@ export default function AdminTagihanPage() {
     const [noWa, setNoWa] = useState('');
     const [mobil, setMobil] = useState('');
     const [layanan, setLayanan] = useState('Lepas Kunci');
-    const [durasi, setDurasi] = useState('1 Hari');
     
-    const [hargaDeal, setHargaDeal] = useState<number>(0);
+    // Auto Calculate fields
+    const [hargaHarian, setHargaHarian] = useState<number>(0);
+    const [jumlahHari, setJumlahHari] = useState<number>(1);
+    
     const [dpPercent, setDpPercent] = useState<number>(30);
 
     const [tambahanList, setTambahanList] = useState<{id: number, ket: string, harga: number}[]>([
         { id: Date.now(), ket: '', harga: 0 }
     ]);
 
+    const [totalHargaSewa, setTotalHargaSewa] = useState(0);
     const [total, setTotal] = useState(0);
     const [dpAmount, setDpAmount] = useState(0);
     const [sisa, setSisa] = useState(0);
@@ -23,17 +26,26 @@ export default function AdminTagihanPage() {
     const invoiceNumber = `INV-${Date.now().toString().slice(-6)}`;
 
     useEffect(() => {
+        const hSewa = hargaHarian * jumlahHari;
+        setTotalHargaSewa(hSewa);
+        
         const totalTambahan = tambahanList.reduce((sum, item) => sum + (item.harga || 0), 0);
-        const t = (hargaDeal || 0) + totalTambahan;
+        const t = hSewa + totalTambahan;
         const dp = Math.round(t * (dpPercent / 100));
         setTotal(t);
         setDpAmount(dp);
         setSisa(t - dp);
-    }, [hargaDeal, tambahanList, dpPercent]);
+    }, [hargaHarian, jumlahHari, tambahanList, dpPercent]);
 
     const formatRupiah = (angka: number) => {
         if (!angka) return 'Rp 0';
         return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
+    // Helper for formatting input with dots
+    const handleHargaChange = (val: string, setter: React.Dispatch<React.SetStateAction<number>>) => {
+        const numericString = val.replace(/\D/g, '');
+        setter(numericString ? parseInt(numericString, 10) : 0);
     };
 
     const addTambahan = () => {
@@ -44,10 +56,21 @@ export default function AdminTagihanPage() {
         setTambahanList(tambahanList.filter(t => t.id !== id));
     };
 
-    const updateTambahan = (id: number, field: string, value: string | number) => {
+    const updateTambahanStr = (id: number, field: string, value: string) => {
         setTambahanList(tambahanList.map(t => {
             if (t.id === id) {
                 return { ...t, [field]: value };
+            }
+            return t;
+        }));
+    };
+    
+    const updateTambahanNum = (id: number, valueStr: string) => {
+        const numericString = valueStr.replace(/\D/g, '');
+        const val = numericString ? parseInt(numericString, 10) : 0;
+        setTambahanList(tambahanList.map(t => {
+            if (t.id === id) {
+                return { ...t, harga: val };
             }
             return t;
         }));
@@ -66,10 +89,10 @@ export default function AdminTagihanPage() {
         text += `*Detail Pesanan:*\n`;
         text += `- Armada: ${mobil}\n`;
         text += `- Layanan: ${layanan}\n`;
-        text += `- Durasi: ${durasi}\n\n`;
+        text += `- Durasi: ${jumlahHari} Hari\n\n`;
 
         text += `*Rincian Biaya:*\n`;
-        text += `- Harga Sewa Kendaraan: ${formatRupiah(hargaDeal)}\n`;
+        text += `- Harga Sewa Kendaraan (${jumlahHari}x ${formatRupiah(hargaHarian)}): ${formatRupiah(totalHargaSewa)}\n`;
         
         tambahanList.forEach(t => {
             if (t.ket && t.harga > 0) {
@@ -88,7 +111,7 @@ export default function AdminTagihanPage() {
 
         text += `*Rekening Pembayaran:*\n`;
         text += `BCA: 4452490696\n`;
-        text += `a.n Nandar Prasetya\n\n`;
+        text += `a/n Nandar Prasetya\n\n`;
 
         text += `Mohon lampirkan bukti transfer jika sudah melakukan pembayaran DP. Jadwal armada Anda akan segera kami amankan setelah DP diterima. Terima kasih! 🙏`;
 
@@ -105,22 +128,21 @@ export default function AdminTagihanPage() {
     };
 
     const handlePrintPDF = () => {
-        window.print();
+        // Simple trick to isolate only the invoice
+        const originalContent = document.body.innerHTML;
+        const printContent = document.getElementById('invoice-preview')?.innerHTML;
+        
+        if (printContent) {
+            document.body.innerHTML = printContent;
+            window.print();
+            document.body.innerHTML = originalContent;
+            window.location.reload(); // To re-hydrate react properly
+        }
     };
 
     return (
         <main className="tagihan-page" style={{ background: '#f1f5f9', minHeight: '100vh', padding: '40px 20px', fontFamily: '"Inter", sans-serif' }}>
-            <style dangerouslySetInnerHTML={{__html: `
-                @media print {
-                    body { background: white !important; margin: 0; padding: 0; }
-                    .no-print { display: none !important; }
-                    .print-only { display: block !important; }
-                    #invoice-preview { box-shadow: none !important; margin: 0 !important; width: 100% !important; padding: 0 !important; }
-                    @page { margin: 10mm; }
-                }
-            `}} />
-
-            <div className="container no-print" style={{ maxWidth: '1000px', margin: '0 auto', marginBottom: '40px' }}>
+            <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', marginBottom: '40px' }}>
                 <div style={{ display: 'flex', gap: '15px', marginBottom: '30px', background: 'white', padding: '15px 20px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', flexWrap: 'wrap' }}>
                     <a href="/admin" style={{ padding: '8px 16px', background: '#f8fafc', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
                         📋 Dasbor Admin
@@ -148,7 +170,7 @@ export default function AdminTagihanPage() {
                             </div>
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
                                 <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Armada Mobil</label>
                                 <input type="text" value={mobil} onChange={e=>setMobil(e.target.value)} placeholder="Contoh: Honda Brio" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
@@ -157,18 +179,24 @@ export default function AdminTagihanPage() {
                                 <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Layanan</label>
                                 <input type="text" value={layanan} onChange={e=>setLayanan(e.target.value)} placeholder="Lepas Kunci / Sopir" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                             </div>
-                            <div>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Durasi Sewa</label>
-                                <input type="text" value={durasi} onChange={e=>setDurasi(e.target.value)} placeholder="Contoh: 2 Hari" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
-                            </div>
                         </div>
 
                         <div style={{ padding: '20px', background: '#f8fafc', borderRadius: '8px', marginBottom: '20px', border: '1px solid #e2e8f0' }}>
-                            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '15px', color: '#0f172a' }}>Rincian Biaya</h3>
+                            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '15px', color: '#0f172a' }}>Rincian Biaya & Durasi</h3>
                             
-                            <div style={{ marginBottom: '15px' }}>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Harga Deal Pokok Sewa (Rp)</label>
-                                <input type="number" value={hargaDeal || ''} onChange={e=>setHargaDeal(parseInt(e.target.value)||0)} placeholder="Contoh: 300000" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 2fr', gap: '20px', marginBottom: '15px' }}>
+                                <div>
+                                    <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Harga Sewa / Hari (Rp)</label>
+                                    <input type="text" value={formatRupiah(hargaHarian)} onChange={e=>handleHargaChange(e.target.value, setHargaHarian)} placeholder="Rp 300.000" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                </div>
+                                <div>
+                                    <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Jumlah Hari</label>
+                                    <input type="number" value={jumlahHari} onChange={e=>setJumlahHari(parseInt(e.target.value)||1)} min={1} className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                </div>
+                                <div>
+                                    <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Total Pokok Sewa (Otomatis)</label>
+                                    <input type="text" value={formatRupiah(totalHargaSewa)} readOnly className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1', backgroundColor: '#e2e8f0', color: '#1e293b', fontWeight: 700 }} />
+                                </div>
                             </div>
 
                             <div style={{ borderTop: '1px solid #e2e8f0', margin: '20px 0', paddingTop: '15px' }}>
@@ -179,8 +207,8 @@ export default function AdminTagihanPage() {
                                 
                                 {tambahanList.map((t, index) => (
                                     <div key={t.id} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr auto', gap: '10px', marginBottom: '10px', alignItems: 'center' }}>
-                                        <input type="text" value={t.ket} onChange={e=>updateTambahan(t.id, 'ket', e.target.value)} placeholder={`Keterangan (misal: Antar Stasiun)`} className="form-control" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1' }} />
-                                        <input type="number" value={t.harga || ''} onChange={e=>updateTambahan(t.id, 'harga', parseInt(e.target.value)||0)} placeholder="Nominal (Rp)" className="form-control" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1' }} />
+                                        <input type="text" value={t.ket} onChange={e=>updateTambahanStr(t.id, 'ket', e.target.value)} placeholder={`Keterangan (misal: Antar Stasiun)`} className="form-control" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1' }} />
+                                        <input type="text" value={t.harga === 0 ? '' : formatRupiah(t.harga)} onChange={e=>updateTambahanNum(t.id, e.target.value)} placeholder="Rp Nominal" className="form-control" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1' }} />
                                         {tambahanList.length > 1 && (
                                             <button type="button" onClick={() => removeTambahan(t.id)} style={{ background: '#ef4444', color: 'white', border: 'none', width: '35px', height: '35px', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>X</button>
                                         )}
@@ -221,7 +249,6 @@ export default function AdminTagihanPage() {
                 {/* KOP SURAT (LETTERHEAD) */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '3px solid #d97706', paddingBottom: '20px', marginBottom: '30px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                        {/* Fake Logo Icon using HTML */}
                         <div style={{ width: '70px', height: '70px', background: '#d97706', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontWeight: 900, fontSize: '30px', letterSpacing: '-2px' }}>
                             AT
                         </div>
@@ -258,9 +285,9 @@ export default function AdminTagihanPage() {
                         <tr>
                             <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>
                                 <div style={{ fontWeight: 700, marginBottom: '4px' }}>Sewa {mobil || 'Kendaraan'}</div>
-                                <div style={{ fontSize: '13px', color: '#64748b' }}>Layanan: {layanan || '-'} | Durasi: {durasi || '-'}</div>
+                                <div style={{ fontSize: '13px', color: '#64748b' }}>Layanan: {layanan || '-'} | Durasi: {jumlahHari} Hari (x {formatRupiah(hargaHarian)})</div>
                             </td>
-                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a', verticalAlign: 'top' }}>{formatRupiah(hargaDeal)}</td>
+                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a', verticalAlign: 'top' }}>{formatRupiah(totalHargaSewa)}</td>
                         </tr>
                         {tambahanList.map((t) => {
                             if (t.ket && t.harga > 0) {
