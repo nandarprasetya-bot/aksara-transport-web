@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function AdminTagihanPage() {
     const [nama, setNama] = useState('');
@@ -11,7 +11,6 @@ export default function AdminTagihanPage() {
     const [hargaDeal, setHargaDeal] = useState<number>(0);
     const [dpPercent, setDpPercent] = useState<number>(30);
 
-    // Multiple Tambahan Biaya
     const [tambahanList, setTambahanList] = useState<{id: number, ket: string, harga: number}[]>([
         { id: Date.now(), ket: '', harga: 0 }
     ]);
@@ -111,77 +110,71 @@ export default function AdminTagihanPage() {
     };
 
     return (
-        <main className="tagihan-page">
+        <main className="tagihan-page" style={{ background: '#f1f5f9', minHeight: '100vh', padding: '40px 20px', fontFamily: '"Inter", sans-serif' }}>
             <style dangerouslySetInnerHTML={{__html: `
                 @media print {
-                    body * { visibility: hidden; }
-                    #print-invoice, #print-invoice * { visibility: visible; }
-                    #print-invoice { position: absolute; left: 0; top: 0; width: 100%; padding: 20px; }
+                    body { background: white !important; margin: 0; padding: 0; }
                     .no-print { display: none !important; }
-                    .tagihan-page { background: white !important; padding: 0 !important; }
-                    .container { max-width: 100% !important; margin: 0 !important; }
+                    .print-only { display: block !important; }
+                    #invoice-preview { box-shadow: none !important; margin: 0 !important; width: 100% !important; padding: 0 !important; }
+                    @page { margin: 10mm; }
                 }
             `}} />
 
-            <div className="container no-print" style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 20px', minHeight: '100vh' }}>
+            <div className="container no-print" style={{ maxWidth: '1000px', margin: '0 auto', marginBottom: '40px' }}>
                 <div style={{ display: 'flex', gap: '15px', marginBottom: '30px', background: 'white', padding: '15px 20px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', flexWrap: 'wrap' }}>
-                    <a href="/admin" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
-                        📋 Pesanan Rental
+                    <a href="/admin" style={{ padding: '8px 16px', background: '#f8fafc', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
+                        📋 Dasbor Admin
                     </a>
                     <a href="/admin/tagihan" style={{ padding: '8px 16px', background: 'var(--primary)', color: 'white', borderRadius: '8px', fontWeight: 600, textDecoration: 'none' }}>
-                        💰 Kalkulator Tagihan WA & PDF
-                    </a>
-                    <a href="/admin/artikel" style={{ padding: '8px 16px', background: '#f1f5f9', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
-                        📰 Manajemen Artikel
+                        💰 Kalkulator Tagihan & Invoice
                     </a>
                 </div>
 
                 <div style={{ background: 'white', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', padding: '30px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                        <div>
-                            <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1e293b', marginBottom: '5px' }}>Kalkulator Tagihan & Invoice PDF</h1>
-                            <p style={{ color: '#64748b' }}>Buat tagihan WhatsApp dan cetak Invoice Resmi (PDF).</p>
-                        </div>
+                    <div style={{ marginBottom: '20px' }}>
+                        <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1e293b', marginBottom: '5px' }}>Form Input Invoice</h1>
+                        <p style={{ color: '#64748b' }}>Isi data di bawah ini, preview Invoice Resmi (Kop Surat) akan terbuat otomatis di bawah.</p>
                     </div>
 
-                    <form onSubmit={handleKirimWA}>
+                    <form>
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px' }}>Nama Pelanggan</label>
-                                <input type="text" value={nama} onChange={e=>setNama(e.target.value)} placeholder="Contoh: Budi Santoso" required className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Nama Pelanggan</label>
+                                <input type="text" value={nama} onChange={e=>setNama(e.target.value)} placeholder="Contoh: Budi Santoso" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                             </div>
                             <div>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px' }}>Nomor WA (Opsional)</label>
+                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Nomor WA Pelanggan (Opsional)</label>
                                 <input type="text" value={noWa} onChange={e=>setNoWa(e.target.value)} placeholder="Contoh: 081234567890" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                             </div>
                         </div>
 
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px' }}>Armada Mobil</label>
-                                <input type="text" value={mobil} onChange={e=>setMobil(e.target.value)} placeholder="Contoh: Brio" required className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Armada Mobil</label>
+                                <input type="text" value={mobil} onChange={e=>setMobil(e.target.value)} placeholder="Contoh: Honda Brio" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                             </div>
                             <div>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px' }}>Layanan</label>
-                                <input type="text" value={layanan} onChange={e=>setLayanan(e.target.value)} placeholder="Lepas Kunci / Sopir" required className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Layanan</label>
+                                <input type="text" value={layanan} onChange={e=>setLayanan(e.target.value)} placeholder="Lepas Kunci / Sopir" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                             </div>
                             <div>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px' }}>Durasi Sewa</label>
-                                <input type="text" value={durasi} onChange={e=>setDurasi(e.target.value)} placeholder="Contoh: 2 Hari" required className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Durasi Sewa</label>
+                                <input type="text" value={durasi} onChange={e=>setDurasi(e.target.value)} placeholder="Contoh: 2 Hari" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                             </div>
                         </div>
 
                         <div style={{ padding: '20px', background: '#f8fafc', borderRadius: '8px', marginBottom: '20px', border: '1px solid #e2e8f0' }}>
-                            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '15px', color: '#0f172a' }}>Rincian Harga & Biaya</h3>
+                            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '15px', color: '#0f172a' }}>Rincian Biaya</h3>
                             
                             <div style={{ marginBottom: '15px' }}>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px' }}>Harga Deal Pokok Sewa (Rp)</label>
-                                <input type="number" value={hargaDeal || ''} onChange={e=>setHargaDeal(parseInt(e.target.value)||0)} placeholder="Contoh: 300000" required className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Harga Deal Pokok Sewa (Rp)</label>
+                                <input type="number" value={hargaDeal || ''} onChange={e=>setHargaDeal(parseInt(e.target.value)||0)} placeholder="Contoh: 300000" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                             </div>
 
                             <div style={{ borderTop: '1px solid #e2e8f0', margin: '20px 0', paddingTop: '15px' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                                    <label style={{ fontWeight: 700, display: 'block' }}>Daftar Biaya Tambahan</label>
+                                    <label style={{ fontWeight: 700, display: 'block', fontSize: '0.9rem' }}>Biaya Tambahan Lain-Lain</label>
                                     <button type="button" onClick={addTambahan} style={{ background: '#3b82f6', color: 'white', border: 'none', padding: '6px 12px', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer' }}>+ Tambah Biaya</button>
                                 </div>
                                 
@@ -197,85 +190,88 @@ export default function AdminTagihanPage() {
                             </div>
                             
                             <div style={{ borderTop: '1px solid #e2e8f0', marginTop: '15px', paddingTop: '15px' }}>
-                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px' }}>Persentase DP (%)</label>
-                                <input type="number" value={dpPercent} onChange={e=>setDpPercent(parseInt(e.target.value)||0)} required className="form-control" style={{ width: '100px', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Persentase DP (%)</label>
+                                <input type="number" value={dpPercent} onChange={e=>setDpPercent(parseInt(e.target.value)||0)} className="form-control" style={{ width: '100px', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
                             </div>
                         </div>
-
-                        <div style={{ background: 'var(--primary-light)', color: 'white', padding: '20px', borderRadius: '8px', marginBottom: '20px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', fontSize: '1.1rem' }}>
-                                <span>Total Tagihan:</span>
-                                <strong>{formatRupiah(total)}</strong>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', fontSize: '1.2rem', color: '#10b981', fontWeight: 800 }}>
-                                <span>Total DP ({dpPercent}%):</span>
-                                <span>{formatRupiah(dpAmount)}</span>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1rem', borderTop: '1px dashed rgba(255,255,255,0.2)', paddingTop: '10px', color: '#cbd5e1' }}>
-                                <span>Sisa Pelunasan:</span>
-                                <span>{formatRupiah(sisa)}</span>
-                            </div>
-                        </div>
-
+                        
                         <div style={{ display: 'flex', gap: '15px' }}>
-                            <button type="submit" className="btn" style={{ flex: 1, padding: '16px', fontSize: '1.1rem', fontWeight: 800, borderRadius: '8px', background: '#25d366', border: 'none', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', cursor: 'pointer' }}>
+                            <button type="button" onClick={handleKirimWA} className="btn" style={{ flex: 1, padding: '16px', fontSize: '1rem', fontWeight: 800, borderRadius: '8px', background: '#25d366', border: 'none', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', cursor: 'pointer' }}>
                                 Kirim ke WhatsApp
                             </button>
-                            <button type="button" onClick={handlePrintPDF} className="btn" style={{ flex: 1, padding: '16px', fontSize: '1.1rem', fontWeight: 800, borderRadius: '8px', background: '#e2e8f0', border: '1px solid #cbd5e1', color: '#1e293b', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', cursor: 'pointer' }}>
+                            <button type="button" onClick={handlePrintPDF} className="btn" style={{ flex: 1, padding: '16px', fontSize: '1rem', fontWeight: 800, borderRadius: '8px', background: '#e2e8f0', border: '1px solid #cbd5e1', color: '#1e293b', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', cursor: 'pointer' }}>
                                 🖨️ Cetak Invoice (PDF)
                             </button>
                         </div>
                     </form>
                 </div>
+                
+                <h2 style={{ textAlign: 'center', marginTop: '40px', marginBottom: '20px', color: '#64748b', fontSize: '1.2rem', fontWeight: 700 }}>👇 PREVIEW INVOICE RESMI 👇</h2>
             </div>
 
-            {/* PRINTABLE INVOICE AREA (HIDDEN EXCEPT WHEN PRINTING) */}
-            <div id="print-invoice" style={{ display: 'none', fontFamily: 'sans-serif', color: '#000', backgroundColor: 'white' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid #0f172a', paddingBottom: '20px', marginBottom: '30px' }}>
-                    <div>
-                        <h1 style={{ margin: 0, fontSize: '28px', color: '#d97706', fontWeight: 900, textTransform: 'uppercase' }}>AKSARA TRANSPORT</h1>
-                        <p style={{ margin: '5px 0 0 0', fontSize: '14px', color: '#475569' }}>Rental Mobil Premium & Wisata Yogyakarta</p>
-                        <p style={{ margin: '2px 0 0 0', fontSize: '12px', color: '#64748b' }}>Jl. Imogiri Barat No.RT.4, Sewon, Bantul, DIY | WA: 0838-6000-740</p>
+            {/* VISIBLE INVOICE AREA (Becomes full page on print) */}
+            <div id="invoice-preview" style={{ 
+                maxWidth: '900px', 
+                margin: '0 auto', 
+                background: 'white', 
+                boxShadow: '0 10px 25px rgba(0,0,0,0.1)', 
+                padding: '50px',
+                borderRadius: '8px',
+                color: '#0f172a'
+            }}>
+                {/* KOP SURAT (LETTERHEAD) */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '3px solid #d97706', paddingBottom: '20px', marginBottom: '30px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                        {/* Fake Logo Icon using HTML */}
+                        <div style={{ width: '70px', height: '70px', background: '#d97706', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontWeight: 900, fontSize: '30px', letterSpacing: '-2px' }}>
+                            AT
+                        </div>
+                        <div>
+                            <h1 style={{ margin: 0, fontSize: '28px', color: '#0f172a', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px' }}>AKSARA TRANSPORT</h1>
+                            <p style={{ margin: '5px 0 0 0', fontSize: '14px', color: '#475569', fontWeight: 600 }}>Pusat Sewa Mobil Premium & Wisata Yogyakarta</p>
+                            <p style={{ margin: '3px 0 0 0', fontSize: '12px', color: '#64748b' }}>Jl. Imogiri Barat No.RT.4, Sewon, Bantul, Daerah Istimewa Yogyakarta 55188</p>
+                            <p style={{ margin: '3px 0 0 0', fontSize: '12px', color: '#64748b' }}>WhatsApp: 0838-6000-740 | Website: jogjasewamobil.com</p>
+                        </div>
                     </div>
-                    <div style={{ textAlign: 'right' }}>
-                        <h2 style={{ margin: 0, fontSize: '32px', color: '#0f172a', letterSpacing: '2px' }}>INVOICE</h2>
-                        <p style={{ margin: '5px 0 0 0', fontSize: '14px', fontWeight: 'bold' }}>#{invoiceNumber}</p>
-                        <p style={{ margin: '2px 0 0 0', fontSize: '12px' }}>Tanggal: {invoiceDate}</p>
+                    <div style={{ textAlign: 'right', paddingTop: '10px' }}>
+                        <h2 style={{ margin: 0, fontSize: '38px', color: '#d97706', fontWeight: 900, letterSpacing: '2px' }}>INVOICE</h2>
+                        <p style={{ margin: '5px 0 0 0', fontSize: '16px', fontWeight: 700, color: '#1e293b' }}>No. {invoiceNumber}</p>
+                        <p style={{ margin: '3px 0 0 0', fontSize: '14px', color: '#64748b' }}>Tanggal: {invoiceDate}</p>
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '40px' }}>
-                    <div>
-                        <h3 style={{ fontSize: '16px', margin: '0 0 10px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '5px' }}>DITAGIHKAN KEPADA:</h3>
-                        <p style={{ margin: '0 0 5px 0', fontWeight: 'bold', fontSize: '18px' }}>{nama || 'Nama Pelanggan'}</p>
-                        {noWa && <p style={{ margin: 0, fontSize: '14px' }}>WA: {noWa}</p>}
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '40px', backgroundColor: '#f8fafc', padding: '20px', borderRadius: '8px' }}>
+                    <div style={{ flex: 1 }}>
+                        <h3 style={{ fontSize: '13px', margin: '0 0 10px 0', color: '#64748b', textTransform: 'uppercase', letterSpacing: '1px' }}>DITAGIHKAN KEPADA:</h3>
+                        <p style={{ margin: '0 0 5px 0', fontWeight: 800, fontSize: '18px', color: '#0f172a' }}>{nama || '(Nama Pelanggan)'}</p>
+                        <p style={{ margin: 0, fontSize: '14px', color: '#475569' }}>Telp / WA: {noWa || '-'}</p>
                     </div>
-                    <div style={{ textAlign: 'right' }}>
-                        <h3 style={{ fontSize: '16px', margin: '0 0 10px 0', borderBottom: '1px solid #e2e8f0', paddingBottom: '5px' }}>DETAIL LAYANAN:</h3>
-                        <p style={{ margin: '0 0 5px 0', fontSize: '14px' }}><strong>Armada:</strong> {mobil || '-'}</p>
-                        <p style={{ margin: '0 0 5px 0', fontSize: '14px' }}><strong>Sistem:</strong> {layanan || '-'}</p>
-                        <p style={{ margin: '0 0 0 0', fontSize: '14px' }}><strong>Durasi:</strong> {durasi || '-'}</p>
+                    <div style={{ flex: 1, textAlign: 'right' }}>
+                        <h3 style={{ fontSize: '13px', margin: '0 0 10px 0', color: '#64748b', textTransform: 'uppercase', letterSpacing: '1px' }}>DETAIL LAYANAN:</h3>
+                        <p style={{ margin: '0 0 5px 0', fontSize: '14px', color: '#0f172a' }}><strong>Armada:</strong> {mobil || '-'}</p>
+                        <p style={{ margin: '0 0 5px 0', fontSize: '14px', color: '#0f172a' }}><strong>Sistem:</strong> {layanan || '-'}</p>
+                        <p style={{ margin: '0 0 0 0', fontSize: '14px', color: '#0f172a' }}><strong>Durasi:</strong> {durasi || '-'}</p>
                     </div>
                 </div>
 
                 <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '30px' }}>
                     <thead>
                         <tr style={{ backgroundColor: '#0f172a', color: 'white' }}>
-                            <th style={{ padding: '12px 15px', textAlign: 'left', fontSize: '14px' }}>DESKRIPSI BIAYA</th>
-                            <th style={{ padding: '12px 15px', textAlign: 'right', fontSize: '14px', width: '200px' }}>JUMLAH (IDR)</th>
+                            <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', borderRadius: '8px 0 0 0' }}>DESKRIPSI BIAYA</th>
+                            <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', width: '220px', borderRadius: '0 8px 0 0' }}>JUMLAH (IDR)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style={{ padding: '15px', borderBottom: '1px solid #e2e8f0', fontSize: '14px' }}>Harga Pokok Sewa Armada</td>
-                            <td style={{ padding: '15px', borderBottom: '1px solid #e2e8f0', fontSize: '14px', textAlign: 'right', fontWeight: 'bold' }}>{formatRupiah(hargaDeal)}</td>
+                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>Harga Pokok Sewa Kendaraan</td>
+                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a' }}>{formatRupiah(hargaDeal)}</td>
                         </tr>
                         {tambahanList.map((t) => {
                             if (t.ket && t.harga > 0) {
                                 return (
                                     <tr key={t.id}>
-                                        <td style={{ padding: '15px', borderBottom: '1px solid #e2e8f0', fontSize: '14px' }}>Biaya Tambahan: {t.ket}</td>
-                                        <td style={{ padding: '15px', borderBottom: '1px solid #e2e8f0', fontSize: '14px', textAlign: 'right', fontWeight: 'bold' }}>{formatRupiah(t.harga)}</td>
+                                        <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>Biaya Tambahan: {t.ket}</td>
+                                        <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a' }}>{formatRupiah(t.harga)}</td>
                                     </tr>
                                 )
                             }
@@ -285,36 +281,44 @@ export default function AdminTagihanPage() {
                 </table>
 
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
-                    <div style={{ width: '350px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 15px', borderBottom: '1px solid #e2e8f0', fontSize: '16px', fontWeight: 'bold' }}>
-                            <span>TOTAL KESELURUHAN</span>
-                            <span>{formatRupiah(total)}</span>
+                    <div style={{ width: '400px', backgroundColor: '#f8fafc', borderRadius: '8px', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '15px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '16px', color: '#475569' }}>
+                            <span>SUBTOTAL</span>
+                            <span style={{ fontWeight: 700, color: '#0f172a' }}>{formatRupiah(total)}</span>
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 15px', borderBottom: '1px solid #e2e8f0', fontSize: '16px', color: '#059669', fontWeight: 'bold', backgroundColor: '#d1fae5' }}>
-                            <span>TANDA JADI / DP ({dpPercent}%)</span>
-                            <span>{formatRupiah(dpAmount)}</span>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '15px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '16px', color: '#059669', backgroundColor: '#ecfdf5' }}>
+                            <span style={{ fontWeight: 700 }}>TANDA JADI / DP ({dpPercent}%)</span>
+                            <span style={{ fontWeight: 800 }}>{formatRupiah(dpAmount)}</span>
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 15px', fontSize: '16px', fontWeight: 'bold' }}>
-                            <span>SISA PELUNASAN</span>
-                            <span>{formatRupiah(sisa)}</span>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '15px 20px', fontSize: '16px', backgroundColor: '#fffbeb', color: '#b45309' }}>
+                            <span style={{ fontWeight: 700 }}>SISA PELUNASAN</span>
+                            <span style={{ fontWeight: 800 }}>{formatRupiah(sisa)}</span>
                         </div>
                     </div>
                 </div>
 
-                <div style={{ marginBottom: '40px' }}>
-                    <h3 style={{ fontSize: '14px', margin: '0 0 5px 0', textTransform: 'uppercase', color: '#64748b' }}>Metode Pembayaran (Transfer Bank)</h3>
-                    <p style={{ margin: '0 0 3px 0', fontSize: '14px', fontWeight: 'bold' }}>BCA: 123-456-7890</p>
-                    <p style={{ margin: '0 0 3px 0', fontSize: '14px', fontWeight: 'bold' }}>Mandiri: 098-765-4321</p>
-                    <p style={{ margin: 0, fontSize: '14px' }}>Atas Nama: <strong>Aksara Transport</strong></p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                    <div style={{ width: '60%' }}>
+                        <h3 style={{ fontSize: '14px', margin: '0 0 8px 0', textTransform: 'uppercase', color: '#475569', letterSpacing: '1px' }}>METODE PEMBAYARAN:</h3>
+                        <div style={{ borderLeft: '4px solid #d97706', paddingLeft: '15px' }}>
+                            <p style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>BCA: 123-456-7890</p>
+                            <p style={{ margin: '0 0 4px 0', fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>Mandiri: 098-765-4321</p>
+                            <p style={{ margin: 0, fontSize: '14px', color: '#475569' }}>Atas Nama: <strong>Aksara Transport</strong></p>
+                        </div>
+                    </div>
+
+                    <div style={{ width: '200px', textAlign: 'center' }}>
+                        <p style={{ margin: '0 0 60px 0', fontSize: '14px', color: '#475569' }}>Hormat Kami,</p>
+                        <p style={{ margin: 0, fontSize: '16px', fontWeight: 800, color: '#0f172a', borderTop: '1px solid #cbd5e1', paddingTop: '10px' }}>Aksara Transport</p>
+                    </div>
                 </div>
 
-                <div style={{ borderTop: '2px dashed #cbd5e1', paddingTop: '20px', fontSize: '12px', color: '#475569', lineHeight: '1.6' }}>
-                    <p style={{ margin: '0 0 5px 0', fontWeight: 'bold', color: '#dc2626' }}>PERINGATAN PENTING:</p>
-                    <p style={{ margin: 0 }}>{generateWarningText()}</p>
-                    <p style={{ margin: '10px 0 0 0' }}>Bukti DP mohon dikirimkan via WhatsApp. Kuitansi sah diterbitkan setelah pembayaran lunas.</p>
+                <div style={{ borderTop: '2px dashed #cbd5e1', marginTop: '40px', paddingTop: '20px', fontSize: '13px', color: '#475569', lineHeight: '1.6', backgroundColor: '#fef2f2', padding: '15px', borderRadius: '8px', borderLeft: '4px solid #ef4444' }}>
+                    <p style={{ margin: '0 0 5px 0', fontWeight: 800, color: '#b91c1c' }}>PENGINGAT PENTING (TERMS OF PAYMENT):</p>
+                    <p style={{ margin: '0 0 5px 0', color: '#991b1b' }}>{generateWarningText()}</p>
+                    <p style={{ margin: 0, color: '#991b1b' }}><em>Kuitansi ini dicetak otomatis dari sistem dan sah tanpa tanda tangan basah apabila DP sudah ditransfer ke rekening resmi kami.</em></p>
                 </div>
             </div>
-            {/* HACK: Make print area visible during print dynamically via CSS block above */}
         </main>
     );
 }
