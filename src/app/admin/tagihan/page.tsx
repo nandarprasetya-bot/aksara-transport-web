@@ -239,37 +239,34 @@ export default function AdminTagihanPage() {
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '40px', backgroundColor: '#f8fafc', padding: '20px', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '30px', backgroundColor: '#f8fafc', padding: '20px', borderRadius: '8px' }}>
                     <div style={{ flex: 1 }}>
                         <h3 style={{ fontSize: '13px', margin: '0 0 10px 0', color: '#64748b', textTransform: 'uppercase', letterSpacing: '1px' }}>DITAGIHKAN KEPADA:</h3>
                         <p style={{ margin: '0 0 5px 0', fontWeight: 800, fontSize: '18px', color: '#0f172a' }}>{nama || '(Nama Pelanggan)'}</p>
                         <p style={{ margin: 0, fontSize: '14px', color: '#475569' }}>Telp / WA: {noWa || '-'}</p>
-                    </div>
-                    <div style={{ flex: 1, textAlign: 'right' }}>
-                        <h3 style={{ fontSize: '13px', margin: '0 0 10px 0', color: '#64748b', textTransform: 'uppercase', letterSpacing: '1px' }}>DETAIL LAYANAN:</h3>
-                        <p style={{ margin: '0 0 5px 0', fontSize: '14px', color: '#0f172a' }}><strong>Armada:</strong> {mobil || '-'}</p>
-                        <p style={{ margin: '0 0 5px 0', fontSize: '14px', color: '#0f172a' }}><strong>Sistem:</strong> {layanan || '-'}</p>
-                        <p style={{ margin: '0 0 0 0', fontSize: '14px', color: '#0f172a' }}><strong>Durasi:</strong> {durasi || '-'}</p>
                     </div>
                 </div>
 
                 <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '30px' }}>
                     <thead>
                         <tr style={{ backgroundColor: '#0f172a', color: 'white' }}>
-                            <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', borderRadius: '8px 0 0 0' }}>DESKRIPSI BIAYA</th>
+                            <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', borderRadius: '8px 0 0 0' }}>DESKRIPSI LAYANAN & BIAYA</th>
                             <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', width: '220px', borderRadius: '0 8px 0 0' }}>JUMLAH (IDR)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>Harga Pokok Sewa Kendaraan</td>
-                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a' }}>{formatRupiah(hargaDeal)}</td>
+                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>
+                                <div style={{ fontWeight: 700, marginBottom: '4px' }}>Sewa {mobil || 'Kendaraan'}</div>
+                                <div style={{ fontSize: '13px', color: '#64748b' }}>Layanan: {layanan || '-'} | Durasi: {durasi || '-'}</div>
+                            </td>
+                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a', verticalAlign: 'top' }}>{formatRupiah(hargaDeal)}</td>
                         </tr>
                         {tambahanList.map((t) => {
                             if (t.ket && t.harga > 0) {
                                 return (
                                     <tr key={t.id}>
-                                        <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>Biaya Tambahan: {t.ket}</td>
+                                        <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>{t.ket}</td>
                                         <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a' }}>{formatRupiah(t.harga)}</td>
                                     </tr>
                                 )
