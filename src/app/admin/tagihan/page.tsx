@@ -151,24 +151,59 @@ export default function AdminTagihanPage() {
 
     return (
         <main className="tagihan-page" style={{ background: '#f1f5f9', minHeight: '100vh', padding: '40px 20px', fontFamily: '"Inter", sans-serif' }}>
+            <style>{`
+                .responsive-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+                .responsive-grid-3 { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 20px; }
+                .responsive-flex { display: flex; gap: 15px; }
+                .invoice-header { display: flex; justify-content: space-between; align-items: flex-start; }
+                .invoice-footer { display: flex; justify-content: space-between; align-items: flex-end; }
+                .subtotal-box { width: 400px; }
+                .table-container { width: 100%; overflow-x: auto; }
+                .form-container { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); padding: 30px; }
+                .kop-atas-kiri { display: flex; align-items: center; gap: 20px; }
+                .tambahan-grid { display: grid; grid-template-columns: 2fr 1fr auto; gap: 10px; align-items: center; }
+                
+                @media (max-width: 768px) {
+                    .tagihan-page { padding: 20px 10px !important; }
+                    .form-container { padding: 15px !important; }
+                    .responsive-grid { grid-template-columns: 1fr; gap: 15px; }
+                    .responsive-grid-3 { grid-template-columns: 1fr; gap: 15px; }
+                    .responsive-flex { flex-direction: column; }
+                    .tambahan-grid { grid-template-columns: 1fr; }
+                    .tambahan-grid > button { width: 100% !important; margin-top: 5px; }
+                    
+                    .invoice-header { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+                    .kop-atas-kiri { flex-direction: column; text-align: center; }
+                    .invoice-header > div:last-child { text-align: center; padding-top: 0; }
+                    
+                    .invoice-footer { flex-direction: column; align-items: center; gap: 30px; text-align: center; }
+                    .invoice-footer > div { width: 100% !important; }
+                    .subtotal-box { width: 100% !important; }
+                    #invoice-preview { padding: 20px !important; }
+                    
+                    th, td { padding: 10px !important; font-size: 13px !important; }
+                    h1 { font-size: 1.5rem !important; }
+                    .btn-aksi { width: 100%; justify-content: center; }
+                }
+            `}</style>
             <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', marginBottom: '40px' }}>
-                <div style={{ display: 'flex', gap: '15px', marginBottom: '30px', background: 'white', padding: '15px 20px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', flexWrap: 'wrap' }}>
-                    <a href="/admin" style={{ padding: '8px 16px', background: '#f8fafc', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0' }}>
+                <div className="responsive-flex" style={{ marginBottom: '30px', background: 'white', padding: '15px 20px', borderRadius: '12px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                    <a href="/admin" style={{ padding: '8px 16px', background: '#f8fafc', color: '#475569', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', border: '1px solid #e2e8f0', textAlign: 'center' }}>
                         📋 Dasbor Admin
                     </a>
-                    <a href="/admin/tagihan" style={{ padding: '8px 16px', background: 'var(--primary)', color: 'white', borderRadius: '8px', fontWeight: 600, textDecoration: 'none' }}>
+                    <a href="/admin/tagihan" style={{ padding: '8px 16px', background: 'var(--primary)', color: 'white', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', textAlign: 'center' }}>
                         💰 Kalkulator Tagihan & Invoice
                     </a>
                 </div>
 
-                <div style={{ background: 'white', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', padding: '30px' }}>
+                <div className="form-container">
                     <div style={{ marginBottom: '20px' }}>
                         <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1e293b', marginBottom: '5px' }}>Form Input Invoice</h1>
                         <p style={{ color: '#64748b' }}>Isi data di bawah ini, preview Invoice Resmi (Kop Surat) akan terbuat otomatis di bawah.</p>
                     </div>
 
                     <form>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                        <div className="responsive-grid" style={{ marginBottom: '20px' }}>
                             <div>
                                 <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Nama Pelanggan</label>
                                 <input type="text" value={nama} onChange={e=>setNama(e.target.value)} placeholder="Contoh: Budi Santoso" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
@@ -179,7 +214,7 @@ export default function AdminTagihanPage() {
                             </div>
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                        <div className="responsive-grid" style={{ marginBottom: '20px' }}>
                             <div>
                                 <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Armada Mobil</label>
                                 <input type="text" value={mobil} onChange={e=>setMobil(e.target.value)} placeholder="Contoh: Honda Brio" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
@@ -193,7 +228,7 @@ export default function AdminTagihanPage() {
                         <div style={{ padding: '20px', background: '#f8fafc', borderRadius: '8px', marginBottom: '20px', border: '1px solid #e2e8f0' }}>
                             <h3 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '15px', color: '#0f172a' }}>Rincian Biaya & Durasi</h3>
                             
-                            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 2fr', gap: '20px', marginBottom: '15px' }}>
+                            <div className="responsive-grid-3" style={{ marginBottom: '15px' }}>
                                 <div>
                                     <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Harga Sewa / Hari (Rp)</label>
                                     <input type="text" value={formatRupiah(hargaHarian)} onChange={e=>handleNumberChange(e.target.value, setHargaHarian)} placeholder="Rp 300.000" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
@@ -215,33 +250,33 @@ export default function AdminTagihanPage() {
                                 </div>
                                 
                                 {tambahanList.map((t, index) => (
-                                    <div key={t.id} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr auto', gap: '10px', marginBottom: '10px', alignItems: 'center' }}>
+                                    <div key={t.id} className="tambahan-grid" style={{ marginBottom: '10px' }}>
                                         <input type="text" value={t.ket} onChange={e=>updateTambahanStr(t.id, 'ket', e.target.value)} placeholder={`Keterangan (misal: Antar Stasiun)`} className="form-control" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1' }} />
                                         <input type="text" value={t.harga === 0 ? '' : formatRupiah(t.harga)} onChange={e=>updateTambahanNum(t.id, e.target.value)} placeholder="Rp Nominal" className="form-control" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #cbd5e1' }} />
                                         {tambahanList.length > 1 && (
-                                            <button type="button" onClick={() => removeTambahan(t.id)} style={{ background: '#ef4444', color: 'white', border: 'none', width: '35px', height: '35px', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>X</button>
+                                            <button type="button" onClick={() => removeTambahan(t.id)} style={{ background: '#ef4444', color: 'white', border: 'none', minWidth: '35px', height: '35px', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>X</button>
                                         )}
                                     </div>
                                 ))}
                             </div>
                             
-                            <div style={{ borderTop: '1px solid #e2e8f0', marginTop: '15px', paddingTop: '15px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                            <div className="responsive-grid" style={{ borderTop: '1px solid #e2e8f0', marginTop: '15px', paddingTop: '15px' }}>
                                 <div>
                                     <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: '#b91c1c' }}>Potongan / Diskon (Rp)</label>
                                     <input type="text" value={diskon === 0 ? '' : formatRupiah(diskon)} onChange={e=>handleNumberChange(e.target.value, setDiskon)} placeholder="Misal diskon: Rp 50.000" className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #fca5a5', backgroundColor: '#fef2f2' }} />
                                 </div>
                                 <div>
                                     <label style={{ fontWeight: 700, display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Persentase DP (%)</label>
-                                    <input type="number" value={dpPercent} onChange={e=>setDpPercent(parseInt(e.target.value)||0)} className="form-control" style={{ width: '100px', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }} />
+                                    <input type="number" value={dpPercent} onChange={e=>setDpPercent(parseInt(e.target.value)||0)} className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #cbd5e1', maxWidth: '150px' }} />
                                 </div>
                             </div>
                         </div>
                         
-                        <div style={{ display: 'flex', gap: '15px' }}>
-                            <button type="button" onClick={handleKirimWA} className="btn" style={{ flex: 1, padding: '16px', fontSize: '1rem', fontWeight: 800, borderRadius: '8px', background: '#25d366', border: 'none', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', cursor: 'pointer' }}>
+                        <div className="responsive-flex">
+                            <button type="button" onClick={handleKirimWA} className="btn btn-aksi" style={{ flex: 1, padding: '16px', fontSize: '1rem', fontWeight: 800, borderRadius: '8px', background: '#25d366', border: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
                                 Kirim ke WhatsApp
                             </button>
-                            <button type="button" onClick={handlePrintPDF} className="btn" style={{ flex: 1, padding: '16px', fontSize: '1rem', fontWeight: 800, borderRadius: '8px', background: '#e2e8f0', border: '1px solid #cbd5e1', color: '#1e293b', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', cursor: 'pointer' }}>
+                            <button type="button" onClick={handlePrintPDF} className="btn btn-aksi" style={{ flex: 1, padding: '16px', fontSize: '1rem', fontWeight: 800, borderRadius: '8px', background: '#e2e8f0', border: '1px solid #cbd5e1', color: '#1e293b', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
                                 🖨️ Cetak Invoice (PDF)
                             </button>
                         </div>
@@ -262,9 +297,9 @@ export default function AdminTagihanPage() {
                 color: '#0f172a'
             }}>
                 {/* KOP SURAT (LETTERHEAD) */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '3px solid #d97706', paddingBottom: '20px', marginBottom: '30px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                        <div style={{ width: '70px', height: '70px', background: '#d97706', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontWeight: 900, fontSize: '30px', letterSpacing: '-2px' }}>
+                <div className="invoice-header" style={{ borderBottom: '3px solid #d97706', paddingBottom: '20px', marginBottom: '30px' }}>
+                    <div className="kop-atas-kiri">
+                        <div style={{ width: '70px', height: '70px', background: '#d97706', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontWeight: 900, fontSize: '30px', letterSpacing: '-2px', margin: '0 auto' }}>
                             AT
                         </div>
                         <div>
@@ -274,7 +309,7 @@ export default function AdminTagihanPage() {
                             <p style={{ margin: '3px 0 0 0', fontSize: '12px', color: '#64748b' }}>WhatsApp: 0838-6000-740 | Website: jogjasewamobil.com</p>
                         </div>
                     </div>
-                    <div style={{ textAlign: 'right', paddingTop: '10px' }}>
+                    <div style={{ paddingTop: '10px' }}>
                         <h2 style={{ margin: 0, fontSize: '38px', color: '#d97706', fontWeight: 900, letterSpacing: '2px' }}>INVOICE</h2>
                         <p style={{ margin: '5px 0 0 0', fontSize: '16px', fontWeight: 700, color: '#1e293b' }}>No. {invoiceNumber}</p>
                         <p style={{ margin: '3px 0 0 0', fontSize: '14px', color: '#64748b' }}>Tanggal: {invoiceDate}</p>
@@ -289,43 +324,45 @@ export default function AdminTagihanPage() {
                     </div>
                 </div>
 
-                <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '30px' }}>
-                    <thead>
-                        <tr style={{ backgroundColor: '#0f172a', color: 'white' }}>
-                            <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', borderRadius: '8px 0 0 0' }}>DESKRIPSI LAYANAN & BIAYA</th>
-                            <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', width: '220px', borderRadius: '0 8px 0 0' }}>JUMLAH (IDR)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>
-                                <div style={{ fontWeight: 700, marginBottom: '4px' }}>Sewa {mobil || 'Kendaraan'}</div>
-                                <div style={{ fontSize: '13px', color: '#64748b' }}>Layanan: {layanan || '-'} | Durasi: {jumlahHari} Hari (x {formatRupiah(hargaHarian)})</div>
-                            </td>
-                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a', verticalAlign: 'top' }}>{formatRupiah(totalHargaSewa)}</td>
-                        </tr>
-                        {tambahanList.map((t) => {
-                            if (t.ket && t.harga > 0) {
-                                return (
-                                    <tr key={t.id}>
-                                        <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>{t.ket}</td>
-                                        <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a' }}>{formatRupiah(t.harga)}</td>
-                                    </tr>
-                                )
-                            }
-                            return null;
-                        })}
-                        {diskon > 0 && (
-                            <tr>
-                                <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#b91c1c', fontWeight: 700 }}>Diskon / Potongan Harga</td>
-                                <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#b91c1c' }}>-{formatRupiah(diskon)}</td>
+                <div className="table-container" style={{ marginBottom: '30px' }}>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '500px' }}>
+                        <thead>
+                            <tr style={{ backgroundColor: '#0f172a', color: 'white' }}>
+                                <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', borderRadius: '8px 0 0 0' }}>DESKRIPSI LAYANAN & BIAYA</th>
+                                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', width: '220px', borderRadius: '0 8px 0 0' }}>JUMLAH (IDR)</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>
+                                    <div style={{ fontWeight: 700, marginBottom: '4px' }}>Sewa {mobil || 'Kendaraan'}</div>
+                                    <div style={{ fontSize: '13px', color: '#64748b' }}>Layanan: {layanan || '-'} | Durasi: {jumlahHari} Hari (x {formatRupiah(hargaHarian)})</div>
+                                </td>
+                                <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a', verticalAlign: 'top' }}>{formatRupiah(totalHargaSewa)}</td>
+                            </tr>
+                            {tambahanList.map((t) => {
+                                if (t.ket && t.harga > 0) {
+                                    return (
+                                        <tr key={t.id}>
+                                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#1e293b' }}>{t.ket}</td>
+                                            <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#0f172a' }}>{formatRupiah(t.harga)}</td>
+                                        </tr>
+                                    )
+                                }
+                                return null;
+                            })}
+                            {diskon > 0 && (
+                                <tr>
+                                    <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', color: '#b91c1c', fontWeight: 700 }}>Diskon / Potongan Harga</td>
+                                    <td style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '15px', textAlign: 'right', fontWeight: 700, color: '#b91c1c' }}>-{formatRupiah(diskon)}</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
 
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '40px' }}>
-                    <div style={{ width: '400px', backgroundColor: '#f8fafc', borderRadius: '8px', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
+                    <div className="subtotal-box" style={{ backgroundColor: '#f8fafc', borderRadius: '8px', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', padding: '15px 20px', borderBottom: '1px solid #e2e8f0', fontSize: '16px', color: '#475569' }}>
                             <span>SUBTOTAL</span>
                             <span style={{ fontWeight: 700, color: '#0f172a' }}>{formatRupiah(total)}</span>
@@ -341,7 +378,7 @@ export default function AdminTagihanPage() {
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div className="invoice-footer">
                     <div style={{ width: '60%' }}>
                         <h3 style={{ fontSize: '14px', margin: '0 0 8px 0', textTransform: 'uppercase', color: '#475569', letterSpacing: '1px' }}>METODE PEMBAYARAN:</h3>
                         <div style={{ borderLeft: '4px solid #d97706', paddingLeft: '15px' }}>
