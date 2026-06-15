@@ -301,7 +301,8 @@ header.scrolled .menu-toggle span {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 32px;
+    gap: 16px; /* Reduced to fit Panduan link */
+    font-size: 0.95rem; /* Slightly smaller text to prevent wrapping */
 }
 
 .nav-link {

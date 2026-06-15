@@ -1,11 +1,37 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function FloatingWhatsApp() {
+    const [sourceText, setSourceText] = useState("");
+
+    useEffect(() => {
+        // Detect source from URL parameters (e.g. ?src=instagram) or document.referrer
+        let detectedSource = "";
+        const params = new URLSearchParams(window.location.search);
+        const utmSource = params.get('utm_source') || params.get('src');
+
+        if (utmSource) {
+            detectedSource = utmSource;
+        } else if (document.referrer) {
+            const ref = document.referrer.toLowerCase();
+            if (ref.includes('instagram.com')) detectedSource = 'Instagram';
+            else if (ref.includes('tiktok.com')) detectedSource = 'TikTok';
+            else if (ref.includes('google.com')) detectedSource = 'Google Search';
+            else if (ref.includes('facebook.com')) detectedSource = 'Facebook';
+            else detectedSource = 'Website Eksternal';
+        }
+
+        if (detectedSource) {
+            // Capitalize first letter
+            detectedSource = detectedSource.charAt(0).toUpperCase() + detectedSource.slice(1);
+            setSourceText(`%0A%0A(Info: Saya menemukan Aksara Transport dari ${detectedSource})`);
+        }
+    }, []);
+
     // Nomor WA admin
     const waNumber = "628386000740"; 
-    const waMessage = encodeURIComponent("Halo Aksara Transport, saya ingin bertanya tentang layanan sewa mobil.");
-    const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
+    const baseMessage = "Halo Aksara Transport, saya ingin bertanya tentang layanan sewa mobil.";
+    const waLink = `https://wa.me/${waNumber}?text=${baseMessage}${sourceText}`;
 
     return (
         <a 
