@@ -75,10 +75,10 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_innova_zenix.webp'
   },
   {
-    slug: 'sewa-alphard-jogja',
+    slug: 'sewa-alphard-facelift-jogja',
     type: 'car',
-    title: 'Sewa Alphard Jogja',
-    carName: 'Toyota Alphard',
+    title: 'Sewa Alphard Facelift Jogja',
+    carName: 'Toyota Alphard Facelift',
     priceWithDriver: 2000000,
     priceAllIn: 2500000,
     benefits: [
@@ -89,7 +89,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_alphard.webp'
   },
   {
-    slug: 'sewa-hiace-jogja',
+    slug: 'sewa-hiace-commuter-jogja',
     type: 'car',
     title: 'Sewa Hiace Commuter Jogja',
     carName: 'Toyota Hiace Commuter',
