@@ -75,8 +75,7 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Alphard Jogja',
     carName: 'Toyota Alphard',
-    priceWithDriver: 2000000,
-    priceAllIn: 2500000,
+    priceWithDriver: 2800000,
     benefits: [
       'Mobil MPV termewah di kelasnya, garansi prestise dan kenyamanan mutlak.',
       'Kursi Captain Seat VIP yang memanjakan penumpang selama di perjalanan.',
