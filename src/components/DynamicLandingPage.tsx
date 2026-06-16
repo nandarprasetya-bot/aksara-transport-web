@@ -196,6 +196,10 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                                         "value": "0",
                                         "currency": "IDR"
                                     },
+                                    "shippingDestination": {
+                                        "@type": "DefinedRegion",
+                                        "addressCountry": "ID"
+                                    },
                                     "deliveryTime": {
                                         "@type": "ShippingDeliveryTime",
                                         "handlingTime": {
@@ -216,7 +220,9 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                                     "@type": "MerchantReturnPolicy",
                                     "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
                                     "merchantReturnDays": 1,
-                                    "returnMethod": "https://schema.org/ReturnInStore"
+                                    "returnMethod": "https://schema.org/ReturnInStore",
+                                    "returnFees": "https://schema.org/FreeReturn",
+                                    "applicableCountry": "ID"
                                 }
                             }
                         } : {}),
