@@ -71,6 +71,20 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_innova_zenix.webp'
   },
   {
+    slug: 'sewa-alphard-jogja',
+    type: 'car',
+    title: 'Sewa Alphard Jogja',
+    carName: 'Toyota Alphard',
+    priceWithDriver: 2000000,
+    priceAllIn: 2500000,
+    benefits: [
+      'Mobil MPV termewah di kelasnya, garansi prestise dan kenyamanan mutlak.',
+      'Kursi Captain Seat VIP yang memanjakan penumpang selama di perjalanan.',
+      'Harga sewa mulai 2 jutaan, standar pelayanan VVIP dan Pejabat Negara.'
+    ],
+    imageUrl: '/images/toyota_alphard.webp'
+  },
+  {
     slug: 'sewa-alphard-facelift-jogja',
     type: 'car',
     title: 'Sewa Alphard Facelift Jogja',
