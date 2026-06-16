@@ -6,6 +6,7 @@ export default function BookingPage() {
     const [sewaNama, setSewaNama] = useState('');
     const [sewaTelepon, setSewaTelepon] = useState('');
     const [sewaWaPJ, setSewaWaPJ] = useState('');
+    const [sewaSosmed, setSewaSosmed] = useState('');
     const [layanan, setLayanan] = useState('lepas-kunci');
     const [sewaMobil, setSewaMobil] = useState('');
     const [sewaMulai, setSewaMulai] = useState('');
@@ -29,7 +30,7 @@ export default function BookingPage() {
         const layananText = layanan === 'lepas-kunci' ? 'Lepas Kunci (Tanpa Sopir)' : 'Dengan Sopir';
         
         let text = `*FORM PEMESANAN MANUAL*\nAksara Transport Yogyakarta\n\n`;
-        text += `*Data Penyewa:*\n- Nama: ${sewaNama}\n- WA Pemesan: ${sewaTelepon}\n`;
+        text += `*Data Penyewa:*\n- Nama: ${sewaNama}\n- WA Pemesan: ${sewaTelepon}\n- Akun Medsos (IG/FB): ${sewaSosmed}\n`;
         if (layanan === 'lepas-kunci') {
             text += `- WA Penanggung Jawab: ${sewaWaPJ}\n`;
         }
@@ -88,6 +89,11 @@ export default function BookingPage() {
                                 <label style={{ fontWeight: 800, display: 'block', marginBottom: '8px' }}>Nomor WhatsApp Aktif</label>
                                 <input type="tel" value={sewaTelepon} onChange={e=>setSewaTelepon(e.target.value)} placeholder="Contoh: 081234567890" required className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1.5px solid #cbd5e1' }} />
                             </div>
+                        </div>
+
+                        <div style={{ marginTop: '15px' }}>
+                            <label style={{ fontWeight: 800, display: 'block', marginBottom: '8px' }}>Akun Instagram / Media Sosial Aktif</label>
+                            <input type="text" value={sewaSosmed} onChange={e=>setSewaSosmed(e.target.value)} placeholder="Contoh: @budi_santoso atau facebook.com/budisantoso" required className="form-control" style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1.5px solid #cbd5e1' }} />
                         </div>
 
                         {layanan === 'lepas-kunci' && (

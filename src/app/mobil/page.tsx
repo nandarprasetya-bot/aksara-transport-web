@@ -130,8 +130,6 @@ function CatalogMobilInner() {
             return;
         }
         let textMessage = `*Permintaan Unit Mobil Kustom - Aksara Transport*\n-------------------------------------------\n\nSaya ingin menanyakan ketersediaan sewa mobil kustom yang tidak ada di katalog:\n\n*Nama Mobil:* ${carName}\n*Sistem Sewa:* ${type === 'lepas-kunci' ? 'Lepas Kunci (Tanpa Supir)' : 'Dengan Supir'}\n\nMohon informasi ketersediaan unit dan tarif harganya. Terima kasih!`;
-        const encodedData = btoa(unescape(encodeURIComponent(textMessage)));
-        textMessage += `\n\nLihat Ringkasan Pesanan Anda: ${window.location.origin}/ringkasan-pesanan?data=${encodedData}`;
         if (type === 'lepas-kunci') {
             textMessage += `\n\n*PENTING*: Mohon lampirkan foto identitas diri (KTP/SIM) untuk keperluan verifikasi sesuai syarat & ketentuan Lepas Kunci.`;
         }
