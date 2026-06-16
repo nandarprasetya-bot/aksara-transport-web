@@ -65,14 +65,12 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Inova Zenix Jogja',
     carName: 'Toyota Innova Zenix',
-    price12: 600000,
-    price24: 750000,
-    priceWithDriver: 800000,
-    priceAllIn: 1000000,
+    priceWithDriver: 1000000,
+    priceAllIn: 1200000,
     benefits: [
       'Generasi terbaru dari Innova dengan teknologi hybrid yang canggih dan senyap.',
       'Interior mewah dengan fitur hiburan lengkap untuk perjalanan jarak jauh.',
-      'Kenyamanan setara mobil kelas atas, memberikan impresi elegan dan profesional.'
+      'Harga sewa mulai 1 jutaan untuk fullday dengan kenyamanan setara kelas VIP.'
     ],
     imageUrl: '/images/toyota_innova_zenix.webp'
   },
@@ -81,32 +79,83 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Alphard Jogja',
     carName: 'Toyota Alphard',
-    price12: 2500000,
-    price24: 3000000,
-    priceWithDriver: 3200000,
-    priceAllIn: 3500000,
+    priceWithDriver: 2000000,
+    priceAllIn: 2500000,
     benefits: [
       'Mobil MPV termewah di kelasnya, garansi prestise dan kenyamanan mutlak.',
       'Kursi Captain Seat VIP yang memanjakan penumpang selama di perjalanan.',
-      'Pintu geser elektrik dan kabin super luas, standar pelayanan VVIP dan Pejabat.'
+      'Harga sewa mulai 2 jutaan, standar pelayanan VVIP dan Pejabat Negara.'
     ],
     imageUrl: '/images/toyota_alphard.webp'
   },
   {
     slug: 'sewa-hiace-jogja',
     type: 'car',
-    title: 'Sewa Hiace Jogja',
-    carName: 'Toyota Hiace Premio/Commuter',
-    price12: 1200000,
-    price24: 1500000,
-    priceWithDriver: 1600000,
-    priceAllIn: 1800000,
+    title: 'Sewa Hiace Commuter Jogja',
+    carName: 'Toyota Hiace Commuter',
+    priceWithDriver: 1000000,
+    priceAllIn: 1200000,
     benefits: [
-      'Kapasitas raksasa hingga 15 penumpang, pilihan paling hemat untuk rombongan besar.',
+      'Kapasitas raksasa hingga 15 penumpang, harga super hemat mulai 1 jutaan.',
       'Plafon kabin tinggi, penumpang bisa berdiri dan bergerak leluasa di dalam mobil.',
-      'Suspensi didesain khusus untuk travel, tidak limbung dan empuk di berbagai medan.'
+      'Sangat cocok untuk rombongan wisata keluarga besar atau ziarah.'
     ],
     imageUrl: '/images/toyota_hiace_premio.webp'
+  },
+  {
+    slug: 'sewa-hiace-premio-jogja',
+    type: 'car',
+    title: 'Sewa Hiace Premio Jogja',
+    carName: 'Toyota Hiace Premio',
+    priceAllIn: 1400000,
+    benefits: [
+      'Sangat ekonomis! Mulai dari 100rb/pack (per penumpang) untuk kapasitas 14 seat.',
+      'Harga sudah ALL IN (Termasuk Mobil, Driver Profesional, dan BBM).',
+      'Desain kabin mewah dan eksklusif, jauh lebih nyaman untuk perjalanan jauh.'
+    ],
+    imageUrl: '/images/toyota_hiace_premio.webp'
+  },
+  {
+    slug: 'sewa-alphard-hev-jogja',
+    type: 'car',
+    title: 'Sewa Alphard HEV Jogja',
+    carName: 'Toyota Alphard HEV (Hybrid)',
+    priceWithDriver: 3000000,
+    priceAllIn: 3500000,
+    benefits: [
+      'Varian tertinggi Alphard dengan teknologi Hybrid Electric Vehicle (HEV) super senyap.',
+      'Harga sewa mulai 3 jutaan dengan fasilitas paling eksklusif di kelasnya.',
+      'Sempurna untuk acara kenegaraan, tamu VVIP, atau pernikahan mewah.'
+    ],
+    imageUrl: '/images/toyota_alphard.webp'
+  },
+  {
+    slug: 'sewa-pajero-jogja',
+    type: 'car',
+    title: 'Sewa Pajero Jogja',
+    carName: 'Mitsubishi Pajero Sport',
+    priceWithDriver: 1500000,
+    priceAllIn: 1700000,
+    benefits: [
+      'SUV tangguh yang siap melibas segala medan wisata ekstrem di Yogyakarta.',
+      'Desain maskulin dan elegan, memberikan kesan gagah di jalan raya.',
+      'Kabin lega dengan fitur keamanan tingkat tinggi untuk petualangan Anda.'
+    ],
+    imageUrl: '/images/toyota_fortuner.webp'
+  },
+  {
+    slug: 'sewa-fortuner-jogja',
+    type: 'car',
+    title: 'Sewa Fortuner Jogja',
+    carName: 'Toyota Fortuner',
+    priceWithDriver: 1500000,
+    priceAllIn: 1700000,
+    benefits: [
+      'Ketangguhan mesin diesel Toyota dipadukan dengan desain SUV mewah yang ikonik.',
+      'Sangat nyaman untuk rute pegunungan seperti Gunungkidul dan Merapi.',
+      'Ground clearance tinggi memastikan perjalanan aman melintasi segala cuaca.'
+    ],
+    imageUrl: '/images/toyota_fortuner.webp'
   },
   {
     slug: 'sewa-elf-jogja',

@@ -277,7 +277,7 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
             />
 
             {/* DYNAMIC PRICING TABLE (SEO OPTIMIZED) */}
-            {type === 'car' && price12 && (
+            {type === 'car' && (price12 || priceWithDriver || priceAllIn) && (
                 <section className="section-padding" style={{ backgroundColor: '#fff', borderTop: '1px solid #f1f5f9' }}>
                     <div className="container">
                         <div className="text-center">
@@ -295,26 +295,34 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr style={{ backgroundColor: '#fff', borderBottom: '1px solid #f1f5f9' }}>
-                                        <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
-                                        <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam</td>
-                                        <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price12.toLocaleString('id-ID')}</td>
-                                    </tr>
-                                    <tr style={{ backgroundColor: '#f8fafc', borderBottom: '1px solid #f1f5f9' }}>
-                                        <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
-                                        <td style={{ padding: '16px 20px', color: '#64748b' }}>24 Jam (Full Day)</td>
-                                        <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price24?.toLocaleString('id-ID')}</td>
-                                    </tr>
-                                    <tr style={{ backgroundColor: '#fff', borderBottom: '1px solid #f1f5f9' }}>
-                                        <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Mobil + Supir</td>
-                                        <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam</td>
-                                        <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {priceWithDriver?.toLocaleString('id-ID')}</td>
-                                    </tr>
-                                    <tr style={{ backgroundColor: '#f8fafc' }}>
-                                        <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>All-In (Mobil + Supir + BBM)</td>
-                                        <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam</td>
-                                        <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {priceAllIn?.toLocaleString('id-ID')}</td>
-                                    </tr>
+                                    {price12 && (
+                                        <tr style={{ backgroundColor: '#fff', borderBottom: '1px solid #f1f5f9' }}>
+                                            <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
+                                            <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam</td>
+                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price12.toLocaleString('id-ID')}</td>
+                                        </tr>
+                                    )}
+                                    {price24 && (
+                                        <tr style={{ backgroundColor: '#f8fafc', borderBottom: '1px solid #f1f5f9' }}>
+                                            <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
+                                            <td style={{ padding: '16px 20px', color: '#64748b' }}>24 Jam (Full Day)</td>
+                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price24.toLocaleString('id-ID')}</td>
+                                        </tr>
+                                    )}
+                                    {priceWithDriver && (
+                                        <tr style={{ backgroundColor: '#fff', borderBottom: '1px solid #f1f5f9' }}>
+                                            <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Mobil + Supir</td>
+                                            <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam / Fullday</td>
+                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {priceWithDriver.toLocaleString('id-ID')}</td>
+                                        </tr>
+                                    )}
+                                    {priceAllIn && (
+                                        <tr style={{ backgroundColor: '#f8fafc' }}>
+                                            <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>All-In (Mobil + Supir + BBM)</td>
+                                            <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam / Fullday</td>
+                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {priceAllIn.toLocaleString('id-ID')}</td>
+                                        </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>
