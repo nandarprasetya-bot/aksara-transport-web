@@ -8,7 +8,8 @@ import { useRouter } from 'next/navigation';
 import { KeywordData } from '@/data/seoKeywords';
 
 export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }) {
-    const { title, type, carName, price12, price24, priceWithDriver, priceAllIn, benefits, imageUrl } = seoData;
+    const { title, type, carName, price12, price24, fullday, priceWithDriver, priceAllIn, benefits, imageUrl } = seoData;
+    const finalPrice24 = price24 || fullday;
     const router = useRouter();
     
     // Booking Form State
@@ -302,11 +303,11 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                                             <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price12.toLocaleString('id-ID')}</td>
                                         </tr>
                                     )}
-                                    {price24 && (
+                                    {finalPrice24 && (
                                         <tr style={{ backgroundColor: '#f8fafc', borderBottom: '1px solid #f1f5f9' }}>
                                             <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
                                             <td style={{ padding: '16px 20px', color: '#64748b' }}>24 Jam (Full Day)</td>
-                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price24.toLocaleString('id-ID')}</td>
+                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {finalPrice24.toLocaleString('id-ID')}</td>
                                         </tr>
                                     )}
                                     {priceWithDriver && (

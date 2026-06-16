@@ -5,6 +5,7 @@ export type KeywordData = {
   carName?: string;
   price12?: number;
   price24?: number;
+  fullday?: number;
   priceWithDriver?: number;
   priceAllIn?: number;
   benefits?: string[];
@@ -18,8 +19,7 @@ export const seoKeywords: KeywordData[] = [
     title: 'Sewa Brio Jogja',
     carName: 'Honda Brio',
     price12: 250000,
-    price24: 300000,
-    priceWithDriver: 400000,
+    fullday: 300000,
     priceAllIn: 550000,
     benefits: [
       'Sangat irit bahan bakar, cocok untuk keliling kota Jogja.',
@@ -34,8 +34,7 @@ export const seoKeywords: KeywordData[] = [
     title: 'Sewa Avanza Jogja',
     carName: 'Toyota Avanza',
     price12: 250000,
-    price24: 350000,
-    priceWithDriver: 450000,
+    fullday: 350000,
     priceAllIn: 600000,
     benefits: [
       'Kapasitas 7 penumpang, pilihan terbaik untuk liburan rombongan keluarga kecil.',
@@ -49,8 +48,6 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Inova Reborn Jogja',
     carName: 'Toyota Innova Reborn',
-    price12: 400000,
-    price24: 500000,
     priceWithDriver: 600000,
     priceAllIn: 800000,
     benefits: [
@@ -65,8 +62,7 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Inova Zenix Jogja',
     carName: 'Toyota Innova Zenix',
-    priceWithDriver: 1000000,
-    priceAllIn: 1200000,
+    priceWithDriver: 1100000,
     benefits: [
       'Generasi terbaru dari Innova dengan teknologi hybrid yang canggih dan senyap.',
       'Interior mewah dengan fitur hiburan lengkap untuk perjalanan jarak jauh.',
@@ -79,8 +75,7 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Alphard Facelift Jogja',
     carName: 'Toyota Alphard Facelift',
-    priceWithDriver: 2000000,
-    priceAllIn: 2500000,
+    priceAllIn: 2999999,
     benefits: [
       'Mobil MPV termewah di kelasnya, garansi prestise dan kenyamanan mutlak.',
       'Kursi Captain Seat VIP yang memanjakan penumpang selama di perjalanan.',
@@ -93,7 +88,6 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Hiace Commuter Jogja',
     carName: 'Toyota Hiace Commuter',
-    priceWithDriver: 1000000,
     priceAllIn: 1200000,
     benefits: [
       'Kapasitas raksasa hingga 15 penumpang, harga super hemat mulai 1 jutaan.',
@@ -120,8 +114,7 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Alphard HEV Jogja',
     carName: 'Toyota Alphard HEV (Hybrid)',
-    priceWithDriver: 3000000,
-    priceAllIn: 3500000,
+    priceAllIn: 4000000,
     benefits: [
       'Varian tertinggi Alphard dengan teknologi Hybrid Electric Vehicle (HEV) super senyap.',
       'Harga sewa mulai 3 jutaan dengan fasilitas paling eksklusif di kelasnya.',
@@ -134,8 +127,7 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Pajero Jogja',
     carName: 'Mitsubishi Pajero Sport',
-    priceWithDriver: 1500000,
-    priceAllIn: 1700000,
+    priceAllIn: 1500000,
     benefits: [
       'SUV tangguh yang siap melibas segala medan wisata ekstrem di Yogyakarta.',
       'Desain maskulin dan elegan, memberikan kesan gagah di jalan raya.',
@@ -149,7 +141,6 @@ export const seoKeywords: KeywordData[] = [
     title: 'Sewa Fortuner Jogja',
     carName: 'Toyota Fortuner',
     priceWithDriver: 1500000,
-    priceAllIn: 1700000,
     benefits: [
       'Ketangguhan mesin diesel Toyota dipadukan dengan desain SUV mewah yang ikonik.',
       'Sangat nyaman untuk rute pegunungan seperti Gunungkidul dan Merapi.',
@@ -162,9 +153,6 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Elf Jogja',
     carName: 'Isuzu Elf Long',
-    price12: 1000000,
-    price24: 1300000,
-    priceWithDriver: 1400000,
     priceAllIn: 1600000,
     benefits: [
       'Microbus tangguh dengan kapasitas hingga 19 orang.',
@@ -178,10 +166,7 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Mobil Listrik Jogja',
     carName: 'Wuling Binguo EV / Air EV',
-    price12: 400000,
-    price24: 550000,
-    priceWithDriver: 650000,
-    priceAllIn: 800000,
+    fullday: 450000,
     benefits: [
       'Bebas polusi dan suara mesin senyap, sensasi berkendara masa depan.',
       'Biaya operasional sangat rendah karena tidak perlu membeli bensin mahal.',
