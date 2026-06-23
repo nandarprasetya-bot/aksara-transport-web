@@ -24,12 +24,13 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className="footer-col">
-                    <h4>Layanan Sewa</h4>
+                    <h4>Layanan Populer</h4>
                     <ul className="footer-links">
-                        <li><Link href="/mobil?filter=family">Sewa Mobil Keluarga</Link></li>
-                        <li><Link href="/mobil?filter=premium">Sewa Mobil Premium</Link></li>
-                        <li><Link href="/mobil?filter=suv">Sewa Mobil SUV</Link></li>
-                        <li><Link href="/mobil?filter=city">Sewa City Car</Link></li>
+                        <li><Link href="/sewa-avanza-jogja">Sewa Avanza Jogja</Link></li>
+                        <li><Link href="/sewa-inova-reborn-jogja">Sewa Innova Reborn</Link></li>
+                        <li><Link href="/sewa-hiace-premio-jogja">Sewa Hiace Premio</Link></li>
+                        <li><Link href="/sewa-alphard-jogja">Sewa Alphard Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-terdekat">Sewa Mobil Terdekat</Link></li>
                         <li><Link href="/tentang#syarat">Syarat Lepas Kunci</Link></li>
                     </ul>
                 </div>

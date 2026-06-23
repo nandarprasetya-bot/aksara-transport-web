@@ -58,6 +58,7 @@ const jsonLd = {
 };
 
 import { GoogleAnalytics } from '@next/third-parties/google';
+import MetaPixel from '@/components/MetaPixel';
 
 export default function RootLayout({
   children,
@@ -74,6 +75,7 @@ export default function RootLayout({
         />
       </head>
       <body className={plusJakarta.className}>
+        <MetaPixel />
         <Header />
         <main>
           {children}
