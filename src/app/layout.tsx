@@ -59,6 +59,7 @@ const jsonLd = {
 
 import { GoogleAnalytics } from '@next/third-parties/google';
 import MetaPixel from '@/components/MetaPixel';
+import { Suspense } from 'react';
 
 export default function RootLayout({
   children,
@@ -75,7 +76,9 @@ export default function RootLayout({
         />
       </head>
       <body className={plusJakarta.className}>
-        <MetaPixel />
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
         <Header />
         <main>
           {children}
