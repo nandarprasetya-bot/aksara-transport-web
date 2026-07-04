@@ -5,7 +5,17 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/admin/',
+      disallow: [
+        '/admin/',
+        '/booking/',
+        '/detail-pesanan/',
+        '/pesan-event',
+        '/pesan-multiday',
+        '/pesan-sopir',
+        '/pesan-wedding',
+        '/pesan-wisata',
+        '/pesan-wisuda',
+      ],
     },
     sitemap: 'https://jogjasewamobil.com/sitemap.xml',
   }

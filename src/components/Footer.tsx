@@ -15,7 +15,8 @@ export default function Footer() {
                     <h4>Link Cepat</h4>
                     <ul className="footer-links">
                         <li><Link href="/">Beranda</Link></li>
-                        <li><Link href="/mobil">Pilihan Mobil</Link></li>
+                        <li><Link href="/mobil?service=lepasKunci">Sewa Lepas Kunci</Link></li>
+                        <li><Link href="/mobil?service=denganSopir">Sewa Dengan Driver</Link></li>
                         <li><Link href="/wisata">Paket Wisata</Link></li>
                         <li><Link href="/artikel">Tips &amp; Berita</Link></li>
                         <li><Link href="/panduan">Panduan &amp; FAQ</Link></li>
@@ -26,10 +27,19 @@ export default function Footer() {
                 <div className="footer-col">
                     <h4>Layanan Populer</h4>
                     <ul className="footer-links">
-                        <li><Link href="/sewa-avanza-jogja">Sewa Avanza Jogja</Link></li>
-                        <li><Link href="/sewa-inova-reborn-jogja">Sewa Innova Reborn</Link></li>
-                        <li><Link href="/sewa-hiace-premio-jogja">Sewa Hiace Premio</Link></li>
-                        <li><Link href="/sewa-alphard-jogja">Sewa Alphard Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-brio-jogja">Sewa Brio Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-avanza-jogja">Sewa Avanza Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-inova-reborn-jogja">Sewa Innova Reborn</Link></li>
+                        <li><Link href="/sewa-mobil-inova-zenix-jogja">Sewa Innova Zenix</Link></li>
+                        <li><Link href="/sewa-mobil-alphard-jogja">Sewa Alphard Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-alphard-facelift-jogja">Sewa Alphard Facelift</Link></li>
+                        <li><Link href="/sewa-mobil-hiace-commuter-jogja">Sewa Hiace Commuter</Link></li>
+                        <li><Link href="/sewa-mobil-hiace-premio-jogja">Sewa Hiace Premio</Link></li>
+                        <li><Link href="/sewa-mobil-alphard-hev-jogja">Sewa Alphard HEV Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-pajero-jogja">Sewa Pajero Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-fortuner-jogja">Sewa Fortuner Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-elf-jogja">Sewa Elf Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-listrik-jogja">Sewa Mobil Listrik</Link></li>
                         <li><Link href="/sewa-mobil-terdekat">Sewa Mobil Terdekat</Link></li>
                         <li><Link href="/tentang#syarat">Syarat Lepas Kunci</Link></li>
                     </ul>

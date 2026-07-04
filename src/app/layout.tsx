@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     icon: '/icon.png',
     apple: '/apple-icon.png',
   },
+  alternates: {
+    canonical: 'https://jogjasewamobil.com',
+  },
   openGraph: {
     title: 'Jogja Sewa Mobil | Aksara Transport',
     description: 'Layanan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan supir.',
@@ -61,6 +64,8 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import MetaPixel from '@/components/MetaPixel';
 import { Suspense } from 'react';
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -74,17 +79,49 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var userLang = navigator.language || navigator.userLanguage || '';
+                  var isEnglish = userLang.toLowerCase().indexOf('en') === 0;
+                  var hasCookie = document.cookie.indexOf('googtrans=') !== -1;
+                  if (isEnglish && !hasCookie) {
+                    document.cookie = "googtrans=/id/en; path=/; domain=" + window.location.hostname;
+                    document.cookie = "googtrans=/id/en; path=/";
+                  }
+                } catch(e) {}
+              })();
+              
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                  pageLanguage: 'id',
+                  includedLanguages: 'en,id',
+                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                  autoDisplay: false
+                }, 'google_translate_element');
+              }
+            `
+          }}
+        />
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
       </head>
       <body className={plusJakarta.className}>
-        <Suspense fallback={null}>
-          <MetaPixel />
-        </Suspense>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
-        <FloatingWhatsApp />
+        <LanguageProvider>
+          <div id="google_translate_element" style={{ display: 'none' }}></div>
+          <Suspense fallback={null}>
+            <MetaPixel />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Header />
+          </Suspense>
+          <main>
+            {children}
+          </main>
+          <Footer />
+          <FloatingWhatsApp />
+        </LanguageProvider>
       </body>
     </html>
   );

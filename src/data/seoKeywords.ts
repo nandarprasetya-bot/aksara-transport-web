@@ -14,12 +14,12 @@ export type KeywordData = {
 
 export const seoKeywords: KeywordData[] = [
   {
-    slug: 'sewa-brio-jogja',
+    slug: 'sewa-mobil-brio-jogja',
     type: 'car',
     title: 'Sewa Brio Jogja',
     carName: 'Honda Brio',
-    price12: 250000,
-    fullday: 300000,
+    price12: 275000,
+    fullday: 325000,
     priceAllIn: 550000,
     benefits: [
       'Sangat irit bahan bakar, cocok untuk keliling kota Jogja.',
@@ -29,7 +29,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/honda_brio.webp'
   },
   {
-    slug: 'sewa-avanza-jogja',
+    slug: 'sewa-mobil-avanza-jogja',
     type: 'car',
     title: 'Sewa Avanza Jogja',
     carName: 'Toyota Avanza',
@@ -44,7 +44,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_avanza.webp'
   },
   {
-    slug: 'sewa-inova-reborn-jogja',
+    slug: 'sewa-mobil-inova-reborn-jogja',
     type: 'car',
     title: 'Sewa Inova Reborn Jogja',
     carName: 'Toyota Innova Reborn',
@@ -58,7 +58,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_innova.webp'
   },
   {
-    slug: 'sewa-inova-zenix-jogja',
+    slug: 'sewa-mobil-inova-zenix-jogja',
     type: 'car',
     title: 'Sewa Inova Zenix Jogja',
     carName: 'Toyota Innova Zenix',
@@ -71,7 +71,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_innova_zenix.webp'
   },
   {
-    slug: 'sewa-alphard-jogja',
+    slug: 'sewa-mobil-alphard-jogja',
     type: 'car',
     title: 'Sewa Alphard Jogja',
     carName: 'Toyota Alphard',
@@ -84,7 +84,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_alphard.webp'
   },
   {
-    slug: 'sewa-alphard-facelift-jogja',
+    slug: 'sewa-mobil-alphard-facelift-jogja',
     type: 'car',
     title: 'Sewa Alphard Facelift Jogja',
     carName: 'Toyota Alphard Facelift',
@@ -97,7 +97,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_alphard.webp'
   },
   {
-    slug: 'sewa-hiace-commuter-jogja',
+    slug: 'sewa-mobil-hiace-commuter-jogja',
     type: 'car',
     title: 'Sewa Hiace Commuter Jogja',
     carName: 'Toyota Hiace Commuter',
@@ -110,7 +110,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_hiace_premio.webp'
   },
   {
-    slug: 'sewa-hiace-premio-jogja',
+    slug: 'sewa-mobil-hiace-premio-jogja',
     type: 'car',
     title: 'Sewa Hiace Premio Jogja',
     carName: 'Toyota Hiace Premio',
@@ -123,7 +123,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_hiace_premio.webp'
   },
   {
-    slug: 'sewa-alphard-hev-jogja',
+    slug: 'sewa-mobil-alphard-hev-jogja',
     type: 'car',
     title: 'Sewa Alphard HEV Jogja',
     carName: 'Toyota Alphard HEV (Hybrid)',
@@ -136,7 +136,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_alphard.webp'
   },
   {
-    slug: 'sewa-pajero-jogja',
+    slug: 'sewa-mobil-pajero-jogja',
     type: 'car',
     title: 'Sewa Pajero Jogja',
     carName: 'Mitsubishi Pajero Sport',
@@ -149,7 +149,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_fortuner.webp'
   },
   {
-    slug: 'sewa-fortuner-jogja',
+    slug: 'sewa-mobil-fortuner-jogja',
     type: 'car',
     title: 'Sewa Fortuner Jogja',
     carName: 'Toyota Fortuner',
@@ -162,7 +162,7 @@ export const seoKeywords: KeywordData[] = [
     imageUrl: '/images/toyota_fortuner.webp'
   },
   {
-    slug: 'sewa-elf-jogja',
+    slug: 'sewa-mobil-elf-jogja',
     type: 'car',
     title: 'Sewa Elf Jogja',
     carName: 'Isuzu Elf Long',

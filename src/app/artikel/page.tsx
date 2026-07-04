@@ -7,6 +7,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Portal Berita & Info Wisata Jogja | Aksara Transport',
     description: 'Kumpulan berita terbaru, tips wisata, rekomendasi kuliner, dan panduan perjalanan di Yogyakarta.',
+    alternates: {
+        canonical: 'https://jogjasewamobil.com/artikel',
+    },
 };
 
 import { dummyArticles } from '@/data/articles';

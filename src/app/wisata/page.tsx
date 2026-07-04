@@ -168,16 +168,48 @@ function WisataInner() {
 
             <section className="section-padding">
                 <div className="container">
-                    <div className="wisata-tab-nav" style={{ display: 'flex', width: 'fit-content', gap: '6px', flexWrap: 'wrap', justifyContent: 'center', margin: '0 auto 40px auto', padding: '6px', background: '#f1f5f9', borderRadius: '50px', border: '1px solid #e2e8f0' }}>
+                    <div className="wisata-tab-nav" style={{ display: 'flex', width: 'fit-content', gap: '6px', flexWrap: 'wrap', justifyContent: 'center', margin: '0 auto 40px auto', padding: '6px', background: '#f8fafc', borderRadius: '50px', border: '1px solid #e2e8f0', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.03)' }}>
                         {[
-                            { id: '1day', label: '1 Day Service', count: 12 },
-                            { id: 'multiday', label: 'Multi-Day (2–7 Hari)', count: 6 },
-                            { id: 'wisuda', label: 'Wisuda & Wedding' },
-                            { id: 'event', label: 'Event & Kerjasama' }
-                        ].map(t => (
-                            <button key={t.id} onClick={() => setActiveTab(t.id)} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 28px', border: 'none', borderRadius: '50px', background: activeTab === t.id ? '#ffffff' : 'transparent', color: activeTab === t.id ? 'var(--primary)' : '#64748b', fontSize: '0.95rem', fontWeight: 600, cursor: 'pointer', boxShadow: activeTab === t.id ? '0 4px 6px -1px rgba(0,0,0,0.1)' : 'none' }}>
-                                {t.label}
-                                {t.count && <span style={{ background: activeTab === t.id ? 'var(--primary)' : '#e2e8f0', color: activeTab === t.id ? '#ffffff' : '#475569', padding: '2px 10px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 700 }}>{t.count}</span>}
+                            { id: '1day', label: '1 Day Service', count: 12, bgActive: '#e0f2fe', textActive: '#0369a1', borderActive: '#bae6fd', badgeBgActive: '#0284c7', badgeTextActive: '#ffffff' },
+                            { id: 'multiday', label: 'Multi-Day (2–7 Hari)', count: 6, bgActive: '#ffedd5', textActive: '#ea580c', borderActive: '#fed7aa', badgeBgActive: '#f97316', badgeTextActive: '#ffffff' },
+                            { id: 'wedding', label: 'Wedding Car', bgActive: '#ffe4e6', textActive: '#be123c', borderActive: '#fecdd3', badgeBgActive: '#e11d48', badgeTextActive: '#ffffff' },
+                            { id: 'wisuda', label: 'Paket Wisuda', bgActive: '#fef3c7', textActive: '#b45309', borderActive: '#fde68a', badgeBgActive: '#d97706', badgeTextActive: '#ffffff' },
+                            { id: 'bandara', label: 'Transfer Bandara', bgActive: '#dcfce7', textActive: '#15803d', borderActive: '#bbf7d0', badgeBgActive: '#16a34a', badgeTextActive: '#ffffff' },
+                            { id: 'event', label: 'Event & Kerjasama', bgActive: '#f3e8ff', textActive: '#7e22ce', borderActive: '#e9d5ff', badgeBgActive: '#9333ea', badgeTextActive: '#ffffff' }
+                        ].map(tInfo => (
+                            <button 
+                                key={tInfo.id} 
+                                onClick={() => setActiveTab(tInfo.id)} 
+                                style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    gap: '8px', 
+                                    padding: '12px 28px', 
+                                    border: '1px solid', 
+                                    borderRadius: '50px', 
+                                    background: activeTab === tInfo.id ? tInfo.bgActive : 'transparent', 
+                                    color: activeTab === tInfo.id ? tInfo.textActive : '#64748b', 
+                                    borderColor: activeTab === tInfo.id ? tInfo.borderActive : 'transparent', 
+                                    fontSize: '0.95rem', 
+                                    fontWeight: 700, 
+                                    cursor: 'pointer', 
+                                    boxShadow: activeTab === tInfo.id ? '0 4px 10px rgba(0,0,0,0.05)' : 'none',
+                                    transition: 'all 0.25s ease'
+                                }}
+                            >
+                                {tInfo.label}
+                                {tInfo.count && (
+                                    <span style={{ 
+                                        background: activeTab === tInfo.id ? tInfo.badgeBgActive : '#e2e8f0', 
+                                        color: activeTab === tInfo.id ? tInfo.badgeTextActive : '#475569', 
+                                        padding: '2px 10px', 
+                                        borderRadius: '50px', 
+                                        fontSize: '0.75rem', 
+                                        fontWeight: 800 
+                                    }}>
+                                        {tInfo.count}
+                                    </span>
+                                )}
                             </button>
                         ))}
                     </div>
@@ -241,14 +273,36 @@ function WisataInner() {
                         </div>
                     )}
 
+                    {activeTab === 'wedding' && (
+                        <div className="wisata-tab-content" style={{ display: 'block', animation: 'fadeIn 0.3s ease' }}>
+                            <div className="category-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
+                                <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>💍 Paket Wedding Car VIP</h2>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>Sempurnakan momen hari pernikahan bahagia Anda dengan rental mobil mewah elegan, lengkap dengan dekorasi bunga segar dan driver khusus berpakaian rapi.</p>
+                            </div>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', maxWidth: '450px', margin: '0 auto 40px auto' }}>
+                                <div className="special-package-card" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', border: '1.5px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '30px', textAlign: 'left', position: 'relative' }}>
+                                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--accent), #f59e0b, var(--accent))' }}></div>
+                                    <Image src="/images/paket_wedding.webp" alt="Paket Wedding" width={500} height={220} style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
+                                    <h3 style={{ textAlign: 'center', fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>Paket Wedding</h3>
+                                    <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '20px' }}>Jadikan hari pernikahan lebih elegan. Layanan driver VIP siap membantu mobilitas pengantin seharian.</p>
+                                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', textAlign: 'left' }}>
+                                        <li style={{ padding: '8px 0', fontSize: '0.85rem', color: 'var(--text-dark)', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px dashed var(--border-color)' }}><span style={{ color: 'var(--success)', fontWeight: 800 }}>✓</span> <strong>Sudah Termasuk:</strong> Mobil, Driver, BBM</li>
+                                        <li style={{ padding: '8px 0', fontSize: '0.85rem', color: 'var(--text-dark)', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px dashed var(--border-color)' }}><span style={{ color: 'var(--success)', fontWeight: 800 }}>✓</span> <strong>Layanan VIP:</strong> Driver rapi / jas</li>
+                                    </ul>
+                                    <div style={{ textAlign: 'center', fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '20px' }}>Mulai dari Rp 800.000 <small style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>/ 12 jam</small></div>
+                                    <button onClick={() => openSpecialModal('Wedding')} className="btn btn-primary" style={{ width: '100%', fontSize: '1rem', padding: '14px', display: 'block', textAlign: 'center', border: 'none', cursor: 'pointer' }}>💍 Pilih Mobil Wedding</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                     {activeTab === 'wisuda' && (
                         <div className="wisata-tab-content" style={{ display: 'block', animation: 'fadeIn 0.3s ease' }}>
                             <div className="category-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
-                                <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>🎓 Paket Wisuda &amp; Wedding</h2>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>Layanan rental mobil premium beserta driver profesional di Jogja, didedikasikan khusus untuk mendukung kelancaran mobilitas di hari spesial wisuda dan pernikahan Anda.</p>
+                                <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>🎓 Paket Wisuda Keluarga</h2>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>Hadirkan kemudahan transportasi bagi keluarga tercinta di hari kelulusan Anda. Tepat waktu, nyaman, kabin luas, dan driver yang sigap membantu.</p>
                             </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginBottom: '40px' }}>
-                                {/* Wisuda */}
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', maxWidth: '450px', margin: '0 auto 40px auto' }}>
                                 <div className="special-package-card" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', border: '1.5px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '30px', textAlign: 'left', position: 'relative' }}>
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--accent), #f59e0b, var(--accent))' }}></div>
                                     <Image src="/images/paket_wisuda.webp" alt="Paket Wisuda" width={500} height={220} style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
@@ -261,18 +315,29 @@ function WisataInner() {
                                     <div style={{ textAlign: 'center', fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '20px' }}>Mulai dari Rp 450.000 <small style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>/ 12 jam</small></div>
                                     <button onClick={() => openSpecialModal('Wisuda')} className="btn btn-primary" style={{ width: '100%', fontSize: '1rem', padding: '14px', display: 'block', textAlign: 'center', border: 'none', cursor: 'pointer' }}>🎓 Pilih Mobil Wisuda</button>
                                 </div>
-                                {/* Wedding */}
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'bandara' && (
+                        <div className="wisata-tab-content" style={{ display: 'block', animation: 'fadeIn 0.3s ease' }}>
+                            <div className="category-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
+                                <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>✈️ Transfer Bandara YIA (Drop In / Out)</h2>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>Layanan perjalanan satu arah (point-to-point) praktis dari Yogyakarta International Airport (YIA) menuju hotel/rumah di Jogja, atau sebaliknya. Tarif all-in bersih bebas pusing.</p>
+                            </div>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', maxWidth: '450px', margin: '0 auto 40px auto' }}>
                                 <div className="special-package-card" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', border: '1.5px solid var(--border-color)', borderRadius: 'var(--border-radius-md)', padding: '30px', textAlign: 'left', position: 'relative' }}>
                                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--accent), #f59e0b, var(--accent))' }}></div>
-                                    <Image src="/images/paket_wedding.webp" alt="Paket Wedding" width={500} height={220} style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
-                                    <h3 style={{ textAlign: 'center', fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>Paket Wedding</h3>
-                                    <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '20px' }}>Jadikan hari pernikahan lebih elegan. Layanan driver VIP siap membantu mobilitas pengantin seharian.</p>
+                                    <Image src="/images/tour_2day.webp" alt="Antar Jemput Bandara YIA" width={500} height={220} style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: 'var(--border-radius-sm)', marginBottom: '20px', marginTop: '10px' }} />
+                                    <h3 style={{ textAlign: 'center', fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '10px' }}>Drop YIA - Hotel (PP)</h3>
+                                    <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '20px' }}>Layanan antar-jemput tepat waktu dan nyaman. Driver ramah standby di terminal kedatangan/lobi hotel.</p>
                                     <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px 0', textAlign: 'left' }}>
-                                        <li style={{ padding: '8px 0', fontSize: '0.85rem', color: 'var(--text-dark)', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px dashed var(--border-color)' }}><span style={{ color: 'var(--success)', fontWeight: 800 }}>✓</span> <strong>Sudah Termasuk:</strong> Mobil, Driver, BBM</li>
-                                        <li style={{ padding: '8px 0', fontSize: '0.85rem', color: 'var(--text-dark)', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px dashed var(--border-color)' }}><span style={{ color: 'var(--success)', fontWeight: 800 }}>✓</span> <strong>Layanan VIP:</strong> Driver rapi / jas</li>
+                                        <li style={{ padding: '8px 0', fontSize: '0.85rem', color: 'var(--text-dark)', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px dashed var(--border-color)' }}><span style={{ color: 'var(--success)', fontWeight: 800 }}>✓</span> <strong>Tarif All-In Bersih:</strong> Termasuk Driver, BBM, &amp; Tol</li>
+                                        <li style={{ padding: '8px 0', fontSize: '0.85rem', color: 'var(--text-dark)', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px dashed var(--border-color)' }}><span style={{ color: 'var(--success)', fontWeight: 800 }}>✓</span> <strong>Standby Tepat Waktu:</strong> Driver siap pantau jadwal landing</li>
+                                        <li style={{ padding: '8px 0', fontSize: '0.85rem', color: 'var(--text-dark)', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: 'var(--success)', fontWeight: 800 }}>✓</span> <strong>Bebas Antre:</strong> Langsung jalan tanpa nunggu taksi bandara</li>
                                     </ul>
-                                    <div style={{ textAlign: 'center', fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '20px' }}>Mulai dari Rp 800.000 <small style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>/ 12 jam</small></div>
-                                    <button onClick={() => openSpecialModal('Wedding')} className="btn btn-primary" style={{ width: '100%', fontSize: '1rem', padding: '14px', display: 'block', textAlign: 'center', border: 'none', cursor: 'pointer' }}>💍 Pilih Mobil Wedding</button>
+                                    <div style={{ textAlign: 'center', fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '20px' }}>Mulai dari Rp 450.000 <small style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>/ trip all-in</small></div>
+                                    <a href="https://wa.me/628386000740?text=Halo%20Aksara%20Transport%2C%20saya%20tertarik%20pesan%20layanan%20Drop%20In%20/%20Out%20Bandara%20YIA" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%', padding: '14px', textAlign: 'center', fontWeight: 800, textDecoration: 'none', display: 'block' }}>✈️ Hubungi via WhatsApp</a>
                                 </div>
                             </div>
                         </div>

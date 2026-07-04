@@ -3,19 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 import { KeywordData } from '@/data/seoKeywords';
 
 export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }) {
-    const { title, type, carName, price12, price24, fullday, priceWithDriver, priceAllIn, benefits, imageUrl } = seoData;
-    const finalPrice24 = price24 || fullday;
-    const router = useRouter();
+    const { title, type, carName, price12, fullday, priceWithDriver, priceAllIn, benefits, imageUrl } = seoData;
     
     // Booking Form State
-    const [supir, setSupir] = useState('lepas-kunci');
-    const [tanggal, setTanggal] = useState('');
+    const [layanan, setLayanan] = useState('lepas-kunci');
+    const [tanggalMulai, setTanggalMulai] = useState('');
     const [tanggalSelesai, setTanggalSelesai] = useState('');
+    const [inputCarName, setInputCarName] = useState(carName || '');
     const [durasi, setDurasi] = useState(1);
 
     // Initialize dates
@@ -31,14 +29,24 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
             return `${yyyy}-${mm}-${dd}`;
         };
 
-        setTanggal(formatLocal(today));
+        setTanggalMulai(formatLocal(today));
         setTanggalSelesai(formatLocal(tomorrow));
     }, []);
 
-    // Handle date changes
+    // Calculate duration when dates change
+    useEffect(() => {
+        if (tanggalMulai && tanggalSelesai) {
+            const start = new Date(tanggalMulai);
+            const end = new Date(tanggalSelesai);
+            const diffTime = end.getTime() - start.getTime();
+            const diffDays = Math.max(1, Math.round(diffTime / (1000 * 60 * 60 * 24)));
+            setDurasi(diffDays);
+        }
+    }, [tanggalMulai, tanggalSelesai]);
+
     const handleTanggalChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const startVal = e.target.value;
-        setTanggal(startVal);
+        setTanggalMulai(startVal);
         const start = new Date(startVal);
         const end = new Date(tanggalSelesai);
         if (end < start) {
@@ -49,646 +57,333 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
     };
 
     const handleTanggalSelesaiChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const endVal = e.target.value;
-        setTanggalSelesai(endVal);
+        setTanggalSelesai(e.target.value);
     };
-
-    // Calculate duration
-    useEffect(() => {
-        if (tanggal && tanggalSelesai) {
-            const start = new Date(tanggal);
-            const end = new Date(tanggalSelesai);
-            const diffTime = end.getTime() - start.getTime();
-            const diffDays = Math.max(1, Math.round(diffTime / (1000 * 60 * 60 * 24)));
-            setDurasi(diffDays);
-        }
-    }, [tanggal, tanggalSelesai]);
 
     const handleBookingSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const serviceParam = supir === 'lepas-kunci' ? 'lepasKunci' : 'denganSopir';
-        router.push(`/mobil?service=${serviceParam}&tanggal=${encodeURIComponent(tanggal)}&tanggalSelesai=${encodeURIComponent(tanggalSelesai)}&durasi=${durasi}`);
+        const serviceLabel = layanan === 'lepas-kunci' ? 'Lepas Kunci (Tanpa Supir)' : 'Dengan Driver Profesional';
+        
+        // Build customized WhatsApp message text
+        const messageText = `Halo Aksara Transport, saya ingin menanyakan ketersediaan armada rental mobil:\n\n` +
+                            `- Mobil: ${inputCarName}\n` +
+                            `- Layanan: ${serviceLabel}\n` +
+                            `- Tanggal Sewa: ${tanggalMulai}\n` +
+                            `- Tanggal Selesai: ${tanggalSelesai}\n` +
+                            `- Durasi: ${durasi} Hari\n\n` +
+                            `Mohon informasi ketersediaan unit dan rincian persyaratannya. Terima kasih!`;
+
+        const waUrl = `https://wa.me/628386000740?text=${encodeURIComponent(messageText)}`;
+        window.open(waUrl, '_blank');
     };
 
     // FAQ State
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const toggleFaq = (index: number) => {
-        if (openFaq === index) {
-            setOpenFaq(null);
-        } else {
-            setOpenFaq(index);
-        }
+        setOpenFaq(openFaq === index ? null : index);
     };
 
+    // Infer car specifications based on name
+    const getSpecs = () => {
+        const name = (carName || '').toLowerCase();
+        if (name.includes('brio') || name.includes('jazz')) {
+            return { seats: '5 Penumpang', trans: 'Automatic', fuel: 'Pertalite / BBM', class: 'City Car' };
+        } else if (name.includes('raize')) {
+            return { seats: '5 Penumpang', trans: 'Automatic (Turbo)', fuel: 'Pertamax', class: 'Compact SUV' };
+        } else if (name.includes('avanza') || name.includes('xpander') || name.includes('innova')) {
+            return { seats: '7 Penumpang', trans: name.includes('innova') ? 'Automatic' : 'Automatic / Manual', fuel: 'Pertamax / Diesel', class: 'MPV Keluarga' };
+        } else if (name.includes('pajero') || name.includes('fortuner')) {
+            return { seats: '7 Penumpang', trans: 'Automatic', fuel: 'Dexlite / Diesel', class: 'SUV Premium' };
+        } else if (name.includes('hiace')) {
+            return { seats: '14-15 Penumpang', trans: 'Manual / Automatic', fuel: 'Diesel', class: 'Microbus' };
+        } else if (name.includes('elf')) {
+            return { seats: '19 Penumpang', trans: 'Manual', fuel: 'Diesel', class: 'Microbus Long' };
+        } else if (name.includes('listrik') || name.includes('binguo') || name.includes('air ev')) {
+            return { seats: '4-5 Penumpang', trans: 'Automatic', fuel: '100% Listrik (EV)', class: 'Eco Electric' };
+        }
+        return { seats: '7 Penumpang', trans: 'Automatic / Manual', fuel: 'BBM', class: 'MPV' };
+    };
+
+    const specs = getSpecs();
+
     return (
-        <>
-            {/* HERO SECTION */}
-            <section className="hero">
-                <Image 
-                    src="/images/hero_background.webp" 
-                    alt={`Layanan ${title} di Yogyakarta dari Aksara Transport`} 
-                    fill 
-                    priority 
-                    style={{ objectFit: 'cover', zIndex: 0, opacity: 0.18 }} 
-                />
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.5) 0%, rgba(15, 23, 42, 0.85) 100%)', zIndex: 1, pointerEvents: 'none' }}></div>
-                <div className="container hero-grid" style={{ position: 'relative', zIndex: 2 }}>
-                    <div className="hero-content">
-                        <span className="badge badge-accent" style={{ marginBottom: '20px' }}>Rental Mobil Premium #1</span>
-                        <h1>{title}</h1>
-                        <p>Dapatkan penawaran terbaik untuk {title.toLowerCase()} hari ini. Temukan solusi rental mobil terbaik untuk liburan keluarga, perjalanan bisnis, hingga acara pernikahan dengan armada terbaru.</p>
-                        <div className="hero-buttons">
-                            <Link href="/mobil" className="btn btn-primary">Lihat Katalog Mobil</Link>
-                            <Link href="/tentang" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>Syarat Sewa</Link>
-                        </div>
-                        <div className="hero-features-list">
-                            <div className="hero-feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span>Lepas Kunci / Sopir</span>
-                            </div>
-                            <div className="hero-feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span>Armada Bersih &amp; Prima</span>
-                            </div>
-                            <div className="hero-feature-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                <span>Layanan Darurat 24 Jam</span>
-                            </div>
-                        </div>
-                    </div>
+        <div style={{ backgroundColor: 'var(--surface-color)', minHeight: '100vh', paddingBottom: '60px' }}>
+            
+            {/* BREADCRUMB BAR */}
+            <div style={{ backgroundColor: '#fff', borderBottom: '1px solid var(--border-color)', padding: '16px 0', marginTop: 'var(--header-height, 80px)' }}>
+                <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    <Link href="/" style={{ color: 'var(--text-muted)' }} className="hover-accent">Home</Link>
+                    <span>/</span>
+                    <Link href="/mobil" style={{ color: 'var(--text-muted)' }} className="hover-accent">Sewa Mobil</Link>
+                    <span>/</span>
+                    <span style={{ color: 'var(--text-dark)' }}>{carName || title}</span>
                 </div>
-            </section>
+            </div>
 
-            {/* BOOKING QUICK WIDGET */}
-            <section className="booking-widget-section">
-                <div className="container">
-                    <form className="booking-widget" id="heroBookingForm" onSubmit={handleBookingSubmit}>
-                        <div className="booking-form-grid">
-                            <div className="form-group">
-                                <label htmlFor="heroSupir">Layanan/Sopir</label>
-                                <div className="form-input-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    <select id="heroSupir" className="form-control" value={supir} onChange={(e) => setSupir(e.target.value)} required>
-                                        <option value="lepas-kunci">Lepas Kunci (Tanpa Supir)</option>
-                                        <option value="dengan-sopir">Dengan Supir Profesional</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="heroTanggal">Tanggal Sewa</label>
-                                <div className="form-input-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                                    <input type="date" id="heroTanggal" className="form-control" value={tanggal} onChange={handleTanggalChange} required />
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="heroTanggalSelesai">Tanggal Selesai</label>
-                                <div className="form-input-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                                    <input type="date" id="heroTanggalSelesai" className="form-control" value={tanggalSelesai} onChange={handleTanggalSelesaiChange} required />
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="heroDurasi">Durasi Sewa</label>
-                                <div className="form-input-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                    <input type="text" id="heroDurasi" className="form-control" readOnly value={`${durasi} Hari`} />
-                                </div>
-                            </div>
-                            <button type="submit" className="btn btn-primary" style={{ height: '50px', fontSize: '0.95rem' }}>Sewa &amp; Pesan</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
-
-            {/* AIO STRUCTURED DATA (JSON-LD) */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": type === 'car' ? "Product" : "LocalBusiness",
-                        "name": title,
-                        "sku": seoData.slug,
-                        "image": imageUrl ? `https://jogjasewamobil.com${imageUrl}` : "https://jogjasewamobil.com/images/hero_car.webp",
-                        "description": `Layanan ${title.toLowerCase()} terbaik. Armada bersih, harga murah, lepas kunci atau dengan supir profesional di Yogyakarta.`,
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": "128"
-                        },
-                        ...(type === 'car' ? {
-                            "brand": {
-                                "@type": "Brand",
-                                "name": carName ? carName.split(' ')[0] : "Aksara Transport"
-                            }
-                        } : {}),
-                        ...(type === 'car' && price12 ? {
-                            "offers": {
-                                "@type": "Offer",
-                                "priceCurrency": "IDR",
-                                "price": price12.toString(),
-                                "availability": "https://schema.org/InStock",
-                                "url": `https://jogjasewamobil.com/${seoData.slug}`,
-                                "shippingDetails": {
-                                    "@type": "OfferShippingDetails",
-                                    "shippingRate": {
-                                        "@type": "MonetaryAmount",
-                                        "value": "0",
-                                        "currency": "IDR"
-                                    },
-                                    "shippingDestination": {
-                                        "@type": "DefinedRegion",
-                                        "addressCountry": "ID"
-                                    },
-                                    "deliveryTime": {
-                                        "@type": "ShippingDeliveryTime",
-                                        "handlingTime": {
-                                            "@type": "QuantitativeValue",
-                                            "minValue": 0,
-                                            "maxValue": 1,
-                                            "unitCode": "d"
-                                        },
-                                        "transitTime": {
-                                            "@type": "QuantitativeValue",
-                                            "minValue": 0,
-                                            "maxValue": 1,
-                                            "unitCode": "d"
-                                        }
-                                    }
-                                },
-                                "hasMerchantReturnPolicy": {
-                                    "@type": "MerchantReturnPolicy",
-                                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                                    "merchantReturnDays": 1,
-                                    "returnMethod": "https://schema.org/ReturnInStore",
-                                    "returnFees": "https://schema.org/FreeReturn",
-                                    "applicableCountry": "ID"
-                                }
-                            }
-                        } : {}),
-                        "provider": {
-                            "@type": "LocalBusiness",
-                            "name": "Aksara Transport",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "addressLocality": "Yogyakarta",
-                                "addressRegion": "DIY",
-                                "addressCountry": "ID"
-                            }
-                        }
-                    })
-                }}
-            />
-            {/* FAQ SCHEMA FOR AI (AIO/GEO) */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "FAQPage",
-                        "mainEntity": [
-                            {
-                                "@type": "Question",
-                                "name": "Apa saja syarat untuk sewa mobil lepas kunci?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Untuk menyewa mobil tanpa supir (lepas kunci), Anda diwajibkan menyertakan scan foto KTP asli, SIM A aktif, bukti kepemilikan sepeda motor dengan STNK terdaftar atas nama penyewa, serta bersedia di-survei singkat lewat telepon."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Apakah biaya sewa sudah termasuk bahan bakar dan supir?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Kami menyediakan sistem sewa Lepas Kunci (hanya sewa mobil kosong) dan sewa Dengan Sopir. Tarif sewa standar Dengan Sopir belum termasuk bahan bakar (BBM), tarif tol, biaya parkir, dan akomodasi/makan supir, kecuali jika Anda memilih Paket All-In."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Apakah Aksara Transport melayani sewa ke luar kota?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Ya, kami memperbolehkan perjalanan luar kota. Namun untuk penyewaan luar kota, minimal durasi sewa lepas kunci adalah 2 hari berturut-turut, atau sangat disarankan menyewa dengan didampingi supir kami agar kenyamanan berkendara terjaga."
-                                }
-                            }
-                        ]
-                    })
-                }}
-            />
-
-            {/* DYNAMIC PRICING TABLE (SEO OPTIMIZED) */}
-            {type === 'car' && (price12 || priceWithDriver || priceAllIn) && (
-                <section className="section-padding" style={{ backgroundColor: '#fff', borderTop: '1px solid #f1f5f9' }}>
-                    <div className="container">
-                        <div className="text-center">
-                            <span className="badge badge-accent">Daftar Harga</span>
-                            <h2 className="section-title">Tarif Harga Sewa {carName}</h2>
-                            <p className="section-subtitle">Tabel harga transparan tanpa biaya tersembunyi. Dapatkan diskon khusus untuk sewa jangka panjang.</p>
-                        </div>
-                        <div style={{ maxWidth: '800px', margin: '0 auto', overflowX: 'auto' }}>
-                            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-                                <thead>
-                                    <tr style={{ backgroundColor: 'var(--primary)', color: '#fff' }}>
-                                        <th style={{ padding: '16px 20px', fontWeight: 700 }}>Paket Layanan</th>
-                                        <th style={{ padding: '16px 20px', fontWeight: 700 }}>Durasi</th>
-                                        <th style={{ padding: '16px 20px', fontWeight: 700 }}>Harga Mulai</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {price12 && (
-                                        <tr style={{ backgroundColor: '#fff', borderBottom: '1px solid #f1f5f9' }}>
-                                            <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
-                                            <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam</td>
-                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {price12.toLocaleString('id-ID')}</td>
-                                        </tr>
-                                    )}
-                                    {finalPrice24 && (
-                                        <tr style={{ backgroundColor: '#f8fafc', borderBottom: '1px solid #f1f5f9' }}>
-                                            <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Lepas Kunci (Tanpa Supir)</td>
-                                            <td style={{ padding: '16px 20px', color: '#64748b' }}>24 Jam (Full Day)</td>
-                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {finalPrice24.toLocaleString('id-ID')}</td>
-                                        </tr>
-                                    )}
-                                    {priceWithDriver && (
-                                        <tr style={{ backgroundColor: '#fff', borderBottom: '1px solid #f1f5f9' }}>
-                                            <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>Mobil + Supir</td>
-                                            <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam / Fullday</td>
-                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {priceWithDriver.toLocaleString('id-ID')}</td>
-                                        </tr>
-                                    )}
-                                    {priceAllIn && (
-                                        <tr style={{ backgroundColor: '#f8fafc' }}>
-                                            <td style={{ padding: '16px 20px', fontWeight: 600, color: '#334155' }}>All-In (Mobil + Supir + BBM)</td>
-                                            <td style={{ padding: '16px 20px', color: '#64748b' }}>12 Jam / Fullday</td>
-                                            <td style={{ padding: '16px 20px', fontWeight: 700, color: 'var(--accent)' }}>Rp {priceAllIn.toLocaleString('id-ID')}</td>
-                                        </tr>
-                                    )}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* DYNAMIC BENEFITS SECTION (WHY CHOOSE THIS CAR / SERVICE) */}
-            <section className="section-padding" style={{ backgroundColor: type === 'car' ? '#f8fafc' : '#fff' }}>
-                <div className="container">
-                    <div className="text-center">
-                        <span className="badge badge-success">Keunggulan</span>
-                        <h2 className="section-title">
-                            {type === 'car' ? `Keuntungan Memilih ${carName} di Jogja` : 'Kenapa Memilih Kami?'}
-                        </h2>
-                        <p className="section-subtitle">Fakta mengapa layanan ini adalah pilihan paling tepat untuk perjalanan Anda.</p>
-                    </div>
-                    <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                            {benefits?.map((benefit, index) => (
-                                <li key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                                    <div style={{ flexShrink: 0, color: '#16a34a', marginTop: '2px' }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                                    </div>
-                                    <span style={{ fontSize: '1.05rem', color: '#334155', lineHeight: '1.6' }}>{benefit}</span>
-                                </li>
-                            ))}
-                            
-                            {/* AIO Soft-selling injection */}
-                            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginTop: '8px', padding: '16px', backgroundColor: '#eff6ff', borderRadius: '8px', border: '1px solid #bfdbfe' }}>
-                                <div style={{ flexShrink: 0, color: '#2563eb', marginTop: '2px' }}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                                </div>
-                                <span style={{ fontSize: '1.05rem', color: '#1e3a8a', lineHeight: '1.6' }}>
-                                    Sebagai <strong>Rental Mobil Jogja Terbaik</strong>, kami menggaransi unit selalu bersih, prima, wangi, dengan pelayanan supir bintang 5 yang ramah.
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            {/* FEATURED VEHICLES */}
-            <section className="section-padding fleet-section">
-                <div className="container">
-                    <div className="text-center">
-                        <span className="badge badge-accent">Armada Pilihan</span>
-                        <h2 className="section-title">Pilihan Mobil Terpopuler</h2>
-                        <p className="section-subtitle">Kami menyediakan unit mobil terbaru dengan transmisi otomatis maupun manual, siap disesuaikan dengan kebutuhan berkendara Anda.</p>
-                    </div>
-                    <div className="cars-grid-4">
-                        {/* Mobil 1 */}
-                        <div className="car-card">
-                            <div className="car-image-container">
-                                <span className="badge badge-success car-tag">Laris</span>
-                                <div style={{ position: 'relative', width: '100%', height: '180px' }}>
-                                    <Image src="/images/honda_brio.webp" alt="Sewa Honda Brio Murah" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
-                                </div>
-                            </div>
-                            <div className="car-details">
-                                <h3 className="car-name">Honda Brio</h3>
-                                <div className="car-specs">
-                                    <div className="spec-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-                                        <span>5 Kursi</span>
-                                    </div>
-                                    <div className="spec-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                        <span>Automatic</span>
-                                    </div>
-                                </div>
-                                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '15px', marginTop: '-5px' }}>
-                                    <span style={{ color: 'var(--success)', fontWeight: 700 }}>Layanan:</span> Lepas Kunci (Tanpa Sopir)
-                                </div>
-                                <div className="car-pricing-footer">
-                                    <div className="price-box">
-                                        <span className="price-label">Tarif Mulai</span>
-                                        <span className="price-val">Rp 250.000 <span>/ 12 jam</span></span>
-                                    </div>
-                                    <Link href="/kontak?supir=lepas-kunci&mobil=Honda+Brio+Matic" className="btn btn-secondary" style={{ padding: '10px 14px', fontSize: '0.8rem' }}>Pesan</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Mobil 2 */}
-                        <div className="car-card">
-                            <div className="car-image-container">
-                                <span className="badge badge-success car-tag">Populer</span>
-                                <div style={{ position: 'relative', width: '100%', height: '180px' }}>
-                                    <Image src="/images/toyota_avanza.webp" alt="Sewa Toyota Avanza Murah" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
-                                </div>
-                            </div>
-                            <div className="car-details">
-                                <h3 className="car-name">Toyota Avanza</h3>
-                                <div className="car-specs">
-                                    <div className="spec-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-                                        <span>7 Kursi</span>
-                                    </div>
-                                    <div className="spec-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                        <span>Manual / Matic</span>
-                                    </div>
-                                </div>
-                                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '15px', marginTop: '-5px' }}>
-                                    <span style={{ color: 'var(--success)', fontWeight: 700 }}>Layanan:</span> Lepas Kunci (Tanpa Sopir)
-                                </div>
-                                <div className="car-pricing-footer">
-                                    <div className="price-box">
-                                        <span className="price-label">Tarif Mulai</span>
-                                        <span className="price-val">Rp 250.000 <span>/ 12 jam</span></span>
-                                    </div>
-                                    <Link href="/kontak?supir=lepas-kunci&mobil=Avanza+Facelift+Matic" className="btn btn-secondary" style={{ padding: '10px 14px', fontSize: '0.8rem' }}>Pesan</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Mobil 3 */}
-                        <div className="car-card">
-                            <div className="car-image-container">
-                                <span className="badge car-tag" style={{ backgroundColor: '#d1fae5', color: '#065f46', fontWeight: 800 }}>Mobil Listrik</span>
-                                <div style={{ position: 'relative', width: '100%', height: '180px' }}>
-                                    <Image src="/images/wuling_binguo.webp" alt="Sewa Wuling Binguo EV Jogja" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
-                                </div>
-                            </div>
-                            <div className="car-details">
-                                <h3 className="car-name">Wuling Binguo EV</h3>
-                                <div className="car-specs">
-                                    <div className="spec-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-                                        <span>5 Kursi</span>
-                                    </div>
-                                    <div className="spec-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                        <span>Automatic</span>
-                                    </div>
-                                </div>
-                                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '15px', marginTop: '-5px' }}>
-                                    <span style={{ color: '#059669', fontWeight: 700 }}>Layanan:</span> Lepas Kunci (Bebas Polusi)
-                                </div>
-                                <div className="car-pricing-footer">
-                                    <div className="price-box">
-                                        <span className="price-label">Tarif Mulai</span>
-                                        <span className="price-val">Rp 550.000 <span>/ fullday</span></span>
-                                    </div>
-                                    <Link href="/kontak?supir=lepas-kunci&mobil=Wuling+Binguo+EV" className="btn btn-secondary" style={{ padding: '10px 14px', fontSize: '0.8rem' }}>Pesan</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Mobil 4: Toyota Hiace Premio */}
-                        <div className="car-card">
-                            <div className="car-image-container">
-                                <span className="badge badge-accent car-tag" style={{ backgroundColor: '#e0f2fe', color: '#0369a1' }}>Grup</span>
-                                <div style={{ position: 'relative', width: '100%', height: '180px' }}>
-                                    <Image src="/images/toyota_hiace_premio.webp" alt="Sewa Toyota Hiace Premio Jogja" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, 33vw" />
-                                </div>
-                            </div>
-                            <div className="car-details">
-                                <h3 className="car-name">Toyota Hiace Premio</h3>
-                                <div className="car-specs">
-                                    <div className="spec-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-                                        <span>15 Kursi</span>
-                                    </div>
-                                    <div className="spec-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                        <span>Manual</span>
-                                    </div>
-                                </div>
-                                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '15px', marginTop: '-5px' }}>
-                                    <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Include:</span> Mobil, Sopir, BBM
-                                </div>
-                                <div className="car-pricing-footer">
-                                    <div className="price-box">
-                                        <span className="price-label">Tarif Mulai</span>
-                                        <span className="price-val">Rp 1.400.000 <span>/ 12 jam</span></span>
-                                    </div>
-                                    <Link href="/pesan-sopir?mobil=Toyota+Hiace+Premio" className="btn btn-secondary" style={{ padding: '10px 14px', fontSize: '0.8rem' }}>Pesan</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className="text-center" style={{ marginTop: '50px' }}>
-                        <Link href="/mobil" className="btn btn-secondary">Lihat Seluruh Armada</Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* PACKAGES SECTION */}
-            <section className="section-padding" style={{ backgroundColor: '#f8fafc' }}>
-                <div className="container">
-                    <div className="text-center">
-                        <span className="badge badge-accent">Layanan Tambahan</span>
-                        <h2 className="section-title">Paket Transportasi Spesial</h2>
-                        <p className="section-subtitle">Selain sewa mobil reguler, kami juga menyediakan paket lengkap untuk momen spesial Anda.</p>
-                    </div>
-                    <div className="features-grid">
-                        <div className="feature-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                            <div style={{ position: 'relative', width: '100%', height: '220px' }}>
-                                <Image src="/images/tour_city.webp" alt="Paket Wisata" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-                            </div>
-                            <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                                <h3 style={{ marginTop: 0 }}>Paket Wisata Jogja</h3>
-                                <p style={{ flex: 1 }}>Jelajahi keindahan Yogyakarta tanpa repot. Sudah termasuk armada nyaman, driver merangkap guide, dan kebebasan memilih destinasi.</p>
-                                <Link href="/wisata" className="btn btn-primary" style={{ display: 'block', width: '100%', marginTop: 'auto', textAlign: 'center', padding: '12px 0', fontSize: '1.05rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Lihat Pilihan Wisata</Link>
-                            </div>
-                        </div>
-                        <div className="feature-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                            <div style={{ position: 'relative', width: '100%', height: '220px' }}>
-                                <Image src="/images/paket_wedding.webp" alt="Paket Wedding" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-                            </div>
-                            <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                                <h3 style={{ marginTop: 0 }}>Mobil Pengantin VIP</h3>
-                                <p style={{ flex: 1 }}>Sempurnakan momen hari bahagia Anda dengan pilihan mobil mewah yang elegan, dilengkapi dekorasi bunga dan driver profesional.</p>
-                                <Link href="/wisata" className="btn btn-primary" style={{ display: 'block', width: '100%', marginTop: 'auto', textAlign: 'center', padding: '12px 0', fontSize: '1.05rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Detail Wedding Car</Link>
-                            </div>
-                        </div>
-                        <div className="feature-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                            <div style={{ position: 'relative', width: '100%', height: '220px' }}>
-                                <Image src="/images/paket_wisuda.webp" alt="Paket Wisuda" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-                            </div>
-                            <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                                <h3 style={{ marginTop: 0 }}>Paket Wisuda Keluarga</h3>
-                                <p style={{ flex: 1 }}>Hadirkan kemudahan mobilitas untuk keluarga di hari kelulusan Anda. Tepat waktu, nyaman, dan bisa memuat banyak anggota keluarga.</p>
-                                <Link href="/wisata" className="btn btn-primary" style={{ display: 'block', width: '100%', marginTop: 'auto', textAlign: 'center', padding: '12px 0', fontSize: '1.05rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Detail Paket Wisuda</Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* HOW IT WORKS */}
-            <section className="section-padding">
-                <div className="container">
-                    <div className="text-center">
-                        <span className="badge badge-accent">Panduan</span>
-                        <h2 className="section-title">4 Langkah Mudah Sewa Mobil</h2>
-                        <p className="section-subtitle">Proses penyewaan mobil di Aksara Transport sangat cepat, hanya butuh waktu kurang dari 10 menit.</p>
-                    </div>
-                    <div className="steps-grid">
-                        <div className="step-card">
-                            <div className="step-number">1</div>
-                            <h4>Pilih Unit Armada</h4>
-                            <p>Jelajahi halaman katalog kami dan pilih kendaraan yang paling sesuai untuk aktivitas Anda.</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">2</div>
-                            <h4>Isi Form Pemesanan</h4>
-                            <p>Lengkapi nama, tanggal sewa, serta preferensi dengan/tanpa supir di form yang disediakan.</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">3</div>
-                            <h4>Konfirmasi WhatsApp</h4>
-                            <p>Kirim form dan terhubung ke admin via WhatsApp untuk detail dokumen penunjang.</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">4</div>
-                            <h4>Serah Terima Mobil</h4>
-                            <p>Ambil unit di kantor kami atau armada kami antarkan langsung ke depan rumah/hotel Anda.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* TESTIMONIALS */}
-            <section className="section-padding">
-                <div className="container">
-                    <div className="text-center">
-                        <span className="badge badge-success">Apa Kata Mereka</span>
-                        <h2 className="section-title">Testimoni Pelanggan</h2>
-                        <p className="section-subtitle">Ribuan pelanggan telah mempercayakan perjalanan mereka bersama Aksara Transport.</p>
-                    </div>
-                    <div className="features-grid" style={{ gap: '20px', marginTop: '40px' }}>
-                        <div className="feature-card" style={{ textAlign: 'left', padding: '30px' }}>
-                            <div style={{ display: 'flex', gap: '4px', color: '#fbbf24', marginBottom: '16px' }}>
-                                {[1,2,3,4,5].map(i => <svg key={i} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>)}
-                            </div>
-                            <p style={{ fontStyle: 'italic', marginBottom: '20px', color: '#475569' }}>"Sewa mobil lepas kunci di Aksara Transport sangat mudah. Proses verifikasi cepat, mobil Brio-nya bersih dan wangi. Pokoknya recommended banget buat keliling Jogja!"</p>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#64748b' }}>B</div>
-                                <div>
-                                    <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Budi Santoso</h4>
-                                    <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Wisatawan Domestik</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="feature-card" style={{ textAlign: 'left', padding: '30px' }}>
-                            <div style={{ display: 'flex', gap: '4px', color: '#fbbf24', marginBottom: '16px' }}>
-                                {[1,2,3,4,5].map(i => <svg key={i} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>)}
-                            </div>
-                            <p style={{ fontStyle: 'italic', marginBottom: '20px', color: '#475569' }}>"Pakai layanan dengan driver untuk keliling pantai Gunungkidul. Driver (Mas Anton) sangat ramah, sabar, dan tahu rute-rute tercepat menghindari macet."</p>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#64748b' }}>R</div>
-                                <div>
-                                    <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Rina Melati</h4>
-                                    <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Perjalanan Keluarga</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="feature-card" style={{ textAlign: 'left', padding: '30px' }}>
-                            <div style={{ display: 'flex', gap: '4px', color: '#fbbf24', marginBottom: '16px' }}>
-                                {[1,2,3,4,5].map(i => <svg key={i} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>)}
-                            </div>
-                            <p style={{ fontStyle: 'italic', marginBottom: '20px', color: '#475569' }}>"Invoice digital yang praktis banget, jadi gampang claim reimbursement ke kantor. Hiace Premio-nya nyaman luar biasa buat tim event kita."</p>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#64748b' }}>A</div>
-                                <div>
-                                    <h4 style={{ margin: 0, fontSize: '0.95rem' }}>Andi Pratama</h4>
-                                    <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Event Organizer</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* SEO FAQ SECTION */}
-            <section className="section-padding faq-section">
-                <div className="container">
-                    <div className="text-center">
-                        <span className="badge badge-accent">Tanya Jawab</span>
-                        <h2 className="section-title">Pertanyaan yang Sering Diajukan</h2>
-                        <p className="section-subtitle">Dapatkan jawaban cepat terkait proses penyewaan, biaya tambahan, cakupan wilayah, hingga pembatalan sewa.</p>
-                    </div>
+            {/* MAIN TWO COLUMN SECTION */}
+            <section style={{ padding: '40px 0' }}>
+                <div className="container dynamic-landing-grid">
                     
-                    <div className="faq-container">
-                        {[
-                            {
-                                q: "Apa saja syarat untuk sewa mobil lepas kunci?",
-                                a: "Untuk menyewa mobil tanpa supir (lepas kunci), Anda diwajibkan menyertakan scan foto KTP asli, SIM A aktif, bukti kepemilikan sepeda motor dengan STNK terdaftar atas nama penyewa, serta bersedia di-survei singkat lewat telepon. Dokumen pendukung lain seperti Kartu Keluarga mungkin diminta demi verifikasi keamanan operasional."
-                            },
-                            {
-                                q: "Apakah biaya sewa sudah termasuk bahan bakar dan supir?",
-                                a: "Kami menyediakan sistem sewa Lepas Kunci (hanya sewa mobil kosong) dan sewa Dengan Sopir. Tarif sewa standar Dengan Sopir belum termasuk bahan bakar (BBM), tarif tol, biaya parkir, dan akomodasi/makan supir, kecuali jika Anda memilih Paket All-In (sewa mobil + supir + BBM)."
-                            },
-                            {
-                                q: "Bagaimana kebijakan jika pemakaian melebihi batas waktu (overtime)?",
-                                a: "Batas keterlambatan pengembalian unit mobil adalah 1 jam dari waktu serah terima. Keterlambatan melebihi batas tersebut dikenakan biaya denda overtime sebesar 10% per jam dari harga sewa harian mobil bersangkutan. Jika keterlambatan mencapai 5 jam atau lebih, maka dihitung sebagai penambahan sewa 1 hari penuh."
-                            },
-                            {
-                                q: "Apakah Aksara Transport melayani sewa ke luar kota?",
-                                a: "Ya, kami memperbolehkan perjalanan luar kota (misalnya dari Jakarta ke Bandung atau Yogyakarta). Namun untuk penyewaan luar kota, minimal durasi sewa lepas kunci adalah 2 hari berturut-turut, atau sangat disarankan menyewa dengan didampingi supir kami agar kenyamanan berkendara terjaga."
-                            },
-                            {
-                                q: "Bagaimana jika saya perlu membatalkan sewa mobil?",
-                                a: "Pembatalan sewa sebelum H-3 jadwal penjemputan tidak dikenakan biaya denda pembatalan (free cancellation). Pembatalan sewa mobil pada H-2 atau H-1 akan dikenakan biaya pembatalan sebesar 50% dari nilai sewa hari pertama. Sedangkan pembatalan pada hari H (no-show) akan dikenakan denda hangus 100% dari biaya sewa total."
-                            }
-                        ].map((faq, index) => (
-                            <div className={`faq-item ${openFaq === index ? 'active' : ''}`} key={index}>
-                                <div className="faq-header" onClick={() => toggleFaq(index)}>
-                                    {faq.q}
-                                    <svg className="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    {/* LEFT COLUMN: PRODUCT CONTENT */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                        
+                        {/* HEADER TITLE SECTION */}
+                        <div>
+                            {type === 'car' && (
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
+                                    <span style={{ backgroundColor: '#fff0e5', color: 'var(--accent)', padding: '6px 12px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 800 }}>{specs.class}</span>
+                                    <span style={{ backgroundColor: '#f1f5f9', color: 'var(--text-muted)', padding: '6px 12px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700 }}>{specs.seats}</span>
+                                    <span style={{ backgroundColor: '#f1f5f9', color: 'var(--text-muted)', padding: '6px 12px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700 }}>{specs.trans}</span>
+                                    <span style={{ backgroundColor: '#f1f5f9', color: 'var(--text-muted)', padding: '6px 12px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700 }}>{specs.fuel}</span>
                                 </div>
-                                <div className="faq-body" style={{ maxHeight: openFaq === index ? '500px' : '0' }}>
-                                    <div className="faq-body-content">
-                                        {faq.a}
+                            )}
+                            <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--text-dark)', lineHeight: '1.2', marginBottom: '16px' }}>
+                                {title}
+                            </h1>
+                            <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+                                Sewa {carName || 'mobil'} murah di Yogyakarta dengan kondisi armada bersih, wangi, terawat, dan keluaran terbaru. Tersedia sistem sewa lepas kunci maupun sewa dengan sopir profesional ramah.
+                            </p>
+                        </div>
+
+                        {/* HERO CAR IMAGE */}
+                        {imageUrl && (
+                            <div style={{ backgroundColor: '#fff', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+                                <div style={{ position: 'relative', width: '100%', height: '320px', maxWidth: '550px' }}>
+                                    <Image 
+                                        src={imageUrl} 
+                                        alt={`Sewa Mobil ${carName} Jogja`} 
+                                        fill 
+                                        style={{ objectFit: 'contain' }}
+                                        priority
+                                    />
+                                </div>
+                            </div>
+                        )}
+
+                        {/* TARIF SEWA TABLE */}
+                        {type === 'car' && (price12 || fullday || priceWithDriver || priceAllIn) && (
+                            <div style={{ backgroundColor: '#fff', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '30px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+                                <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-dark)', borderBottom: '2px solid var(--accent)', display: 'inline-block', paddingBottom: '8px', marginBottom: '20px' }}>
+                                    Pilihan Varian &amp; Tarif Harga
+                                </h2>
+                                <div style={{ overflowX: 'auto' }}>
+                                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                                        <thead>
+                                            <tr style={{ borderBottom: '2px solid var(--border-color)', color: 'var(--text-dark)', fontWeight: 800 }}>
+                                                <th style={{ padding: '12px 16px', fontSize: '0.95rem' }}>Layanan</th>
+                                                <th style={{ padding: '12px 16px', fontSize: '0.95rem' }}>Durasi</th>
+                                                <th style={{ padding: '12px 16px', fontSize: '0.95rem', textAlign: 'right' }}>Harga Sewa</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {price12 && (
+                                                <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                                                    <td style={{ padding: '16px', fontWeight: 600, color: 'var(--text-dark)' }}>Sewa Lepas Kunci (Tanpa Sopir)</td>
+                                                    <td style={{ padding: '16px', color: 'var(--text-muted)' }}>12 Jam (Weekday)</td>
+                                                    <td style={{ padding: '16px', fontWeight: 800, color: 'var(--accent)', textAlign: 'right', fontSize: '1.1rem' }}>Rp {price12.toLocaleString('id-ID')}</td>
+                                                </tr>
+                                            )}
+                                            {fullday && (
+                                                <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                                                    <td style={{ padding: '16px', fontWeight: 600, color: 'var(--text-dark)' }}>Sewa Lepas Kunci (Tanpa Sopir)</td>
+                                                    <td style={{ padding: '16px', color: 'var(--text-muted)' }}>Fullday (Weekend/Liburan)</td>
+                                                    <td style={{ padding: '16px', fontWeight: 800, color: 'var(--accent)', textAlign: 'right', fontSize: '1.1rem' }}>Rp {fullday.toLocaleString('id-ID')}</td>
+                                                </tr>
+                                            )}
+                                            {priceWithDriver && (
+                                                <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                                                    <td style={{ padding: '16px', fontWeight: 600, color: 'var(--text-dark)' }}>Mobil + Sopir (Belum Termasuk BBM)</td>
+                                                    <td style={{ padding: '16px', color: 'var(--text-muted)' }}>12 Jam / Fullday</td>
+                                                    <td style={{ padding: '16px', fontWeight: 800, color: 'var(--accent)', textAlign: 'right', fontSize: '1.1rem' }}>Rp {priceWithDriver.toLocaleString('id-ID')}</td>
+                                                </tr>
+                                            )}
+                                            {priceAllIn && (
+                                                <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                                                    <td style={{ padding: '16px', fontWeight: 600, color: 'var(--text-dark)' }}>All-In (Mobil + Sopir + BBM)</td>
+                                                    <td style={{ padding: '16px', color: 'var(--text-muted)' }}>12 Jam / Fullday</td>
+                                                    <td style={{ padding: '16px', fontWeight: 800, color: 'var(--accent)', textAlign: 'right', fontSize: '1.1rem' }}>Rp {priceAllIn.toLocaleString('id-ID')}</td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '15px', fontStyle: 'italic' }}>
+                                    * Note: Untuk sewa lepas kunci 12 Jam &amp; 24 Jam berlaku khusus hari weekday (Senin-Kamis). Hari Jumat-Minggu serta libur nasional dilayani dengan paket sewa Fullday.
+                                </p>
+                            </div>
+                        )}
+
+                        {/* DESCRIPTION / ARTICLE */}
+                        <div style={{ backgroundColor: '#fff', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '30px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-dark)', borderBottom: '2px solid var(--accent)', display: 'inline-block', paddingBottom: '8px', marginBottom: '20px' }}>
+                                Deskripsi Ulasan {carName || 'Layanan'}
+                            </h2>
+                            <div style={{ color: '#475569', fontSize: '1.025rem', lineHeight: '1.7', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                                <p>
+                                    Yogyakarta memiliki kekayaan budaya dan destinasi alam menakjubkan yang tersebar luas, mulai dari perkotaan bersejarah, pegunungan sejuk Merapi, hingga jejeran pantai eksotis di Gunungkidul. Memilih armada transportasi yang tepat adalah kunci utama menikmati liburan dengan tenang.
+                                </p>
+                                <p>
+                                    {carName ? `Armada ${carName} kami rawat secara berkala di bengkel resmi demi memastikan mesin dalam kondisi prima, AC dingin maksimal, serta kabin senyap terbebas dari bau asap rokok. Kabin yang lapang menjamin kenyamanan seluruh penumpang selama menempuh rute perjalanan jauh maupun menghadapi kepadatan lalu lintas kota Jogja.` : `Layanan transportasi kami rancang khusus untuk memenuhi kebutuhan perjalanan Anda dengan aman, fleksibel, dan ekonomis.`}
+                                </p>
+                                <p>
+                                    Didukung tim driver profesional berpengalaman yang hafal jalan tikus Jogja dan bersikap sopan, kami siap menemani aktivitas Anda dengan standar kenyamanan bintang 5. Bagi Anda yang menyukai privasi, pilihan rental lepas kunci dapat disewa dengan syarat verifikasi cepat dan mudah.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* BENEFITS SECTION */}
+                        {benefits && benefits.length > 0 && (
+                            <div style={{ backgroundColor: '#fff', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '30px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+                                <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-dark)', borderBottom: '2px solid var(--accent)', display: 'inline-block', paddingBottom: '8px', marginBottom: '20px' }}>
+                                    Fitur &amp; Keunggulan Utama
+                                </h2>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                                    {benefits.map((benefit, index) => (
+                                        <div key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                                            <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '24px', height: '24px', borderRadius: '50%', backgroundColor: '#ecfdf5', color: '#10b981', flexShrink: 0, fontWeight: 800, fontSize: '0.85rem' }}>✓</span>
+                                            <span style={{ color: '#475569', fontSize: '1rem', lineHeight: '1.5' }}>{benefit}</span>
+                                        </div>
+                                    ))}
+                                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginTop: '10px', padding: '16px', backgroundColor: '#fff8eb', borderRadius: '8px', border: '1px solid #ffe8cc' }}>
+                                        <span style={{ color: 'var(--accent)', fontSize: '1.25rem', lineHeight: '1', flexShrink: 0 }}>★</span>
+                                        <span style={{ color: '#b25e00', fontSize: '0.95rem', fontWeight: 600, lineHeight: '1.5' }}>
+                                            Aksara Transport menjamin unit dalam kondisi higienis dan disemprot disinfektan sebelum diserahkan kepada Anda.
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                        )}
+
+                        {/* FAQ SECTION */}
+                        <div style={{ backgroundColor: '#fff', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '30px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-dark)', borderBottom: '2px solid var(--accent)', display: 'inline-block', paddingBottom: '8px', marginBottom: '20px' }}>
+                                Tanya Jawab Umum (FAQ)
+                            </h2>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                {[
+                                    {
+                                        q: "Bagaimana syarat sewa mobil lepas kunci?",
+                                        a: "Persyaratan sewa lepas kunci sangatlah mudah: Anda hanya perlu mengirimkan scan foto KTP asli, SIM A aktif, bukti kepemilikan motor dengan STNK atas nama pribadi, serta bersedia di-survei singkat via telepon."
+                                    },
+                                    {
+                                        q: "Apakah harga sewa sudah termasuk BBM dan Tol?",
+                                        a: "Untuk sistem sewa Lepas Kunci, BBM ditanggung oleh penyewa. Untuk sistem Dengan Sopir, tarif dasar belum termasuk BBM, Tol, dan parkir, kecuali Anda memesan paket spesial All-In."
+                                    },
+                                    {
+                                        q: "Apakah bisa diantar-jemput ke hotel atau stasiun?",
+                                        a: "Ya! Kami menyediakan layanan antar-jemput armada ke Stasiun Tugu, Lempuyangan, Bandara YIA, serta berbagai hotel di pusat kota Yogyakarta dengan tarif antar-jemput yang sangat terjangkau."
+                                    }
+                                ].map((faq, index) => (
+                                    <div key={index} style={{ border: '1px solid var(--border-color)', borderRadius: '8px', overflow: 'hidden' }}>
+                                        <div 
+                                            onClick={() => toggleFaq(index)} 
+                                            style={{ backgroundColor: '#f8fafc', padding: '16px 20px', fontWeight: 700, color: 'var(--text-dark)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', userSelect: 'none' }}
+                                        >
+                                            <span>{faq.q}</span>
+                                            <span style={{ fontSize: '0.8rem', transform: openFaq === index ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+                                        </div>
+                                        {openFaq === index && (
+                                            <div style={{ padding: '20px', color: '#475569', fontSize: '0.95rem', lineHeight: '1.6', borderTop: '1px solid var(--border-color)', backgroundColor: '#fff' }}>
+                                                {faq.a}
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
                     </div>
+
+                    {/* RIGHT COLUMN: BOOKING SIDEBAR CARD */}
+                    <div>
+                        <div style={{ position: 'sticky', top: '100px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                            
+                            {/* BOOKING CARD */}
+                            <div style={{ backgroundColor: '#fff', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '30px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.04)' }}>
+                                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '5px' }}>Booking Cepat via WA</h3>
+                                <p style={{ fontSize: '0.825rem', color: 'var(--text-muted)', marginBottom: '20px' }}>Silakan lengkapi rincian di bawah untuk memeriksa ketersediaan unit</p>
+                                
+                                <form onSubmit={handleBookingSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                                    
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                                        <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)' }}>Pilihan Layanan</label>
+                                        <select 
+                                            value={layanan} 
+                                            onChange={(e) => setLayanan(e.target.value)}
+                                            style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid var(--border-color)', fontSize: '0.9rem', outline: 'none', backgroundColor: '#fff' }}
+                                        >
+                                            <option value="lepas-kunci">Lepas Kunci (Tanpa Sopir)</option>
+                                            <option value="dengan-sopir">Dengan Driver Profesional</option>
+                                        </select>
+                                    </div>
+
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                                        <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)' }}>Tanggal Mulai Sewa</label>
+                                        <input 
+                                            type="date" 
+                                            value={tanggalMulai} 
+                                            onChange={handleTanggalChange}
+                                            style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid var(--border-color)', fontSize: '0.9rem', outline: 'none' }}
+                                            required
+                                        />
+                                    </div>
+
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                                        <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)' }}>Tanggal Selesai Sewa</label>
+                                        <input 
+                                            type="date" 
+                                            value={tanggalSelesai} 
+                                            onChange={handleTanggalSelesaiChange}
+                                            style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid var(--border-color)', fontSize: '0.9rem', outline: 'none' }}
+                                            required
+                                        />
+                                    </div>
+
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                                        <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)' }}>Tipe Mobil (Input Manual)</label>
+                                        <input 
+                                            type="text" 
+                                            value={inputCarName} 
+                                            onChange={(e) => setInputCarName(e.target.value)}
+                                            placeholder="Ketik tipe mobil..."
+                                            style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid var(--border-color)', fontSize: '0.9rem', outline: 'none' }}
+                                            required
+                                        />
+                                    </div>
+
+                                    <div style={{ backgroundColor: '#f8fafc', padding: '12px 16px', borderRadius: '6px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Estimasi Durasi</span>
+                                        <span style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--text-dark)' }}>{durasi} Hari</span>
+                                    </div>
+
+                                    <button 
+                                        type="submit" 
+                                        className="btn btn-primary" 
+                                        style={{ width: '100%', height: '48px', fontSize: '0.95rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}
+                                    >
+                                        Cek Ketersediaan via WA
+                                    </button>
+
+                                </form>
+                            </div>
+                            
+                            {/* TRUST WIDGET */}
+                            <div style={{ backgroundColor: '#fff', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <span style={{ fontSize: '1.2rem' }}>🛡️</span>
+                                    <span style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text-dark)' }}>100% Pembatalan Gratis</span>
+                                </div>
+                                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0 }}>
+                                    Bebas denda pembatalan sebelum H-3 jadwal penjemputan. Liburan aman tanpa cemas rencana berubah.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </section>
-        </>
+
+        </div>
     );
 }
