@@ -149,10 +149,10 @@ export const dummyArticles = [
         content: `
             <p>Pesatnya pariwisata Jogja rupanya juga mengundang oknum-oknum nakal yang ingin meraup untung dari wisatawan dengan cara curang. Banyak korban penipuan rental mobil yang akhirnya curhat viral di media sosial. Mulai dari mobil yang mogok, harga yang tiba-tiba membengkak, hingga kehilangan uang DP (Down Payment) karena rental fiktif.</p>
             <p>Agar hal ini tidak terjadi pada Anda, mari kita kupas tuntas <strong>15 modus penipuan rental mobil</strong> yang sering terjadi di Jogja, serta cara jitu menghindarinya!</p>
-            
+
             <h2>1. Harga "Umpan" Terlalu Murah</h2>
             <p>Modus: Menawarkan Avanza seharga Rp 100.000/hari di Instagram. Fakta: Begitu tiba, mobil tidak ada dan ditawari mobil lain yang jauh lebih mahal dengan alasan "Avanza sudah disewa orang".</p>
-            
+
             <h2>2. Rental Bodong (Fiktif)</h2>
             <p>Modus: Akun Instagram dengan followers puluhan ribu (beli follower palsu). Meminta Anda transfer DP penuh, lalu memblokir nomor WhatsApp Anda pada hari-H.</p>
 
@@ -196,7 +196,6 @@ export const dummyArticles = [
             <p>Modus: Memanfaatkan kelengahan penumpang yang menitipkan koper di dalam mobil saat mampir ke toko oleh-oleh.</p>
 
             <hr />
-
             <h2>Lalu, Bagaimana Cara Menghindarinya?</h2>
             <p>Jangan paranoid! Masih banyak rental mobil yang profesional dan jujur. Ini kuncinya:</p>
             <ul>
@@ -264,7 +263,7 @@ export const dummyArticles = [
 
             <h2>2. Rute Barat (Kawasan Candi & Pegunungan Menoreh)</h2>
             <p><strong>Destinasi Utama:</strong> Candi Borobudur, Gereja Ayam (Bukit Rhema), Tumpeng Menoreh, Waduk Sermo Kulon Progo.</p>
-            <p><strong>Karakteristik Medan:</strong> Jalan antar-kota yang lebar menuju arah Magelang, bercabang ke gang perbukitan curam jika ingin naik ke puncak Menoreh.</p>
+            <p><strong>Karakteristik Medan:</strong> Jalan antar-kota yang lebar menuju arah Magelang, bercabang ke gang perbukitan curam jika ingin naik to puncak Menoreh.</p>
             <p><strong>Transportasi Terbaik:</strong> Jika hanya ke Candi Borobudur, mobil perkotaan kecil seperti Honda Brio matic sangat memadai. Namun, jika ingin menjelajahi Tumpeng Menoreh, pastikan kendaraan dalam performa mesin dan rem yang prima.</p>
 
             <h2>3. Rute Selatan (Kawasan Tebing Pantai & Gumuk Pasir)</h2>
@@ -284,6 +283,294 @@ export const dummyArticles = [
                <li><strong>Gunakan Google Maps Secara Bijak:</strong> Selalu periksa rute alternatif guna menghindari kemacetan ringroad saat jam pulang kerja.</li>
                <li><strong>Pilih Layanan Rental Terpercaya:</strong> Pastikan Anda menggunakan jasa rental dengan reputasi transparan seperti <strong>Aksara Transport</strong>. Kami menyediakan pilihan sewa lepas kunci 24 jam serta paket sewa mobil dengan supir profesional yang siap memandu liburan Anda dengan aman.</li>
             </ul>
+        `
+    },
+    {
+        id: '6',
+        created_at: '2026-07-01T10:00:00Z',
+        title: 'Event Budaya Terbesar Jogja Art Books Festival 2026 Segera Digelar di Taman Pintar!',
+        slug: 'event-jogja-art-books-festival-2026',
+        category: 'Berita Jogja',
+        image: '/images/artikel_wisata_hits.webp',
+        excerpt: 'Kabar gembira untuk pencinta literasi dan seni rupa! Jogja Art Books Festival 2026 siap menghadirkan ribuan koleksi buku seni langka, pameran zine, dan lokakarya interaktif.',
+        content: `
+            <p>Yogyakarta kembali membuktikan posisinya sebagai ibu kota kebudayaan dan seni tanah air. Pada bulan Juli 2026 ini, perhelatan akbar <strong>Jogja Art Books Festival (JABF) 2026</strong> secara resmi akan digelar di kawasan edukasi Taman Pintar Yogyakarta.</p>
+            <p>Festival tahunan ini mengusung tema kolaborasi seni visual dan sastra, menghadirkan ratusan penerbit buku independen dari dalam dan luar negeri, kolektor seni, serta seniman zine yang memamerkan karya visual unik mereka.</p>
+            
+            <h2>Apa Saja yang Menarik di JABF 2026?</h2>
+            <ul>
+                <li><strong>Galeri Buku Seni Langka:</strong> Ruang khusus yang menampilkan buku-buku katalog pameran seni rupa jadul yang sudah tidak dicetak lagi.</li>
+                <li><strong>Workshop Pembuatan Zine & Bookbinding:</strong> Pengunjung diajak belajar langsung cara merakit dan menjilid buku saku secara manual menggunakan teknik jahitan tradisional Jepang.</li>
+                <li><strong>Sesi Wicara Seniman (Artist Talk):</strong> Diskusi interaktif bersama ilustrator buku terkemuka nusantara mengenai masa depan industri kreatif visual.</li>
+            </ul>
+            
+            <h2>Rekomendasi Akses Transportasi</h2>
+            <p>Lokasi Taman Pintar berada tepat di jantung kota Yogyakarta (samping Benteng Vredeburg). Area parkirnya sangat terbatas terutama saat akhir pekan. Agar Anda tidak repot mencari tempat parkir yang padat, memanfaatkan layanan <a href="/">sewa mobil jogja dengan supir</a> dari Aksara Transport adalah langkah cerdas. Supir kami siap menjemput Anda langsung di lobi hotel dan mengantar ke lokasi pameran dengan tepat waktu.</p>
+        `
+    },
+    {
+        id: '7',
+        created_at: '2026-06-28T09:00:00Z',
+        title: 'Festival Lampion Borobudur 2026: Jadwal Lengkap, Lokasi, dan Tips Parkir Rombongan',
+        slug: 'festival-lampion-borobudur-2026-jadwal-tips',
+        category: 'Berita Jogja',
+        image: '/images/tour_borobudur.webp',
+        excerpt: 'Jangan lewatkan malam penuh keajaiban di Candi Borobudur! Dapatkan informasi lengkap mengenai jadwal penerbangan lampion Waisak 2026 dan tips berkendara ke sana.',
+        content: `
+            <p>Momen pelepasan ribuan lampion kertas yang menyala indah berlatar belakang Candi Borobudur yang megah selalu menjadi magnet utama wisatawan dunia. Perayaan <strong>Festival Lampion Borobudur Waisak 2026</strong> dipastikan akan berlangsung meriah pada pertengahan tahun ini.</p>
+            <p>Ribuan umat Buddha dan turis domestik hingga mancanegara akan memadati pelataran candi Buddha terbesar di dunia ini untuk menyaksikan langsung prosesi doa bersama dan pelepasan lampion pembawa harapan perdamaian dunia.</p>
+
+            <h2>Detail Acara & Jadwal Penerbangan Lampion</h2>
+            <p>Prosesi pelepasan lampion dibagi menjadi dua sesi pada malam hari raya Waisak. Sesi pertama dimulai pukul 19.30 WIB dan sesi kedua pukul 22.00 WIB. Pembelian tiket lampion disarankan dilakukan secara online beberapa minggu sebelum hari H karena kuotanya sangat terbatas.</p>
+
+            <h2>Tips Perjalanan & Transportasi Rombongan</h2>
+            <p>Perjalanan dari Kota Jogja menuju Borobudur (Magelang) memakan waktu sekitar 1 hingga 1,5 jam. Mengingat jalanan akan macet parah menjelang malam hari, kami menyarankan rombongan keluarga besar untuk menggunakan armada berkapasitas besar seperti Toyota Hiace. Di Aksara Transport, Anda bisa memesan <a href="/sewa-mobil-hiace-commuter-jogja">sewa hiace jogja</a> yang sudah include supir dan BBM. Supir profesional kami siap mencarikan rute alternatif bebas macet untuk kelancaran liburan Anda.</p>
+        `
+    },
+    {
+        id: '8',
+        created_at: '2026-06-25T11:00:00Z',
+        title: 'Pasar Kangen Jogja 2026 Hadir Kembali: Nostalgia Kuliner Jadul dan Barang Antik Nusantara',
+        slug: 'pasar-kangen-jogja-2026-kuliner-jadul',
+        category: 'Berita Jogja',
+        image: '/images/tour_city.webp',
+        excerpt: 'Kangen rasa jajanan masa kecil seperti rambut nenek, es gosrok, dan lupis hangat? Pasar Kangen Jogja 2026 siap mengobati kerinduan kuliner jadul Anda.',
+        content: `
+            <p>Bagi Anda pecinta kuliner tempo dulu dan kolektor barang-barang antik, perhelatan <strong>Pasar Kangen Jogja 2026</strong> adalah acara yang wajib Anda datangi. Event tahunan yang diselenggarakan di Taman Budaya Yogyakarta (TBY) ini menyajikan ratusan stand kuliner tradisional yang kini sudah langka di pasaran.</p>
+            <p>Seluruh penjual diwajibkan menyajikan makanan dengan bahan organik tradisional dan dilarang menggunakan wadah plastik sekali pakai demi menjaga keaslian nuansa pedesaan masa lalu.</p>
+
+            <h2>Kuliner Langka yang Wajib Dicoba</h2>
+            <ul>
+                <li><strong>Cimplung:</strong> Jajanan berbahan singkong yang direbus dengan air nira kelapa panas hingga legit manis.</li>
+                <li><strong>Limun Sarsaparilla:</strong> Minuman bersoda legendaris khas kerajaan Jawa tempo dulu dengan rasa herbal unik.</li>
+                <li><strong>Ketan Lupis Mbah Satinem:</strong> Lupis ketan legendaris berlumur gula merah kental yang manis gurih.</li>
+            </ul>
+
+            <h2>Kemudahan Akses Menuju Lokasi</h2>
+            <p>Kawasan TBY terletak sangat dekat dengan Malioboro dan Keraton Yogyakarta. Mengingat minimnya lahan parkir di TBY saat event berlangsung, Anda bisa memanfaatkan jasa <a href="/sewa-mobil-lepas-kunci-jogja-24-jam">sewa mobil lepas kunci jogja</a> dengan unit city car lincah seperti Honda Brio dari Aksara Transport agar lebih fleksibel memarkir kendaraan di kantong parkir sekitar Malioboro.</p>
+        `
+    },
+    {
+        id: '9',
+        created_at: '2026-06-20T08:00:00Z',
+        title: 'Wajah Baru Pedestrian Jalan Senopati Jogja: Lebih Ramah Difabel dan Bebas PKL Liar',
+        slug: 'wajah-baru-pedestrian-jalan-senopati-jogja',
+        category: 'Berita Jogja',
+        image: '/images/tour_city.webp',
+        excerpt: 'Pemerintah Kota Yogyakarta sukses meresmikan revitalisasi kawasan pedestrian Jalan Senopati. Kini pejalan kaki bisa menikmati trotoar yang bersih, lebar, dan estetik.',
+        content: `
+            <p>Kawasan Nol Kilometer Yogyakarta hingga Jalan Panembahan Senopati kini tampil lebih cantik dan rapi. Proyek revitalisasi trotoar pedestrian yang berlangsung selama beberapa bulan terakhir akhirnya selesai dikerjakan.</p>
+            <p>Kini, trotoar di sepanjang jalan tersebut dibuat lebih lebar menggunakan lantai batu alam abu-abu, dilengkapi dengan jalur pemandu kuning (guiding block) untuk penyandang disabilitas, serta kursi taman bernuansa klasik besi tempa.</p>
+
+            <h2>Bebas PKL dan Lebih Nyaman Berfoto</h2>
+            <p>Untuk menjaga kebersihan dan kenyamanan pejalan kaki, area trotoar baru ini steril dari pedagang kaki lima (PKL) liar dan parkir motor sembarangan. Petugas Jogoboro (Satpol PP pariwisata) disiagakan 24 jam untuk melakukan patroli. Pengunjung bisa leluasa berjalan kaki dari stasiun atau tempat parkir menuju Benteng Vredeburg, Istana Negara Gedung Agung, hingga Pasar Beringharjo dengan aman.</p>
+            <p>Wisatawan yang membawa rombongan keluarga besar kini dapat bernafas lega karena area ini ramah untuk stroller bayi dan kursi roda. Untuk kenyamanan mobilitas menuju jantung kota Jogja, gunakan rental terpercaya seperti <a href="/">rental mobil jogja</a> Aksara Transport yang menyediakan armada MPV premium selalu bersih wangi.</p>
+        `
+    },
+    {
+        id: '10',
+        created_at: '2026-06-15T10:00:00Z',
+        title: 'Pemerintah Yogyakarta Uji Coba Shuttle Bus Listrik Gratis Rute Malioboro - Keraton',
+        slug: 'shuttle-bus-listrik-gratis-malioboro-keraton',
+        category: 'Berita Jogja',
+        image: '/images/wuling_binguo.webp',
+        excerpt: 'Dukung program ramah lingkungan, Pemkot Yogyakarta meluncurkan armada bus shuttle listrik gratis keliling sumbu filosofis kota Jogja bagi wisatawan.',
+        content: `
+            <p>Dalam rangka mewujudkan kawasan rendah emisi gas buang di pusat pariwisata, Dinas Perhubungan DIY resmi meluncurkan program uji coba **Shuttle Bus Listrik Gratis**. Armada bus ramah lingkungan berukuran medium ini melayani rute melingkar dari Tempat Parkir Abu Bakar Ali (dekat Stasiun Tugu) menyusuri Jalan Malioboro, titik Nol Kilometer, hingga kawasan Keraton Yogyakarta.</p>
+            <p>Wisatawan cukup menunjukkan kode QR pendaftaran aplikasi pariwisata lokal untuk dapat menikmati fasilitas AC dingin dan kursi nyaman bus listrik ini secara gratis.</p>
+
+            <h2>Alternatif Transportasi Menuju Pusat Kota</h2>
+            <p>Meskipun shuttle bus listrik ini sangat membantu mobilitas lokal, kapasitas kursinya terbatas dan jadwal keberangkatannya bergantung pada kondisi lalu lintas Malioboro yang padat. Jika Anda menginginkan kenyamanan mutlak tanpa perlu mengantri panjang di bawah terik matahari, menyewa kendaraan pribadi di <a href="/sewa-mobil-listrik-jogja">sewa mobil listrik jogja</a> Aksara Transport seperti Wuling Air EV atau Binguo EV adalah alternatif terbaik yang ramah lingkungan sekaligus sangat lincah menyusuri jalanan kota Jogja.</p>
+        `
+    },
+    {
+        id: '11',
+        created_at: '2026-06-10T14:00:00Z',
+        title: 'Panduan Lengkap Solo Backpacking ke Jogja 3 Hari 2 Malam Hanya dengan Budget 500 Ribu!',
+        slug: 'panduan-solo-backpacking-jogja-budget-minim',
+        category: 'Tips',
+        image: '/images/artikel_wisata_alam.webp',
+        excerpt: 'Siapa bilang liburan sendirian ke Jogja butuh biaya mahal? Simak tips cerdas menghemat akomodasi, tiket wisata, makan, dan transportasi ala backpacker.',
+        content: `
+            <p>Yogyakarta selalu menjadi destinasi impian bagi para <em>solo traveler</em> dan backpacker. Selain karena budayanya yang ramah, biaya hidup dan pariwisata di kota ini tergolong sangat murah dibanding kota besar lainnya di Indonesia. Dengan perencanaan matang, uang 500 ribu rupiah sudah cukup untuk membiayai liburan mandiri selama 3 hari 2 malam!</p>
+
+            <h2>Rincian Budget Pengeluaran 500 Ribu</h2>
+            <ul>
+                <li><strong>Akomodasi (Hostel/Dormitory):</strong> Rp 70.000 x 2 malam = Rp 140.000. Banyak hostel kapsul nyaman di dekat Malioboro atau Prawirotaman dengan harga di bawah 100 ribu semalam.</li>
+                <li><strong>Kuliner Rakyat (Angkringan & Gudeg):</strong> Rp 25.000 x 3 hari = Rp 75.000. Makan nasi kucing dengan sate usus di angkringan pinggir jalan sangat murah dan kenyang.</li>
+                <li><strong>Tiket Masuk Wisata:</strong> Candi Prambanan/Borobudur (lokal) Rp 50.000, Tamansari Rp 15.000, selebihnya kunjungi wisata alam gratis seperti bukit paralayang atau pantai Gunungkidul.</li>
+                <li><strong>Transportasi Lokal:</strong> Sewa motor matic hemat bensin sekitar Rp 70.000/hari atau jika Anda ingin jalan bersama teman backpacker baru untuk menghemat lelah di rute jauh, gunakan opsi <a href="/sewa-mobil-murah">sewa mobil murah jogja</a> patungan dengan sewa mobil harian lepas kunci dari Aksara Transport mulai Rp 250 ribuan dibagi 5 orang (hanya Rp 50.000 per orang!).</li>
+            </ul>
+        `
+    },
+    {
+        id: '12',
+        created_at: '2026-06-05T09:00:00Z',
+        title: '10 Tips Rahasia Liburan Murah ke Jogja Saat Peak Season Tanpa Kebocoran Budget',
+        slug: 'tips-liburan-murah-jogja-peak-season',
+        category: 'Tips',
+        image: '/images/tour_pines_sunset.webp',
+        excerpt: 'Musim libur sekolah dan tahun baru bikin harga tiket dan penginapan meroket? Jangan khawatir, terapkan 10 tips jitu ini agar liburan Anda tetap hemat.',
+        content: `
+            <p>Liburan saat musim libur panjang (*peak season*) ke Yogyakarta sering kali membuat dompet jebol karena lonjakan tarif hotel dan tiket transportasi. Namun, bagi yang tahu triknya, liburan hemat saat peak season bukanlah hal mustahil. Berikut 10 tips rahasia liburan hemat ke Jogja:</p>
+            
+            <h2>Trik Menghemat Anggaran Liburan Peak Season</h2>
+            <ol>
+                <li><strong>Pesan Akomodasi di Luar Ringroad:</strong> Hotel di pusat kota (Malioboro) akan naik hingga 2 kali lipat. Carilah penginapan di area Condongcatur, Kalasan, atau Bantul yang harganya cenderung stabil.</li>
+                <li><strong>Makan di Warung Makan Warga Lokal:</strong> Hindari restoran di sekitar jalan protokol wisata utama. Makanlah di warmindo (bubur kacang ijo/indomie) atau warung soto pinggir jalan pemukiman warga.</li>
+                <li><strong>Pesan Sewa Mobil Jauh Hari:</strong> Saat peak season, permintaan rental mobil melonjak drastis yang menyebabkan tarif sewa naik mendadak di jalanan. Lakukan pemesanan unit dari jauh hari di <a href="/">sewa mobil jogja terpercaya</a> Aksara Transport untuk mendapatkan harga flat promo normal tanpa kenaikan tarif dadakan di lokasi.</li>
+            </ol>
+        `
+    },
+    {
+        id: '13',
+        created_at: '2026-05-30T10:00:00Z',
+        title: 'Liburan Hemat Keluarga: 7 Alasan Mengapa Rental Avanza Lebih Murah Dibanding Naik Ojol di Jogja',
+        slug: 'rental-avanza-jogja-hemat-keluarga',
+        category: 'Tips',
+        image: '/images/toyota_avanza.webp',
+        excerpt: 'Membawa keluarga besar liburan keliling tempat wisata Jogja naik taksi online? Pikirkan lagi! Simak perbandingan biaya riil dan kenyamanannya di sini.',
+        content: `
+            <p>Banyak wisatawan berasumsi bahwa memesan taksi online (ojol roda empat) setiap kali ingin bepergian di Yogyakarta akan menghemat biaya daripada menyewa mobil harian. Padahal, bagi rombongan keluarga berisi 4 hingga 6 orang, cara ini justru sering memicu pemborosan tersembunyi. Mengapa demikian?</p>
+
+            <h2>Mengapa Sewa Avanza Harian Lebih Menguntungkan?</h2>
+            <ul>
+                <li><strong>Bebas Tarif Dinamis (Surge Pricing):</strong> Taksi online akan menaikkan tarif hingga 2x lipat saat hujan deras, macet, atau jam sibuk sore hari. Tarif sewa Avanza harian bersifat tetap (*flat rate*).</li>
+                <li><strong>Hemat Waktu Menunggu:</strong> Anda tidak perlu membuang waktu 15-30 menit untuk memesan dan menunggu driver online menjemput di setiap destinasi wisata.</li>
+                <li><strong>Total Biaya Riil Lebih Murah:</strong> Biaya pergi-pulang dari kota ke pantai Gunungkidul menggunakan taksi online berkisar antara Rp 400.000 - Rp 500.000 sekali jalan. Sementara tarif <a href="/sewa-mobil-avanza-jogja">sewa avanza jogja</a> di Aksara Transport hanya Rp 250.000/hari (lepas kunci) atau Rp 550.000 (All-In dengan supir & bbm) untuk pemakaian seharian penuh bebas rute.</li>
+            </ul>
+        `
+    },
+    {
+        id: '14',
+        created_at: '2026-05-25T11:00:00Z',
+        title: 'Rekomendasi 5 Homestay Murah Dekat Malioboro di Bawah 150 Ribu yang Cocok untuk Mahasiswa',
+        slug: 'rekomendasi-homestay-murah-dekat-malioboro',
+        category: 'Tips',
+        image: '/images/tour_city.webp',
+        excerpt: 'Ingin menginap di pusat kota Jogja dekat jalan Malioboro tapi anggaran terbatas? Simak rekomendasi penginapan bersih dengan fasilitas memadai di bawah 150 ribu.',
+        content: `
+            <p>Jalan Malioboro adalah denyut nadi pariwisata Yogyakarta. Menemukan penginapan murah yang berjarak jalan kaki dari Malioboro adalah dambaan setiap mahasiswa yang berlibur ke Jogja. Jangan khawatir, di gang-gang pemukiman Sosrowijayan dan Dagen, terdapat banyak homestay bersih yang ramah kantong.</p>
+
+            <h2>Daftar Homestay Murah Rekomendasi Mahasiswa</h2>
+            <ol>
+                <li><strong>Jalur Sosrowijayan Wetan:</strong> Menyediakan kamar sederhana dengan kipas angin/AC mulai Rp 90.000 per malam, sangat dekat dengan stasiun kereta.</li>
+                <li><strong>Losmen Gang Dagen:</strong> Homestay berkonsep rumah tinggal kuno Jawa dengan fasilitas teh hangat gratis di pagi hari seharga Rp 120.000 per malam.</li>
+            </ol>
+            <p>Untuk menunjang mobilitas Anda bersama teman-teman mahasiswa dari penginapan menuju tempat wisata alam luar kota, menyewa city car irit seperti <a href="/sewa-mobil-brio-jogja">sewa brio jogja</a> dari Aksara Transport sangatlah praktis dan hemat karena tarifnya sangat kompetitif.</p>
+        `
+    },
+    {
+        id: '15',
+        created_at: '2026-05-18T08:00:00Z',
+        title: 'Tips Sewa Mobil Lepas Kunci di Jogja untuk Pemula: Syarat Lengkap dan Cara Cek Body Unit',
+        slug: 'tips-sewa-mobil-lepas-kunci-jogja-pemula',
+        category: 'Tips',
+        image: '/images/tour_merapi.webp',
+        excerpt: 'Pertama kali ingin mencoba menyewa mobil tanpa supir di Yogyakarta? Pahami dokumen persyaratan wajib dan panduan serah terima mobil agar bebas masalah.',
+        content: `
+            <p>Layanan sewa mobil lepas kunci menawarkan privasi tinggi dan kebebasan waktu berkendara. Namun, bagi penyewa pemula, proses administrasi dan serah terima mobil bisa terasa membingungkan. Agar transaksi Anda aman dan nyaman, ikuti panduan lengkap sewa lepas kunci berikut ini:</p>
+
+            <h2>Dokumen Syarat Wajib Umum</h2>
+            <p>Penyedia rental mobil terpercaya di Jogja membutuhkan verifikasi identitas yang ketat untuk mencegah kejahatan. Persiapkan dokumen asli berikut:</p>
+            <ul>
+                <li>Kartu Tanda Penduduk (KTP asli) penyewa.</li>
+                <li>Surat Izin Mengemudi (SIM A aktif) untuk pengemudi utama.</li>
+                <li>Bukti reservasi tiket pesawat/kereta pergi-pulang dan bukti booking penginapan di Jogja.</li>
+            </ul>
+
+            <h2>Langkah Krusial Saat Serah Terima Unit</h2>
+            <p>Sebelum menandatangani dokumen sewa dan membawa mobil pergi, pastikan Anda merekam video keliling mobil secara detail (*video walkaround*) untuk mendokumentasikan goresan atau penyok kecil yang sudah ada sebelum Anda sewa. Pastikan Anda menyewa dari provider berpengalaman seperti <a href="/sewa-mobil-lepas-kunci-jogja-24-jam">sewa mobil lepas kunci jogja 24 jam</a> Aksara Transport yang memiliki reputasi prima dan proses verifikasi cepat tanpa birokrasi berbelit.</p>
+        `
+    },
+    {
+        id: '16',
+        created_at: '2026-05-15T09:00:00Z',
+        title: 'Surga Kuliner Malam: 10 Rekomendasi Gudeg Mercon Super Pedas Terenak di Yogyakarta',
+        slug: '10-gudeg-mercon-super-pedas-yogyakarta',
+        category: 'Kuliner',
+        image: '/images/tour_city.webp',
+        excerpt: 'Bosan dengan cita rasa gudeg manis tradisional? Tantang adrenalin lidah Anda dengan mencicipi 10 kuliner gudeg mercon pedas legendaris di malam hari.',
+        content: `
+            <p>Gudeg identik dengan rasa manis gurih nangka muda bersantan tebal. Namun, bagi Anda pecinta kuliner pedas, Yogyakarta menyajikan varian unik bernama **Gudeg Mercon**. Perpaduan kuah sayur nangka dengan tumisan krecek berselimut irisan cabai rawit merah setan dijamin akan membuat keringat Anda bercucuran!</p>
+
+            <h2>Rekomendasi Gudeg Mercon Legendaris</h2>
+            <ul>
+                <li><strong>Gudeg Mercon Bu Tinah (Jalan Asem Gede):</strong> Pelopor gudeg pedas di Jogja yang buka mulai pukul 21.00 WIB. Antreannya selalu panjang namun terbayar lunas dengan rasa pedas nendang oseng mercon tetelan sapinya.</li>
+                <li><strong>Gudeg Mercon Mbak Parni:</strong> Terkenal dengan kuah areh kental gurih berpadu sambal krecek rawit utuh.</li>
+            </ul>
+            <p>Kuliner malam ini lokasinya tersebar di jalan-jalan kecil perkotaan Jogja. Agar perjalanan berburu kuliner malam Anda nyaman tanpa pusing mencari parkir jalanan yang sempit, sewa kendaraan di <a href="/">sewa mobil jogja</a> Aksara Transport dengan supir yang ramah dan siap mengantar Anda langsung ke depan kedai kuliner favorit Anda.</p>
+        `
+    },
+    {
+        id: '17',
+        created_at: '2026-05-10T11:00:00Z',
+        title: 'Bukan Cuma Kopi Klotok, Ini 5 Warung Kopi Pinggir Sawah Syahdu di Sleman yang Wajib Dicoba!',
+        slug: '5-warung-kopi-pinggir-sawah-sleman',
+        category: 'Kuliner',
+        image: '/images/tour_sand_dunes.webp',
+        excerpt: 'Ingin nongkrong santai memandang hamparan padi hijau berlatar Gunung Merapi yang megah? Berikut 5 warung kopi pedesaan syahdu selain Kopi Klotok.',
+        content: `
+            <p>Menikmati kopi hangat di tepi sawah pedesaan Sleman dengan angin sepoi-sepoi kini menjadi gaya hidup liburan baru bagi wisatawan perkotaan. Kopi Klotok Kaliurang memang sangat melegenda, namun ada beberapa pilihan tempat kopi pedesaan estetik alternatif di Sleman yang tidak kalah syahdu dan bebas antrean panjang:</p>
+
+            <h2>Daftar Kopi Pinggir Sawah Sleman Terpopuler</h2>
+            <ol>
+                <li><strong>Kopi Ampirono:</strong> Berlokasi di kawasan perbukitan Sleman utara, menyajikan kopi ndeso, teh poci, mendoan hangat, dan pisang goreng kepok dengan view sawah terasering yang cantik.</li>
+                <li><strong>Kopi Rolas:</strong> Nongkrong di dekat aliran sungai irigasi sawah dengan arsitektur rumah joglo kayu jati Jawa kuno yang sangat menenangkan.</li>
+            </ol>
+            <p>Mengingat rute menuju Sleman utara menanjak landai menyusuri pemukiman asri, menyewa armada keluarga irit bensin seperti Avanza lepas kunci di <a href="/sewa-mobil-keluarga-jogja-murah">sewa mobil keluarga jogja murah</a> Aksara Transport akan melengkapi petualangan kuliner pedesaan Anda bersama keluarga besar secara hemat.</p>
+        `
+    },
+    {
+        id: '18',
+        created_at: '2026-05-05T08:00:00Z',
+        title: 'Wisata Kuliner Legendaris: Menikmati Sate Klatak Pak Pong di Bantul yang Dagingnya Empuk Juicy',
+        slug: 'sate-klatak-pak-pong-bantul-legendaris',
+        category: 'Kuliner',
+        image: '/images/tour_city.webp',
+        excerpt: 'Kenali keunikan sate kambing khas Bantul yang dibakar menggunakan jeruji besi sepeda. Simak lokasi, jam buka, dan tips menghindari antrean Sate Pak Pong.',
+        content: `
+            <p>Bicara soal kuliner legendaris Yogyakarta, **Sate Klatak** adalah kuliner wajib berikutnya bagi pecinta olahan daging kambing. Berbeda dengan sate biasa yang ditusuk bambu dan berbumbu kecap tebal, Sate Klatak hanya dibumbui garam kasar, ditusuk menggunakan **jeruji besi sepeda**, lalu dibakar di atas bara arang kelapa.</p>
+
+            <h2>Mengapa Menggunakan Jeruji Besi?</h2>
+            <p>Jeruji besi bertindak sebagai konduktor panas yang mengantarkan suhu panas hingga ke bagian dalam daging kambing muda. Hasilnya, daging matang merata dengan tekstur luar garing namun bagian dalamnya sangat empuk, lembut, dan *juicy* tanpa bau prengus.</p>
+            <p>Kedai Sate Klatak Pak Pong di Jalan Imogiri Timur Bantul adalah kedai terpopuler yang menghabiskan belasan ekor kambing setiap harinya. Untuk menuju Bantul tanpa tersesat, pastikan Anda memesan layanan <a href="/paket-wisata-yogyakarta">paket wisata yogyakarta</a> Aksara Transport yang mencakup wisata kuliner kuliner legendaris Jogja diantar supir profesional kami.</p>
+        `
+    },
+    {
+        id: '19',
+        created_at: '2026-04-28T10:00:00Z',
+        title: '7 Kafe Aesthetic Terbaru di Jogja dengan Pemandangan Perbukitan Menoreh yang Menakjubkan',
+        slug: '7-kafe-aesthetic-view-menoreh-jogja',
+        category: 'Kuliner',
+        image: '/images/tour_pines_sunset.webp',
+        excerpt: 'Ingin nongkrong cantik dengan latar awan pagi dan perbukitan hijau Kulon Progo? Catat 7 rekomendasi kafe modern berarsitektur aesthetic di Menoreh.',
+        content: `
+            <p>Kawasan pegunungan Menoreh Kulon Progo kini menjelma menjadi surga wisata baru di Yogyakarta. Selain keindahan alamnya, bermunculan kafe-kafe estetik berkonsep semi-outdoor yang menawarkan pemandangan tebing hijau eksotis langsung menghadap lembah sungai.</p>
+            <p>Berikut adalah 7 kafe aesthetic terbaru di Menoreh yang wajib masuk ke daftar kunjungan berakhir pekan Anda:</p>
+
+            <h2>Rekomendasi Kafe Aesthetic Menoreh</h2>
+            <ul>
+                <li><strong>Tumpeng Ayu:</strong> Kafe saudara Tumpeng Menoreh dengan akses kereta gantung (lift tebing) outdoor pertama di Yogyakarta. Pemandangannya di atas awan sangat mempesona.</li>
+                <li><strong>Menoreh Vista:</strong> Kafe dengan dek kayu gantung luas yang menjorok ke arah jurang pegunungan, sangat diminati anak muda untuk berfoto ria.</li>
+            </ul>
+            <p>Medan jalanan Kulon Progo berliku dan menanjak tajam di beberapa titik. Gunakan supir profesional kami dengan paket sewa mobil tangguh harian seperti Innova Reborn di <a href="/sewa-mobil-inova-reborn-jogja">sewa innova reborn jogja</a> Aksara Transport demi keselamatan berkendara kelompok Anda.</p>
+        `
+    },
+    {
+        id: '20',
+        created_at: '2026-04-20T11:00:00Z',
+        title: 'Wajib Beli! 5 Rekomendasi Bakpia Pathok Paling Enak dan Tahan Lama untuk Oleh-Oleh Khas Jogja',
+        slug: '5-rekomendasi-bakpia-pathok-oleh-oleh-jogja',
+        category: 'Kuliner',
+        image: '/images/tour_city.webp',
+        excerpt: 'Bingung memilih oleh-oleh khas Jogja untuk dibawa pulang? Kenali perbedaan jenis bakpia basah dan bakpia kering serta rekomendasi merk bakpia terlaris.',
+        content: `
+            <p>Liburan ke Yogyakarta terasa kurang lengkap tanpa membawa pulang buah tangan ikonik berupa **Bakpia Pathok**. Kue bulat panggang dengan isian pasta kacang hijau manis ini memiliki sejarah panjang yang merepresentasikan akulturasi budaya Tionghoa dan Jawa di perkampungan Pathuk Yogyakarta.</p>
+
+            <h2>Bakpia Kering vs Bakpia Basah</h2>
+            <p>Bakpia kering memiliki kulit renyah berlapis tipis dan tahan disimpan hingga 2-3 minggu tanpa bahan pengawet. Sementara bakpia basah bertekstur kulit lembut empuk dengan masa simpan lebih singkat sekitar 4-5 hari di suhu ruang.</p>
+            <p>Beberapa merk terlaris meliputi Bakpia Pathok 25, Bakpia Kurnia Sari (kulit premium renyah), dan Bakpia Kukus Tugu (tekstur lembut mirip bolu kukus kekinian). Toko pusat bakpia ini memiliki area parkir yang sangat padat oleh bus pariwisata. Memanfaatkan jasa <a href="/">sewa mobil jogja</a> Aksara Transport akan mempermudah Anda berbelanja oleh-oleh dengan nyaman karena supir kami siap memarkirkan mobil selagi Anda memilih kue kesukaan Anda.</p>
         `
     }
 ];
