@@ -78,6 +78,29 @@ export default function Footer() {
                     <a href="#" className="social-icon" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
                 </div>
             </div>
+            
+            {/* SEO Link Cloud */}
+            <div className="container" style={{ borderTop: '1px solid #1e293b', marginTop: '30px', paddingTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center', alignItems: 'center' }}>
+                <span style={{ color: '#64748b', fontSize: '0.75rem', fontWeight: 700 }}>Pencarian Terkait:</span>
+                <Link href="/sewa-mobil-yogyakarta" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Sewa Mobil Yogyakarta</Link>
+                <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
+                <Link href="/sewa-mobil-murah" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Sewa Mobil Murah</Link>
+                <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
+                <Link href="/sewa-mobil-1-di-yogyakarta" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Sewa Mobil #1 Di Yogyakarta</Link>
+                <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
+                <Link href="/sewa-mobil-lepas-kunci-jogja-24-jam" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Sewa Mobil Lepas Kunci Jogja 24 Jam</Link>
+                <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
+                <Link href="/rental-mobil-jogja-dekat-stasiun-tugu" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Rental Mobil Jogja Dekat Stasiun Tugu</Link>
+                <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
+                <Link href="/sewa-mobil-keluarga-jogja-murah" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Sewa Mobil Keluarga Jogja Murah</Link>
+                <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
+                <Link href="/rekomendasi-sewa-mobil-jogja-terbaik" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Rekomendasi Sewa Mobil Jogja Terbaik</Link>
+                <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
+                <Link href="/sewa-mobil-jogja-bisa-keluar-kota" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Sewa Mobil Jogja Bisa Keluar Kota</Link>
+                <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
+                <Link href="/harga-sewa-mobil-jogja-dengan-supir" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Harga Sewa Mobil Jogja Dengan Supir</Link>
+            </div>
+
             <div className="text-center" style={{ marginTop: '30px', fontSize: '0.8rem', color: '#64748b' }}>
                 &copy; 2026 Aksara Transport. Seluruh Hak Cipta Dilindungi.
             </div>
