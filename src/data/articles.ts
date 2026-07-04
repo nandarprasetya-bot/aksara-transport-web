@@ -244,5 +244,46 @@ export const dummyArticles = [
             <p><strong>Kesimpulan:</strong><br />Jika Anda masih mahasiswa/anak muda yang energinya masih full dan ingin ngirit budget, <strong>Sewa Lepas Kunci</strong> adalah opsi terbaik. Namun, jika Anda membawa keluarga (orang tua & anak kecil) dan ingin liburan yang eksklusif tanpa stres, <strong>Sewa Mobil Plus Supir</strong> sangat kami rekomendasikan.</p>
             <p>Apapun pilihan Anda, pastikan Anda memesannya hanya di <strong>Aksara Transport</strong>. Kami menyediakan puluhan unit mobil bersih terawat baik untuk lepas kunci maupun lengkap dengan supir profesional!</p>
         `
+    },
+    {
+        id: '5',
+        created_at: '2026-06-01T08:30:00Z',
+        title: 'Panduan Lengkap Rute Wisata Jogja Terpopuler & Pilihan Transportasi Terbaik (Edisi Lengkap 2026)',
+        slug: 'panduan-rute-wisata-jogja-transportasi-terbaik',
+        category: 'Tips',
+        image: '/images/tour_sand_dunes.webp',
+        excerpt: 'Ingin menjelajahi Jogja dengan rute paling efisien tanpa tersesat? Simak panduan rute wisata Jogja terpopuler dari utara ke selatan lengkap dengan opsi transportasinya!',
+        content: `
+            <p>Merencanakan liburan ke Yogyakarta memang menyenangkan, namun sering kali membingungkan saat menyusun rute perjalanan (*itinerary*). Banyak wisatawan yang terpaksa membuang waktu berharga mereka di jalan hanya karena rute objek wisata yang dikunjungi saling berjauhan dan tidak searah.</p>
+            <p>Agar liburan Anda efisien dan menyenangkan, kami merangkum <strong>Panduan Rute Wisata Jogja Terpopuler</strong> yang dikelompokkan secara geografis, lengkap dengan rekomendasi transportasi terbaik untuk melaluinya!</p>
+
+            <h2>1. Rute Utara (Kawasan Lereng Gunung Merapi & Kaliurang)</h2>
+            <p><strong>Destinasi Utama:</strong> Lavatour Merapi (Jeep Adventure), Museum Ullen Sentalu, Ledok Sambi, Kopi Klotok.</p>
+            <p><strong>Karakteristik Medan:</strong> Didominasi jalanan menanjak, berkelok, dengan udara sejuk pegunungan. Rute ini sangat populer dikunjungi di pagi hari mulai pukul 07.00 WIB.</p>
+            <p><strong>Transportasi Terbaik:</strong> Mobil bermesin tangguh seperti Toyota Avanza FWD atau Mitsubishi Xpander. Bagi yang tidak biasa menyetir di tanjakan curam, menggunakan supir lokal sangat disarankan.</p>
+
+            <h2>2. Rute Barat (Kawasan Candi & Pegunungan Menoreh)</h2>
+            <p><strong>Destinasi Utama:</strong> Candi Borobudur, Gereja Ayam (Bukit Rhema), Tumpeng Menoreh, Waduk Sermo Kulon Progo.</p>
+            <p><strong>Karakteristik Medan:</strong> Jalan antar-kota yang lebar menuju arah Magelang, bercabang ke gang perbukitan curam jika ingin naik ke puncak Menoreh.</p>
+            <p><strong>Transportasi Terbaik:</strong> Jika hanya ke Candi Borobudur, mobil perkotaan kecil seperti Honda Brio matic sangat memadai. Namun, jika ingin menjelajahi Tumpeng Menoreh, pastikan kendaraan dalam performa mesin dan rem yang prima.</p>
+
+            <h2>3. Rute Selatan (Kawasan Tebing Pantai & Gumuk Pasir)</h2>
+            <p><strong>Destinasi Utama:</strong> Gumuk Pasir Parangkusumo, Pantai Parangtritis, Obelix Sea View, Bukit Paralayang Watugupit.</p>
+            <p><strong>Karakteristik Medan:</strong> Jalan datar yang panjang dari ringroad selatan, diselingi jalur tebing curam berliku tajam saat menanjak menuju Obelix Sea View atau Watugupit.</p>
+            <p><strong>Transportasi Terbaik:</strong> Opsi lepas kunci sangat menyenangkan untuk rute ini karena jalannya cenderung lurus dan beraspal mulus sebelum naik ke tebing. Pilihan mobil keluarga seperti Toyota Innova Reborn atau Zenix memberikan kenyamanan ekstra selama perjalanan.</p>
+
+            <h2>4. Rute Timur (Kawasan Warisan Budaya Candi)</h2>
+            <p><strong>Destinasi Utama:</strong> Candi Prambanan, Candi Ratu Boko, Tebing Breksi, Obelix Hills.</p>
+            <p><strong>Karakteristik Medan:</strong> Jalur utama Solo-Yogyakarta yang relatif padat. Menuju Tebing Breksi & Obelix Hills jalannya menanjak cukup ekstrem dengan tikungan tajam lebar.</p>
+            <p><strong>Transportasi Terbaik:</strong> Minibus keluarga seperti Avanza atau jika bepergian berkelompok rombongan besar, menyewa Toyota Hiace Commuter/Premio akan jauh lebih ekonomis dan seru.</p>
+
+            <hr/>
+            <h2>Tips Transportasi Aman Selama Liburan di Jogja</h2>
+            <ul>
+               <li><strong>Kelompokkan Wisata Searah:</strong> Jangan mengunjungi Candi Borobudur (Barat) dan Pantai Drini (Selatan) di hari yang sama karena jaraknya lebih dari 90 km.</li>
+               <li><strong>Gunakan Google Maps Secara Bijak:</strong> Selalu periksa rute alternatif guna menghindari kemacetan ringroad saat jam pulang kerja.</li>
+               <li><strong>Pilih Layanan Rental Terpercaya:</strong> Pastikan Anda menggunakan jasa rental dengan reputasi transparan seperti <strong>Aksara Transport</strong>. Kami menyediakan pilihan sewa lepas kunci 24 jam serta paket sewa mobil dengan supir profesional yang siap memandu liburan Anda dengan aman.</li>
+            </ul>
+        `
     }
 ];
