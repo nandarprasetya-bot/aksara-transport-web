@@ -41,6 +41,12 @@ export const metadata: Metadata = {
     locale: 'id_ID',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jogja Sewa Mobil | Aksara Transport',
+    description: 'Layanan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan supir.',
+    images: ['https://jogjasewamobil.com/images/hero_car.webp'],
+  },
 };
 
 const jsonLd = {

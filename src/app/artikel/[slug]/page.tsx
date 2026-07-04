@@ -27,6 +27,9 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     return {
         title: `${article.title} | Aksara Transport`,
         description: article.excerpt,
+        alternates: {
+            canonical: `https://jogjasewamobil.com/artikel/${params.slug}`
+        },
         openGraph: {
             title: article.title,
             description: article.excerpt,
