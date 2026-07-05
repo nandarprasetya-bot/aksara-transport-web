@@ -112,6 +112,7 @@ export default function RootLayout({
           }}
         />
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="4HiAKCfdqGLdtBQHHLHQgA" async></script>
       </head>
       <body className={plusJakarta.className}>
         <LanguageProvider>
