@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { KeywordData } from '@/data/seoKeywords';
 
 export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }) {
-    const { title, type, carName, price12, fullday, priceWithDriver, priceAllIn, benefits, imageUrl } = seoData;
+    const { title, type, carName, price12, fullday, priceWithDriver, priceAllIn, benefits, imageUrl, descriptionContent } = seoData;
     
     // Booking Form State
     const [layanan, setLayanan] = useState('lepas-kunci');
@@ -219,15 +219,23 @@ export default function DynamicLandingPage({ seoData }: { seoData: KeywordData }
                                 Deskripsi Ulasan {carName || 'Layanan'}
                             </h2>
                             <div style={{ color: '#475569', fontSize: '1.025rem', lineHeight: '1.7', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                                <p>
-                                    Yogyakarta memiliki kekayaan budaya dan destinasi alam menakjubkan yang tersebar luas, mulai dari perkotaan bersejarah, pegunungan sejuk Merapi, hingga jejeran pantai eksotis di Gunungkidul. Memilih armada transportasi yang tepat adalah kunci utama menikmati liburan dengan tenang.
-                                </p>
-                                <p>
-                                    {carName ? `Armada ${carName} kami rawat secara berkala di bengkel resmi demi memastikan mesin dalam kondisi prima, AC dingin maksimal, serta kabin senyap terbebas dari bau asap rokok. Kabin yang lapang menjamin kenyamanan seluruh penumpang selama menempuh rute perjalanan jauh maupun menghadapi kepadatan lalu lintas kota Jogja.` : `Layanan transportasi kami rancang khusus untuk memenuhi kebutuhan perjalanan Anda dengan aman, fleksibel, dan ekonomis.`}
-                                </p>
-                                <p>
-                                    Didukung tim driver profesional berpengalaman yang hafal jalan tikus Jogja dan bersikap sopan, kami siap menemani aktivitas Anda dengan standar kenyamanan bintang 5. Bagi Anda yang menyukai privasi, pilihan rental lepas kunci dapat disewa dengan syarat verifikasi cepat dan mudah.
-                                </p>
+                                {descriptionContent && descriptionContent.length > 0 ? (
+                                    descriptionContent.map((paragraph, index) => (
+                                        <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                                    ))
+                                ) : (
+                                    <>
+                                        <p>
+                                            Yogyakarta memiliki kekayaan budaya dan destinasi alam menakjubkan yang tersebar luas, mulai dari perkotaan bersejarah, pegunungan sejuk Merapi, hingga jejeran pantai eksotis di Gunungkidul. Memilih armada transportasi yang tepat adalah kunci utama menikmati liburan dengan tenang.
+                                        </p>
+                                        <p>
+                                            {carName ? `Armada ${carName} kami rawat secara berkala di bengkel resmi demi memastikan mesin dalam kondisi prima, AC dingin maksimal, serta kabin senyap terbebas dari bau asap rokok. Kabin yang lapang menjamin kenyamanan seluruh penumpang selama menempuh rute perjalanan jauh maupun menghadapi kepadatan lalu lintas kota Jogja.` : `Layanan transportasi kami rancang khusus untuk memenuhi kebutuhan perjalanan Anda dengan aman, fleksibel, dan ekonomis.`}
+                                        </p>
+                                        <p>
+                                            Didukung tim driver profesional berpengalaman yang hafal jalan tikus Jogja dan bersikap sopan, kami siap menemani aktivitas Anda dengan standar kenyamanan bintang 5. Bagi Anda yang menyukai privasi, pilihan rental lepas kunci dapat disewa dengan syarat verifikasi cepat dan mudah.
+                                        </p>
+                                    </>
+                                )}
                             </div>
                         </div>
 
