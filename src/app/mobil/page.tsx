@@ -7,6 +7,29 @@ import { useSearchParams } from 'next/navigation';
 
 const lepasKunciCars = [
     { 
+        id: 'agya', 
+        name: 'Toyota Agya', 
+        category: 'city', 
+        image: '/images/toyota_agya.webp', 
+        badge: 'Hemat', 
+        seats: 5, 
+        trans: 'Manual / Matic', 
+        rates: [
+            { label: '12 Jam', price: 'Rp 275.000' }, 
+            { label: '24 Jam', price: 'Rp 325.000' }, 
+            { label: 'Fullday', price: 'Rp 325.000' }
+        ], 
+        startPrice: 'Rp 275.000', 
+        queryName: 'Toyota+Agya',
+        desc: 'Toyota Agya adalah city car praktis yang sangat irit bensin, lincah, dan mudah diparkir di area perkotaan Yogyakarta.',
+        features: ['AC Dingin Sejuk', '5 Kursi Nyaman', 'Kabin Bersih', 'Mesin Irit BBM', 'Sistem Audio'],
+        routes: [
+            { route: 'Kawasan Malioboro', reason: 'Sangat mudah mencari ruang parkir yang terbatas.' },
+            { route: 'Pusat Kota Jogja', reason: 'Gesit menyusuri lalu lintas perkotaan yang padat.' }
+        ],
+        waMessage: 'Halo Aksara Transport, saya tertarik menyewa unit lepas kunci Toyota Agya. Mohon syarat & ketersediaannya.'
+    },
+    { 
         id: 'brio', 
         name: 'Honda Brio Matic', 
         category: 'city', 
@@ -16,7 +39,7 @@ const lepasKunciCars = [
         trans: 'Automatic', 
         rates: [
             { label: '12 Jam', price: 'Rp 275.000' }, 
-            { label: '24 Jam', price: 'Rp 350.000' }, 
+            { label: '24 Jam', price: 'Rp 325.000' }, 
             { label: 'Fullday', price: 'Rp 325.000' }
         ], 
         startPrice: 'Rp 275.000', 
@@ -36,18 +59,17 @@ const lepasKunciCars = [
         category: 'city', 
         image: '/images/honda_jazz.webp', 
         badge: 'Sporty', 
-        seats: 5, 
+        seats: 4, 
         trans: 'Automatic', 
-        badgeColor: 'accent', 
         rates: [
-            { label: '12 Jam', price: 'Rp 325.000' }, 
+            { label: '12 Jam', price: 'Rp 375.000' }, 
             { label: '24 Jam', price: 'Rp 425.000' }, 
-            { label: 'Fullday', price: 'Rp 375.000' }
+            { label: 'Fullday', price: 'Rp 425.000' }
         ], 
-        startPrice: 'Rp 325.000', 
+        startPrice: 'Rp 375.000', 
         queryName: 'Honda+Jazz+Matic',
         desc: 'Honda Jazz menyajikan sensasi berkendara yang sporty dengan kabin interior dinamis dan fleksibel (Ultra Seat). Sangat digemari oleh kawula muda yang mendambakan performa lincah bertenaga.',
-        features: ['Kabin Fleksibel (Ultra Seat)', '5 Penumpang', 'Mesin 1500 CC Lincah', 'Sporty Dashboard Design', 'AC Dingin Maksimal'],
+        features: ['Kabin Fleksibel (Ultra Seat)', '4 Penumpang', 'Mesin 1500 CC Lincah', 'Sporty Dashboard Design', 'AC Dingin Maksimal'],
         routes: [
             { route: 'Kawasan Malioboro', reason: 'Kemudahan bermanuver dan melaju lincah di kemacetan kota.' },
             { route: 'Candi Prambanan', reason: 'Kestabilan berkendara yang mumpuni di rute jalan lurus antarkota.' }
@@ -55,118 +77,84 @@ const lepasKunciCars = [
         waMessage: 'Halo Aksara Transport, saya ingin bertanya tentang ketersediaan unit lepas kunci Honda Jazz Matic. Terima kasih.'
     },
     { 
-        id: 'raize', 
-        name: 'Toyota Raize Matic', 
-        category: 'suv', 
-        image: '/images/toyota_raize.webp', 
-        badge: 'Compact SUV', 
-        seats: 5, 
-        trans: 'Automatic', 
-        badgeColor: 'accent', 
-        rates: [
-            { label: '12 Jam', price: 'Rp 325.000' }, 
-            { label: '24 Jam', price: 'Rp 425.000' }, 
-            { label: 'Fullday', price: 'Rp 375.000' }
-        ], 
-        startPrice: 'Rp 325.000', 
-        queryName: 'Toyota+Raize',
-        desc: 'Toyota Raize adalah compact SUV modern dengan mesin turbo bertenaga. Sangat lincah, berjiwa petualang, dan memiliki ground clearance tinggi untuk melibas segala rintangan jalanan perkotaan maupun pedesaan Jogja.',
-        features: ['Mesin 1000 CC Turbo', '5 Penumpang Nyaman', 'Ground Clearance Tinggi', 'LED Headlamp Terang', 'Kabin Modern Digital'],
-        routes: [
-            { route: 'Kawasan Bukit Bintang', reason: 'Torsi mesin turbo yang handal menghadapi rute menanjak.' },
-            { route: 'Lereng Gunung Merapi (Kaliurang)', reason: 'Ground clearance tinggi memberikan rasa aman dari rintangan jalanan rusak.' }
-        ],
-        waMessage: 'Halo Aksara Transport, saya berminat menyewa lepas kunci Toyota Raize Matic. Tolong info ketersediaan unit.'
-    },
-    { 
         id: 'avanza-fl', 
-        name: 'Avanza Facelift Matic', 
+        name: 'Toyota Avanza', 
         category: 'family', 
-        image: '/images/toyota_avanza_facelift.webp', 
-        badge: 'Irit', 
+        image: '/images/toyota_avanza.webp', 
+        badge: 'Terpopuler', 
         seats: 7, 
-        trans: 'Automatic', 
+        trans: 'Manual / Matic', 
         rates: [
-            { label: '12 Jam', price: 'Rp 250.000' }, 
+            { label: '12 Jam', price: 'Rp 300.000' }, 
             { label: '24 Jam', price: 'Rp 350.000' }, 
-            { label: 'Fullday', price: 'Rp 300.000' }
+            { label: 'Fullday', price: 'Rp 350.000' }
         ], 
-        startPrice: 'Rp 250.000', 
-        queryName: 'Toyota+Avanza+Facelift+Matic',
-        desc: 'Toyota Avanza Facelift adalah MPV andalan keluarga Indonesia yang sangat legendaris. Dilengkapi dengan kabin yang luas dan ground clearance tinggi, menjamin ketangguhan berkendara di berbagai rute perjalanan Anda di Yogyakarta.',
+        startPrice: 'Rp 300.000', 
+        queryName: 'Toyota+Avanza',
+        desc: 'Toyota Avanza adalah MPV andalan keluarga Indonesia yang sangat legendaris. Dilengkapi dengan kabin yang luas dan ground clearance tinggi, menjamin ketangguhan berkendara di berbagai rute perjalanan Anda di Yogyakarta.',
         features: ['Double Blower AC', 'Kapasitas 7 Kursi', 'Bagasi Fleksibel', 'Mesin 1300 CC Kuat', 'Dual SRS Airbag'],
         routes: [
             { route: 'Candi Borobudur', reason: 'Kabin lapang membuat keluarga tetap nyaman selama perjalanan luar kota.' },
             { route: 'Lereng Gunung Merapi (Kaliurang)', reason: 'Mesin tangguh dengan penggerak roda yang handal di rute menanjak pegunungan.' },
             { route: 'Pantai Parangtritis', reason: 'Suspensi nyaman meredam guncangan di rute lintas selatan.' }
         ],
-        waMessage: 'Halo Aksara Transport, saya ingin booking sewa lepas kunci unit Toyota Avanza Facelift. Mohon info ketersediaan unit.'
+        waMessage: 'Halo Aksara Transport, saya ingin booking sewa lepas kunci unit Toyota Avanza. Mohon info ketersediaan unit.'
     },
     { 
         id: 'avanza-fwd', 
-        name: 'Avanza FWD Matic', 
+        name: 'Toyota New Avanza FWD', 
         category: 'family', 
         image: '/images/toyota_avanza_fwd.webp', 
         badge: 'Kabin Luas', 
         seats: 7, 
         trans: 'Automatic', 
-        badgeColor: 'accent', 
         rates: [
-            { label: '12 Jam', price: 'Rp 300.000' }, 
-            { label: '24 Jam', price: 'Rp 375.000' }, 
-            { label: 'Fullday', price: 'Rp 350.000' }
+            { label: 'Fullday', price: 'Rp 375.000' }
         ], 
-        startPrice: 'Rp 300.000', 
-        queryName: 'Toyota+Avanza+FWD+Matic',
+        startPrice: 'Rp 375.000', 
+        queryName: 'Toyota+New+Avanza+FWD',
         desc: 'Avanza generasi terbaru dengan sistem penggerak roda depan (FWD). Memberikan kabin yang jauh lebih hening, ruang kaki baris kedua yang lapang, serta suspensi yang empuk demi kenyamanan ekstra keluarga tercinta.',
         features: ['Penggerak Roda Depan (FWD)', 'Kapasitas 7 Kursi', 'Double Blower AC', 'Kabin Lebih Senyap', 'Fitur Keselamatan Modern'],
         routes: [
             { route: 'Kawasan Kaliurang', reason: 'Transmisi matic responsif dengan torsi handal di jalur berbukit.' },
             { route: 'Candi Borobudur', reason: 'Kabin lapang dan suspensi empuk menjaga kebugaran keluarga sepanjang perjalanan.' }
         ],
-        waMessage: 'Halo Aksara Transport, saya tertarik menyewa lepas kunci Avanza FWD Matic. Bagaimana ketersediaannya?'
+        waMessage: 'Halo Aksara Transport, saya tertarik menyewa lepas kunci Toyota New Avanza FWD. Bagaimana ketersediaannya?'
     },
     { 
         id: 'xpander', 
-        name: 'Mitsubishi Xpander Matic', 
+        name: 'Mitsubishi Xpander', 
         category: 'family', 
         image: '/images/mitsubishi_xpander.webp', 
-        badge: 'Nyaman', 
+        badge: 'Terfavorit', 
         seats: 7, 
         trans: 'Automatic', 
-        badgeColor: 'accent', 
         rates: [
-            { label: '12 Jam', price: 'Rp 325.000' }, 
-            { label: '24 Jam', price: 'Rp 425.000' }, 
-            { label: 'Fullday', price: 'Rp 375.000' }
+            { label: 'Fullday', price: 'Rp 450.000' }
         ], 
-        startPrice: 'Rp 325.000', 
-        queryName: 'Mitsubishi+Xpander+Matic',
+        startPrice: 'Rp 450.000', 
+        queryName: 'Mitsubishi+Xpander',
         desc: 'Mitsubishi Xpander menyajikan kemewahan MPV keluarga premium dengan suspensi ternyaman di kelasnya. Desain eksterior yang modern gagah (Dynamic Shield) dipadukan dengan kesenyapan kabin tingkat tinggi.',
         features: ['Suspensi Kelas SUV', '7 Kursi Penumpang', 'Desain Dynamic Shield', 'Kekedapan Kabin Maksimal', 'Bagasi Fleksibel Serbaguna'],
         routes: [
             { route: 'Perjalanan ke Pantai Gunungkidul', reason: 'Kualitas suspensi luar biasa meredam guncangan di rute aspal berliku.' },
             { route: 'Pusat Kota Jogja', reason: 'Kabin senyap menjauhkan kebisingan jalanan kota dari kenyamanan penumpang.' }
         ],
-        waMessage: 'Halo Aksara Transport, mohon info ketersediaan sewa lepas kunci unit Mitsubishi Xpander Matic.'
+        waMessage: 'Halo Aksara Transport, mohon info ketersediaan sewa lepas kunci unit Mitsubishi Xpander.'
     },
     { 
         id: 'innova', 
-        name: 'Innova Reborn Matic', 
+        name: 'Toyota Innova Reborn', 
         category: 'family', 
         image: '/images/innova_reborn.webp', 
-        badge: 'Gagah', 
+        badge: 'Premium Family', 
         seats: 7, 
         trans: 'Automatic', 
-        badgeBg: '#fef3c7', 
-        badgeText: '#b45309', 
         rates: [
-            { label: 'Fullday', price: 'Rp 550.000' }, 
-            { label: '* Hubungi kami untuk tarif weekday', price: '', isInfo: true }
+            { label: 'Fullday', price: 'Rp 550.000' }
         ], 
         startPrice: 'Rp 550.000', 
-        priceLabel: 'Tarif Weekend', 
-        queryName: 'Toyota+Innova+Reborn+Matic',
+        queryName: 'Toyota+Innova+Reborn',
         desc: 'Toyota Innova Reborn menawarkan kemewahan berkendara dengan kenyamanan suspensi tingkat tinggi yang mampu meredam getaran dengan sempurna. Pilihan utama untuk perjalanan keluarga eksklusif maupun dinas bisnis.',
         features: ['Mesin Diesel 2400 CC Turbo', 'Kapasitas 7 Kursi', 'Kabin Sangat Senyap & Luas', 'Suspensi Premium Empuk', 'AC Triple Blower'],
         routes: [
@@ -177,6 +165,27 @@ const lepasKunciCars = [
         waMessage: 'Halo Aksara Transport, saya tertarik menyewa Toyota Innova Reborn lepas kunci. Mohon info ketersediaannya.'
     },
     { 
+        id: 'binguo-ev', 
+        name: 'Wuling Binguo EV', 
+        category: 'electric', 
+        image: '/images/wuling_binguo.webp', 
+        badge: 'Full Electric', 
+        seats: 4, 
+        trans: 'Baterai 333km', 
+        rates: [
+            { label: 'Fullday', price: 'Rp 500.000' }
+        ], 
+        startPrice: 'Rp 500.000', 
+        queryName: 'Wuling+Binguo+EV',
+        desc: 'Wuling Binguo EV menyajikan kenyamanan mobil listrik modern dengan desain eksterior retro-futuristik yang sangat stylish. Berkendara keliling Jogja dengan senyap, ramah lingkungan, dan hemat tanpa BBM.',
+        features: ['Sistem Listrik Penuh (EV)', 'Kapasitas 4 Kursi', 'Bebas Polusi Udara', 'Jangkauan Baterai 333 KM', 'Smart Key & Autopilot Urban'],
+        routes: [
+            { route: 'Heritage Tour (Taman Sari & Kotagede)', reason: 'Praktis dikendarai melintasi rute stop-and-go di gang bersejarah Jogja.' },
+            { route: 'Kawasan Wisata Kaliurang', reason: 'Baterai melimpah kuat menanjak rute sejuk Merapi pulang-pergi.' }
+        ],
+        waMessage: 'Halo Aksara Transport, saya ingin menanyakan ketersediaan sewa lepas kunci unit Wuling Binguo EV Jogja.'
+    },
+    { 
         id: 'air-ev', 
         name: 'Wuling Air EV', 
         category: 'electric', 
@@ -184,14 +193,10 @@ const lepasKunciCars = [
         badge: 'Full Electric', 
         seats: 4, 
         trans: 'Baterai 300km', 
-        badgeBg: '#dbeafe', 
-        badgeText: '#1e40af', 
         rates: [
-            { label: 'Fullday', price: 'Rp 450.000' }, 
-            { label: '* Free Baterai / Cas Penuh', price: '', isSuccessInfo: true }
+            { label: 'Fullday', price: 'Rp 450.000' }
         ], 
         startPrice: 'Rp 450.000', 
-        priceLabel: 'Tarif Allday', 
         queryName: 'Wuling+Air+EV',
         desc: 'Wuling Air EV menyajikan kelincahan mobil listrik kompak modern untuk menjelajahi perkotaan Jogja dengan lincah. Desain mungil, praktis, senyap, bebas polusi, dan gratis tanpa biaya BBM.',
         features: ['100% Energi Listrik (EV)', 'Kapasitas 4 Kursi', 'Bebas Polusi Udara', 'Jangkauan Baterai 300 KM', 'Keyless System & Mudah Parkir'],
@@ -202,30 +207,46 @@ const lepasKunciCars = [
         waMessage: 'Halo Aksara Transport, saya ingin menanyakan sewa lepas kunci unit Wuling Air EV. Terima kasih.'
     },
     { 
-        id: 'binguo-ev', 
-        name: 'Wuling Binguo EV', 
+        id: 'ioniq-5', 
+        name: 'Hyundai Ioniq 5', 
         category: 'electric', 
-        image: '/images/wuling_binguo.webp', 
+        image: '/images/hyundai_ioniq_5.webp', 
+        badge: 'VIP Electric', 
+        seats: 5, 
+        trans: 'Baterai 480km', 
+        rates: [
+            { label: 'Fullday', price: 'Rp 1.500.000' }
+        ], 
+        startPrice: 'Rp 1.500.000', 
+        queryName: 'Hyundai+Ioniq+5',
+        desc: 'Hyundai Ioniq 5 menyajikan kemewahan mobil listrik premium dengan desain futuristik yang memukau. Nikmati kenyamanan VVIP berkendara keliling Jogja dengan kabin ekstra senyap dan lapang.',
+        features: ['Sistem Listrik Premium (EV)', 'Kapasitas 5 Kursi', 'Bebas Polusi Udara', 'Jangkauan Baterai 480 KM', 'V2L Technology & Panoramic Sunroof'],
+        routes: [
+            { route: 'Kunjungan Tamu VIP', reason: 'Memberikan impresi mewah dan modern untuk kolega bisnis.' },
+            { route: 'Pernikahan (Wedding Car)', reason: 'Sangat elegan didekorasi sebagai mobil pengantin masa kini.' }
+        ],
+        waMessage: 'Halo Aksara Transport, saya tertarik menyewa lepas kunci Hyundai Ioniq 5. Mohon syarat & ketersediaannya.'
+    },
+    { 
+        id: 'neta-v', 
+        name: 'Neta V-II', 
+        category: 'electric', 
+        image: '/images/neta_v_ii.webp', 
         badge: 'Full Electric', 
         seats: 5, 
-        trans: 'Baterai 400km', 
-        badgeBg: '#dbeafe', 
-        badgeText: '#1e40af', 
+        trans: 'Baterai 401km', 
         rates: [
-            { label: 'Fullday', price: 'Rp 500.000' }, 
-            { label: '* Free Baterai / Cas Penuh', price: '', isSuccessInfo: true }
+            { label: 'Fullday', price: 'Rp 600.000' }
         ], 
-        startPrice: 'Rp 500.000', 
-        priceLabel: 'Tarif Allday', 
-        queryName: 'Wuling+Binguo+EV',
-        desc: 'Wuling Binguo EV menyajikan kenyamanan mobil listrik modern dengan desain eksterior retro-futuristik yang sangat stylish. Berkendara keliling Jogja dengan senyap, ramah lingkungan, dan hemat tanpa BBM.',
-        features: ['Sistem Listrik Penuh (EV)', 'Kapasitas 5 Kursi', 'Bebas Polusi Udara', 'Jangkauan Baterai 333 KM', 'Smart Key & Autopilot Urban'],
+        startPrice: 'Rp 600.000', 
+        queryName: 'Neta+V-II',
+        desc: 'Neta V-II menyajikan kepraktisan mobil crossover listrik modern berukuran kompak. Lincah menyusuri jalanan Jogja dengan kabin futuristik dan efisiensi energi listrik yang sangat baik.',
+        features: ['100% Energi Listrik (EV)', 'Kapasitas 5 Kursi', 'Bebas Polusi Udara', 'Jangkauan Baterai 401 KM', 'Layar Multimedia 14.6 Inci'],
         routes: [
-            { route: 'Heritage Tour (Taman Sari & Kotagede)', reason: 'Praktis dikendarai melintasi rute stop-and-go di gang bersejarah Jogja.' },
-            { route: 'Kawasan Wisata Kaliurang', reason: 'Baterai melimpah kuat menanjak rute sejuk Merapi pulang-pergi.' },
-            { route: 'Heha Sky View', reason: 'Tampil modis dan sangat fotogenik di kawasan wisata instagramable.' }
+            { route: 'Pusat Kota Jogja', reason: 'Lincah menyusuri jalan padat dan ramah kantong tanpa bensin.' },
+            { route: 'Heha Sky View', reason: 'Performa menanjak di perbukitan Pathuk yang stabil dan bertenaga.' }
         ],
-        waMessage: 'Halo Aksara Transport, saya ingin menanyakan ketersediaan sewa lepas kunci unit Wuling Binguo EV Jogja.'
+        waMessage: 'Halo Aksara Transport, mohon info ketersediaan sewa lepas kunci unit Neta V-II. Terima kasih.'
     }
 ];
 

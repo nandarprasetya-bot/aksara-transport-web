@@ -20,6 +20,7 @@ export const seoKeywords: KeywordData[] = [
     title: 'Sewa Brio Jogja',
     carName: 'Honda Brio',
     price12: 275000,
+    price24: 325000,
     fullday: 325000,
     priceAllIn: 550000,
     benefits: [
@@ -39,7 +40,8 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Avanza Jogja',
     carName: 'Toyota Avanza',
-    price12: 250000,
+    price12: 300000,
+    price24: 350000,
     fullday: 350000,
     priceAllIn: 600000,
     benefits: [
@@ -59,6 +61,7 @@ export const seoKeywords: KeywordData[] = [
     type: 'car',
     title: 'Sewa Inova Reborn Jogja',
     carName: 'Toyota Innova Reborn',
+    fullday: 550000,
     priceWithDriver: 600000,
     priceAllIn: 800000,
     benefits: [

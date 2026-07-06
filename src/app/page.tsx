@@ -131,7 +131,7 @@ Mohon informasi ketersediaan unit dan tarifnya. Terima kasih!`;
                 { route: 'Candi Borobudur', reason: 'Kabin lapang membuat keluarga tetap nyaman selama perjalanan.' },
                 { route: 'Lereng Gunung Merapi (Kaliurang)', reason: 'Mesin tangguh dengan penggerak roda yang handal di rute menanjak.' }
             ],
-            priceLepasKunci: 'Rp 250.000',
+            priceLepasKunci: 'Rp 300.000',
             priceLepasKunciUnit: '/12j',
             priceDenganSopir: 'Rp 550.000',
             priceDenganSopirUnit: '/12j',
@@ -142,13 +142,13 @@ Mohon informasi ketersediaan unit dan tarifnya. Terima kasih!`;
             id: 'binguo',
             name: 'Wuling Binguo EV',
             category: 'electric',
-            seats: 5,
+            seats: 4,
             trans: 'Automatic',
             fuel: 'Listrik',
             image: '/images/wuling_binguo.webp',
             tag: 'Eco Friendly',
             desc: 'Wuling Binguo EV menyajikan kenyamanan mobil listrik modern dengan desain eksterior retro-futuristik yang sangat stylish. Berkendara keliling Jogja dengan senyap, ramah lingkungan, dan hemat tanpa BBM.',
-            features: ['Sistem Listrik Penuh (EV)', 'Kapasitas 5 Kursi', 'Bebas Polusi Udara', 'Jangkauan Baterai 333 KM', 'Smart Key'],
+            features: ['Sistem Listrik Penuh (EV)', 'Kapasitas 4 Kursi', 'Bebas Polusi Udara', 'Jangkauan Baterai 333 KM', 'Smart Key'],
             routes: [
                 { route: 'Heritage Tour (Taman Sari)', reason: 'Praktis dikendarai melintasi rute stop-and-go di gang bersejarah Jogja.' },
                 { route: 'Heha Sky View', reason: 'Tampil modis dan sangat fotogenik di kawasan wisata instagramable.' }
