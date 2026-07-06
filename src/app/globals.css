@@ -3053,4 +3053,186 @@ body {
     top: 0 !important;
 }
 
+/* ==========================================================================
+   19. INTERACTIVE SERVICE GALLERY (GLASSMORPHISM)
+   ========================================================================== */
+.gallery-section {
+    position: relative;
+    z-index: 10;
+}
+
+.gallery-tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.gallery-tab-btn {
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.gallery-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--accent);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.gallery-tab-btn.active {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 6px 15px rgba(249, 115, 22, 0.25);
+}
+
+.gallery-item-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 4/3;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.gallery-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.12);
+}
+
+.gallery-item-card:hover .gallery-img-hover {
+    transform: scale(1.06);
+}
+
+.gallery-item-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 5;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 5px 12px;
+    font-size: 0.725rem;
+    font-weight: 800;
+    border-radius: 50px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.85) 100%);
+    padding: 24px 20px 20px 20px;
+    z-index: 4;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+}
+
+.gallery-item-card:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.gallery-item-caption {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-align: left;
+}
+
+/* Lightbox Modal with Blur Backdrop */
+.lightbox-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.lightbox-modal-content {
+    position: relative;
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-close-btn {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    outline: none;
+}
+
+.lightbox-close-btn:hover {
+    color: var(--accent);
+    transform: scale(1.1) rotate(90deg);
+}
+
+.lightbox-caption {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 15px;
+    text-align: center;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
 

@@ -21,6 +21,10 @@ export default function Home() {
 
     const [showStickyCta, setShowStickyCta] = useState(false);
 
+    // Gallery States
+    const [activeGalleryTab, setActiveGalleryTab] = useState('all');
+    const [activeLightbox, setActiveLightbox] = useState<string | null>(null);
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 400) {
@@ -224,7 +228,33 @@ Mohon informasi ketersediaan unit dan tarifnya. Terima kasih!`;
             priceDenganSopir: 'Rp 1.400.000',
             priceDenganSopirUnit: '/12j',
             waMessageLepasKunci: '',
-            waMessageDenganSopir: 'Halo Aksara Transport, saya ingin booking unit DENGAN SOPIR Toyota Hiace Premio.'
+        }
+    ];
+
+    const galleryImages = [
+        {
+            src: '/images/gallery_vvip_1.webp',
+            category: 'layanan',
+            caption: 'Penyambutan VVIP Kaesang Pangarep bersama Tim Aksara Transport',
+            tag: 'Layanan VVIP'
+        },
+        {
+            src: '/images/gallery_trip_2.webp',
+            category: 'trip',
+            caption: 'Trip Wisata Seru VW Safari Borobudur bersama pelanggan setia',
+            tag: 'Trip Wisata'
+        },
+        {
+            src: '/images/gallery_driver_1.webp',
+            category: 'layanan',
+            caption: 'Pelayanan prima armada Innova Reborn bersama driver Aksara Transport',
+            tag: 'Layanan Driver'
+        },
+        {
+            src: '/images/gallery_trip_1.webp',
+            category: 'trip',
+            caption: 'Momen kebersamaan rombongan wisata keliling tempat hits Jogja',
+            tag: 'Trip Wisata'
         }
     ];
 
@@ -265,6 +295,9 @@ Mohon informasi ketersediaan unit dan tarifnya. Terima kasih!`;
                                 <Link href="/tentang" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.08)', fontWeight: 700 }}>
                                     Syarat Rental Mobil ➔
                                 </Link>
+                                <a href="#galeri" className="btn btn-outline" style={{ color: 'var(--accent)', borderColor: 'rgba(249,115,22,0.4)', background: 'rgba(249,115,22,0.08)', fontWeight: 700 }}>
+                                    ✓ 100% Foto Real &amp; Layanan ➔
+                                </a>
                             </div>
                         </div>
 
@@ -560,7 +593,7 @@ Mohon informasi ketersediaan unit dan tarifnya. Terima kasih!`;
                                     <div className="beranda-cta-group">
                                         {car.priceLepasKunci ? (
                                             <a 
-                                                href={`https://wa.me/628386000740?text=${encodeURIComponent(car.waMessageLepasKunci)}`} 
+                                                href={`https://wa.me/628386000740?text=${encodeURIComponent(car.waMessageLepasKunci || '')}`} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer" 
                                                 className="btn-wa-cta btn-wa-cta-lk"
@@ -574,7 +607,7 @@ Mohon informasi ketersediaan unit dan tarifnya. Terima kasih!`;
 
                                         {car.priceDenganSopir ? (
                                             <a 
-                                                href={`https://wa.me/628386000740?text=${encodeURIComponent(car.waMessageDenganSopir)}`} 
+                                                href={`https://wa.me/628386000740?text=${encodeURIComponent(car.waMessageDenganSopir || '')}`} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer" 
                                                 className="btn-wa-cta btn-wa-cta-ds"
@@ -734,6 +767,100 @@ Mohon informasi ketersediaan unit dan tarifnya. Terima kasih!`;
                     </div>
                 </div>
             </section>
+
+            {/* INTERACTIVE SERVICE GALLERY SECTION */}
+            <section id="galeri" className="section-padding gallery-section" style={{ backgroundColor: '#f1f5f9', paddingTop: '80px', paddingBottom: '80px' }}>
+                <div className="container">
+                    <div className="text-center" style={{ marginBottom: '40px' }}>
+                        <span className="badge badge-accent">Dokumentasi</span>
+                        <h2 className="section-title">Galeri Pelayanan &amp; Aktivitas Real</h2>
+                        <p className="section-subtitle">Melihat lebih dekat pelayanan prima, kesiapan armada, dan momen berharga bersama para pelanggan setia kami di Yogyakarta.</p>
+                    </div>
+
+                    {/* Filter Tabs */}
+                    <div className="gallery-tabs-container" style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '35px', flexWrap: 'wrap' }}>
+                        <button 
+                            className={`gallery-tab-btn ${activeGalleryTab === 'all' ? 'active' : ''}`}
+                            onClick={() => setActiveGalleryTab('all')}
+                        >
+                            Semua Dokumentasi
+                        </button>
+                        <button 
+                            className={`gallery-tab-btn ${activeGalleryTab === 'layanan' ? 'active' : ''}`}
+                            onClick={() => setActiveGalleryTab('layanan')}
+                        >
+                            Pelayanan &amp; VVIP
+                        </button>
+                        <button 
+                            className={`gallery-tab-btn ${activeGalleryTab === 'trip' ? 'active' : ''}`}
+                            onClick={() => setActiveGalleryTab('trip')}
+                        >
+                            Perjalanan Wisata
+                        </button>
+                    </div>
+
+                    {/* Gallery Grid */}
+                    <div className="gallery-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+                        {galleryImages
+                            .filter(img => activeGalleryTab === 'all' || img.category === activeGalleryTab)
+                            .map((img, index) => (
+                                <div 
+                                    className="gallery-item-card" 
+                                    key={index} 
+                                    onClick={() => setActiveLightbox(img.src)}
+                                    style={{ cursor: 'pointer', overflow: 'hidden', borderRadius: '12px', position: 'relative', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', backgroundColor: '#ffffff', aspectRatio: '4/3' }}
+                                >
+                                    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                                        <Image 
+                                            src={img.src} 
+                                            alt={img.caption} 
+                                            fill 
+                                            style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }} 
+                                            className="gallery-img-hover"
+                                            sizes="(max-width: 768px) 100vw, 25vw"
+                                        />
+                                    </div>
+                                    <span className="gallery-item-tag">{img.tag}</span>
+                                    <div className="gallery-item-overlay">
+                                        <p className="gallery-item-caption">{img.caption}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            {/* LIGHTBOX POPUP MODAL */}
+            {activeLightbox && (
+                <div 
+                    className="lightbox-modal-overlay" 
+                    onClick={() => setActiveLightbox(null)}
+                >
+                    <div className="lightbox-modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button 
+                            className="lightbox-close-btn" 
+                            onClick={() => setActiveLightbox(null)}
+                            aria-label="Tutup foto"
+                        >
+                            ✕
+                        </button>
+                        <div className="lightbox-image-wrapper" style={{ position: 'relative', width: '100%', height: '80vh' }}>
+                            <Image 
+                                src={activeLightbox} 
+                                alt="Foto Dokumentasi Aksara Transport" 
+                                fill 
+                                style={{ objectFit: 'contain' }} 
+                                sizes="90vw"
+                            />
+                        </div>
+                        {(() => {
+                            const found = galleryImages.find(img => img.src === activeLightbox);
+                            return found ? <p className="lightbox-caption">{found.caption}</p> : null;
+                        })()}
+                    </div>
+                </div>
+            )}
 
             {/* SEO FAQ SECTION WITH INTERACTIVE ACCORDIONS */}
             <section className="section-padding faq-section" style={{ backgroundColor: '#ffffff' }}>
