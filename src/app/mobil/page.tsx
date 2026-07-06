@@ -77,8 +77,32 @@ const lepasKunciCars = [
         waMessage: 'Halo Aksara Transport, saya ingin bertanya tentang ketersediaan unit lepas kunci Honda Jazz Matic. Terima kasih.'
     },
     { 
+        id: 'raize', 
+        name: 'Toyota Raize Matic', 
+        category: 'suv', 
+        image: '/images/toyota_raize.webp', 
+        badge: 'Compact SUV', 
+        seats: 5, 
+        trans: 'Automatic', 
+        badgeColor: 'accent', 
+        rates: [
+            { label: '12 Jam', price: 'Rp 375.000' }, 
+            { label: '24 Jam', price: 'Rp 425.000' }, 
+            { label: 'Fullday', price: 'Rp 425.000' }
+        ], 
+        startPrice: 'Rp 375.000', 
+        queryName: 'Toyota+Raize',
+        desc: 'Toyota Raize adalah compact SUV modern dengan mesin turbo bertenaga. Sangat lincah, berjiwa petualang, dan memiliki ground clearance tinggi untuk melibas segala rintangan jalanan perkotaan maupun pedesaan Jogja.',
+        features: ['Mesin 1000 CC Turbo', '5 Penumpang Nyaman', 'Ground Clearance Tinggi', 'LED Headlamp Terang', 'Kabin Modern Digital'],
+        routes: [
+            { route: 'Kawasan Bukit Bintang', reason: 'Torsi mesin turbo yang handal menghadapi rute menanjak.' },
+            { route: 'Lereng Gunung Merapi (Kaliurang)', reason: 'Ground clearance tinggi memberikan rasa aman dari rintangan jalanan rusak.' }
+        ],
+        waMessage: 'Halo Aksara Transport, saya berminat menyewa lepas kunci Toyota Raize Matic. Tolong info ketersediaan unit.'
+    },
+    { 
         id: 'avanza-fl', 
-        name: 'Toyota Avanza', 
+        name: 'Toyota Avanza Facelift', 
         category: 'family', 
         image: '/images/toyota_avanza.webp', 
         badge: 'Terpopuler', 
