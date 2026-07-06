@@ -66,7 +66,7 @@ export const seoKeywords: KeywordData[] = [
       'Cocok untuk tamu VIP, perjalanan dinas, atau keluarga yang mencari kenyamanan ekstra.',
       'Mesin bertenaga besar, melibas semua medan wisata di Yogyakarta dengan mudah.'
     ],
-    imageUrl: '/images/toyota_innova.webp',
+    imageUrl: '/images/innova_reborn.webp',
     descriptionContent: [
       'Dapatkan kenyamanan berkendara kelas premium untuk perjalanan bisnis maupun liburan keluarga dengan layanan <strong>sewa inova reborn jogja</strong>. Toyota Innova Reborn menawarkan ruang kabin yang sangat senyap, suspensi empuk kelas atas, serta performa mesin diesel yang bertenaga besar namun tetap hemat bahan bakar.',
       'Mobil MPV premium ini sangat direkomendasikan untuk menjamu tamu VIP, pejabat, atau keluarga besar yang mengutamakan kenyamanan selama menempuh rute jarak jauh di Yogyakarta. Aksara Transport menjamin kebersihan unit 100% steril sebelum diserahkan kepada penyewa.',
@@ -138,7 +138,7 @@ export const seoKeywords: KeywordData[] = [
       'Plafon kabin tinggi, penumpang bisa berdiri dan bergerak leluasa di dalam mobil.',
       'Sangat cocok untuk rombongan wisata keluarga besar atau ziarah.'
     ],
-    imageUrl: '/images/toyota_hiace_premio.webp',
+    imageUrl: '/images/toyota_hiace_commuter.webp',
     descriptionContent: [
       'Membawa rombongan keluarga besar atau rekan sekantor liburan di Jogja kini lebih hemat dan praktis dengan <strong>sewa hiace commuter jogja</strong>. Minibus andalan Toyota ini mampu menampung hingga 15 orang penumpang sekaligus tanpa mengorbankan kenyamanan legroom.',
       'Plafon kabin yang tinggi memudahkan penumpang untuk berdiri dan bergerak di dalam mobil. Aksara Transport menyediakan unit Hiace Commuter yang terawat, AC ducting dingin hingga baris belakang, serta suspensi yang stabil untuk rute jarak jauh seperti wisata pantai Gunungkidul.',
@@ -174,7 +174,7 @@ export const seoKeywords: KeywordData[] = [
       'Harga sewa mulai 3 jutaan dengan fasilitas paling eksklusif di kelasnya.',
       'Sempurna untuk acara kenegaraan, tamu VVIP, atau pernikahan mewah.'
     ],
-    imageUrl: '/images/toyota_alphard.webp',
+    imageUrl: '/images/toyota_alphard_hev.webp',
     descriptionContent: [
       'Rasakan kemewahan ramah lingkungan dengan paket <strong>sewa alphard hev jogja</strong>. Varian terbaru Toyota Alphard Hybrid Electric Vehicle (HEV) ini menawarkan kesenyapan kabin luar biasa saat motor listrik bekerja, memberikan sensasi berkendara kelas VVIP yang tiada duanya.',
       'Sempurna untuk melayani delegasi bisnis internasional, pejabat tinggi negara, atau pernikahan mewah di Yogyakarta yang mengusung konsep modern dan eco-friendly. Unit kami terawat dengan standar servis dealer resmi demi menjaga performa premiumnya.',
@@ -192,7 +192,7 @@ export const seoKeywords: KeywordData[] = [
       'Desain maskulin dan elegan, memberikan kesan gagah di jalan raya.',
       'Kabin lega dengan fitur keamanan tingkat tinggi untuk petualangan Anda.'
     ],
-    imageUrl: '/images/toyota_fortuner.webp',
+    imageUrl: '/images/mitsubishi_pajero.webp',
     descriptionContent: [
       'Taklukkan medan menantang dan nikmati petualangan wisata alam di Yogyakarta dengan layanan <strong>sewa pajero jogja</strong>. Mitsubishi Pajero Sport merupakan SUV tangguh berdesain sporty dan maskulin yang sangat stabil melibas jalanan menanjak maupun berlubang di kawasan Merapi dan perbukitan Jogja.',
       'Kabin SUV premium ini sangat nyaman untuk kapasitas hingga 7 orang, dengan bagasi yang fleksibel untuk barang bawaan petualangan Anda. Aksara Transport menjamin unit Pajero Sport kami selalu dalam performa mesin optimal dan bersih berkilau.',
@@ -228,7 +228,7 @@ export const seoKeywords: KeywordData[] = [
       'Tarikan mesin diesel Isuzu yang kuat menanjak di perbukitan Jogja.',
       'Solusi transportasi massal paling efisien dan ekonomis untuk rombongan wisata.'
     ],
-    imageUrl: '/images/tour_city.webp',
+    imageUrl: '/images/elf_long.webp',
     descriptionContent: [
       'Untuk kapasitas rombongan super besar hingga 19 orang, layanan <strong>sewa elf jogja</strong> (Isuzu Elf Long) dari Aksara Transport adalah solusi transportasi massal paling efisien. Sangat ideal untuk rombongan study tour sekolah, ziarah keagamaan, atau acara arisan keluarga besar di Yogyakarta.',
       'Dilengkapi mesin diesel Isuzu yang terkenal sangat bertenaga dan tangguh menanjak di perbukitan, perjalanan Anda bersama rombongan besar akan tetap lancar. Fasilitas AC dingin merata dan ruang bagasi luas menjadi standar kenyamanan unit kami.',
