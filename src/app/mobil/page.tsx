@@ -4,7 +4,6 @@ import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import TopChart7Hari from '@/components/TopChart7Hari';
 
 const lepasKunciCars = [
     { 
@@ -802,9 +801,6 @@ function CatalogMobilInner() {
 
                 </div>
             </section>
-
-            {/* TOP CHART DAFTAR HARGA SEWA 7 HARI (PAKET MINGGUAN) */}
-            <TopChart7Hari />
 
             {/* DETAIL VEHICLE MODAL POPUP */}
             {selectedModalCar && (

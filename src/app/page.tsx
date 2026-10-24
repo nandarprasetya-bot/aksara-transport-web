@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import TopChart7Hari from '@/components/TopChart7Hari';
 
 // Data Katalog Sewa Mobil Lepas Kunci (8 Unit Sesuai Permintaan)
 const lepasKunciCatalog = [
@@ -1342,7 +1341,7 @@ Mohon konfirmasi ketersediaan unit dan penawaran tarif terbaiknya. Terima kasih!
                             <div className="hero-feature-pill-list">
                                 <span className="hero-feature-pill">Free Pengantaran Area Dalam Kota Jogja</span>
                                 <span className="hero-feature-pill">Driver Profesional Ramah</span>
-                                <a href="#top-chart-7-hari" className="hero-feature-pill" style={{ textDecoration: 'none', background: '#FFF7ED', color: '#EA580C', borderColor: '#FDBA74', cursor: 'pointer' }}>Top Chart Sewa 7 Hari</a>
+                                <span className="hero-feature-pill">Harga Bersahabat &amp; Transparan</span>
                                 <span className="hero-feature-pill">Free Antar Jemput Stasiun/Hotel</span>
                             </div>
 
@@ -1661,9 +1660,6 @@ Mohon konfirmasi ketersediaan unit dan penawaran tarif terbaiknya. Terima kasih!
                     />
                 </div>
             </section>
-
-            {/* TOP CHART DAFTAR HARGA SEWA 7 HARI (PAKET MINGGUAN) */}
-            <TopChart7Hari />
 
             {/* HOW IT WORKS */}
             <section className="section-padding" style={{ backgroundColor: '#ffffff', paddingTop: '90px', paddingBottom: '90px' }}>
