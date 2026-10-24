@@ -407,6 +407,45 @@ export const seoKeywords: KeywordData[] = [
       'Supir profesional kami tidak hanya terlatih mengemudi dengan aman, tetapi juga merangkap sebagai pemandu wisata lokal yang ramah. Mereka siap menunjukkan jalan tikus bebas macet serta merekomendasikan destinasi kuliner tersembunyi yang lezat khas Yogyakarta.',
       'Dapatkan paket harga sewa All-In (Mobil, Driver, BBM) untuk mengontrol anggaran pengeluaran liburan Anda sejak awal dengan sangat mudah.'
     ]
+  },
+  {
+    slug: 'sewa-hiace-jogja',
+    type: 'car',
+    title: 'Sewa Hiace di Jogja Murah',
+    carName: 'Toyota Hiace Commuter & Hiace Premio',
+    priceAllIn: 1100000,
+    benefits: [
+      'Tersedia Toyota Hiace Commuter (15 Kursi) & Hiace Premio Luxury (14 Kursi) terbaru.',
+      'Paket All-In super hemat: Mobil + Driver Pariwisata Ramah + BBM Operasional.',
+      'AC ducting dingin ke setiap baris kursi, legroom longgar, dan suspensi empuk.',
+      'Free penjemputan di Stasiun Tugu, Lempuyangan, Bandara YIA, maupun Hotel.'
+    ],
+    imageUrl: '/images/toyota_hiace_premio.webp',
+    descriptionContent: [
+      'Mencari layanan <strong>sewa hiace di jogja</strong> dengan harga murah, unit bersih wangi, dan driver pariwisata berpengalaman? Aksara Transport adalah solusi terbaik untuk perjalanan rombongan keluarga besar, instansi kantor, study tour, hingga gathering komunitas di Yogyakarta.',
+      'Kami menyediakan dua varian minibus terbaik: <strong>Toyota Hiace Commuter</strong> berkapasitas 15 kursi yang sangat ekonomis, serta <strong>Toyota Hiace Premio</strong> berkapasitas 14 kursi dengan kabin semi-bonnet mewah yang super senyap dan berkelas.',
+      'Semua paket sewa Hiace Jogja kami sudah mencakup unit kendaraan prima, sopir ramah yang merangkap pemandu rute lokal, dan bahan bakar (BBM). Nikmati perjalanan wisata tanpa rasa lelah mengemudi ke destinasi populer seperti Candi Borobudur, Tebing Breksi, Lava Tour Merapi, hingga pantai-pantai eksotis Gunungkidul.'
+    ]
+  },
+  {
+    slug: 'sewa-mobil-jogja-dengan-sopir-murah',
+    type: 'general',
+    title: 'Sewa Mobil di Jogja dengan Sopir Murah',
+    carName: 'Avanza, Innova Reborn, Zenix & Hiace',
+    priceWithDriver: 550000,
+    priceAllIn: 600000,
+    benefits: [
+      'Driver ramah, sopan, berpakaian rapi, dan berpengalaman rute dalam & luar kota Jogja.',
+      'Harga paket All-In transparan: sudah termasuk mobil, jasa sopir profesional, dan BBM.',
+      'Pilihan armada lengkap: Avanza, Xpander, Innova Reborn Diesel, Zenix Hybrid, hingga Hiace.',
+      'Layanan antar jemput tepat waktu di Stasiun Tugu, Lempuyangan, Bandara YIA, atau Hotel.'
+    ],
+    imageUrl: '/images/toyota_avanza_facelift.webp',
+    descriptionContent: [
+      'Layanan <strong>sewa mobil di jogja dengan sopir murah</strong> dari Aksara Transport dirancang khusus bagi Anda yang ingin menikmati liburan atau perjalanan bisnis di Yogyakarta tanpa rasa lelah menghadapi kemacetan dan sulitnya mencari tempat parkir.',
+      'Driver kami bukan sekadar pengemudi biasa, melainkan tenaga profesional yang ramah, sopan, mengutamakan keselamatan penumpang, serta hafal jalan-jalan tikus tercepat dan rekomendasi kuliner legendaris khas Jogja yang otentik.',
+      'Tersedia beragam pilihan armada prima yang wangi dan bersih, mulai dari Toyota Avanza untuk keluarga kecil, Innova Reborn Diesel dan Innova Zenix Hybrid untuk kenyamanan kelas eksekutif, hingga minibus Toyota Hiace untuk rombongan wisata. Semua tarif sewa mobil dengan sopir kami dijamin transparan tanpa ada pungutan biaya tersembunyi.'
+    ]
   }
 ];
 

@@ -29,6 +29,41 @@ const nextConfig: NextConfig = {
         destination: '/:slug',
         permanent: true,
       },
+      {
+        source: '/sewa-hiace-di-jogja',
+        destination: '/sewa-hiace-jogja',
+        permanent: true,
+      },
+      {
+        source: '/sewa-mobil-hiace-jogja',
+        destination: '/sewa-hiace-jogja',
+        permanent: true,
+      },
+      {
+        source: '/mobil/sewa-hiace-jogja-murah',
+        destination: '/sewa-hiace-jogja',
+        permanent: true,
+      },
+      {
+        source: '/sewa-mobil-di-jogja-dengan-sopir',
+        destination: '/sewa-mobil-jogja-dengan-sopir-murah',
+        permanent: true,
+      },
+      {
+        source: '/artikel/sewa-mobil-jogja-dengan-sopir-murah',
+        destination: '/sewa-mobil-jogja-dengan-sopir-murah',
+        permanent: true,
+      },
+      {
+        source: '/sewa-mobil-dengan-sopir-murah',
+        destination: '/sewa-mobil-jogja-dengan-sopir-murah',
+        permanent: true,
+      },
+      {
+        source: '/sewa-mobil-jogja-dengan-supir',
+        destination: '/sewa-mobil-jogja-dengan-sopir-murah',
+        permanent: true,
+      },
     ];
   },
 };
