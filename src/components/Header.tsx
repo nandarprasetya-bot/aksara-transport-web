@@ -33,6 +33,7 @@ export default function Header() {
             dropdownItems: [
                 { href: '/mobil?service=lepasKunci', label: 'Sewa Lepas Kunci' },
                 { href: '/mobil?service=denganSopir', label: 'Dengan Driver' },
+                { href: '/#top-chart-7-hari', label: 'Top Chart Sewa 7 Hari' },
             ]
         },
         { href: '/wisata', label: 'Paket Wisata' },
