@@ -451,46 +451,46 @@ const denganSopirCars = [
         name: 'Toyota Alphard Facelift 2023', 
         category: 'luxury', 
         image: '/images/toyota_alphard.webp', 
-        badge: 'VIP Luxury', 
+        badge: 'VIP All-In', 
         badgeBg: '#f3e8ff', 
         badgeText: '#9333ea', 
         isLuxury: true, 
-        disclaimer: '* Pemakaian khusus area dalam kota.', 
+        isAlphard: true,
         rates: [
             { label: '12 Jam', price: 'Rp 2.899.000' }, { label: 'Fullday', price: 'Rp 2.999.999' }
         ], 
         startPrice: 'Rp 2.899.000', 
         queryName: 'Toyota+Alphard+Facelift+2023',
-        desc: 'Toyota Alphard Facelift menyajikan kemewahan premium MPV nomor satu di Indonesia. Dilengkapi Captain Seat mewah, kabin sangat senyap, dan sopir berseragam khusus untuk melayani perjalanan eksklusif Anda.',
-        features: ['Luxury Captain Seats', '7 Kursi VIP', 'Double Sunroof', 'Sopir Khusus Protokoler', 'Sudah Termasuk Unit + Driver + BBM'],
+        desc: 'Toyota Alphard Facelift menyajikan kemewahan premium MPV nomor satu di Indonesia. Paket All In lengkap BBM, Mobil, Driver profesional, Parkir, dan Refreshment VIP. Kabin super senyap dengan Captain Seat mewah.',
+        features: ['All In: BBM, Mobil, Driver, Parkir', 'Free Refreshment VIP', 'Luxury Captain Seats', 'Double Sunroof Mewah', 'Sopir Khusus Protokoler'],
         routes: [
             { route: 'Pernikahan (Wedding Car)', reason: 'Sangat anggun dan megah didekorasi bunga segar sebagai mobil pengantin.' },
             { route: 'Penyambutan Tamu Penting (VIP)', reason: 'Menunjukkan standar pelayanan tertinggi untuk menyambut kolega utama bisnis Anda.' }
         ],
-        waMessage: 'Halo Aksara Transport, mohon info detail sewa Toyota Alphard Facelift + Sopir VIP.'
+        waMessage: 'Halo Aksara Transport, saya ingin sewa unit DENGAN DRIVER Toyota Alphard Facelift (All In BBM, Mobil, Driver, Parkir + Refreshment).'
     },
     { 
         id: 'ds-alphard-hev', 
         name: 'Toyota Alphard HEV 2026', 
         category: 'luxury', 
         image: '/images/toyota_alphard_hev.webp', 
-        badge: 'VIP Hybrid', 
+        badge: 'VIP All-In', 
         badgeBg: '#f3e8ff', 
         badgeText: '#9333ea', 
         isLuxury: true, 
-        disclaimer: '* Pemakaian khusus area dalam kota.', 
+        isAlphard: true,
         rates: [
             { label: '12 Jam', price: 'Rp 3.899.999' }, { label: 'Fullday', price: 'Rp 3.999.999' }
         ], 
         startPrice: 'Rp 3.899.999', 
         queryName: 'Toyota+Alphard+HEV+2026',
-        desc: 'Sewa Toyota Alphard Hybrid (HEV) terbaru di Jogja. Teknologi mesin hybrid yang super senyap dan ramah lingkungan, dipadukan dengan kabin super mewah kelas eksekutif protokoler.',
-        features: ['Mesin Hybrid Super Senyap', 'Executive Lounge Captain Seats', 'Advanced Safety Assist', 'Sopir VIP Protokoler Profesional', 'Sudah Termasuk Unit + Driver + BBM'],
+        desc: 'Sewa Toyota Alphard Hybrid (HEV) terbaru di Jogja. Paket All In lengkap BBM, Mobil, Driver profesional, Parkir, dan Refreshment VIP. Mesin hybrid super senyap, kabin super mewah kelas eksekutif protokoler.',
+        features: ['All In: BBM, Mobil, Driver, Parkir', 'Free Refreshment VIP', 'Mesin Hybrid Super Senyap', 'Executive Lounge Captain Seats', 'Sopir VIP Protokoler Profesional'],
         routes: [
             { route: 'Event Kenegaraan / VIP Rombongan', reason: 'Kendaraan termewah yang menghadirkan wibawa dan kenyamanan maksimal.' },
             { route: 'Pernikahan Megah (Luxury Wedding)', reason: 'Pilihan terbaik untuk mengabadikan momen hari bahagia dengan kendaraan premium terbaru.' }
         ],
-        waMessage: 'Halo Aksara Transport, saya ingin menanyakan rental unit Toyota Alphard HEV Hybrid terbaru + Driver.'
+        waMessage: 'Halo Aksara Transport, saya ingin menanyakan rental unit Toyota Alphard HEV Hybrid terbaru All In BBM, Mobil, Driver, Parkir + Refreshment.'
     },
     { 
         id: 'ds-hiace-com', 
@@ -667,11 +667,37 @@ function CatalogMobilInner() {
                         </div>
                     ) : (
                         <>
-                            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                                <span style={{ color: 'var(--accent)', fontWeight: 700 }}>Include:</span> Mobil, Driver, BBM{car.isLuxury ? ', Refreshment' : ''}<br />
-                                <span style={{ color: 'var(--text-dark)', fontWeight: 700 }}>Exclude:</span> Tol, Parkir, Tiket wisata
-                            </div>
-                            <p style={{ fontSize: '0.825rem', color: 'var(--text-muted)', marginBottom: '12px', fontStyle: 'italic' }}>{car.disclaimer}</p>
+                            {(car.id === 'ds-alphard-fl' || car.id === 'ds-alphard-hev' || car.isLuxury) ? (
+                                <div style={{ marginBottom: '14px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                                    <div style={{ fontSize: '0.82rem', background: '#faf5ff', border: '1.5px solid #d8b4fe', borderRadius: '8px', padding: '8px 10px', lineHeight: 1.45 }}>
+                                        <div style={{ color: '#7e22ce', fontWeight: 800, marginBottom: '3px' }}>
+                                            ✨ INCLUDE : All In (BBM, Mobil, Driver, Parkir) + Refreshment
+                                        </div>
+                                        <div style={{ color: '#dc2626', fontWeight: 700 }}>
+                                            • EXCLUDE : Retribusi Wisata, Konsumsi Driver.
+                                        </div>
+                                    </div>
+                                    <div style={{ fontSize: '0.78rem', color: '#334155', background: '#f8fafc', border: '1px dashed #cbd5e1', borderRadius: '6px', padding: '6px 8px', lineHeight: 1.4 }}>
+                                        <div style={{ fontWeight: 600 }}>* Untuk Pemakaian 14 Jam Dan Maksimal Jam 22.00.</div>
+                                        <div style={{ fontWeight: 600, color: '#0369a1', marginTop: '2px' }}>* Pemakaian Meliputi Area Gunungkidul Dan Magelang Kota.</div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div style={{ marginBottom: '14px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                                    <div style={{ fontSize: '0.82rem', background: '#ecfdf5', border: '1.5px solid #a7f3d0', borderRadius: '8px', padding: '8px 10px', lineHeight: 1.45 }}>
+                                        <div style={{ color: '#047857', fontWeight: 800, marginBottom: '3px' }}>
+                                            ✅ INCLUDE : BBM, MOBIL, DRIVER
+                                        </div>
+                                        <div style={{ color: '#dc2626', fontWeight: 700 }}>
+                                            • EXCLUDE : Parkir, Retribusi Wisata, Konsumsi Driver.
+                                        </div>
+                                    </div>
+                                    <div style={{ fontSize: '0.78rem', color: '#334155', background: '#f8fafc', border: '1px dashed #cbd5e1', borderRadius: '6px', padding: '6px 8px', lineHeight: 1.4 }}>
+                                        <div style={{ fontWeight: 600 }}>* Untuk Pemakaian 14 Jam Dan Maksimal Jam 22.00.</div>
+                                        <div style={{ fontWeight: 600, color: '#0369a1', marginTop: '2px' }}>* Pemakaian Meliputi Area Gunungkidul Dan Magelang Kota.</div>
+                                    </div>
+                                </div>
+                            )}
                         </>
                     )}
                     
@@ -800,10 +826,37 @@ function CatalogMobilInner() {
                                     <span className="modal-price-label">Tarif Mulai</span>
                                     <span className="modal-price-val">{selectedModalCar.startPrice || selectedModalCar.price} <span>{selectedModalCar.priceUnit || '/hari'}</span></span>
                                 </div>
-                                {activeService === 'lepasKunci' && (
+                                {activeService === 'lepasKunci' ? (
                                     <p style={{ fontSize: '0.725rem', color: 'var(--text-muted)', marginTop: '10px', fontStyle: 'italic', lineHeight: '1.4', textAlign: 'center' }}>
                                         * Note: Paket 12 Jam &amp; 24 Jam hanya untuk weekday (Senin-Kamis). Paket Fullday untuk liburan panjang &amp; weekend (Jumat-Minggu).
                                     </p>
+                                ) : (
+                                    <div style={{
+                                        marginTop: '12px',
+                                        padding: '12px',
+                                        borderRadius: '8px',
+                                        backgroundColor: (selectedModalCar.id === 'ds-alphard-fl' || selectedModalCar.id === 'ds-alphard-hev' || selectedModalCar.isLuxury) ? '#faf5ff' : '#f0fdf4',
+                                        border: (selectedModalCar.id === 'ds-alphard-fl' || selectedModalCar.id === 'ds-alphard-hev' || selectedModalCar.isLuxury) ? '1.5px solid #d8b4fe' : '1.5px solid #bbf7d0',
+                                        fontSize: '0.8rem',
+                                        lineHeight: '1.45',
+                                        width: '100%',
+                                        textAlign: 'left'
+                                    }}>
+                                        <div style={{ fontWeight: 800, color: (selectedModalCar.id === 'ds-alphard-fl' || selectedModalCar.id === 'ds-alphard-hev' || selectedModalCar.isLuxury) ? '#6b21a8' : '#15803d', marginBottom: '4px' }}>
+                                            {(selectedModalCar.id === 'ds-alphard-fl' || selectedModalCar.id === 'ds-alphard-hev' || selectedModalCar.isLuxury)
+                                                ? '✨ INCLUDE : All In (BBM, Mobil, Driver, Parkir) + Refreshment' 
+                                                : '✅ INCLUDE : BBM, MOBIL, DRIVER'}
+                                        </div>
+                                        <div style={{ fontWeight: 700, color: '#dc2626', marginBottom: '6px' }}>
+                                            {(selectedModalCar.id === 'ds-alphard-fl' || selectedModalCar.id === 'ds-alphard-hev' || selectedModalCar.isLuxury)
+                                                ? '• EXCLUDE : Retribusi Wisata, Konsumsi Driver.'
+                                                : '• EXCLUDE : Parkir, Retribusi Wisata, Konsumsi Driver.'}
+                                        </div>
+                                        <div style={{ color: '#334155', fontWeight: 600, borderTop: '1px dashed #cbd5e1', paddingTop: '6px' }}>
+                                            <div>* Untuk Pemakaian 14 Jam Dan Maksimal Jam 22.00.</div>
+                                            <div style={{ marginTop: '2px', color: '#0369a1' }}>* Pemakaian Meliputi Area Gunungkidul Dan Magelang Kota.</div>
+                                        </div>
+                                    </div>
                                 )}
                             </div>
                             

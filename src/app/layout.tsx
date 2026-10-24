@@ -1,6 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -12,9 +18,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Jogja Sewa Mobil | Aksara Transport Murah & Terpercaya",
-  description: "Layanan sewa mobil Jogja lepas kunci dan pakai supir. Armada terlengkap: Avanza, Innova Reborn/Zenix, Hiace, Alphard. Harga murah dan pelayanan profesional.",
-  keywords: "jogja sewa mobil, sewa mobil jogja, rental mobil jogja, sewa mobil jogja lepas kunci, rental mobil murah jogja, sewa hiace jogja, sewa alphard jogja",
+  title: "Sewa Mobil Jogja Murah Lepas Kunci & Driver 24 Jam | Aksara Transport",
+  description: "Rental mobil Jogja murah 24 jam lepas kunci & dengan driver berpengalaman. Free antar jemput Stasiun Tugu, Lempuyangan, Bandara YIA & Hotel. Unit Brio, Avanza, Zenix, Hiace & Alphard prima.",
+  keywords: "sewa mobil jogja, rental mobil jogja, sewa mobil jogja lepas kunci, rental mobil jogja lepas kunci, rental mobil murah jogja, sewa hiace jogja, sewa alphard jogja, sewa innova zenix jogja, sewa mobil jogja dengan sopir, rental mobil jogja stasiun tugu, sewa mobil bandara yia",
   verification: {
     google: 'chh1k_l3xMe_SmRy_x-GRSuqPjhGC9SEWfJnAqvTXC0',
   },
@@ -26,16 +32,16 @@ export const metadata: Metadata = {
     canonical: 'https://jogjasewamobil.com',
   },
   openGraph: {
-    title: 'Jogja Sewa Mobil | Aksara Transport',
-    description: 'Layanan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan supir.',
+    title: 'Sewa Mobil Jogja Murah Lepas Kunci & Driver 24 Jam | Aksara Transport',
+    description: 'Rental mobil Jogja murah 24 jam lepas kunci & dengan driver berpengalaman. Free antar jemput Stasiun Tugu, Lempuyangan, Bandara YIA & Hotel.',
     url: 'https://jogjasewamobil.com',
-    siteName: 'Aksara Transport',
+    siteName: 'Aksara Transport Jogja',
     images: [
       {
-        url: 'https://jogjasewamobil.com/images/hero_car.webp',
+        url: 'https://jogjasewamobil.com/images/hero_reborn_hd.webp',
         width: 1200,
         height: 630,
-        alt: 'Sewa Mobil Jogja - Aksara Transport',
+        alt: 'Sewa Mobil Jogja Murah - Aksara Transport',
       },
     ],
     locale: 'id_ID',
@@ -43,26 +49,34 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jogja Sewa Mobil | Aksara Transport',
-    description: 'Layanan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan supir.',
-    images: ['https://jogjasewamobil.com/images/hero_car.webp'],
+    title: 'Sewa Mobil Jogja Murah Lepas Kunci & Driver 24 Jam | Aksara Transport',
+    description: 'Rental mobil Jogja murah 24 jam lepas kunci & dengan driver berpengalaman. Free antar jemput Stasiun Tugu, Lempuyangan, Bandara YIA & Hotel.',
+    images: ['https://jogjasewamobil.com/images/hero_reborn_hd.webp'],
   },
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'AutoRental',
+  '@type': 'WebSite',
+  '@id': 'https://jogjasewamobil.com/#website',
   name: 'Aksara Transport Jogja',
-  image: 'https://jogjasewamobil.com/icon.png',
   url: 'https://jogjasewamobil.com',
-  telephone: '+628386000740',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Jl. Imogiri Barat No.RT.4, Salakan, Bangunharjo, Kec. Sewon',
-    addressLocality: 'Kabupaten Bantul',
-    addressRegion: 'Daerah Istimewa Yogyakarta',
-    postalCode: '55188',
-    addressCountry: 'ID'
+  description: 'Layanan sewa dan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan driver profesional.',
+  publisher: {
+    '@type': 'Organization',
+    '@id': 'https://jogjasewamobil.com/#organization',
+    name: 'Aksara Transport Jogja',
+    url: 'https://jogjasewamobil.com',
+    logo: 'https://jogjasewamobil.com/icon.png',
+    telephone: '+628386000740',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Jl. Imogiri Barat No.RT.4, Salakan, Bangunharjo, Kec. Sewon',
+      addressLocality: 'Bantul',
+      addressRegion: 'Daerah Istimewa Yogyakarta',
+      postalCode: '55188',
+      addressCountry: 'ID'
+    }
   }
 };
 
@@ -81,6 +95,7 @@ export default function RootLayout({
     <html lang="id">
       <GoogleAnalytics gaId="G-G00BF38QDS" />
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
