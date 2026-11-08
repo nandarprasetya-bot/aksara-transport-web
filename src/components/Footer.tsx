@@ -26,7 +26,7 @@ export default function Footer() {
                 </div>
                 <div className="footer-col">
                     <h4>Layanan Populer</h4>
-                    <ul className="footer-links">
+                    <ul className="footer-links footer-services-grid">
                         <li><Link href="/sewa-mobil-jogja" style={{ fontWeight: 700, color: '#f59e0b' }}>Sewa Mobil Jogja</Link></li>
                         <li><Link href="/sewa-mobil-hiace-jogja" style={{ fontWeight: 700, color: '#f59e0b' }}>Sewa Hiace Jogja</Link></li>
                         <li><Link href="/sewa-mobil-brio-jogja">Sewa Brio Jogja</Link></li>
@@ -82,7 +82,7 @@ export default function Footer() {
             </div>
             
             {/* SEO Link Cloud */}
-            <div className="container" style={{ borderTop: '1px solid #1e293b', marginTop: '30px', paddingTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center', alignItems: 'center' }}>
+            <div className="container" style={{ borderTop: '1px solid #1e293b', marginTop: '16px', paddingTop: '14px', display: 'flex', flexWrap: 'wrap', gap: '8px 14px', justifyContent: 'center', alignItems: 'center' }}>
                 <span style={{ color: '#64748b', fontSize: '0.75rem', fontWeight: 700 }}>Pencarian Terkait:</span>
                 <Link href="/sewa-mobil-yogyakarta" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Sewa Mobil Yogyakarta</Link>
                 <span style={{ color: '#334155', fontSize: '0.75rem' }}>•</span>
@@ -103,7 +103,7 @@ export default function Footer() {
                 <Link href="/harga-sewa-mobil-jogja-dengan-supir" style={{ color: '#94a3b8', fontSize: '0.75rem', textDecoration: 'none' }} className="footer-seo-link">Harga Sewa Mobil Jogja Dengan Supir</Link>
             </div>
 
-            <div className="text-center" style={{ marginTop: '30px', fontSize: '0.8rem', color: '#64748b' }}>
+            <div className="text-center" style={{ marginTop: '16px', fontSize: '0.75rem', color: '#64748b' }}>
                 &copy; 2026 Aksara Transport. Seluruh Hak Cipta Dilindungi.
             </div>
         </footer>
