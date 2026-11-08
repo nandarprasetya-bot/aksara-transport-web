@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { dummyArticles } from '@/data/articles';
 
 // Data Katalog Sewa Mobil Lepas Kunci (8 Unit Sesuai Permintaan)
 const lepasKunciCatalog = [
@@ -2011,6 +2012,100 @@ Mohon konfirmasi ketersediaan unit dan penawaran tarif terbaiknya. Terima kasih!
                         >
                             Konsultasi Gratis via WhatsApp
                         </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION BLOG & ARTIKEL PILAR TERBARU (SEO POWERHOUSE) */}
+            <section className="section-padding" style={{ backgroundColor: '#f8fafc', paddingTop: '75px', paddingBottom: '75px', borderTop: '1px solid #e2e8f0' }}>
+                <div className="container">
+                    <div className="section-title text-center" style={{ marginBottom: '45px' }}>
+                        <span className="badge badge-accent" style={{ textTransform: 'uppercase', letterSpacing: '1px' }}>KONTEN &amp; TIPS TERBARU</span>
+                        <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '10px' }}>
+                            Tips Liburan &amp; Panduan Sewa Mobil Jogja
+                        </h2>
+                        <p style={{ color: 'var(--text-muted)', maxWidth: '650px', margin: '12px auto 0', fontSize: '1rem', lineHeight: '1.6' }}>
+                            Dapatkan rekomendasi destinasi wisata hits, panduan tarif rental mobil harian, dan tips perjalanan hemat di Yogyakarta.
+                        </p>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', alignItems: 'stretch' }}>
+                        {dummyArticles.slice(0, 3).map((item) => (
+                            <article 
+                                key={item.id} 
+                                style={{ 
+                                    backgroundColor: '#ffffff', 
+                                    borderRadius: '14px', 
+                                    overflow: 'hidden', 
+                                    border: '1px solid #e2e8f0', 
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.04)',
+                                    display: 'flex', 
+                                    flexDirection: 'column',
+                                    transition: 'transform 0.25s ease, box-shadow 0.25s ease'
+                                }}
+                            >
+                                <div style={{ position: 'relative', width: '100%', height: '210px', backgroundColor: '#e2e8f0' }}>
+                                    <Image 
+                                        src={item.image} 
+                                        alt={item.title} 
+                                        fill 
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        style={{ objectFit: 'cover' }} 
+                                    />
+                                    <div style={{ position: 'absolute', top: '14px', left: '14px', backgroundColor: 'var(--primary, #0284c7)', color: '#ffffff', padding: '4px 12px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase' }}>
+                                        {item.category}
+                                    </div>
+                                </div>
+
+                                <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                                    <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: '8px', fontWeight: 600 }}>
+                                        {new Date(item.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                    </div>
+                                    <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main)', lineHeight: '1.45', marginBottom: '12px' }}>
+                                        <Link href={`/artikel/${item.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                                            {item.title}
+                                        </Link>
+                                    </h3>
+                                    <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '20px', flex: 1, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                                        {item.excerpt}
+                                    </p>
+                                    <Link 
+                                        href={`/artikel/${item.slug}`}
+                                        style={{ 
+                                            color: 'var(--primary, #0284c7)', 
+                                            fontWeight: 700, 
+                                            fontSize: '0.9rem', 
+                                            textDecoration: 'none', 
+                                            display: 'inline-flex', 
+                                            alignItems: 'center', 
+                                            gap: '6px' 
+                                        }}
+                                    >
+                                        Baca Panduan Lengkap &rarr;
+                                    </Link>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+
+                    <div style={{ textAlign: 'center', marginTop: '45px' }}>
+                        <Link 
+                            href="/artikel" 
+                            className="btn btn-primary"
+                            style={{ 
+                                padding: '14px 32px', 
+                                borderRadius: '50px', 
+                                fontSize: '0.95rem', 
+                                fontWeight: 700, 
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px'
+                            }}
+                        >
+                            <span>Lihat Semua Artikel &amp; Tips Wisata</span>
+                            <span>&rarr;</span>
+                        </Link>
                     </div>
                 </div>
             </section>

@@ -57,27 +57,90 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': 'https://jogjasewamobil.com/#website',
-  name: 'Aksara Transport Jogja',
-  url: 'https://jogjasewamobil.com',
-  description: 'Layanan sewa dan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan driver profesional.',
-  publisher: {
-    '@type': 'Organization',
-    '@id': 'https://jogjasewamobil.com/#organization',
-    name: 'Aksara Transport Jogja',
-    url: 'https://jogjasewamobil.com',
-    logo: 'https://jogjasewamobil.com/icon.png',
-    telephone: '+628386000740',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Jl. Imogiri Barat No.RT.4, Salakan, Bangunharjo, Kec. Sewon',
-      addressLocality: 'Bantul',
-      addressRegion: 'Daerah Istimewa Yogyakarta',
-      postalCode: '55188',
-      addressCountry: 'ID'
+  '@graph': [
+    {
+      '@type': 'AutoRental',
+      '@id': 'https://jogjasewamobil.com/#autorental',
+      name: 'Aksara Transport Jogja - Rental & Sewa Mobil Jogja',
+      url: 'https://jogjasewamobil.com',
+      image: 'https://jogjasewamobil.com/images/hero_reborn_hd.webp',
+      logo: 'https://jogjasewamobil.com/icon.png',
+      description: 'Pusat rental dan sewa mobil Jogja murah 24 jam lepas kunci & dengan supir. Unit Brio, Avanza, Zenix, Hiace & Alphard prima. Gratis antar jemput Stasiun Tugu, Lempuyangan, Bandara YIA & Hotel.',
+      telephone: '+628386000740',
+      priceRange: 'Rp 275.000 - Rp 3.500.000',
+      currenciesAccepted: 'IDR',
+      paymentAccepted: 'Cash, Bank Transfer, QRIS, Credit Card',
+      areaServed: [
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Daerah Istimewa Yogyakarta'
+        },
+        {
+          '@type': 'City',
+          name: 'Yogyakarta'
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Sleman'
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Bantul'
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Gunungkidul'
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Kulon Progo'
+        }
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Jl. Imogiri Barat No.RT.4, Salakan, Bangunharjo, Kec. Sewon',
+        addressLocality: 'Bantul',
+        addressRegion: 'Daerah Istimewa Yogyakarta',
+        postalCode: '55188',
+        addressCountry: 'ID'
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: -7.838426,
+        longitude: 110.373516
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+            'Sunday'
+          ],
+          opens: '00:00',
+          closes: '23:59'
+        }
+      ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        bestRating: '5',
+        ratingCount: '870',
+        reviewCount: '870'
+      }
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://jogjasewamobil.com/#website',
+      name: 'Aksara Transport Jogja',
+      url: 'https://jogjasewamobil.com',
+      description: 'Layanan sewa dan rental mobil terbaik di Yogyakarta. Lepas kunci & dengan driver profesional.'
     }
-  }
+  ]
 };
 
 import { GoogleAnalytics } from '@next/third-parties/google';

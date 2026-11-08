@@ -27,6 +27,8 @@ export default function Footer() {
                 <div className="footer-col">
                     <h4>Layanan Populer</h4>
                     <ul className="footer-links">
+                        <li><Link href="/sewa-mobil-jogja" style={{ fontWeight: 700, color: '#f59e0b' }}>Sewa Mobil Jogja</Link></li>
+                        <li><Link href="/sewa-mobil-hiace-jogja" style={{ fontWeight: 700, color: '#f59e0b' }}>Sewa Hiace Jogja</Link></li>
                         <li><Link href="/sewa-mobil-brio-jogja">Sewa Brio Jogja</Link></li>
                         <li><Link href="/sewa-mobil-avanza-jogja">Sewa Avanza Jogja</Link></li>
                         <li><Link href="/sewa-mobil-inova-reborn-jogja">Sewa Innova Reborn</Link></li>
