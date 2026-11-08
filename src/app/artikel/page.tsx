@@ -41,8 +41,8 @@ export default async function ArtikelPage(props: {
         articles = dummyArticles;
     }
 
-    // Filter dummy if using dummy
-    if (!supabase && categoryFilter !== 'Semua') {
+    // Filter dummy if category filter applied on fallback
+    if (categoryFilter !== 'Semua' && (!supabase || articles === dummyArticles)) {
         articles = articles.filter(a => a.category === categoryFilter);
     }
 

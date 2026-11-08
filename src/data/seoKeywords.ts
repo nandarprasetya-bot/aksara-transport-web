@@ -259,6 +259,29 @@ export const seoKeywords: KeywordData[] = [
 
   // --- GENERAL KEYWORDS (Samudra Biru / Niche) ---
   {
+    slug: 'sewa-mobil-jogja',
+    type: 'general',
+    title: 'Sewa Mobil Jogja Murah Lepas Kunci & Supir',
+    carName: 'Brio, Avanza, Innova Reborn, Zenix & Hiace',
+    price12: 275000,
+    price24: 325000,
+    fullday: 325000,
+    priceWithDriver: 500000,
+    priceAllIn: 550000,
+    benefits: [
+      'Penyedia sewa mobil Jogja nomor 1: armada terlengkap, bersih, wangi, dan diservis berkala.',
+      'Pilihan rental lepas kunci 24 jam fleksibel atau paket sewa all-in bersama driver lokal ramah.',
+      'Gratis layanan antar jemput unit di Stasiun Tugu, Stasiun Lempuyangan, Bandara YIA & Hotel.',
+      'Harga transparan tanpa biaya tersembunyi, siap melayani kebutuhan wisata, dinas, dan wisuda.'
+    ],
+    imageUrl: '/images/hero_reborn_hd.webp',
+    descriptionContent: [
+      'Selamat datang di Aksara Transport, penyedia jasa <strong>sewa mobil jogja</strong> paling terpercaya yang siap melayani segala kebutuhan mobilitas Anda di Daerah Istimewa Yogyakarta. Baik untuk liburan keluarga, perjalanan bisnis dinas kantor, acara pernikahan, wisuda kampus, hingga tour wisata rombongan, kami memiliki unit kendaraan yang tepat dengan harga yang sangat bersaing.',
+      'Kami menyediakan jajaran armada modern keluaran terbaru yang selalu dirawat di bengkel resmi: mulai dari city car lincah Honda Brio untuk menjelajahi gang-gang kuliner Jogja, MPV keluarga legendaris Toyota Avanza dan Mitsubishi Xpander, kelas eksekutif Innova Reborn Diesel dan Innova Zenix Hybrid, SUV tangguh Mitsubishi Pajero dan Toyota Fortuner, hingga minibus rombongan Toyota Hiace Commuter dan Premio.',
+      'Dapatkan kebebasan menjelajah dengan opsi <strong>rental mobil jogja lepas kunci</strong> 24 jam dengan syarat mudah dan proses verifikasi cepat. Bagi Anda yang ingin menikmati perjalanan tanpa rasa lelah menghadapi macetnya jalanan wisata, supir profesional kami yang ramah dan sopan siap mengantar Anda ke destinasi favorit seperti Malioboro, Candi Prambanan, Lava Tour Merapi, hingga pantai-pantai eksotis di Gunungkidul.'
+    ]
+  },
+  {
     slug: 'sewa-mobil-terdekat',
     type: 'general',
     title: 'Sewa Mobil Terdekat',
@@ -425,6 +448,25 @@ export const seoKeywords: KeywordData[] = [
       'Mencari layanan <strong>sewa hiace di jogja</strong> dengan harga murah, unit bersih wangi, dan driver pariwisata berpengalaman? Aksara Transport adalah solusi terbaik untuk perjalanan rombongan keluarga besar, instansi kantor, study tour, hingga gathering komunitas di Yogyakarta.',
       'Kami menyediakan dua varian minibus terbaik: <strong>Toyota Hiace Commuter</strong> berkapasitas 15 kursi yang sangat ekonomis, serta <strong>Toyota Hiace Premio</strong> berkapasitas 14 kursi dengan kabin semi-bonnet mewah yang super senyap dan berkelas.',
       'Semua paket sewa Hiace Jogja kami sudah mencakup unit kendaraan prima, sopir ramah yang merangkap pemandu rute lokal, dan bahan bakar (BBM). Nikmati perjalanan wisata tanpa rasa lelah mengemudi ke destinasi populer seperti Candi Borobudur, Tebing Breksi, Lava Tour Merapi, hingga pantai-pantai eksotis Gunungkidul.'
+    ]
+  },
+  {
+    slug: 'sewa-mobil-hiace-jogja',
+    type: 'car',
+    title: 'Sewa Mobil Hiace Jogja Murah All-In',
+    carName: 'Toyota Hiace Commuter & Hiace Premio',
+    priceAllIn: 1100000,
+    benefits: [
+      'Layanan sewa mobil Hiace Jogja terlengkap: varian Commuter 15 seat dan Premio Luxury 14 seat.',
+      'Paket All-In tanpa ribet: sudah include mobil bersih wangi, jasa driver pariwisata, dan BBM.',
+      'Sangat cocok untuk rombongan keluarga besar, study tour sekolah, kedinasan kantor, hingga tour wisata.',
+      'Free antar-jemput di Stasiun Tugu, Stasiun Lempuyangan, Bandara YIA, atau hotel di Jogja.'
+    ],
+    imageUrl: '/images/toyota_hiace_premio.webp',
+    descriptionContent: [
+      'Layanan <strong>sewa mobil hiace jogja</strong> dari Aksara Transport dirancang untuk memberikan kenyamanan maksimal bagi perjalanan rombongan di Yogyakarta. Minibus Toyota Hiace telah lama diakui sebagai pilihan utama berkat bantingan suspensi yang empuk, kabin yang lapang dan hening, serta pendingin AC individual di setiap baris kursi.',
+      'Kami menyediakan unit Toyota Hiace Commuter berkapasitas hingga 15 orang serta Toyota Hiace Premio Luxury dengan interior mewah berkapasitas 14 penumpang. Semua unit kami selalu dalam kondisi prima, wangi, bersih, dan melalui inspeksi keselamatan ketat sebelum menjemput Anda.',
+      'Dengan paket harga All-In yang hemat, Anda dan rombongan bebas menjelajahi destinasi wisata hits Yogyakarta seperti Pantai Indrayanti Gunungkidul, Hutan Pinus Mangunan, Candi Prambanan, hingga wisata alam Kaliurang tanpa perlu lelah menyetir.'
     ]
   },
   {

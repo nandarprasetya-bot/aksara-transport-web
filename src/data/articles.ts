@@ -1,5 +1,287 @@
 export const dummyArticles = [
     {
+        id: 'sewa-mobil-jogja-panduan-2026',
+        created_at: '2026-11-08T12:00:00Z',
+        title: 'Panduan Lengkap Sewa Mobil Jogja 2026: Tips Hemat, Syarat Lepas Kunci & Daftar Harga Terbaru',
+        slug: 'panduan-lengkap-sewa-mobil-jogja-harga-terbaru',
+        category: 'Tips',
+        image: '/images/hero_reborn_hd.webp',
+        excerpt: 'Mencari layanan sewa mobil Jogja murah dan terpercaya? Simak panduan lengkap rental mobil Jogja 2026: tips hemat, perbandingan lepas kunci vs sopir, syarat dokumen, dan daftar harga terbaru.',
+        content: `
+            <p>Merencanakan liburan, kunjungan kerja, atau reuni keluarga ke Yogyakarta? Salah satu kunci utama agar mobilitas Anda lancar, nyaman, dan terbebas dari stres kemacetan adalah memilih sarana transportasi yang tepat. Mengandalkan transportasi umum atau transportasi daring (ojek/taksi online) seringkali merepotkan, terutama saat Anda membawa koper banyak atau ingin menjelajahi destinasi yang letaknya berjauhan seperti dari pusat kota menuju pantai-pantai eksotis di Gunungkidul atau perbukitan Menoreh di Kulon Progo.</p>
+
+            <p>Oleh karena itu, memanfaatkan jasa <strong><a href="/sewa-mobil-jogja">sewa mobil jogja</a></strong> merupakan keputusan terbaik yang paling fleksibel dan hemat anggaran. Melalui panduan komprehensif edisi 2026 ini, kami merangkum semua informasi esensial yang Anda butuhkan: mulai dari perbandingan sewa lepas kunci vs dengan supir, syarat dan ketentuan sewa, hingga estimasi harga sewa mobil harian terbaru di Yogyakarta.</p>
+
+            <h2>Mengapa Memilih Sewa Mobil di Jogja Lebih Menguntungkan?</h2>
+            <p>Bagi wisatawan maupun rombongan dinas, menggunakan <em>rental mobil jogja</em> memberikan serangkaian keuntungan nyata dibandingkan moda transportasi lainnya:</p>
+            <ul>
+                <li><strong>Rute dan Waktu Sepenuhnya Fleksibel:</strong> Anda bebas menentukan kapan berangkat, berapa lama singgah di tempat wisata, dan kapan kembali ke hotel tanpa diburu waktu atau terikat rute angkutan umum.</li>
+                <li><strong>Jauh Lebih Hemat untuk Rombongan:</strong> Jika Anda bepergian bersama 3 hingga 7 orang, biaya sewa harian mobil (seperti Avanza atau Brio) jauh lebih hemat jika dihitung per orang dibandingkan memesan taksi online berkali-kali.</li>
+                <li><strong>Akses Tanpa Batas ke Destinasi Terpencil:</strong> Banyak destinasi wisata hits seperti HeHa Ocean View, Obelix Hills, Air Terjun Sri Gethuk, hingga Tumpeng Menoreh berada di luar jangkauan operasional transportasi online reguler.</li>
+                <li><strong>Layanan Antar-Jemput Gratis (Free Delivery):</strong> Jasa sewa mobil terpercaya di Jogja seperti Aksara Transport menyediakan fasilitas antar dan ambil unit kendaraan langsung di Stasiun Tugu Yogyakarta, Stasiun Lempuyangan, Bandara Internasional Yogyakarta (YIA), maupun lobi hotel tempat Anda menginap.</li>
+            </ul>
+
+            <h2>Sewa Mobil Lepas Kunci vs Sewa Mobil dengan Supir: Mana yang Pas untuk Anda?</h2>
+            <p>Penyedia rental kendaraan umumnya menawarkan dua sistem penyewaan. Pilihlah sesuai dengan preferensi dan gaya liburan Anda:</p>
+
+            <h3>1. Sewa Mobil Jogja Lepas Kunci (Self-Drive 24 Jam)</h3>
+            <p>Pilihan <strong><a href="/sewa-mobil-lepas-kunci-jogja-24-jam">sewa mobil jogja lepas kunci</a></strong> sangat digemari oleh wisatawan muda, pasangan solo traveler, atau mereka yang menginginkan privasi maksimal tanpa kehadiran orang asing di dalam kendaraan. Anda dapat leluasa mengatur musik, obrolan pribadi, dan jadwal bepergian sesuka hati.</p>
+            <p>Pilihan armada city car kompak seperti <a href="/sewa-mobil-brio-jogja">Honda Brio</a> atau hatchback gesit sangat ideal untuk menembus gang-gang kuliner sempit dan mempermudah pencarian parkir di sekitar Malioboro.</p>
+            <p><strong>Syarat Umum Sewa Lepas Kunci di Aksara Transport:</strong></p>
+            <ul>
+                <li>Foto KTP asli penyewa (e-KTP).</li>
+                <li>Foto SIM A yang masih berlaku aktif.</li>
+                <li>Tiket perjalanan (tiket kereta api pulang-pergi atau tiket pesawat) dan bukti reservasi hotel/penginapan di Jogja.</li>
+                <li>Akun media sosial aktif (Instagram / LinkedIn) untuk verifikasi identitas cepat.</li>
+            </ul>
+
+            <h3>2. Sewa Mobil Jogja dengan Supir (All-In / Driver Pariwisata)</h3>
+            <p>Jika Anda berlibur bersama keluarga besar, lansia, atau anak-anak, opsi <strong><a href="/sewa-mobil-jogja-dengan-sopir-murah">sewa mobil di jogja dengan sopir</a></strong> adalah pilihan paling bijak dan nyaman. Anda tidak perlu memikirkan lelahnya menyetir setelah seharian beraktivitas, apalagi menghadapi tanjakan curam di kawasan Gunungkidul atau Kaliurang.</p>
+            <p>Keunggulan driver dari Aksara Transport:</p>
+            <ul>
+                <li>Driver lokal berpengalaman yang ramah, sopan, berpakaian rapi, dan tidak merokok di dalam kabin.</li>
+                <li>Hafal jalur-jalur tikus bebas macet saat musim liburan (peak season).</li>
+                <li>Bisa merangkap sebagai tour guide lokal yang siap memberi rekomendasi kuliner hidden gem otentik Jogja serta spot foto terbaik.</li>
+            </ul>
+
+            <h2>Daftar Harga Sewa Mobil Jogja Terbaru 2026</h2>
+            <p>Aksara Transport memberikan garansi tarif transparan tanpa biaya siluman. Berikut perbandingan harga rental mobil harian terfavorit di Yogyakarta:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipe Mobil</th>
+                            <th>Kapasitas</th>
+                            <th>Lepas Kunci (24 Jam)</th>
+                            <th>Mobil + Driver</th>
+                            <th>Paket All-In (Mobil + Driver + BBM)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><a href="/sewa-mobil-brio-jogja">Honda Brio Matic</a></strong></td>
+                            <td>4 - 5 Penumpang</td>
+                            <td>Rp 325.000</td>
+                            <td>Rp 475.000</td>
+                            <td>Rp 550.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="/sewa-mobil-avanza-jogja">Toyota Avanza Facelift</a></strong></td>
+                            <td>7 Penumpang</td>
+                            <td>Rp 350.000</td>
+                            <td>Rp 500.000</td>
+                            <td>Rp 600.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="/sewa-mobil-inova-reborn-jogja">Toyota Innova Reborn Diesel</a></strong></td>
+                            <td>7 Penumpang</td>
+                            <td>Rp 550.000</td>
+                            <td>Rp 650.000</td>
+                            <td>Rp 800.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="/sewa-mobil-inova-zenix-jogja">Toyota Innova Zenix Hybrid</a></strong></td>
+                            <td>7 Penumpang</td>
+                            <td>-</td>
+                            <td>Rp 900.000</td>
+                            <td>Rp 1.100.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="/sewa-hiace-jogja">Toyota Hiace Commuter</a></strong></td>
+                            <td>14 - 15 Penumpang</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>Rp 1.100.000 (All-In)</td>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="/sewa-mobil-hiace-premio-jogja">Toyota Hiace Premio Luxury</a></strong></td>
+                            <td>14 Penumpang</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>Rp 1.350.000 (All-In)</td>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="/sewa-mobil-alphard-jogja">Toyota Alphard Transformer / HEV</a></strong></td>
+                            <td>6 - 7 Penumpang VIP</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>Rp 2.800.000 - Rp 3.500.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><em>*Catatan: Harga dapat mengalami penyesuaian saat periode Idul Fitri, Natal, dan Tahun Baru. Untuk ketersediaan unit terbaru, silakan cek halaman <a href="/mobil">katalog sewa mobil</a> kami.</em></p>
+
+            <h2>5 Tips Cerdas Memilih Rental Mobil di Jogja Agar Bebas Khawatir</h2>
+            <ol>
+                <li><strong>Booking Lebih Awal Sebelum Keberangkatan:</strong> Saat akhir pekan panjang atau masa liburan sekolah, ketersediaan unit sewa mobil di Jogja sangat cepat habis. Amankan unit Anda minimal 3 hingga 7 hari sebelum jadwal tiba.</li>
+                <li><strong>Lakukan Pengecekan Fisik Mobil (Walkaround Check):</strong> Saat serah terima mobil lepas kunci, periksa bersama petugas kondisi bodi, lampu, AC, ban cadangan, dan level bensin. Jangan ragu mengambil video atau foto keliling sebagai bukti awal.</li>
+                <li><strong>Ketahui Ketentuan Overtime Secara Jelas:</strong> Tanyakan biaya kelebihan jam penggunaan (overtime fee). Pada umumnya di Yogyakarta, biaya overtime dihitung sekitar 10% per jam dari harga sewa harian.</li>
+                <li><strong>Pilih Penjemputan di Titik Strategis:</strong> Mengatur penjemputan unit di <a href="/rental-mobil-jogja-dekat-stasiun-tugu">Stasiun Tugu</a> atau Stasiun Lempuyangan langsung saat kereta tiba akan sangat menghemat waktu dan ongkos transfer bagasi.</li>
+                <li><strong>Pastikan Kondisi Mesin Terawat dan Kabin Higienis:</strong> Pilihlah rental yang memiliki komitmen servis berkala di bengkel resmi serta kabin bersih bebas bau rokok agar anggota keluarga tetap nyaman.</li>
+            </ol>
+
+            <h2>Pertanyaan yang Sering Diajukan (FAQ Sewa Mobil Jogja)</h2>
+            <div class="faq-section">
+                <h3>Apakah bisa sewa mobil lepas kunci untuk penyewa dari luar kota?</h3>
+                <p>Bisa. Aksara Transport secara khusus melayani wisatawan dan tamu dari luar kota Yogyakarta dengan syarat verifikasi data identitas (KTP, SIM A, tiket kepulangan, serta bukti reservasi hotel) yang praktis melalui WhatsApp.</p>
+
+                <h3>Berapa lama durasi hitungan sewa mobil harian?</h3>
+                <p>Untuk rental lepas kunci berlaku durasi 24 jam penuh per hari sewa. Sedangkan untuk paket dengan sopir tersedia pilihan 12 jam, fullday (sampai pukul 23.00 WIB), atau paket multiday luar kota.</p>
+
+                <h3>Apakah tarif sewa mobil sudah termasuk biaya bahan bakar (BBM) dan parkir?</h3>
+                <p>Untuk paket "All-In", tarif sudah mencakup mobil, supir profesional, dan bahan bakar (BBM). Biaya parkir tempat wisata dan tiket masuk destinasi disesuaikan dengan pengeluaran riil di lapangan.</p>
+            </div>
+
+            <div class="article-cta-box">
+                <h3>Butuh Sewa Mobil Jogja Cepat & Terpercaya?</h3>
+                <p>Konsultasikan kebutuhan transportasi Anda bersama tim <strong>Aksara Transport</strong>. Kami siap menyediakan armada bersih, wangi, dengan pelayanan ramah 24 jam non-stop.</p>
+                <p><a href="https://wa.me/6281226500599?text=Halo%20Aksara%20Transport,%20saya%20ingin%20tanya%20info%20dan%20promo%20sewa%20mobil%20jogja" class="btn-wa" target="_blank" rel="noopener noreferrer">📲 Chat WhatsApp Customer Care Kami Sekarang</a></p>
+            </div>
+        `
+    },
+    {
+        id: 'sewa-hiace-jogja-panduan-2026',
+        created_at: '2026-11-08T11:00:00Z',
+        title: 'Sewa Hiace Jogja Murah 2026: Pilihan Toyota Hiace Commuter & Premio Luxury untuk Rombongan',
+        slug: 'sewa-mobil-hiace-jogja-commuter-premio-harga-murah',
+        category: 'Wisata',
+        image: '/images/toyota_hiace_premio.webp',
+        excerpt: 'Ingin liburan rombongan nyaman di Yogyakarta? Dapatkan layanan sewa Hiace Jogja murah 2026: komparasi Toyota Hiace Commuter 15 kursi vs Premio Luxury 14 kursi, paket all-in supir + BBM, dan rekomendasi rute wisata.',
+        content: `
+            <p>Merencanakan liburan rombongan keluarga besar, gathering instansi kantor, study tour sekolah, atau arisan keluarga ke Daerah Istimewa Yogyakarta? Salah satu tantangan terbesar bagi rombongan berjumlah 8 hingga 15 orang adalah koordinasi kendaraan. Menggunakan 2 atau 3 mobil kecil seringkali membuat rombongan terpisah di jalan karena macet, biaya bahan bakar dan tol berlipat ganda, serta keterbatasan tempat parkir di spot wisata.</p>
+
+            <p>Solusi paling efisien, hemat, dan prestisius adalah menggunakan layanan <strong><a href="/sewa-hiace-jogja">sewa hiace jogja</a></strong> atau <a href="/sewa-mobil-hiace-jogja">sewa mobil hiace jogja</a>. Toyota Hiace telah terbukti menjadi armada minibus pariwisata paling diminati di Indonesia berkat kenyamanan suspensinya yang empuk, kabin lega nan lapang, serta pendingin udara (AC) merata ke setiap baris kursi.</p>
+
+            <p>Melalui artikel ini, Aksara Transport memberikan panduan lengkap mengenai pilihan varian Toyota Hiace, perbandingan spesifikasi, daftar harga sewa Hiace Jogja terbaru 2026, hingga rekomendasi rute wisata terbaik untuk rombongan Anda.</p>
+
+            <h2>Mengapa Toyota Hiace Menjadi Minibus Wisata Nomor 1 di Jogja?</h2>
+            <p>Ada alasan kuat mengapa Toyota Hiace lebih difavoritkan dibandingkan microbus konvensional lainnya seperti Isuzu Elf:</p>
+            <ul>
+                <li><strong>Kenyamanan Suspensi Mirip Mobil Pribadi:</strong> Menggunakan sasis monokok modern dan peredam kejut berkualitas tinggi, bantingan suspensi Toyota Hiace terasa sangat empuk dan tidak mudah mengocok perut penumpang saat melintasi jalur bergelombang.</li>
+                <li><strong>Kabin Super Senyap & Nyaman:</strong> Sistem insulasi kabin yang optimal membuat kebisingan mesin diesel dan deru angin luar teredam sangat baik, sehingga rombongan dapat beristirahat atau bernyanyi bersama dengan santai.</li>
+                <li><strong>AC Ducting Individual:</strong> Setiap baris kursi memiliki lubang kisi-kisi AC sendiri di plafon atas. Tidak ada lagi penumpang di baris belakang yang merasa kegerahan di tengah cuaca terik Yogyakarta.</li>
+                <li><strong>Legroom Longgar & Sandaran Reclining:</strong> Seluruh jok dilengkapi fitur sandaran yang dapat direbahkan (reclining seat) serta jarak antarkursi yang cukup longgar, membuat perjalanan jarak jauh ke Gunungkidul atau Kaliurang tetap bebas pegal.</li>
+            </ul>
+
+            <h2>Komparasi Toyota Hiace Commuter vs Toyota Hiace Premio Luxury</h2>
+            <p>Di Aksara Transport Jogja, kami menyediakan dua varian Toyota Hiace generasi terbaru yang bisa Anda sesuaikan dengan kebutuhan dan anggaran:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fitur & Karakteristik</th>
+                            <th>Toyota Hiace Commuter</th>
+                            <th>Toyota Hiace Premio Luxury</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kapasitas Penumpang</strong></td>
+                            <td>14 hingga 15 Kursi</td>
+                            <td>11 hingga 14 Kursi (Captain Seat Option)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Desain Moncong Depan</strong></td>
+                            <td>Cab-over (Mesin di bawah jok depan)</td>
+                            <td>Semi-bonnet (Moncong panjang di depan)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Performa Mesin</strong></td>
+                            <td>2.500 cc D-4D Common Rail Turbo</td>
+                            <td>2.800 cc 1GD-FTV Power Kuat & Halus</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tingkat Kenyamanan</strong></td>
+                            <td>Sangat Nyaman untuk Wisata Hemat</td>
+                            <td>Premium Class / Setara VIP Lounge</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Peruntukan Acara</strong></td>
+                            <td>Keluarga besar, study tour, rombongan arisan</td>
+                            <td>Tamu kedinasan, direksi perusahaan, VIP tour</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Daftar Harga Paket Sewa Hiace Jogja Terbaru 2026</h2>
+            <p>Aksara Transport menyediakan paket sewa Hiace terjangkau dengan skema <strong>All-In</strong> sehingga Anda tidak perlu pusing memikirkan uang saku operasional supir atau pengeluaran BBM:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Varian Armada</th>
+                            <th>Durasi Sewa</th>
+                            <th>Fasilitas Termasuk</th>
+                            <th>Tarif Paket All-In</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><a href="/sewa-mobil-hiace-commuter-jogja">Toyota Hiace Commuter</a></strong></td>
+                            <td>Fullday (sd 23.00 WIB)</td>
+                            <td>Mobil + Driver Pariwisata + BBM</td>
+                            <td><strong>Rp 1.100.000</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong><a href="/sewa-mobil-hiace-premio-jogja">Toyota Hiace Premio Standar</a></strong></td>
+                            <td>Fullday (sd 23.00 WIB)</td>
+                            <td>Mobil + Driver Pariwisata + BBM</td>
+                            <td><strong>Rp 1.350.000</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Toyota Hiace Premio Luxury VIP</strong></td>
+                            <td>Fullday (sd 23.00 WIB)</td>
+                            <td>Mobil + Driver VIP + BBM + Air Mineral</td>
+                            <td><strong>Rp 1.600.000 - Rp 1.800.000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><em>*Tarif berlaku untuk area Daerah Istimewa Yogyakarta dan sekitarnya (termasuk Candi Borobudur). Untuk rute luar kota seperti Solo, Semarang, atau Dataran Tinggi Dieng, silakan hubungi tim kami untuk penawaran terbaik.</em></p>
+
+            <h2>Ide Itinerary Wisata Rombongan Terbaik dengan Sewa Hiace Jogja</h2>
+            <p>Dengan kapasitas kabin yang besar dan mesin yang bertenaga, Toyota Hiace sangat tangguh menjelajahi berbagai topografi wisata di Yogyakarta. Berikut rekomendasi paket rute 1 hari yang paling disukai rombongan:</p>
+            <ol>
+                <li><strong>Rute Sejarah & Budaya:</strong> Penjemputan di Stasiun Tugu / Hotel &rarr; Keraton Yogyakarta & Tamansari &rarr; Candi Prambanan & Tebing Breksi &rarr; Makan Malam di Sentra Gudeg Wijilan &rarr; Belanja Oleh-oleh Bakpia Pathok.</li>
+                <li><strong>Rute Alam & Petualangan Merapi:</strong> Penjemputan &rarr; Lava Tour Merapi Jeep Adventure Kaliurang &rarr; Kopi Klotok Pakem Sleman &rarr; Agrowisata Bhumi Merapi &rarr; Sunset di Obelix Hills.</li>
+                <li><strong>Rute Eksotis Pantai Gunungkidul:</strong> Penjemputan Pagi &rarr; Goa Pindul Cave Tubing &rarr; Pantai Drini / Pantai Indrayanti &rarr; HeHa Ocean View Sunset &rarr; Makan Malam Khas Sate Klatak Bantul.</li>
+            </ol>
+
+            <h2>Fasilitas Penjemputan Gratis di Semua Titik Kedatangan</h2>
+            <p>Tidak perlu repot mencari transportasi penyambung. Driver Aksara Transport siap menyambut rombongan Anda tepat waktu di:</p>
+            <ul>
+                <li>Bandara Internasional Yogyakarta (YIA Kulon Progo)</li>
+                <li>Stasiun Tugu Yogyakarta & Stasiun Lempuyangan</li>
+                <li>Hotel atau villa tempat rombongan menginap di seputar kota Jogja & Sleman</li>
+            </ul>
+
+            <h2>Pertanyaan yang Sering Diajukan (FAQ Sewa Hiace Jogja)</h2>
+            <div class="faq-section">
+                <h3>Apakah bisa menyewa Toyota Hiace lepas kunci (tanpa supir)?</h3>
+                <p>Untuk armada Toyota Hiace Commuter dan Premio, kami hanya melayani paket sewa bersama pengemudi profesional pariwisata. Dimensi minibus yang besar membutuhkan keahlian khusus dalam bermanuver di jalan perbukitan dan area parkir wisata demi keselamatan seluruh rombongan.</p>
+
+                <h3>Berapa banyak koper atau barang bawaan yang muat di bagasi Hiace?</h3>
+                <p>Toyota Hiace Commuter dan Premio memiliki ruang bagasi belakang yang lega serta lorong bawah kursi yang mampu menampung 8-12 koper ukuran sedang beserta kardus oleh-oleh khas Jogja.</p>
+
+                <h3>Bagaimana cara booking sewa mobil Hiace di Aksara Transport?</h3>
+                <p>Proses pemesanan sangat mudah dan cepat. Cukup klik tombol WhatsApp kami, sampaikan tanggal sewa, tujuan wisata, dan varian Hiace yang diinginkan. Tim kami akan segera mengonfirmasi ketersediaan unit dan mengirimkan invoice resmi pemesanan.</p>
+            </div>
+
+            <div class="article-cta-box">
+                <h3>Rencanakan Wisata Rombongan Anda Sekarang!</h3>
+                <p>Dapatkan pengalaman perjalanan rombongan yang tak terlupakan dengan kenyamanan <strong>Toyota Hiace dari Aksara Transport Jogja</strong>. Booking armada Anda sekarang sebelum tanggal keberangkatan Anda terisi penuh!</p>
+                <p><a href="https://wa.me/6281226500599?text=Halo%20Aksara%20Transport,%20saya%20ingin%20sewa%20Hiace%20Jogja%20untuk%20rombongan" class="btn-wa" target="_blank" rel="noopener noreferrer">📲 Hubungi Kami via WhatsApp (Fast Response 24 Jam)</a></p>
+            </div>
+        `
+    },
+    {
         id: '1',
         created_at: '2026-06-08T10:00:00Z',
         title: 'Bukan Cuma Malioboro, Ini 15 Tempat Wisata Hits di Jogja (Update 2026) yang Wajib Masuk Daftar Liburanmu!',

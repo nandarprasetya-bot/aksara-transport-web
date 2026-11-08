@@ -6,24 +6,31 @@ import { dummyArticles } from '@/data/articles';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://jogjasewamobil.com'
 
-  let articles: any[] = [];
+  const articleMap = new Map<string, any>();
+  dummyArticles.forEach(a => articleMap.set(a.slug, a));
+
   if (supabase) {
-    const { data, error } = await supabase.from('articles').select('slug, created_at');
-    if (!error && data && data.length > 0) {
-      articles = data;
-    } else {
-      articles = dummyArticles;
+    try {
+      const { data, error } = await supabase.from('articles').select('slug, created_at');
+      if (!error && data && data.length > 0) {
+        data.forEach(a => articleMap.set(a.slug, a));
+      }
+    } catch {
+      // ignore db error, keep dummyArticles
     }
-  } else {
-    articles = dummyArticles;
   }
 
-  const articleUrls = articles.map((article) => ({
-    url: `${baseUrl}/artikel/${article.slug}`,
-    lastModified: new Date(article.created_at || new Date()),
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
-  }));
+  const allArticles = Array.from(articleMap.values());
+
+  const articleUrls = allArticles.map((article) => {
+    const isPilarArticle = article.slug.includes('sewa-mobil') || article.slug.includes('sewa-hiace');
+    return {
+      url: `${baseUrl}/artikel/${article.slug}`,
+      lastModified: new Date(article.created_at || new Date()),
+      changeFrequency: 'weekly' as const,
+      priority: isPilarArticle ? 0.85 : 0.6,
+    };
+  });
 
   return [
     {

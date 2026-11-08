@@ -66,8 +66,68 @@ export default async function ArtikelDetailPage(props: { params: Promise<{ slug:
         notFound();
     }
 
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        'headline': article.title,
+        'description': article.excerpt,
+        'image': article.image ? (article.image.startsWith('http') ? article.image : `https://jogjasewamobil.com${article.image}`) : 'https://jogjasewamobil.com/images/hero_reborn_hd.webp',
+        'datePublished': article.created_at || '2026-11-08T10:00:00Z',
+        'dateModified': article.created_at || '2026-11-08T10:00:00Z',
+        'author': {
+            '@type': 'Organization',
+            'name': 'Aksara Transport Jogja',
+            'url': 'https://jogjasewamobil.com'
+        },
+        'publisher': {
+            '@type': 'Organization',
+            'name': 'Aksara Transport',
+            'logo': {
+                '@type': 'ImageObject',
+                'url': 'https://jogjasewamobil.com/icon.png'
+            }
+        },
+        'mainEntityOfPage': {
+            '@type': 'WebPage',
+            '@id': `https://jogjasewamobil.com/artikel/${params.slug}`
+        }
+    };
+
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+            {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Beranda',
+                'item': 'https://jogjasewamobil.com'
+            },
+            {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Artikel',
+                'item': 'https://jogjasewamobil.com/artikel'
+            },
+            {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': article.title,
+                'item': `https://jogjasewamobil.com/artikel/${params.slug}`
+            }
+        ]
+    };
+
     return (
         <main style={{ backgroundColor: '#f8fafc', minHeight: '100vh', paddingTop: '100px', paddingBottom: '60px' }}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             <div className="container">
                 
                 {/* BREADCRUMB */}
@@ -154,19 +214,42 @@ export default async function ArtikelDetailPage(props: { params: Promise<{ slug:
             </div>
 
             <style dangerouslySetInnerHTML={{__html: `
-                .article-body h2 { font-size: 1.8rem; font-weight: 800; color: #1e293b; margin: 30px 0 15px 0; }
-                .article-body h3 { font-size: 1.4rem; font-weight: 700; color: #1e293b; margin: 25px 0 15px 0; }
-                .article-body p { margin-bottom: 20px; }
-                .article-body ul { margin-bottom: 20px; padding-left: 20px; }
-                .article-body li { margin-bottom: 8px; }
+                .article-body h2 { font-size: 1.8rem; font-weight: 800; color: #1e293b; margin: 35px 0 18px 0; }
+                .article-body h3 { font-size: 1.35rem; font-weight: 700; color: #1e293b; margin: 25px 0 15px 0; }
+                .article-body p { margin-bottom: 20px; line-height: 1.8; color: #334155; }
+                .article-body ul, .article-body ol { margin-bottom: 24px; padding-left: 24px; line-height: 1.8; color: #334155; }
+                .article-body li { margin-bottom: 10px; }
                 .article-body a { color: var(--primary); text-decoration: none; font-weight: 600; }
                 .article-body a:hover { text-decoration: underline; }
                 .article-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
                 
+                /* Table Styles */
+                .table-responsive { width: 100%; overflow-x: auto; margin: 25px 0; -webkit-overflow-scrolling: touch; border-radius: 8px; border: 1px solid #e2e8f0; }
+                .article-body table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+                .article-body th { background: #f1f5f9; color: #1e293b; font-weight: 700; padding: 14px 16px; border-bottom: 2px solid #cbd5e1; }
+                .article-body td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; color: #334155; }
+                .article-body tr:last-child td { border-bottom: none; }
+                .article-body tr:hover { background-color: #f8fafc; }
+                
+                /* FAQ Section */
+                .faq-section { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; margin: 25px 0; }
+                .faq-section h3 { margin-top: 15px; font-size: 1.15rem; color: #0f172a; }
+                .faq-section h3:first-child { margin-top: 0; }
+                .faq-section p { margin-bottom: 15px; color: #475569; }
+
+                /* CTA Box */
+                .article-cta-box { background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%); border-left: 5px solid var(--primary); padding: 25px; border-radius: 8px; margin: 35px 0; }
+                .article-cta-box h3 { font-size: 1.4rem; font-weight: 800; color: #1e3a8a; margin: 0 0 10px 0; }
+                .article-cta-box p { color: #1e293b; margin-bottom: 15px; }
+                .article-cta-box .btn-wa { display: inline-block; background: #25D366; color: #fff !important; font-weight: 700; padding: 12px 24px; border-radius: 50px; text-decoration: none !important; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); transition: transform 0.2s; }
+                .article-cta-box .btn-wa:hover { transform: translateY(-2px); }
+
                 @media (max-width: 768px) {
                     .container > div { grid-template-columns: 1fr !important; }
                     article { padding: 20px !important; }
                     h1 { font-size: 1.8rem !important; }
+                    .article-body h2 { font-size: 1.5rem; }
+                    .article-body h3 { font-size: 1.2rem; }
                 }
             `}} />
         </main>
