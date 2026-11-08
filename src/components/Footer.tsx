@@ -1,7 +1,10 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
+    const [showAllServices, setShowAllServices] = useState(false);
     return (
         <footer>
             <div className="container footer-grid">
@@ -33,18 +36,39 @@ export default function Footer() {
                         <li><Link href="/sewa-mobil-avanza-jogja">Sewa Avanza Jogja</Link></li>
                         <li><Link href="/sewa-mobil-inova-reborn-jogja">Sewa Innova Reborn</Link></li>
                         <li><Link href="/sewa-mobil-inova-zenix-jogja">Sewa Innova Zenix</Link></li>
-                        <li><Link href="/sewa-mobil-alphard-jogja">Sewa Alphard Jogja</Link></li>
-                        <li><Link href="/sewa-mobil-alphard-facelift-jogja">Sewa Alphard Facelift</Link></li>
-                        <li><Link href="/sewa-mobil-hiace-commuter-jogja">Sewa Hiace Commuter</Link></li>
-                        <li><Link href="/sewa-mobil-hiace-premio-jogja">Sewa Hiace Premio</Link></li>
-                        <li><Link href="/sewa-mobil-alphard-hev-jogja">Sewa Alphard HEV Jogja</Link></li>
-                        <li><Link href="/sewa-mobil-pajero-jogja">Sewa Pajero Jogja</Link></li>
-                        <li><Link href="/sewa-mobil-fortuner-jogja">Sewa Fortuner Jogja</Link></li>
-                        <li><Link href="/sewa-mobil-elf-jogja">Sewa Elf Jogja</Link></li>
-                        <li><Link href="/sewa-mobil-listrik-jogja">Sewa Mobil Listrik</Link></li>
-                        <li><Link href="/sewa-mobil-terdekat">Sewa Mobil Terdekat</Link></li>
-                        <li><Link href="/tentang#syarat">Syarat Lepas Kunci</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-alphard-jogja">Sewa Alphard Jogja</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-alphard-facelift-jogja">Sewa Alphard Facelift</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-hiace-commuter-jogja">Sewa Hiace Commuter</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-hiace-premio-jogja">Sewa Hiace Premio</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-alphard-hev-jogja">Sewa Alphard HEV Jogja</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-pajero-jogja">Sewa Pajero Jogja</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-fortuner-jogja">Sewa Fortuner Jogja</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-elf-jogja">Sewa Elf Jogja</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-listrik-jogja">Sewa Mobil Listrik</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/sewa-mobil-terdekat">Sewa Mobil Terdekat</Link></li>
+                        <li className={!showAllServices ? 'footer-service-hidden' : ''}><Link href="/tentang#syarat">Syarat Lepas Kunci</Link></li>
                     </ul>
+                    <button 
+                        type="button" 
+                        onClick={() => setShowAllServices(!showAllServices)}
+                        style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: '1px solid rgba(255, 255, 255, 0.15)',
+                            color: '#94a3b8',
+                            padding: '5px 12px',
+                            borderRadius: '4px',
+                            fontSize: '0.78rem',
+                            fontWeight: 600,
+                            cursor: 'pointer',
+                            marginTop: '10px',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            transition: 'all 0.2s ease'
+                        }}
+                    >
+                        <span>{showAllServices ? 'Tutup Daftar Armada ▲' : 'Lihat Semua Armada (+11) ▼'}</span>
+                    </button>
                 </div>
                 <div className="footer-col">
                     <h4>Kontak Layanan</h4>

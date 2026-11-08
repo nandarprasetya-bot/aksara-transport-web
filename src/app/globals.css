@@ -1285,6 +1285,10 @@ footer {
     row-gap: 6px;
 }
 
+.footer-service-hidden {
+    display: none !important;
+}
+
 .footer-contact-list {
     list-style: none;
 }
