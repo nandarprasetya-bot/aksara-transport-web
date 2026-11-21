@@ -22,6 +22,8 @@ export default function Footer() {
                         <li><Link href="/mobil?service=denganSopir">Sewa Dengan Driver</Link></li>
                         <li><Link href="/wisata">Paket Wisata</Link></li>
                         <li><Link href="/artikel">Tips &amp; Berita</Link></li>
+                        <li><Link href="/ulasan" style={{ color: '#f59e0b', fontWeight: 600 }}>Ulasan Pelanggan (4.9★)</Link></li>
+                        <li><Link href="/tulis-ulasan">Tulis Ulasan</Link></li>
                         <li><Link href="/panduan">Panduan &amp; FAQ</Link></li>
                         <li><Link href="/tentang">Tentang Kami</Link></li>
                         <li><Link href="/kontak">Kontak Kami</Link></li>

@@ -37,6 +37,7 @@ export default function Header() {
         },
         { href: '/wisata', label: 'Paket Wisata' },
         { href: '/artikel', label: 'Tips & Berita' },
+        { href: '/ulasan', label: 'Ulasan (4.9★)' },
         { href: '/panduan', label: 'Panduan & FAQ' },
         { href: '/tentang', label: 'Tentang Kami' },
         { href: '/kontak', label: 'Kontak' },
