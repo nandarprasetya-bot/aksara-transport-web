@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { dummyArticles } from '@/data/articles';
+import GoogleReviewsSection from '@/components/GoogleReviewsSection';
 
 // Data Katalog Sewa Mobil Lepas Kunci (8 Unit Sesuai Permintaan)
 const lepasKunciCatalog = [
@@ -1695,154 +1696,8 @@ Mohon konfirmasi ketersediaan unit dan penawaran tarif terbaiknya. Terima kasih!
                 </div>
             </section>
 
-            {/* TESTIMONIALS */}
-            <section className="section-padding testi-modern-section">
-                <div className="container">
-                    <div className="text-center" style={{ marginBottom: '45px' }}>
-                        <div className="testi-trust-pill">
-                            <span className="testi-trust-rating">4.9 / 5.0</span>
-                            <span className="testi-trust-divider">|</span>
-                            <span className="testi-trust-text">Rating dari 350+ Ulasan Google Terverifikasi</span>
-                        </div>
-                        <h2 className="section-title">Apa Kata Pelanggan Aksara Transport?</h2>
-                        <p className="section-subtitle">Ribuan wisatawan domestik, keluarga, hingga instansi telah mempercayakan kenyamanan perjalanannya di Jogja kepada kami.</p>
-                    </div>
-                    
-                    <div className="testi-modern-grid">
-                        {/* Review 1 */}
-                        <div className="testi-modern-card">
-                            <div className="testi-card-header">
-                                <span className="testi-badge-service badge-lepas-kunci">LEPAS KUNCI</span>
-                                <span className="testi-verified-text">Terverifikasi Google • 2 hari lalu</span>
-                            </div>
-                            <div className="testi-card-fleet-tag">Armada: Honda Brio Satya E CVT</div>
-                            <p className="testi-card-comment">
-                                &ldquo;Sewa mobil lepas kunci di Aksara Transport sangat praktis dan menyenangkan. Verifikasi identitas cepat via WhatsApp tanpa ribet, unit Brio Matic diantarkan tepat waktu ke Stasiun Tugu dalam kondisi sangat bersih, wangi, dan bensin full. Keliling spot kuliner Jogja jadi bebas dan santai!&rdquo;
-                            </p>
-                            <div className="testi-card-footer">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <div className="testi-avatar avatar-blue">B</div>
-                                    <div>
-                                        <h4 className="testi-author-name">Budi Santoso</h4>
-                                        <span className="testi-author-role">Wisatawan Domestik (Jakarta)</span>
-                                    </div>
-                                </div>
-                                <span className="testi-rating-badge">Skor 5.0 / 5.0</span>
-                            </div>
-                        </div>
-
-                        {/* Review 2 */}
-                        <div className="testi-modern-card">
-                            <div className="testi-card-header">
-                                <span className="testi-badge-service badge-dengan-driver">DENGAN DRIVER</span>
-                                <span className="testi-verified-text">Terverifikasi Google • 5 hari lalu</span>
-                            </div>
-                            <div className="testi-card-fleet-tag">Armada: New Toyota Avanza Facelift</div>
-                            <p className="testi-card-comment">
-                                &ldquo;Pakai paket Avanza dengan sopir untuk liburan keluarga ke Pantai Timang dan HeHa Sky View di Gunungkidul. Mas sopirnya sangat sopan, ramah, dan hafal jalan tikus menghindari macet saat libur panjang. Orang tua dan anak-anak nyaman sepanjang perjalanan.&rdquo;
-                            </p>
-                            <div className="testi-card-footer">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <div className="testi-avatar avatar-orange">R</div>
-                                    <div>
-                                        <h4 className="testi-author-name">Rina Melati &amp; Keluarga</h4>
-                                        <span className="testi-author-role">Liburan Keluarga (Surabaya)</span>
-                                    </div>
-                                </div>
-                                <span className="testi-rating-badge">Skor 5.0 / 5.0</span>
-                            </div>
-                        </div>
-
-                        {/* Review 3 */}
-                        <div className="testi-modern-card">
-                            <div className="testi-card-header">
-                                <span className="testi-badge-service badge-dinas">PERJALANAN DINAS</span>
-                                <span className="testi-verified-text">Terverifikasi Google • 1 minggu lalu</span>
-                            </div>
-                            <div className="testi-card-fleet-tag">Armada: Toyota Innova Zenix Hybrid</div>
-                            <p className="testi-card-comment">
-                                &ldquo;Sewa Innova Zenix untuk agenda dinas dan kunjungan kerja di Yogyakarta. Pelayanan admin sangat responsif 24 jam, invoice resmi dan bukti serah terima cepat disiapkan untuk kebutuhan reimbursement kantor kami. Unit sangat senyap dan berkelas.&rdquo;
-                            </p>
-                            <div className="testi-card-footer">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <div className="testi-avatar avatar-indigo">D</div>
-                                    <div>
-                                        <h4 className="testi-author-name">Dimas Setiawan</h4>
-                                        <span className="testi-author-role">PT Megah Nusantara (Bandung)</span>
-                                    </div>
-                                </div>
-                                <span className="testi-rating-badge">Skor 5.0 / 5.0</span>
-                            </div>
-                        </div>
-
-                        {/* Review 4 */}
-                        <div className="testi-modern-card">
-                            <div className="testi-card-header">
-                                <span className="testi-badge-service badge-vvip">LAYANAN VVIP</span>
-                                <span className="testi-verified-text">Terverifikasi Google • 1 minggu lalu</span>
-                            </div>
-                            <div className="testi-card-fleet-tag">Armada: Toyota Alphard Facelift VIP</div>
-                            <p className="testi-card-comment">
-                                &ldquo;Memesan Alphard untuk menyambut tamu kehormatan dari Jakarta. Driver berpakaian rapi dan tepat waktu standby di Bandara Internasional YIA. Kondisi kendaraan sangat prima layaknya baru keluar dari dealer. Standar pelayanan VVIP terbaik di Jogja.&rdquo;
-                            </p>
-                            <div className="testi-card-footer">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <div className="testi-avatar avatar-purple">H</div>
-                                    <div>
-                                        <h4 className="testi-author-name">dr. Hendra Wijaya</h4>
-                                        <span className="testi-author-role">Kunjungan Profesional (Semarang)</span>
-                                    </div>
-                                </div>
-                                <span className="testi-rating-badge">Skor 5.0 / 5.0</span>
-                            </div>
-                        </div>
-
-                        {/* Review 5 */}
-                        <div className="testi-modern-card">
-                            <div className="testi-card-header">
-                                <span className="testi-badge-service badge-rombongan">ROMBONGAN WISATA</span>
-                                <span className="testi-verified-text">Terverifikasi Google • 2 minggu lalu</span>
-                            </div>
-                            <div className="testi-card-fleet-tag">Armada: Toyota Hiace Premio Luxury</div>
-                            <p className="testi-card-comment">
-                                &ldquo;Rombongan kami 12 orang sewa Hiace Premio selama 3 hari keliling Candi Prambanan, Lava Tour Merapi, dan Tebing Breksi. Kabin sangat lapang, suspensi empuk, dan AC dingin merata. Driver sangat sabar dan bahkan membantu mengambil foto dokumentasi kami.&rdquo;
-                            </p>
-                            <div className="testi-card-footer">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <div className="testi-avatar avatar-teal">S</div>
-                                    <div>
-                                        <h4 className="testi-author-name">Saraswati &amp; Rekan</h4>
-                                        <span className="testi-author-role">Wisata Rombongan (Tangerang)</span>
-                                    </div>
-                                </div>
-                                <span className="testi-rating-badge">Skor 5.0 / 5.0</span>
-                            </div>
-                        </div>
-
-                        {/* Review 6 */}
-                        <div className="testi-modern-card">
-                            <div className="testi-card-header">
-                                <span className="testi-badge-service badge-dropoff">DROP OFF BANDARA</span>
-                                <span className="testi-verified-text">Terverifikasi Google • 3 minggu lalu</span>
-                            </div>
-                            <div className="testi-card-fleet-tag">Armada: Toyota Innova Reborn Diesel</div>
-                            <p className="testi-card-comment">
-                                &ldquo;Butuh rental Innova Reborn mendadak malam hari untuk drop off dini hari ke Bandara YIA Kulon Progo. CS merespons dengan cepat dan ramah, mobil tiba 30 menit sebelum jadwal penjemputan. Pelayanan sangat terpercaya dan tepat waktu.&rdquo;
-                            </p>
-                            <div className="testi-card-footer">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <div className="testi-avatar avatar-emerald">F</div>
-                                    <div>
-                                        <h4 className="testi-author-name">Fachri Ramadhan</h4>
-                                        <span className="testi-author-role">Perjalanan Bisnis (Medan)</span>
-                                    </div>
-                                </div>
-                                <span className="testi-rating-badge">Skor 5.0 / 5.0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* GOOGLE MAPS REVIEWS SECTION (10 ULASAN BERJAJAR KE BAWAH ALA GOOGLE MAPS) */}
+            <GoogleReviewsSection />
 
             {/* INTERACTIVE SERVICE GALLERY SECTION */}
             <section id="galeri" className="section-padding gallery-section" style={{ backgroundColor: '#f1f5f9', paddingTop: '80px', paddingBottom: '80px' }}>
