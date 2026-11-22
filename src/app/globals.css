@@ -331,6 +331,8 @@ header.scrolled .menu-toggle span {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-right: 32px;
+    flex-shrink: 0;
 }
 
 .logo span {
@@ -341,8 +343,8 @@ header.scrolled .menu-toggle span {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 16px; /* Reduced to fit Panduan link */
-    font-size: 0.95rem; /* Slightly smaller text to prevent wrapping */
+    gap: 22px;
+    font-size: 0.95rem;
 }
 
 .nav-link {
@@ -350,6 +352,7 @@ header.scrolled .menu-toggle span {
     color: var(--primary);
     position: relative;
     padding: 8px 0;
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -1458,8 +1461,10 @@ footer {
         background-color: var(--primary);
         color: var(--bg-white);
         flex-direction: column;
-        justify-content: center;
-        gap: 30px;
+        justify-content: flex-start;
+        padding: 80px 24px 40px;
+        overflow-y: auto;
+        gap: 20px;
         transition: var(--transition-normal);
         z-index: 1050;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
@@ -2792,7 +2797,7 @@ dialog.car-modal::backdrop {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
     padding: 8px 0;
-    min-width: 190px;
+    min-width: 220px;
     display: none;
     z-index: 100;
     list-style: none;
@@ -2829,6 +2834,7 @@ dialog.car-modal::backdrop {
     font-size: 0.875rem;
     transition: var(--transition-fast);
     text-align: left;
+    white-space: nowrap;
 }
 
 .dropdown-link:hover,

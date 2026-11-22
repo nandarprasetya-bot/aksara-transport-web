@@ -33,13 +33,21 @@ export default function Header() {
             dropdownItems: [
                 { href: '/mobil?service=lepasKunci', label: 'Sewa Lepas Kunci' },
                 { href: '/mobil?service=denganSopir', label: 'Dengan Driver' },
+                { href: '/mobil', label: 'Semua Pilihan Mobil' },
             ]
         },
         { href: '/wisata', label: 'Paket Wisata' },
         { href: '/artikel', label: 'Tips & Berita' },
-        { href: '/ulasan', label: 'Ulasan (4.9★)' },
-        { href: '/panduan', label: 'Panduan & FAQ' },
-        { href: '/tentang', label: 'Tentang Kami' },
+        { 
+            label: 'Info & Ulasan', 
+            isDropdown: true,
+            dropdownItems: [
+                { href: '/ulasan', label: 'Ulasan Pelanggan (★ 4.9)' },
+                { href: '/tulis-ulasan', label: 'Tulis Ulasan Baru' },
+                { href: '/panduan', label: 'Panduan & FAQ Sewa' },
+                { href: '/tentang', label: 'Tentang Aksara Transport' },
+            ]
+        },
         { href: '/kontak', label: 'Kontak' },
     ];
 
@@ -51,7 +59,10 @@ export default function Header() {
             const queryService = query.split('=')[1];
             return pathname === path && searchService === queryService;
         }
-        return pathname.startsWith(href) && !pathname.includes('?');
+        if (href === '/mobil') {
+            return pathname === '/mobil' && !searchParams.get('service');
+        }
+        return pathname === href || (pathname.startsWith(href) && href !== '/');
     };
 
     const forceScrolled = pathname !== '/';
