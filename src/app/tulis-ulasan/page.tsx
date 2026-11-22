@@ -8,11 +8,21 @@ export default function TulisUlasanPage() {
     const [hoverRating, setHoverRating] = useState<number>(0);
     const [nama, setNama] = useState<string>('');
     const [asalKota, setAsalKota] = useState<string>('');
-    const [layanan, setLayanan] = useState<string>('Lepas Kunci');
-    const [armada, setArmada] = useState<string>('Honda Brio Matic');
+    const [layanan, setLayanan] = useState<string>('');
+    const [armada, setArmada] = useState<string>('');
     const [ruteWisata, setRuteWisata] = useState<string>('');
     const [ulasan, setUlasan] = useState<string>('');
     const [submitted, setSubmitted] = useState<boolean>(false);
+
+    // Tanggal otomatis sistem (hari ini) yang terkunci dan tidak bisa diubah customer
+    const [autoDate] = useState<string>(() => {
+        const now = new Date();
+        return now.toLocaleDateString('id-ID', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+    });
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -25,11 +35,11 @@ export default function TulisUlasanPage() {
             role: `${asalKota ? asalKota + ' • ' : ''}Ulasan Terverifikasi`,
             avatarColor: '#0284c7',
             rating: rating,
-            date: 'Baru saja',
+            date: autoDate,
             isoDate: new Date().toISOString().split('T')[0],
-            serviceTag: layanan.toUpperCase(),
+            serviceTag: (layanan || 'RENTAL MOBIL').toUpperCase(),
             serviceCategory: layanan.toLowerCase().includes('lepas') ? 'lepas-kunci' : (layanan.toLowerCase().includes('hiace') ? 'hiace' : 'dengan-driver'),
-            carFleet: armada,
+            carFleet: armada || 'Armada Pilihan',
             routeWisata: ruteWisata,
             comment: ulasan,
             likes: 1
@@ -148,62 +158,76 @@ export default function TulisUlasanPage() {
                                 </div>
                             </div>
 
-                            {/* PILIHAN LAYANAN & ARMADA */}
+                            {/* PILIHAN LAYANAN & ARMADA (ISI MANUAL) */}
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
                                 <div>
                                     <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
                                         Jenis Layanan Sewa <span style={{ color: '#dc2626' }}>*</span>
                                     </label>
-                                    <select
+                                    <input 
+                                        type="text" 
+                                        required
                                         value={layanan}
                                         onChange={(e) => setLayanan(e.target.value)}
-                                        style={{ width: '100%', padding: '12px 14px', borderRadius: '8px', border: '1.5px solid #cbd5e1', fontSize: '0.95rem', outline: 'none', background: '#fff' }}
-                                    >
-                                        <option value="Lepas Kunci">Rental Lepas Kunci (Self Drive 24 Jam)</option>
-                                        <option value="Dengan Driver">Sewa Mobil + Supir Profesional</option>
-                                        <option value="Hiace Rombongan">Minibus Hiace / Elf Rombongan Wisata</option>
-                                        <option value="Drop Off Bandara">Antar Jemput Bandara YIA / Stasiun Tugu</option>
-                                        <option value="Perjalanan Dinas">Perjalanan Dinas Kantor / Tamu VVIP</option>
-                                    </select>
+                                        placeholder="Contoh: Lepas Kunci / Dengan Sopir / Drop Off Bandara"
+                                        style={{ width: '100%', padding: '12px 14px', borderRadius: '8px', border: '1.5px solid #cbd5e1', fontSize: '0.95rem', outline: 'none' }}
+                                    />
                                 </div>
                                 <div>
                                     <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
                                         Tipe Armada yang Digunakan <span style={{ color: '#dc2626' }}>*</span>
                                     </label>
-                                    <select
+                                    <input 
+                                        type="text" 
+                                        required
                                         value={armada}
                                         onChange={(e) => setArmada(e.target.value)}
-                                        style={{ width: '100%', padding: '12px 14px', borderRadius: '8px', border: '1.5px solid #cbd5e1', fontSize: '0.95rem', outline: 'none', background: '#fff' }}
-                                    >
-                                        <option value="Honda Brio Matic">Honda Brio Matic</option>
-                                        <option value="Toyota Avanza Facelift">Toyota Avanza Facelift</option>
-                                        <option value="Toyota Innova Reborn Diesel">Toyota Innova Reborn Diesel</option>
-                                        <option value="Toyota Innova Zenix Hybrid">Toyota Innova Zenix Hybrid</option>
-                                        <option value="Toyota Hiace Premio Luxury">Toyota Hiace Premio Luxury</option>
-                                        <option value="Toyota Hiace Commuter 15 Seat">Toyota Hiace Commuter 15 Seat</option>
-                                        <option value="Toyota Alphard Facelift VIP">Toyota Alphard Facelift VIP</option>
-                                        <option value="Toyota Fortuner VRZ">Toyota Fortuner VRZ</option>
-                                        <option value="Mitsubishi Pajero Sport">Mitsubishi Pajero Sport</option>
-                                        <option value="Isuzu Elf Long 19 Seat">Isuzu Elf Long 19 Seat</option>
-                                    </select>
+                                        placeholder="Contoh: Honda Brio Matic / Avanza Facelift / Innova Zenix"
+                                        style={{ width: '100%', padding: '12px 14px', borderRadius: '8px', border: '1.5px solid #cbd5e1', fontSize: '0.95rem', outline: 'none' }}
+                                    />
                                 </div>
                             </div>
 
-                            {/* RUTE WISATA YANG DIKUNJUNGI (SEO BOOSTER) */}
-                            <div>
-                                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
-                                    Destinasi / Rute Wisata yang Dikunjungi di Jogja
-                                </label>
-                                <input 
-                                    type="text" 
-                                    value={ruteWisata}
-                                    onChange={(e) => setRuteWisata(e.target.value)}
-                                    placeholder="Contoh: Candi Borobudur, Malioboro, Pantai Timang, HeHa Ocean View"
-                                    style={{ width: '100%', padding: '12px 14px', borderRadius: '8px', border: '1.5px solid #cbd5e1', fontSize: '0.95rem', outline: 'none' }}
-                                />
-                                <span style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px', display: 'block' }}>
-                                    💡 Sebutkan tempat-tempat yang Anda kunjungi agar ulasan ini membantu wisatawan lain merencanakan itinerary.
-                                </span>
+                            {/* RUTE WISATA & TANGGAL OTOMATIS TERKUNCI */}
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+                                <div>
+                                    <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                                        Destinasi / Rute Wisata yang Dikunjungi di Jogja
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        value={ruteWisata}
+                                        onChange={(e) => setRuteWisata(e.target.value)}
+                                        placeholder="Contoh: Candi Borobudur, Malioboro, Pantai Timang, HeHa"
+                                        style={{ width: '100%', padding: '12px 14px', borderRadius: '8px', border: '1.5px solid #cbd5e1', fontSize: '0.95rem', outline: 'none' }}
+                                    />
+                                    <span style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px', display: 'block' }}>
+                                        💡 Rute tempat wisata yang Anda kunjungi di Jogja.
+                                    </span>
+                                </div>
+                                <div>
+                                    <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.875rem', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                                        <span>Tanggal Ulasan</span>
+                                        <span style={{ fontSize: '0.7rem', background: '#f1f5f9', color: '#475569', padding: '2px 8px', borderRadius: '4px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                                            🔒 Otomatis Terkunci
+                                        </span>
+                                    </label>
+                                    <div style={{ position: 'relative' }}>
+                                        <input 
+                                            type="text" 
+                                            value={`${autoDate} (Hari Ini)`}
+                                            readOnly
+                                            disabled
+                                            style={{ width: '100%', padding: '12px 14px 12px 38px', borderRadius: '8px', border: '1.5px solid #e2e8f0', fontSize: '0.95rem', backgroundColor: '#f8fafc', color: '#334155', cursor: 'not-allowed', fontWeight: 600 }}
+                                        />
+                                        <span style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', fontSize: '1rem' }}>
+                                            📅
+                                        </span>
+                                    </div>
+                                    <span style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '4px', display: 'block' }}>
+                                        Tanggal otomatis ditetapkan oleh sistem sesuai hari ini.
+                                    </span>
+                                </div>
                             </div>
 
                             {/* KOLOM ULASAN */}
@@ -333,3 +357,4 @@ export default function TulisUlasanPage() {
         </main>
     );
 }
+
