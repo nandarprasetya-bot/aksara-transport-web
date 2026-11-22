@@ -5468,7 +5468,15 @@ body {
     box-shadow: 0 4px 14px rgba(249, 115, 22, 0.15);
 }
 
-@media (max-width: 992px) {
+.hero-cta-desktop {
+    display: flex;
+}
+
+.hero-cta-mobile {
+    display: none;
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
     .hero-bright-grid {
         grid-template-columns: 1fr;
         gap: 28px;
@@ -5494,31 +5502,185 @@ body {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .hero-bright-section {
-        padding-top: 84px;
-        padding-bottom: 40px;
+        padding-top: 76px;
+        padding-bottom: 22px;
+    }
+    .hero-bright-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 10px;
+        align-items: center;
+    }
+    .hero-car-showcase {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .hero-car-stage {
-        height: 260px;
+        width: 100%;
+        height: 135px;
+    }
+    .hero-car-pedestal {
+        height: 16px;
+        bottom: 2px;
+        filter: blur(5px);
+        width: 85%;
     }
     .hero-car-img {
-        max-width: 96%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
     }
     .hero-car-info-bar {
-        padding: 8px 12px;
+        margin-top: 4px;
+        padding: 4px 8px;
+        border-radius: 8px;
         width: 95%;
+        max-width: 170px;
+        gap: 4px;
+        border-left-width: 2.5px;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
     }
     .hero-car-info-name {
-        font-size: 0.82rem;
+        font-size: 0.68rem;
+        line-height: 1.2;
+    }
+    .hero-car-info-badge {
+        display: none;
     }
     .hero-car-price-val {
-        font-size: 0.88rem;
+        font-size: 0.74rem;
+        line-height: 1.1;
     }
-    .btn-hero-primary,
-    .btn-hero-secondary {
+    .hero-car-price-unit {
+        font-size: 0.58rem;
+    }
+    .hero-car-dots {
+        margin-top: 6px;
+        gap: 4px;
+    }
+    .hero-car-dot {
+        width: 5px;
+        height: 5px;
+    }
+    .hero-car-dot.active {
+        width: 14px;
+    }
+    .hero-bright-content {
+        text-align: left;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .hero-tagline-badge {
+        font-size: 0.58rem;
+        padding: 2px 7px;
+        margin-bottom: 4px;
+        letter-spacing: 0.03em;
+        align-self: flex-start;
+    }
+    .hero-bright-title {
+        font-size: 1.05rem;
+        font-weight: 900;
+        line-height: 1.22;
+        margin: 0 0 5px 0;
+        color: #0B1B3D;
+        text-align: left;
+    }
+    .hero-bright-desc {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        margin: 0 0 6px 0;
+        color: #334155;
+        text-align: left;
+        max-width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .hero-feature-pill-list {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        margin-bottom: 0;
+        justify-content: flex-start;
+    }
+    .hero-feature-pill {
+        font-size: 0.62rem;
+        padding: 2px 6px;
+        border-radius: 6px;
+        line-height: 1.2;
+        background: rgba(255, 255, 255, 0.9);
+        width: fit-content;
+    }
+    .hero-cta-desktop {
+        display: none !important;
+    }
+    .hero-cta-mobile {
+        grid-column: 1 / -1;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 14px;
         width: 100%;
-        font-size: 0.88rem;
+    }
+    .hero-cta-mobile .btn-hero-primary {
+        background: #25D366;
+        color: #ffffff;
+        padding: 10px 6px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        text-decoration: none;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .hero-cta-mobile .btn-hero-secondary {
+        background: #ffffff;
+        color: #0B1B3D;
+        border: 1.5px solid #cbd5e1;
+        padding: 10px 6px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        white-space: nowrap;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+        text-decoration: none;
+        cursor: pointer;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-car-stage {
+        height: 120px;
+    }
+    .hero-bright-title {
+        font-size: 0.96rem;
+    }
+    .hero-cta-mobile .btn-hero-primary,
+    .hero-cta-mobile .btn-hero-secondary {
+        font-size: 0.72rem;
+        padding: 9px 4px;
     }
 }
 
