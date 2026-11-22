@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { dummyArticles } from '@/data/articles';
 import GoogleReviewsSection from '@/components/GoogleReviewsSection';
+import HowItWorksSection from '@/components/HowItWorksSection';
 
 // Data Katalog Sewa Mobil Lepas Kunci (8 Unit Sesuai Permintaan)
 const lepasKunciCatalog = [
@@ -1663,38 +1664,8 @@ Mohon konfirmasi ketersediaan unit dan penawaran tarif terbaiknya. Terima kasih!
                 </div>
             </section>
 
-            {/* HOW IT WORKS */}
-            <section className="section-padding" style={{ backgroundColor: '#ffffff', paddingTop: '90px', paddingBottom: '90px' }}>
-                <div className="container">
-                    <div className="text-center" style={{ marginBottom: '45px' }}>
-                        <span className="badge badge-accent">Panduan Cepat</span>
-                        <h2 className="section-title">4 Langkah Mudah Sewa Mobil di Jogja</h2>
-                        <p className="section-subtitle">Proses penyewaan armada di Aksara Transport sangat praktis dan cepat, selesai dalam kurang dari 5 menit via WhatsApp.</p>
-                    </div>
-                    <div className="steps-grid">
-                        <div className="step-card">
-                            <div className="step-number">01</div>
-                            <h4>Pilih Mobil Sesuai Kebutuhan</h4>
-                            <p>Tentukan tipe mobil yang Anda inginkan (City Car, MPV Keluarga, EV, atau Minibus) dan sistem sewa (Lepas Kunci / Driver).</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">02</div>
-                            <h4>Pilih Tanggal &amp; Rute</h4>
-                            <p>Tentukan durasi penggunaan mobil, tanggal mulai hingga selesai, serta lokasi serah terima unit (Stasiun, Bandara, atau Hotel).</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">03</div>
-                            <h4>Konfirmasi via WhatsApp</h4>
-                            <p>Klik tombol booking untuk terhubung ke CS kami. Verifikasi identitas (KTP &amp; SIM A) dilakukan cepat secara online tanpa ribet.</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">04</div>
-                            <h4>Mobil Diantar &amp; Siap Jalan</h4>
-                            <p>Unit yang sudah dicuci bersih dan wangi langsung diantarkan tepat waktu ke lokasi Anda. Nikmati liburan keliling Jogja!</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* HOW IT WORKS (COMPACT, MODERN & MOBILE SWIPEABLE CAROUSEL) */}
+            <HowItWorksSection />
 
             {/* GOOGLE MAPS REVIEWS SECTION (10 ULASAN BERJAJAR KE BAWAH ALA GOOGLE MAPS) */}
             <GoogleReviewsSection />

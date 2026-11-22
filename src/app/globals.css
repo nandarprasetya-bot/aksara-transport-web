@@ -6162,3 +6162,270 @@ body {
 
 
 
+
+
+/* ==========================================================================
+   HOW IT WORKS (COMPACT & MODERN HORIZONTAL SWIPEABLE STEPPER)
+   ========================================================================== */
+.how-it-works-section {
+    background-color: #ffffff;
+    padding: 55px 0 50px 0;
+    position: relative;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.how-header {
+    margin-bottom: 28px;
+}
+
+.how-badge-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.how-quick-hint {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0284c7;
+    background: #f0f9ff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(2, 132, 199, 0.18);
+}
+
+.how-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin: 6px 0 10px 0;
+}
+
+.how-subtitle {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.55;
+}
+
+.how-steps-wrapper {
+    position: relative;
+    margin-top: 10px;
+}
+
+/* Connecting line across step badges on desktop */
+@media (min-width: 1025px) {
+    .how-steps-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 42px;
+        left: 12%;
+        right: 12%;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(255, 94, 54, 0.3) 0%, rgba(37, 99, 235, 0.3) 50%, rgba(16, 185, 129, 0.3) 100%);
+        z-index: 0;
+    }
+}
+
+.how-steps-carousel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.how-step-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 22px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: default;
+    box-sizing: border-box;
+}
+
+.how-step-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 94, 54, 0.45);
+    box-shadow: 0 14px 28px -4px rgba(255, 94, 54, 0.12);
+}
+
+.how-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.how-step-num-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.how-num-text {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #ff5e36 0%, #ff8c42 100%);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 94, 54, 0.28);
+    flex-shrink: 0;
+    border: 2px solid #ffffff;
+}
+
+.how-icon-box {
+    color: #ff5e36;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.how-tag-pill {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #0284c7;
+    background: #f0f9ff;
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.how-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.how-card-desc {
+    font-size: 0.825rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.how-dots-indicator {
+    display: none;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET STYLING (TOUCH SWIPE CAROUSEL - ELIMINATES 2X SCROLL)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .how-it-works-section {
+        padding: 34px 0 30px 0;
+    }
+
+    .how-header {
+        margin-bottom: 18px;
+    }
+
+    .how-title {
+        font-size: 1.45rem;
+        line-height: 1.25;
+        margin: 4px 0 8px 0;
+    }
+
+    .how-subtitle {
+        font-size: 0.825rem;
+        padding: 0 12px;
+    }
+
+    .how-steps-carousel {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px;
+        padding: 4px 16px 14px 16px;
+        margin: 0 -16px;
+        scrollbar-width: none;
+    }
+
+    .how-steps-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .how-step-card {
+        flex: 0 0 80%;
+        max-width: 310px;
+        scroll-snap-align: center;
+        padding: 16px 14px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.05);
+    }
+
+    .how-step-card.is-active-step {
+        border-color: rgba(255, 94, 54, 0.5);
+        box-shadow: 0 6px 18px -2px rgba(255, 94, 54, 0.12);
+    }
+
+    .how-card-title {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+
+    .how-card-desc {
+        font-size: 0.775rem;
+        line-height: 1.45;
+    }
+
+    .how-dots-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .how-dot-btn {
+        background: transparent;
+        border: none;
+        padding: 6px 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .how-dot-inner {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .how-dot-btn.active .how-dot-inner {
+        width: 22px;
+        border-radius: 11px;
+        background: linear-gradient(90deg, #ff5e36, #ff8c42);
+        box-shadow: 0 2px 8px rgba(255, 94, 54, 0.35);
+    }
+
+    .how-dot-label {
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: #ff5e36;
+        letter-spacing: -0.01em;
+    }
+}
