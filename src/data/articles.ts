@@ -1,5 +1,146 @@
 export const dummyArticles = [
     {
+        id: 'sewa-mobil-nataru-jogja-2027',
+        created_at: '2026-11-22T08:00:00Z',
+        title: 'Sewa Mobil Nataru Jogja 2026/2027: Daftar Harga Paket Liburan, Syarat & Tips Booking Murah',
+        slug: 'sewa-mobil-nataru-jogja-2027-harga-terbaru',
+        category: 'Tips',
+        image: '/images/hero_reborn_hd.webp',
+        excerpt: 'Daftar harga resmi sewa mobil Nataru Jogja 2026/2027 periode 24 Des 2026 - 04 Jan 2027. Cek pricelist paket rental Brio, Avanza, Raize, Xpander, hingga Innova Reborn Solar.',
+        content: `
+            <p>Musim liburan akhir tahun Natal dan Tahun Baru (Nataru) 2026/2027 telah tiba! Yogyakarta kembali menjadi salah satu destinasi wisata paling favorit di Indonesia bagi wisatawan domestik maupun mancanegara. Mulai dari kehangatan suasana malam di kawasan Malioboro dan Titik Nol Kilometer, pesona kemegahan Candi Prambanan dan Borobudur, sunrise menawan di Tumpeng Menoreh Kulon Progo, hingga deretan pantai pasir putih eksotis di Gunungkidul, Jogja selalu menyajikan memori liburan yang tak terlupakan.</p>
+
+            <p>Namun, lonjakan jutaan wisatawan pada periode <em>peak season</em> akhir tahun selalu membawa tantangan tersendiri: kemacetan di titik-titik wisata favorit, lonjakan tarif taksi online berkali lipat (<em>surge pricing</em>), hingga sulitnya mendapatkan transportasi umum. Karena itulah, memilih layanan <strong><a href="/sewa-mobil-jogja">sewa mobil jogja</a></strong> sejak dini menjadi keputusan paling bijak untuk memastikan perjalanan Anda dan keluarga tetap aman, nyaman, dan terjadwal secara efisien.</p>
+
+            <p>Untuk menyambut libur panjang ini, <strong>Aksara Transport</strong> merilis <strong>Pricelist Resmi Sewa Mobil Nataru 2026/2027</strong> yang berlaku untuk periode sewa mulai <strong>24 Desember 2026 hingga 04 Januari 2027</strong>. Simak daftar tarif paket, ketentuan sewa, dan tips mengamankan unit armada sebelum kehabisan di bawah ini!</p>
+
+            <h2>Pricelist Sewa Mobil Nataru Jogja 2026/2027 (Periode 24 Des 2026 - 04 Jan 2027)</h2>
+            <p>Pada periode liburan Nataru, Aksara Transport menyediakan paket sewa fleksibel berdurasi 3 hari hingga 7 hari (mingguan) dengan garansi harga transparan, unit terawat prima, AC dingin maksimal, wangi, dan bebas biaya tersembunyi.</p>
+
+            <div class="table-responsive" style="overflow-x: auto; margin: 25px 0;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; background: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <thead>
+                        <tr style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff;">
+                            <th style="padding: 14px 16px; font-weight: 800; border-bottom: 3px solid #ff5e36;">Tipe Armada Mobil</th>
+                            <th style="padding: 14px 16px; font-weight: 800; border-bottom: 3px solid #ff5e36; text-align: center;">Paket 3 Hari</th>
+                            <th style="padding: 14px 16px; font-weight: 800; border-bottom: 3px solid #ff5e36; text-align: center;">Paket 4 Hari</th>
+                            <th style="padding: 14px 16px; font-weight: 800; border-bottom: 3px solid #ff5e36; text-align: center;">Paket 5 Hari</th>
+                            <th style="padding: 14px 16px; font-weight: 800; border-bottom: 3px solid #ff5e36; text-align: center;">Paket 6 Hari</th>
+                            <th style="padding: 14px 16px; font-weight: 800; border-bottom: 3px solid #ff5e36; text-align: center;">Paket 7 Hari (Hemat)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 14px 16px;">
+                                <strong><a href="/sewa-mobil-brio-jogja">Honda Brio</a> / Toyota Agya</strong><br/>
+                                <span style="font-size: 0.85rem; color: #64748b;">City Car Kompak, Lincah &amp; Super Irit (4-5 Seat)</span>
+                            </td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 1.350.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 1.700.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.050.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.400.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 800; color: #ea580c; background: #fff7ed;">Rp 2.650.000</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
+                            <td style="padding: 14px 16px;">
+                                <strong><a href="/sewa-mobil-avanza-jogja">Toyota Avanza</a> / Daihatsu Xenia</strong><br/>
+                                <span style="font-size: 0.85rem; color: #64748b;">MPV Keluarga Terfavorit, Tangguh &amp; Lapang (7 Seat)</span>
+                            </td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 1.450.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 1.800.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.150.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.550.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 800; color: #ea580c; background: #fff7ed;">Rp 2.800.000</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 14px 16px;">
+                                <strong>All New Avanza / All New Xenia &amp; Raize</strong><br/>
+                                <span style="font-size: 0.85rem; color: #64748b;">Desain Modern, Suspensi Empuk &amp; Fitur Terkini</span>
+                            </td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 1.650.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.250.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.650.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.850.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 800; color: #ea580c; background: #fff7ed;">Rp 3.150.000</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
+                            <td style="padding: 14px 16px;">
+                                <strong>Mitsubishi Xpander</strong><br/>
+                                <span style="font-size: 0.85rem; color: #64748b;">Kabin Sangat Senyap, Nyaman Maksimal &amp; Mewah (7 Seat)</span>
+                            </td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 1.750.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.250.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.800.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 3.050.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 800; color: #ea580c; background: #fff7ed;">Rp 3.350.000</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 14px 16px;">
+                                <strong><a href="/sewa-mobil-inova-reborn-jogja">Toyota Innova Reborn</a> Diesel (Solar)</strong><br/>
+                                <span style="font-size: 0.85rem; color: #64748b;">Mesin Bertenaga, Raja Tanjakan &amp; Kenyamanan Kelas Premium</span>
+                            </td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.100.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 2.550.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 3.200.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 700; color: #0f172a;">Rp 3.750.000</td>
+                            <td style="padding: 14px 16px; text-align: center; font-weight: 800; color: #ea580c; background: #fff7ed;">Rp 4.200.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="font-size: 0.9rem; color: #64748b; font-style: italic;">
+                *Catatan: Harga di atas berlaku khusus periode Peak Season Nataru (24 Desember 2026 s/d 04 Januari 2027). Unit sangat terbatas dan sistem booking mengutamakan siapa cepat dia dapat (first come, first served).
+            </p>
+
+            <h2>Keuntungan Sewa Mobil Nataru di Aksara Transport</h2>
+            <p>Berlibur di masa puncak liburan membutuhkan kepastian armada yang prima dan penyedia rental yang berkomitmen penuh. Berikut alasan mengapa ribuan wisatawan mempercayakan liburan Nataru mereka kepada Aksara Transport:</p>
+            <ul>
+                <li><strong>Free Antar &amp; Jemput Stasiun/Hotel:</strong> Kami siap mengantarkan armada langsung ke titik kedatangan Anda, baik di Stasiun Tugu Yogyakarta, Stasiun Lempuyangan, Bandara Internasional Yogyakarta (YIA), maupun hotel tempat Anda menginap di area Kota Yogyakarta.</li>
+                <li><strong>Kondisi Kendaraan 100% Siap Jalan:</strong> Setiap armada melewati pengecekan menyeluruh (rem, ban, oli, suspensi, dan AC) serta dicuci bersih dan disemprot pewangi sebelum serah terima.</li>
+                <li><strong>Opsi Lepas Kunci Maupun Dengan Driver:</strong> Ingin privasi penuh bersama keluarga? Pilih paket <em>lepas kunci</em>. Butuh sopir ramah yang hafal jalan tikus anti macet? Driver profesional kami siap mendampingi.</li>
+                <li><strong>Layanan Customer Service 24 Jam:</strong> Tim kami selalu siap siaga memberikan bantuan darurat dan konsultasi perjalanan selama masa sewa Anda di Yogyakarta.</li>
+            </ul>
+
+            <h2>Syarat Mudah Sewa Mobil Lepas Kunci Nataru</h2>
+            <p>Proses pemesanan di Aksara Transport sangat praktis tanpa prosedur yang berbelit-belit. Anda cukup menyiapkan dokumen berikut secara online via WhatsApp:</p>
+            <ol>
+                <li>Foto e-KTP penyewa asli.</li>
+                <li>Foto SIM A yang masih berlaku aktif.</li>
+                <li>Bukti tiket perjalanan pulang-pergi (tiket kereta api atau pesawat) serta bukti reservasi hotel/penginapan di Jogja.</li>
+                <li>Akun media sosial aktif (Instagram / Facebook / LinkedIn) untuk verifikasi identitas kilat.</li>
+            </ol>
+
+            <h2>Tips Penting Sebelum Booking Mobil Liburan Akhir Tahun di Jogja</h2>
+            <ol>
+                <li><strong>Booking Secepat Mungkin (Early Bird):</strong> Ketersediaan unit rental di Yogyakarta selalu menipis dan habis sejak akhir November hingga awal Desember. Mengamankan unit lebih awal mencegah Anda kehabisan mobil atau terpaksa menyewa dengan harga calo yang tidak wajar.</li>
+                <li><strong>Pilih Mobil Sesuai Rencana Destinasi:</strong>
+                    <ul>
+                        <li>Untuk rute perkotaan dan kulineran santai (Malioboro, Kotagede, Prawirotaman), <strong>Honda Brio / Agya</strong> adalah pilihan paling efisien dan mudah mencari parkir.</li>
+                        <li>Untuk liburan keluarga dengan koper besar ke pantai Gunungkidul, Hutan Pinus Mangunan, atau Candi Prambanan, <strong>Avanza, Xenia, atau Xpander</strong> menawarkan kenyamanan optimal.</li>
+                        <li>Untuk kenyamanan ekstra dan rute perbukitan terjal seperti Kaliurang, Merapi, atau Tumpeng Menoreh, <strong>Innova Reborn Diesel</strong> adalah raja torsi yang paling tangguh dan nyaman.</li>
+                    </ul>
+                </li>
+                <li><strong>Kunci Tanggal Sewa dengan DP Resmi:</strong> Lakukan pembayaran uang muka (DP) resmi ke rekening perusahaan Aksara Transport agar jadwal kendaraan Anda terkunci secara pasti di sistem kalender kami.</li>
+            </ol>
+
+            <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 5px solid #2563eb; padding: 25px; border-radius: 12px; margin: 35px 0;">
+                <h3 style="margin-top: 0; color: #1e40af; font-size: 1.25rem;">Siap Mengamankan Mobil Impian Anda untuk Liburan Nataru 2026/2027?</h3>
+                <p style="margin-bottom: 18px; color: #1e3a8a; font-size: 0.95rem; line-height: 1.6;">
+                    Jangan biarkan liburan akhir tahun Anda terganggu karena kehabisan unit armada. Hubungi tim reservasi Aksara Transport sekarang juga melalui WhatsApp untuk konsultasi ketersediaan armada dan penawaran terbaik!
+                </p>
+                <a 
+                    href="https://wa.me/628386000740?text=Halo%20Aksara%20Transport%2C%20saya%20tertarik%20tanya%20sewa%20mobil%20untuk%20periode%20Nataru%202026%2F2027.%20Apakah%20unit%20masih%20tersedia%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="display: inline-flex; align-items: center; gap: 8px; background-color: #25D366; color: #ffffff; padding: 12px 24px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; text-decoration: none; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);"
+                >
+                    <span>💬 Hubungi Admin via WhatsApp Sekarang</span>
+                </a>
+            </div>
+        `
+    },
+    {
         id: 'sewa-mobil-jogja-panduan-2026',
         created_at: '2026-11-08T12:00:00Z',
         title: 'Panduan Lengkap Sewa Mobil Jogja 2026: Tips Hemat, Syarat Lepas Kunci & Daftar Harga Terbaru',

@@ -6591,3 +6591,27 @@ body {
         letter-spacing: -0.01em;
     }
 }
+
+
+/* ==========================================================================
+   ARTICLE TABLE STYLING (RESPONSIVE FOR PRICELIST & GUIDES)
+   ========================================================================== */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 24px 0;
+}
+
+.table-responsive table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 620px;
+}
+
+.table-responsive th,
+.table-responsive td {
+    padding: 12px 14px;
+    vertical-align: middle;
+}
